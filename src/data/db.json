@@ -1,0 +1,692 @@
+{
+  "contact": {
+    "phone": "+995 592 05 50 17",
+    "whatsapp": "995 592 05 50 17",
+    "instagram": "https://www.instagram.com/sun_set_paddle/"
+  },
+  "promo_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5gE106Pf2-K-JkVUMawfBl9jLln0_Rq1Ide078g9WCMxbB2nYlEujxx15&s=10",
+  "logo": "/pictures/logo.webp",
+  "hero_video_url": "https://www.instagram.com/reels/C-Swmkuoe3Z/",
+  "lifestyle_video_url": "https://www.instagram.com/reels/C-Swmkuoe3Z/",
+  "promo_title": {
+    "en": "SUP Board Rental & Sales",
+    "ge": "საპ ბორდების გაქირავება",
+    "ru": "Аренда SUP-бордов"
+  },
+  "promo_subtitle": {
+    "en": "Rent premium SUP boards at Lisi Lake, Batumi, and Anaklia at the best price.",
+    "ge": "იქირავე საპი ლისის ტბაზე, ბათუმსა და ანაკლიაში საუკეთესო ფასად.",
+    "ru": "Аренда сапбордов на Лисьем озере, в Батуми и Анаклии по лучшей цене."
+  },
+  "kit_items": [
+    {
+      "key": "board",
+      "image": "/pictures/paddleboard.webp",
+      "title": {
+        "en": "Inflatable Board",
+        "ge": "გასაბერი დაფა",
+        "ru": "Надувная доска"
+      },
+      "desc": {
+        "en": "Stable all-round inflatable board suitable for all water conditions.",
+        "ge": "სტაბილური გასაბერი დაფა ყველა ტიპის წყლისთვის.",
+        "ru": "Стабильная универсальная надувная доска для любых условий."
+      }
+    },
+    {
+      "key": "paddle",
+      "image": "/pictures/paddle.webp",
+      "title": {
+        "en": "Carbon Paddle",
+        "ge": "კარბონის ნიჩაბი",
+        "ru": "Карбоновое весло"
+      },
+      "desc": {
+        "en": "Lightweight, adjustable carbon-shaft paddle for efficient, fatigue-free strokes.",
+        "ge": "მსუბუქი კარბონის ნიჩაბი სწრაფი და მარტივი სრიალისთვის.",
+        "ru": "Легкое регулируемое весло с карбоновым шафтом для долгой гребли."
+      }
+    },
+    {
+      "key": "vest",
+      "image": "/pictures/life-vest.webp",
+      "title": {
+        "en": "Life Vest",
+        "ge": "სამაშველო ჟილეტი",
+        "ru": "Спасательный жилет"
+      },
+      "desc": {
+        "en": "CE-certified buoyancy aid vest in all sizes for absolute safety.",
+        "ge": "უსაფრთხოების სერტიფიცირებული ჟილეტი ყველა ზომაში.",
+        "ru": "Сертифицированный страховочный жилет любого размера для вашей безопасности."
+      }
+    },
+    {
+      "key": "bag",
+      "image": "/pictures/backpack.webp",
+      "title": {
+        "en": "Carrying Backpack",
+        "ge": "ჩანთა",
+        "ru": "Рюкзак для переноски"
+      },
+      "desc": {
+        "en": "Ergonomic, heavy-duty backpack to pack the entire kit comfortably.",
+        "ge": "ერგონომიული ჩანთა კომპლექტის მარტივად სატარებლად.",
+        "ru": "Эргономичный прочный рюкзак для легкой транспортировки всего комплекта."
+      }
+    },
+    {
+      "key": "case",
+      "image": "/pictures/waterproof-case.webp",
+      "title": {
+        "en": "Waterproof Case",
+        "ge": "ტელეფონის ქეისი",
+        "ru": "Водонепроницаемый кейс"
+      },
+      "desc": {
+        "en": "Hermetic touch-compatible pouch to protect your phone and capture memories.",
+        "ge": "წყალგამძლე ქეისი ტელეფონისთვის მოგონებების გადასაღებად.",
+        "ru": "Герметичный сенсорный чехол для сохранения телефона сухим и ярких фото."
+      }
+    },
+    {
+      "key": "pump",
+      "image": "/pictures/pump.webp",
+      "title": {
+        "en": "High-Pressure Pump",
+        "ge": "ტუმბო",
+        "ru": "Насос высокого давления"
+      },
+      "desc": {
+        "en": "Double-action manual pump with pressure gauge for quick 5-minute inflation.",
+        "ge": "მაღალი წნევის ტუმბო სწრაფი და მარტივი გაბერვისთვის.",
+        "ru": "Ручной насос двойного действия с манометром для быстрой накачки за 5 минут."
+      }
+    }
+  ],
+  "services": [
+    {
+      "id": "tour_lisi",
+      "name": {
+        "en": "Lisi Lake Guided Tour",
+        "ge": "ტურები ლისის ტბაზე",
+        "ru": "Тур с гидом по озеру Лиси"
+      },
+      "location": {
+        "en": "Tbilisi - Lisi Lake",
+        "ge": "თბილისი - ლისის ტბა",
+        "ru": "Тбилиси - Озеро Лиси"
+      },
+      "price": "60 GEL",
+      "duration": {
+        "en": "2 Hours",
+        "ge": "2 საათი",
+        "ru": "2 Часа"
+      },
+      "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=500&q=80",
+      "desc": {
+        "en": "Enjoy a breathtaking sunset or sunrise paddle across Lisi Lake under the guidance of our local instructors. Perfect for families, beginners, and group bonding.",
+        "ge": "ისიამოვნეთ მზის ჩასვლის ან ამოსვლის ულამაზესი ხედებით ლისის ტბაზე გამოცდილი ინსტრუქტორების მეთვალყურეობით. საუკეთესოა ოჯახებისთვის და მეგობრებისთვის.",
+        "ru": "Насладитесь захватывающим закатом или рассветом на озере Лиси под руководством опытных местных гидов. Идеально для семей, новичков и корпоративов."
+      },
+      "inclusions": {
+        "en": [
+          "Full SUP Kit",
+          "Professional Instructor",
+          "Sunset Photoshoot",
+          "Hot Tea/Coffee"
+        ],
+        "ge": [
+          "სრული საპ კომპლექტი",
+          "პროფესიონალი ინსტრუქტორი",
+          "მზის ჩასვლის ფოტოები",
+          "ცხელი ჩაი ან ყავა"
+        ],
+        "ru": [
+          "Полный сап комплект",
+          "Профессиональный инструктор",
+          "Фотосессия на закате",
+          "Горячий чай/кофе"
+        ]
+      },
+      "images": [
+        "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=500&q=80",
+        "/pictures/paddleboard.webp"
+      ]
+    },
+    {
+      "id": "lesson_surf",
+      "name": {
+        "en": "Surf School Batumi",
+        "ge": "სერფინგის სკოლა ბათუმში",
+        "ru": "Школа серфинга в Батуми"
+      },
+      "location": {
+        "en": "Batumi Beach",
+        "ge": "ბათუმის სანაპირო",
+        "ru": "Пляж Батуми"
+      },
+      "price": "90 GEL",
+      "duration": {
+        "en": "1.5 Hours",
+        "ge": "1.5 საათი",
+        "ru": "1.5 Часа"
+      },
+      "image": "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=500&q=80",
+      "desc": {
+        "en": "Catch your first wave on the Black Sea coast! Our structured lessons cover safety protocols, pop-up mechanics, board control, and riding technique.",
+        "ge": "დაიჭირეთ თქვენი პირველი ტალღა შავი ზღვის სანაპიროზე! გაკვეთილი მოიცავს უსაფრთხოების წესებს, დაფაზე დგომის მექანიკას და ბალანსის მართვას.",
+        "ru": "Поймайте свою первую волну на Черном море! Наши структурированные уроки включают технику безопасности, механику вставания на доску и управление балансом."
+      },
+      "inclusions": {
+        "en": [
+          "Surfboard Rental",
+          "Wetsuit",
+          "1-on-1 Instructor Guide",
+          "HD Action Videos"
+        ],
+        "ge": [
+          "სერფინგის დაფის ქირაობა",
+          "სველი კოსტუმი (ჰიდროკოსტუმი)",
+          "პირადი ინსტრუქტორი",
+          "აქშენ ვიდეო ჩანაწერები"
+        ],
+        "ru": [
+          "Аренда серфборда",
+          "Гидрокостюм",
+          "Персональный инструктор",
+          "Экшен-видео вашей каталки"
+        ]
+      },
+      "images": [
+        "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=500&q=80"
+      ]
+    },
+    {
+      "id": "corporate_event",
+      "name": {
+        "en": "Corporate Water Fun",
+        "ge": "კორპორატიული აქტივობები",
+        "ru": "Корпоративы на воде"
+      },
+      "location": {
+        "en": "Lisi, Batumi or Anaklia",
+        "ge": "ლისი, ბათუმი ან ანაკლია",
+        "ru": "Лиси, Батуми или Анаклия"
+      },
+      "price": "Custom / კორპორატიული",
+      "duration": {
+        "en": "Flexible",
+        "ge": "მოქნილი დრო",
+        "ru": "Гибкое время"
+      },
+      "image": "https://images.unsplash.com/photo-1500309722644-cf8528574a7b?auto=format&fit=crop&w=500&q=80",
+      "desc": {
+        "en": "Elevate your team's synergy with giant SUP races, relay games, water polo, and beach barbecues. Fully customized event planning tailored to your organization.",
+        "ge": "გააძლიერეთ თქვენი გუნდის სინერგია გიგანტური საპების რბოლებით, წყლის პოლოთი და სანაპირო ბარბექიუთი. სრულად მორგებული თქვენს მოთხოვნებზე.",
+        "ru": "Усильте командную синергию с помощью гонок на гигантских сапах, эстафет, водного поло и пляжного барбекю. Полностью индивидуальная программа."
+      },
+      "inclusions": {
+        "en": [
+          "Giant SUPs (fits 6-8 people)",
+          "Event Coordinator",
+          "Catering & Drinks",
+          "Professional Videography"
+        ],
+        "ge": [
+          "გიგანტური საპები (6-8 კაცზე)",
+          "ღონისძიების კოორდინატორი",
+          "ქეითერინგი და სასმელები",
+          "პროფესიონალი ვიდეოგრაფი"
+        ],
+        "ru": [
+          "Гигантские сапы (на 6-8 человек)",
+          "Координатор праздника",
+          "Кейтеринг и напитки",
+          "Профессиональная видеосъемка"
+        ]
+      },
+      "images": [
+        "https://images.unsplash.com/photo-1500309722644-cf8528574a7b?auto=format&fit=crop&w=500&q=80"
+      ]
+    }
+  ],
+  "products": [
+    {
+      "id": "board_gladiator",
+      "name": {
+        "en": "New Tiki 10'6\" Inflatable Paddle Board",
+        "ge": " გასაბერი საპ ბორდი Tiki 10'6\"",
+        "ru": "Новейший надувной сапборд Tiki 10'6\""
+      },
+      "category": {
+        "en": "SUP Boards",
+        "ge": "საპ დაფები",
+        "ru": "SUP Доски"
+      },
+      "condition": {
+        "en": "New",
+        "ge": "ახალი",
+        "ru": "Новый"
+      },
+      "price": "1,050",
+      "rating": 5,
+      "image": "/pictures/paddleboard.webp",
+      "desc": {
+        "en": "Lightweight, durable, and perfect for any adventure. Made from ultra-light double wall PVC, they have a 350 LBS weight capacity and meet rigorous standards, offering premium customer service and innovative features.\n\nInflatable stand up paddle board × 1\nAdjustable aluminum paddle × 1\nHigh pressure pump × 1\nRemovable SUP fin × 3\nTravel backpack × 1\nElastic SUP leash × 1",
+        "ge": "მსუბუქი, გამძლე და იდეალურია ნებისმიერი თავგადასავლისთვის. დამზადებულია ულტრამსუბუქი ორმაგი კედლის მქონე PVC მასალისგან. მას აქვს 350 ფუნტის (158 კგ) წონის ტევადობა, აკმაყოფილებს მკაცრ სტანდარტებს და გთავაზობთ პრემიუმ კლასის მომხმარებელთა მომსახურებასა და ინოვაციურ ფუნქციებს.\nგასაბერი საპ ბორდი (SUP) × 1\n\nრეგულირებადი ალუმინის ნიჩაბი × 1\nმაღალი წნევის ტუმბო × 1\nმოხსნადი ფარფლი (Fin) × 3\nსამგზავრო ზურგჩანთა × 1\nელასტიური უსაფრთხოების თოკი (Leash) × 1",
+        "ru": "Легкий, прочный и идеально подходящий для любых приключений. Изготовленный из ультралегкого двухслойного ПВХ (PVC), этот сапборд выдерживает вес до 350 фунтов (158 кг). Он соответствует строгим стандартам качества, предлагая премиальное обслуживание клиентов и инновационные функции.\nНадувной сапборд (SUP) × 1\n\nРегулируемое алюминиевое весло × 1\nНасос высокого давления × 1\nСъемный плавник × 3\nДорожный рюкзак × 1\nЭластичный страховочный лиш (поводок) × 1"
+      },
+      "images": [
+        "/pictures/paddleboard.webp",
+        "/pictures/paddleboard-1.webp",
+        "/pictures/paddleboard-6.webp",
+        "/pictures/paddleboard-2.webp",
+        "/pictures/paddleboard-3.webp",
+        "/pictures/paddleboard-5.webp",
+        "/pictures/paddleboard-4.webp"
+      ],
+      "features": {
+        "en": [
+          "Dimensions: 10'6\" x 33\" x 6\"",
+          "Weight Capacity: 350 LBS",
+          "Recommended Pressure: 12-15 PSI",
+          "Item Weight: 25 Pounds",
+          "Package Dimensions (L x W x H): 35.35 x 15.43 x 8.66 inches",
+          "Package Weight: 13.16 Kilograms"
+        ],
+        "ge": [
+          "ზომები: 10'6\" x 33\" x 6\" (დაახლ. 320 x 84 x 15 სმ)",
+          "ტევადობა/მაქს. წონა: 350 ფუნტი (დაახლ. 158 კგ)",
+          "რეკომენდებული წნევა: 12-15 PSI",
+          "პროდუქტის წონა: 25 ფუნტი (დაახლ. 11.3 კგ)",
+          "შეფუთვის ზომები (სიგრძე x სიგანე x სიმაღლე): 35.35 x 15.43 x 8.66 ინჩი",
+          "შეფუთვის წონა: 13.16 კილოგრამი"
+        ],
+        "ru": [
+          "Размеры: 10'6\" x 33\" x 6\" (прибл. 320 x 84 x 15 см)",
+          "Грузоподъемность: 350 фунтов (прибл. 158 кг)",
+          "Рекомендуемое давление: 12-15 PSI",
+          "Вес товара: 25 фунтов (прибл. 11.3 кг)",
+          "Размеры упаковки (Д х Ш х В): 35.35 x 15.43 x 8.66 дюймов",
+          "Вес упаковки: 13.16 килограмм"
+        ]
+      }
+    },
+    {
+      "id": "product_1782817440735",
+      "name": {
+        "en": "Waterproof Phone Pouch",
+        "ge": "წყალგაუმტარი ტელეფონის ჩანთა",
+        "ru": "Водонепроницаемый чехол для телефона"
+      },
+      "category": {
+        "en": "Accessories",
+        "ge": "აქსესუარები",
+        "ru": "Аксессуары"
+      },
+      "condition": {
+        "en": "New",
+        "ge": "ახალი",
+        "ru": "Новый"
+      },
+      "price": "20 GEL",
+      "rating": 5,
+      "image": "/pictures/waterproof-case.webp",
+      "desc": {
+        "en": "SKU: ACC1600001\n❤Made of high-quality waterproof materials,it provides a full range of waterproof protection for your phone.\n❤The front fully transparent design allows you to clearly see the content displayed on the phone,avoiding you from missing important messages.\n❤The neck lanyard is made of high-quality materials,which is very comfortable to wear and will not harm your skin.\n❤The bright color design makes it easy for you to match any of your outfits.\n❤We are dedicated to providing the best devices for all lovers of water sports,and we care about your user experience.Please feel free to contact us if you have any questions.\n\nimmediatly following, I'm generating an image that effectively showcases this waterproof phone pouch, including key details from your listing like the description features and price.\n\nTo create this image, I will design a clean, professional product shot of the waterproof phone pouch that highlights the features from the description and clearly includes the price. I'll depict a vibrant blue waterproof pouch with a crystal-clear front and an adjustable lanyard. It will be shown holding a smartphone, with water droplets visible on the surface to demonstrate its function, set against a blurred beach background. Text overlays in both English and Georgian will highlight the key selling points from the listing.",
+        "ge": "SKU : ACC1600001\n❤ დამზადებულია მაღალხარისხოვანი წყალგაუმტარი მასალებისგან, ის უზრუნველყოფს თქვენი ტელეფონის სრულ წყალგაუმტარ დაცვას.\n❤ წინა, სრულიად გამჭვირვალე დიზაინი საშუალებას გაძლევთ ნათლად დაინახოთ ტელეფონზე გამოსახული შინაარსი, რაც თავიდან აგაცილებთ მნიშვნელოვანი შეტყობინებების გამოტოვებას.\n❤ კისერზე ჩამოსაკიდი ღვედი დამზადებულია მაღალხარისხოვანი მასალებისგან, რომელიც ძალიან კომფორტული სატარებელია და არ აზიანებს თქვენს კანს.\n❤ ნათელი ფერების დიზაინი გაგიადვილებთ მის შეხამებას ნებისმიერ თქვენს სამოსთან.\n❤ ჩვენ მზად ვართ უზრუნველვყოთ საუკეთესო მოწყობილობები წყლის სპორტის ყველა მოყვარულისთვის და ვზრუნავთ თქვენს მომხმარებლის გამოცდილებაზე. გთხოვთ, მოგვმართოთ ნებისმიერი შეკითხვის შემთხვევაში.",
+        "ru": "SKU (Артикул): ACC1600001\n❤ Изготовлен из высококачественных водонепроницаемых материалов, он обеспечивает полный спектр водонепроницаемой защиты для вашего телефона.\n❤ Полностью прозрачный дизайн передней панели позволяет четко видеть содержимое на экране телефона, что поможет вам не пропустить важные сообщения.\n❤ Шейный ремешок выполнен из высококачественных материалов, он очень удобен в ношении и не раздражает кожу.\n❤ Яркий дизайн позволяет легко сочетать чехол с любым вашим нарядом.\n❤ Мы стремимся предоставлять лучшие аксессуары для всех любителей водного спорта и заботимся о вашем пользовательском опыте. Пожалуйста, свяжитесь с нами, если у вас возникнут вопросы.Описание..."
+      },
+      "images": [
+        "/pictures/waterproof-case.webp",
+        "/pictures/waterproof-case-1.webp",
+        "/pictures/waterproof-case-2.webp"
+      ],
+      "features": {
+        "en": [
+          "Waterproof",
+          "High-quality materials",
+          "Full protection",
+          "Transparent front",
+          "Touchscreen compatible",
+          "Comfortable neck lanyard",
+          "Skin-friendly",
+          "Bright colors",
+          "Water sports accessory",
+          "SKU: ACC1600001"
+        ],
+        "ge": [
+          "წყალგაუმტარი",
+          "მაღალხარისხიანი მასალები",
+          "სრული დაცვა",
+          "გამჭვირვალე წინა მხარე",
+          "სენსორთან თავსებადი",
+          "კომფორტული კისრის ღვედი",
+          "კანისთვის უსაფრთხო",
+          "ნათელი ფერები",
+          "წყლის სპორტის აქსესუარი",
+          "არტიკული: ACC1600001"
+        ],
+        "ru": [
+          "Водонепроницаемый",
+          "Высококачественные материалы",
+          "Полная защита",
+          "Прозрачная передняя панель",
+          "Совместимость с сенсором",
+          "Удобный шейный ремешок",
+          "Безопасный для кожи",
+          "Яркие цвета",
+          "Аксессуар для водного спорта",
+          "Артикул: ACC1600001"
+        ]
+      }
+    },
+    {
+      "id": "product_1782912663036",
+      "name": {
+        "en": "SUP Board , NOVA",
+        "ge": "SUP დაფა, NOVA ",
+        "ru": "SUP-доска , NOVA"
+      },
+      "category": {
+        "en": "SUP Boards",
+        "ge": "საპ დაფები",
+        "ru": "SUP Доски"
+      },
+      "condition": {
+        "en": "New",
+        "ge": "ახალი",
+        "ru": "Новый"
+      },
+      "price": "1150",
+      "rating": 5,
+      "image": "/pictures/sup-paddleboard-nova-1.webp",
+      "desc": {
+        "en": "Introduce the NOVA 3.0, the most popular board for paddlers who want convenience without compromise. The all-round outline suits all skill levels, it delivers stable, smooth rides across lakes, rivers, and coastal waters.\n\nThe smart foldable concept makes transport and storage effortless – sliding neatly into a compact pack without compromising performance. Perfect for beginners, adventurers, and leisure riders alike, this board has become the go-to favorite for those who want an easy, reliable, and all-in-one paddle boarding experience.",
+        "ge": "წარმოგიდგენთ NOVA 3.0-ს – ყველაზე პოპულარულ SUP დაფას მათთვის, ვისაც სურს მაქსიმალური კომფორტი ყოველგვარი კომპრომისის გარეშე. მისი უნივერსალური (All-round) ფორმა იდეალურია ნებისმიერი დონის მოყვარულისთვის, რაც უზრუნველყოფს სტაბილურ და გლუვ სრიალს ტბებზე, მდინარეებსა და სანაპირო წყლებში.\n\nჭკვიანი, კეცვადი კონცეფციის წყალობით, ტრანსპორტირება და შენახვა წარმოუდგენლად მარტივია – დაფა კომპაქტურად იკეცება და თავსდება სპეციალურ ჩანთაში მახასიათებლებისა და გამძლეობის დაკარგვის გარეშე. NOVA 3.0 იდეალური არჩევანია როგორც დამწყებთა და თავგადასავლების მაძიებელთათვის, ასევე დასვენების მოყვარულთათვის. ის გახდა ნამდვილი ფავორიტი ყველასთვის, ვისაც სურს მარტივი, საიმედო და „ყველაფერი ერთში“ ტიპის დაუვიწყარი გამოცდილება წყალზე.",
+        "ru": "Представляем NOVA 3.0 – самую популярную SUP-доску для райдеров, которые ценят удобство без компромиссов. Универсальная форма (All-round) отлично подходит для любого уровня подготовки, обеспечивая стабильное и плавное скольжение по озерам, рекам и прибрежным морским водам.\n\nБлагодаря умной складной концепции, транспортировка и хранение становятся максимально простыми – доска аккуратно складывается в компактный рюкзак, сохраняя при этом все свои ходовые качества. NOVA 3.0 идеально подходит как для новичков и искателей приключений, так и для любителей спокойного отдыха, став настоящим фаворитом для тех, кто ищет надежный, удобный и готовый к использованию комплект «все в одном»."
+      },
+      "images": [
+        "/pictures/sup-paddleboard-nova-1.webp",
+        "/pictures/sup-paddleboard-nova-2.webp",
+        "/pictures/sup-paddleboard-nova-4.webp",
+        "/pictures/sup-paddleboard-nova-3.webp",
+        "/pictures/sup-bag.webp",
+        "/pictures/sup-leash.webp",
+        "/pictures/sup-fins.webp",
+        "/pictures/sup-paddle.webp",
+        "/pictures/sup-pump.webp"
+      ],
+      "features": {
+        "ge": [
+          "სიგრძე: 10'0\" / 305 სმ  სიგანე: 32\" / 81 სმ",
+          "სისქე: 6\" / 15 სმ",
+          "წონა: 8.1 კგ / 17.9 ფუნტი",
+          "მოცულობა: 275 ლიტრი",
+          "რეკომენდებული დატვირთვა: 85 კგ / 187 ფუნტი",
+          "მაქსიმალური დატვირთვა: 115 კგ / 254 ფუნტი"
+        ],
+        "en": [
+          "Length: 10'0\" / 305 cm",
+          "Width: 32\" / 81 cm",
+          "Thickness: 6\" / 15 cm",
+          "Weight: 8.1 kg / 17.9 lbs",
+          "Volume: 275 L",
+          "Rec. Payload: 85 kg / 187 lbs",
+          "Max. Payload: 115 kg / 254 lbs"
+        ],
+        "ru": [
+          "Длина: 10'0\" / 305 см  Ширина: 32\" / 81 см",
+          "Толщина: 6\" / 15 см",
+          "Вес: 8.1 кг / 17.9 фунтов",
+          "Объем: 275 л",
+          "Рекомендуемая нагрузка: 85 кг / 187 фунтов",
+          "Максимальная нагрузка: 115 кг / 254 фунта"
+        ]
+      }
+    }
+  ],
+  "blog_categories": [
+    {
+      "id": "paddleboarding",
+      "title": {
+        "en": "Paddleboarding",
+        "ge": "პადლბორდინგი",
+        "ru": "Сапбординг"
+      },
+      "blogs": [
+        {
+          "id": "what-is-sup-board",
+          "title": {
+            "en": "What is a Stand-Up Paddleboard (SUP)?",
+            "ge": "რა არის საპ დაფა?",
+            "ru": "Что такое сапборд?"
+          },
+          "excerpt": {
+            "en": "Learn what a SUP board is, the different types (inflatable vs hard), and why it is the fastest-growing water sport.",
+            "ge": "გაიგეთ რა არის საპ დაფა, რა ტიპები არსებობს (გასაბერი და მყარი) და რატომ არის ის ყველაზე პოპულარული წყლის სპორტი.",
+            "ru": "Узнайте, что такое сапборд, какие виды бывают (надувные и жесткие) и почему это самый быстрорастущий водный спорт."
+          },
+          "content": {
+            "en": "Stand-Up Paddleboarding (SUP) is an outdoor water sports activity where a rider stands on a large board and uses a paddle to navigate across the water surface. Originating in Hawaii, SUP has taken the world by storm. Boards are categorized into Inflatable SUPs (iSUPs) and Hard (Epoxy/Fiberglass) boards.\n\nInflatable SUPs are incredibly popular in Georgia (especially on Lisi Lake and Batumi) due to their portability and durability. They are made from high-strength drop-stitch PVC and can be deflated to fit in a backpack. Hard boards offer slightly better glide and speed but require vehicle racks for transport.\n\nFor beginners, a wider board (32-34 inches) is highly recommended as it provides maximum lateral stability, helping you build confidence instantly.",
+            "ge": "საპ ბორდინგი (Stand-Up Paddleboarding ან SUP) არის წყლის სპორტის პოპულარული სახეობა, სადაც მომხმარებელი დგას სპეციალურ დიდ დაფაზე და გადაადგილდება ნიჩბის მეშვეობით. ის ჰავაიდან იღებს სათავეს და დღეს მსოფლიოში ერთ-ერთი ყველაზე სწრაფად მზარდი აქტივობაა.\n\nსაპ დაფები იყოფა ორ ძირითად კატეგორიად: გასაბერი და მყარი დაფები. გასაბერი დაფები (iSUP) დამზადებულია მყარი და მრავალშრიანი PVC მასალისგან. ისინი ძალიან მარტივი გადასატანია, ეტევა ზურგჩანთაში და ნაკლებად ზიანდება ქვებზე, რაც იდეალურია საქართველოს ტბებისა და ზღვის პირობებისთვის.\n\nდამწყებთათვის რეკომენდებულია უფრო განიერი დაფები (32-34 ინჩი / 80-86 სმ), რადგან მათ აქვთ საუკეთესო ბალანსი და ნაკლებად ყირავდებიან.",
+            "ru": "Сапбординг (Stand-Up Paddleboarding или SUP) — это водный вид спорта, в котором райдер стоит на большой доске и перемещается по воде с помощью весла. Зародившись на Гавайях, сап-серфинг быстро завоевал мировую популярность.\n\nДоски делятся на надувные (iSUP) и жесткие (эпоксидные/карбоновые). Надувные сапы невероятно популярны в Грузии (особенно на озере Лиси и в Батуми) благодаря своей прочности и удобству транспортировки. Они легко сдуваются и помещаются в рюкзак. Жесткие доски скользят немного быстрее, но требуют багажника на крыше автомобиля.\n\nДля новичков рекомендуются широкие доски (32-34 дюйма), которые обеспечивают отличную остойчивость и помогают сразу почувствовать себя уверенно на воде."
+          },
+          "date": "2026-06-20",
+          "readTime": "3 min",
+          "author": "Giorgi Kopadze",
+          "image": "https://images.unsplash.com/photo-1517176118179-c55d0910c5e8?auto=format&fit=crop&w=500&q=80"
+        },
+        {
+          "id": "sup-paddle-guide",
+          "title": {
+            "en": "The Complete SUP Paddle Guide",
+            "ge": "როგორ შევარჩიოთ საპ ნიჩაბი?",
+            "ru": "Полное руководство по веслам для сапа"
+          },
+          "excerpt": {
+            "en": "How to choose the perfect paddle length, blade size, and shaft material for smooth strokes.",
+            "ge": "როგორ შევარჩიოთ ნიჩბის სიგრძე, ფირფიტის ზომა და მასალა (კარბონი, ალუმინი) სასიამოვნო სრიალისთვის.",
+            "ru": "Как правильно подобрать длину весла, размер лопасти и материал шафта для эффективной гребли."
+          },
+          "content": {
+            "en": "Your paddle is your engine on the water. Choosing the right one is just as important as choosing the board. SUP paddles are made from aluminum, fiberglass, carbon fiber, or wood.\n\n- **Aluminum paddles:** Heavy but very affordable and durable. Usually included in budget rental kits.\n- **Carbon paddles:** The gold standard. Extremely lightweight, rigid, and minimizes shoulder fatigue during long sessions. Our premium rentals include carbon paddles.\n\n**Finding the correct length:** A general rule of thumb is to set the paddle length 6 to 8 inches (15 to 20 cm) above the paddler's height. Stand the paddle vertically next to you, raise your hand, and adjust the handle so it rests comfortably in your palm.",
+            "ge": "ნიჩაბი თქვენი მთავარი ძრავია წყალზე. მისი შერჩევა არანაკლებ მნიშვნელოვანია, ვიდრე თავად საპ დაფის. ნიჩბები მზადდება სხვადასხვა მასალისგან: ალუმინი, ფიბერგლასი და კარბონი.\n\n- **ალუმინის ნიჩაბი:** მძიმეა, მაგრამ იაფი და გამძლე. ძირითადად გამოიყენება საბიუჯეტო კომპლექტებში.\n- **კარბონის ნიჩაბი:** საუკეთესო არჩევანია. ძალიან მსუბუქია და მხრებისა თუ ხელების დაღლილობას მინიმუმამდე ამცირებს. ჩვენს კომპლექტებში სწორედ კარბონის მსუბუქი ნიჩბები შედის.\n\n**სიგრძის რეგულირება:** სწორი სიმაღლე გამოითვლება მარტივად: ნიჩაბი უნდა იყოს თქვენს სიმაღლეზე დაახლოებით 15-20 სანტიმეტრით მაღალი. ვერტიკალურად დადგით ნიჩაბი თქვენ წინ, ასწიეთ ხელი და სახელური თქვენი მაჯის დონეზე უნდა დაფიქსირდეს.",
+            "ru": "Весло — это ваш мотор на воде. Его правильный выбор не менее важен, чем выбор самой доски. Весла изготавливаются из алюминия, стекловолокна или карбона.\n\n- **Алюминиевые весла:** Тяжелые, но недорогие и прочные. Часто идут в базовых комплектах.\n- **Карбоновые весла:** Лучший стандарт качества. Ультралегкие, жесткие, минимизируют усталость рук и суставов. В наш прокат входят именно легкие карбоновые весла.\n\n**Как настроить длину:** Стандартное правило — весло должно быть на 15-20 см выше роста гребца. Поставьте весло вертикально перед собой, поднимите руку: рукоятка должна находиться на уровне вашего запястья."
+          },
+          "date": "2026-06-18",
+          "readTime": "4 min",
+          "author": "Luka Devdariani",
+          "image": "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=500&q=80"
+        },
+        {
+          "id": "how-to-stand-sup",
+          "title": {
+            "en": "How to Stand and Balance on a SUP",
+            "ge": "როგორ დავდგეთ საპ დაფაზე სწორად?",
+            "ru": "Как правильно стоять и держать баланс"
+          },
+          "excerpt": {
+            "en": "Step-by-step balance tips for beginners to stand up on a paddleboard without falling.",
+            "ge": "ნაბიჯ-ნაბიჯ სახელმძღვანელო დამწყებთათვის, რათა მარტივად შეინარჩუნოთ ბალანსი დაფაზე დამოუკიდებლად.",
+            "ru": "Пошаговая инструкция для новичков о том, как встать на ноги на сапе и не упасть."
+          },
+          "content": {
+            "en": "Standing up on a SUP is easier than it looks if you follow these basic steps:\n\n1. **Start on your knees:** Place the board in water deep enough so the center fin doesn't touch the bottom. Kneel directly over the carry handle (center of gravity).\n2. **Keep hands on the board:** Place your paddle across the board in front of you. Hold the board with both hands.\n3. **Transition to feet:** Bring one foot up at a time, placing them exactly where your knees were—parallel to each other, shoulder-width apart.\n4. **Stand up slowly:** Keep your knees bent slightly to absorb waves. Rise up with a straight back.\n5. **Look at the horizon:** The most common mistake is looking down at your feet. Keep your eyes on the horizon; this automatically aligns your inner ear balance!",
+            "ge": "საპ დაფაზე ფეხზე დგომა და ბალანსის შენარჩუნება ბევრად უფრო მარტივია, ვიდრე ერთი შეხედვით ჩანს:\n\n1. **დაიწყეთ მუხლებით:** შედით წყალში ისე, რომ ფინი ფსკერს არ ეხებოდეს. დადექით მუხლებზე ზუსტად დაფის შუა ნაწილში (სადაც ხელმოსაკიდი სახელურია).\n2. **დააყრდენით ხელები:** დადეთ ნიჩაბი დაფის განივად თქვენ წინ და დაეყრდენით ორივე ხელით დაფას.\n3. **ფეხზე წამოდგომა:** სათითაოდ დადგით ფეხები მუხლების ადგილას, ერთმანეთის პარალელურად, მხრების სიგანეზე.\n4. **სხეულის გასწორება:** ნელა წამოდექით, მუხლები ოდნავ მოხრილი გქონდეთ, რომ წყლის რყევები ჩააქროთ.\n5. **უყურეთ ჰორიზონტს:** დამწყებთა 90% უყურებს საკუთარ ფეხებს, რაც აფუჭებს ბალანსს. იყურეთ წინ, ჰორიზონტისკენ - ეს ავტომატურად ასწორებს წონასწორობას!",
+            "ru": "Встать на сапборд гораздо проще, чем кажется. Достаточно следовать этой инструкции:\n\n1. **Начните на коленях:** Зайдите в воду на достаточную глубину, чтобы плавник не цеплял дно. Встаньте на колени прямо посередине доски (в районе ручки переноски).\n2. **Упритесь руками:** Положите весло поперек доски перед собой и упритесь руками.\n3. **Переносите ноги:** Поочередно ставьте стопы на место коленей — параллельно друг другу, на ширине плеч.\n4. **Поднимайтесь плавно:** Слегка согните колени для амортизации волн. Выпрямляйте спину не спеша.\n5. **Смотрите на горизонт:** Самая частая ошибка — смотреть на свои ноги. Держите взгляд на горизонте; это автоматически включает правильный баланс тела!"
+          },
+          "date": "2026-06-15",
+          "readTime": "3 min",
+          "author": "Giorgi Kopadze",
+          "image": "https://images.unsplash.com/photo-1500309722644-cf8528574a7b?auto=format&fit=crop&w=500&q=80",
+          "videoUrl": "https://www.youtube.com/watch?v=R3L01q1BexE"
+        },
+        {
+          "id": "sup-safety-rules",
+          "title": {
+            "en": "Essential SUP Safety Rules on Water",
+            "ge": "უსაფრთხოების წესები საპით სრიალისას",
+            "ru": "Главные правила безопасности на сапе"
+          },
+          "excerpt": {
+            "en": "Safety first! Why a leash and life vest are mandatory and how to read wind/current changes.",
+            "ge": "უსაფრთხოება წყალზე უპირველესია! რატომაა ლიში და ჟილეტი სავალდებულო და როგორ გავითვალისწინოთ ქარი.",
+            "ru": "Безопасность превыше всего! Почему лиш и жилет обязательны и как читать ветер и течение."
+          },
+          "content": {
+            "en": "Paddleboarding is incredibly fun, but the water demands respect. Never skip these core safety rules:\n\n- **Wear the Leash:** The leash connects your ankle to the board. If you fall, the wind can blow the board away faster than you can swim. The board is your primary flotation device.\n- **Wear a Buoyancy Aid (Life Jacket):** Even if you are a strong swimmer, unexpected cramps or wind changes can occur. A vest keeps you safe and visible.\n- **Check Wind Direction:** Be extremely careful with offshore winds (wind blowing from the shore into the open water). It can prevent you from paddling back. Always check wind forecasts.\n- **Stay Hydrated & Protect from Sun:** Apply waterproof sunscreen and carry water in your dry bag.",
+            "ge": "საპით ცურვა ძალიან სიამოვნოა, თუმცა წყალთან უსაფრთხოების წესების დაცვა უმნიშვნელოვანესია:\n\n- **ყოველთვის გამოიყენეთ ლიში:** ლიში არის დამცავი თოკი, რომელიც აკავშირებს თქვენს ფეხს დაფასთან. ჩავარდნის შემთხვევაში, ქარმა შეიძლება დაფა თქვენზე სწრაფად წაიღოს. დაფა არის თქვენი მთავარი სამაშველო რგოლი.\n- **ჩაიცვით სამაშველო ჟილეტი:** ძლიერმა მცურავებმაც კი უნდა გამოიყენონ ჟილეტი, რადგან წყალზე კრუნჩხვა ან დაღლილობა მოულოდნელად ხდება.\n- **აკონტროლეთ ქარი:** განსაკუთრებით საშიშია სანაპიროდან წყლისკენ მიმართული ქარი, რომელმაც შეიძლება შორს გაგიტაცოთ. ცურვის დაწყებამდე შეამოწმეთ ამინდის პროგნოზი.\n- **დაიცავით თავი მზისგან:** გამოიყენეთ მზისგან დამცავი კრემი და წყალგამძლე ქეისი ტელეფონისთვის, რათა საგანგებო სიტუაციაში დარეკვა შეძლოთ.",
+            "ru": "Катание на сапах приносит массу радости, но вода требует уважения. Никогда не игнорируйте эти правила безопасности:\n\n- **Всегда надевайте лиш:** Страховочный трос связывает вашу ногу с сапом. Если вы упадете в воду, ветер унесет легкий сап быстрее, чем вы сможете плыть. Сап — ваш главный спасательный круг.\n- **Используйте спасательный жилет:** Даже если вы отлично плаваете, внезапные судороги или волны могут дезориентировать. Жилет держит вас на воде без усилий.\n- **Следите за ветром:** Будьте осторожны с отжимным ветром (дующим от берега в воду). Он может помешать вам вернуться назад. Всегда сверяйтесь с прогнозом ветра.\n- **Защита от солнца и вода:** Используйте крем от загара и берите с собой питьевую воду в гермомешке."
+          },
+          "date": "2026-06-12",
+          "readTime": "4 min",
+          "author": "Luka Devdariani",
+          "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=500&q=80"
+        },
+        {
+          "id": "sup-paddling-techniques",
+          "title": {
+            "en": "Basic Paddling Techniques for Beginners",
+            "ge": "ნიჩბოსნობის ტექნიკა დამწყებთათვის",
+            "ru": "Базовая техника гребли для начинающих"
+          },
+          "excerpt": {
+            "en": "Master the forward stroke, reverse stroke, and sweep turns to maneuver your board like a pro.",
+            "ge": "ისწავლეთ წინ სრიალი, დამუხრუჭება და მობრუნების ტექნიკა, რათა მართოთ საპ დაფა პროფესიონალურად.",
+            "ru": "Освойте прямой гребок, торможение и развороты, чтобы управлять сапом как настоящий профессионал."
+          },
+          "content": {
+            "en": "Paddling efficiently uses your core, not just your arms. Here are three basic strokes to master:\n\n1. **The Forward Stroke:** Keep your arms straight (like a triangle). Insert the paddle blade fully into the water ahead of you, and pull it back along the side of the board to your feet. Take the blade out at your feet. Pulling it further back just slows you down!\n2. **The Reverse Stroke (Braking/Reversing):** Place the paddle in the water near the tail of the board and push it forward. This stops the board's forward motion or moves you backward.\n3. **The Sweep Turn:** To turn left, place the paddle on the right side near the nose and sweep it in a wide arc towards the tail. The board will rotate left. To turn right, do the opposite.",
+            "ge": "ეფექტური ნიჩბოსნობა ხდება მუცლისა და ზურგის კუნთებით და არა მხოლოდ ხელებით. აი სამი ძირითადი მოძრაობა:\n\n1. **წინ სრიალი (Forward Stroke):** ხელები გქონდეთ გამართული. ჩადეთ ნიჩბის ფირფიტა მთლიანად წყალში თქვენ წინ და გამოქაჩეთ დაფის პარალელურად ფეხების დონემდე. ამოიღეთ ნიჩაბი ფეხებთან. ნიჩბის უფრო უკან წაღება მხოლოდ დაგამუხრუჭებთ!\n2. **უკან სრიალი და დამუხრუჭება:** ჩადეთ ნიჩაბი წყალში დაფის ბოლოში და მიაწექით წინ. ეს დაგეხმარებათ სწრაფ დამუხრუჭებაში ან უკან სვლით გადაადგილებაში.\n3. **მობრუნება (Sweep Turn):** მარცხნივ მოსაბრუნებლად, ჩადეთ ნიჩაბი დაფის მარჯვენა მხარეს ცხვირთან ახლოს და გააკეთეთ დიდი ნახევარწრე დაფის ბოლომდე. დაფა მარცხნივ შებრუნდება.",
+            "ru": "Эффективная гребля задействует мышцы пресса и спины, а не только рук. Вот три базовых гребка:\n\n1. **Прямой гребок (вперед):** Держите руки выпрямленными (образуя треугольник). Опустите лопасть полностью в воду перед собой и ведите вдоль борта до уровня стоп. Доставайте весло у стоп. Проводка дальше назад только тормозит доску!\n2. **Обратный гребок (торможение):** Опустите весло в воду у кормы и толкайте его вперед. Это остановит движение или сдвинет вас назад.\n3. **Гребок дугой (разворот):** Чтобы повернуть налево, опустите весло справа ближе к носу доски и опишите широкую дугу к корме. Доска развернется влекво. Для поворота направо сделайте наоборот справа налево."
+          },
+          "date": "2026-06-10",
+          "readTime": "3 min",
+          "author": "Luka Devdariani",
+          "image": "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=500&q=80"
+        },
+        {
+          "id": "best-lakes-georgia-sup",
+          "title": {
+            "en": "Top 5 Lakes for Paddleboarding in Georgia",
+            "ge": "სად ვისრიალოთ საპ ბორდით: 5 საუკეთესო ტბა საქართველოში",
+            "ru": "Топ-5 озер для сапсерфинга в Грузии"
+          },
+          "excerpt": {
+            "en": "Explore the most beautiful and peaceful lakes in Georgia for an unforgettable paddleboarding adventure.",
+            "ge": "აღმოაჩინეთ საქართველოს ულამაზესი და მშვიდი ტბები საპით სეირნობისთვის და დაუვიწყარი თავგადასავლებისთვის.",
+            "ru": "Откройте для себя самые красивые и спокойные озера Грузии для незабываемого SUP-путешествия."
+          },
+          "content": {
+            "en": "Georgia is home to spectacular lakes that offer perfect flat-water conditions for paddleboarding. Here are our top 5 recommendations:\n\n1. **Lisi Lake (Tbilisi):** The perfect weekday spot close to the city center. Ideal for sunset paddling and family trips.\n2. **Bazaleti Lake:** Beautiful landscapes and clean water, located just 40 minutes from Tbilisi. Perfect for beginners.\n3. **Sioni Reservoir:** Surrounded by forests and mountains, Sioni offers crystal clear waters and quiet coves.\n4. **Shaori Reservoir:** Located in Racha region, Shaori is surrounded by majestic forests that look breathtaking in autumn.\n5. **Zhinali Reservoir:** Turquoise water surrounded by high mountains and ancient fortresses creating jaw-dropping views.\n\n> Safety Tip: Always check the wind speed before launching. Offshore wind (wind blowing away from the shore) can make paddling back extremely exhausting.",
+            "ge": "საქართველოში უამრავი ლამაზი ტბა და წყალსაცავია, რომლებიც იდეალურია საპ ბორდით სასრიალოდ. გთავაზობთ ჩვენს საუკეთესო ხუთეულს:\n\n1. **ლისის ტბა (თბილისი):** ყველაზე პოპულარული და მარტივად მისადგომი ადგილი ქალაქში. საუკეთესოა მზის ჩასვლისას სრიალისთვის.\n2. **ბაზალეთის ტბა:** თბილისიდან სულ რაღაც 40 წუთის სავალზეა. დიდი სივრცე და სასიამოვნო ტალღები.\n3. **სიონის წყალსაცავი:** მთებითა და ტყით გარშემორტყმული ულამაზესი ადგილი. აქ წყალი ყოველთვის სუფთა და გამჭვირვალეა.\n4. **შაორის წყალსაცავი (რაჭა):** ნამდვილი სამოთხე ბუნების მოყვარულთათვის. შემოდგომაზე ფერადი ტყეების ფონზე სრიალი დაუვიწყარია.\n5. **ჟინვალის წყალსაცავი:** ფირუზისფერი წყალი და გარშემო არსებული მთები საოცარ ხედებს ქმნის.\n\n> რჩევა უსაფრთხოებაზე: ყოველთვის შეამოწმეთ ქარის მიმართულება. სანაპიროდან წყლისკენ მქროლავმა ქარმა შეიძლება უკან დაბრუნება გაართულოს.",
+            "ru": "Грузия славится своими великолепными озерами и водохранилищами с гладкой водой. Вот наш топ-5 мест для катания на сапах:\n\n1. **Озеро Лиси (Тбилиси):** Популярное городское озеро, идеально подходящее для прогулок на закате.\n2. **Озеро Базалети:** Всего в 40 минутах езды от Тбилиси. Отличное место для начинающих.\n3. **Сионское водохранилище:** Чистейшая вода, окруженная хвойными лесами и горами.\n4. **Шаорское водохранилище (Рача):** Одно из самых живописных мест, особенно осенью.\n5. **Жинвальское водохранилище:** Бирюзовая вода на фоне величественных гор и древних крепостей.\n\n> Совет по безопасности: Всегда проверяйте направление ветра. Ветер, дующий от берега, может сильно затруднить возвращение назад."
+          },
+          "date": "2026-07-16",
+          "readTime": "5 min",
+          "author": "Levan Asatiani",
+          "image": "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=500&q=80",
+          "videoUrl": "https://www.youtube.com/watch?v=R3L01q1BexE"
+        }
+      ]
+    },
+    {
+      "id": "surfing",
+      "title": {
+        "en": "Surfing",
+        "ge": "სერფინგი",
+        "ru": "Серфинг"
+      },
+      "blogs": [
+        {
+          "id": "surfboards-for-beginners",
+          "title": {
+            "en": "Choosing Your First Surfboard",
+            "ge": "სერფინგის დაფის შერჩევა დამწყებთათვის",
+            "ru": "Выбор первого серфборда"
+          },
+          "excerpt": {
+            "en": "Why soft-top longboards are the ultimate choice for your first waves and how size matters.",
+            "ge": "რატომაა რბილი დაფები (სოფტ-ტოპი) საუკეთესო არჩევანი პირველი ტალღებისთვის და როგორ შევარჩიოთ ზომა.",
+            "ru": "Почему софт-топы — лучший выбор для первых волн и как размер влияет на стабильность."
+          },
+          "content": {
+            "en": "Stepping into surfing requires the right equipment. The biggest mistake beginners make is buying a small shortboard because it looks cool.\n\nFor learning, you need volume and length. A **Soft-Top (foam) board** between 8.0 and 9.0 feet is perfect. It provides high buoyancy, allowing you to catch waves easily, and soft foam is safer if the board hits you in a wipeout. Hard epoxy boards can wait until you master standing up and carving.",
+            "ge": "სერფინგის დაწყებისას უმნიშვნელოვანესია დაფის სწორად შერჩევა. დამწყებთა შეცდომაა მოკლე დაფის ყიდვა. დასაწყისისთვის გჭირდებათ დიდი მოცულობის და სიგრძის მქონე რბილი დაფა (Soft-Top) 8.0-დან 9.0 ფუტამდე. ის კარგად ტივტივებს წყალზე და ჩავარდნისას მისი დარტყმა უსაფრთხოა.",
+            "ru": "Первые шаги в серфинге зависят от правильно подобранной доски. Ошибка новичков — покупка короткой доски. Для обучения необходим объем и длина. **Софт-топ (пенопластовая доска)** длиной от 8.0 до 9.0 футов идеален. Он держит на воде и безопасен при падениях."
+          },
+          "date": "2026-06-08",
+          "readTime": "3 min",
+          "author": "Luka Devdariani",
+          "image": "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=500&q=80"
+        }
+      ]
+    },
+    {
+      "id": "foiling",
+      "title": {
+        "en": "Foil Sports",
+        "ge": "ფოილი",
+        "ru": "Фойл"
+      },
+      "blogs": [
+        {
+          "id": "what-is-hydrofoil",
+          "title": {
+            "en": "Introduction to Hydrofoiling",
+            "ge": "რა არის ჰიდროფოილი და როგორ მუშაობს ის?",
+            "ru": "Что такое гидрофойл и как он летает?"
+          },
+          "excerpt": {
+            "en": "Learn the science behind hydrofoils and why 'flying' above water is taking over water sports.",
+            "ge": "გაიგეთ როგორ მუშაობს ჰიდროფოილი და რატომ გახდა წყლის ზემოთ 'ფრენა' ასეთი პოპულარული.",
+            "ru": "Узнайте физику полета гидрофойла над водой и почему это будущее водного спорта."
+          },
+          "content": {
+            "en": "Hydrofoiling is the practice of riding a board with an underwater wing (hydrofoil) attached. As speed increases, the wing generates lift, raising the board completely out of the water.\n\nThis eliminates water friction, providing a smooth, silent sensation of flight. Hydrofoils are used in wing foiling, surf foiling, and kite foiling. It requires specific balance as you control the pitch (up/down tilt) of the foil with your front and back feet weight distribution.",
+            "ge": "ჰიდროფოილი არის დაფის ქვეშ დამონტაჟებული სპეციალური ფრთა. სიჩქარის მომატებასთან ერთად, ფრთა წარმოქმნის ამწევ ძალას, რაც დაფას მთლიანად სწევს წყლის ზედაპირის ზემოთ. ეს აქრობს ხახუნს და გიტოვებთ წყალზე 'ფრენის' უხმო და სასიამოვნო შეგრძნებას.",
+            "ru": "Гидрофойл — это подводное крыло, прикрепленное к доске. С набором скорости крыло создает подъемную силу, поднимая доску над водой. Это устраняет трение о воду, даря тихое и плавное ощущение свободного полета."
+          },
+          "date": "2026-06-05",
+          "readTime": "3 min",
+          "author": "Luka Devdariani",
+          "image": "https://images.unsplash.com/photo-1500309722644-cf8528574a7b?auto=format&fit=crop&w=500&q=80"
+        }
+      ]
+    },
+    {
+      "id": "kitesurfing",
+      "title": {
+        "en": "Kitesurfing",
+        "ge": "კაიტსერფინგი",
+        "ru": "Кайтсерфинг"
+      },
+      "blogs": [
+        {
+          "id": "kitesurfing-wind-basics",
+          "title": {
+            "en": "Kitesurfing Wind and Wind Window Basics",
+            "ge": "კაიტსერფინგი: ქარისა და ქარის ფანჯრის საფუძვლები",
+            "ru": "Кайтсерфинг: основы ветра и ветрового окна"
+          },
+          "excerpt": {
+            "en": "Understand the Wind Window, power zones, and why wind direction determines your safety in kitesurfing.",
+            "ge": "შეისწავლეთ ქარის ფანჯარა, ძალის ზონები და ქარის მიმართულება კაიტსერფინგში უსაფრთხოების დასაცავად.",
+            "ru": "Поймите концепцию ветрового окна, силовых зон и почему направление ветра критически важно для кайтера."
+          },
+          "content": {
+            "en": "Kitesurfing harnesses the power of the wind to pull you across the water. The core concept every beginner must learn is the **Wind Window**.\n\nThe wind window is the 3D semi-hemisphere area where the kite can fly, relative to the pilot's position. The edges of the window represent low power (neutral zones), while the center directly downwind is the power zone. Understanding how to navigate the kite through these zones is essential to control speed and pull.",
+            "ge": "კაიტსერფინგი იყენებს ქარის ძალას, რათა სპეციალური დიდი ფრანით (კაიტით) გადმოგაადგილოთ წყალზე. პირველი, რაც უნდა ისწავლოთ, არის ქარის ფანჯრის (Wind Window) კონცეფცია. ეს არის ნახევარსფერო, სადაც კაიტს შეუძლია ფრენა. კიდეებში ძალა მინიმალურია, ხოლო შუაში - მაქსიმალური.",
+            "ru": "Кайтсерфинг использует силу ветра для катания по воде с помощью купола (кайта). Главное понятие для новичка — **Ветровое окно** (Wind Window). Это область, в которой летает кайт. По краям тяга минимальна (нейтральная зона), а по центру по направлению ветра — максимальна."
+          },
+          "date": "2026-06-02",
+          "readTime": "3 min",
+          "author": "Luka Devdariani",
+          "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=500&q=80"
+        }
+      ]
+    }
+  ]
+}
