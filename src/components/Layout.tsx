@@ -152,15 +152,71 @@ export default function Layout() {
 
     document.title = pageTitle;
 
-    let meta = document.querySelector('meta[name="description"]');
-    if (meta) {
-      meta.setAttribute('content', metaDesc);
-    } else {
-      meta = document.createElement('meta');
-      meta.setAttribute('name', 'description');
-      meta.setAttribute('content', metaDesc);
-      document.head.appendChild(meta);
-    }
+    // Helper to set or create meta element
+    const setMetaTag = (attrName: string, attrValue: string, content: string) => {
+      let element = document.querySelector(`meta[${attrName}="${attrValue}"]`);
+      if (element) {
+        element.setAttribute('content', content);
+      } else {
+        element = document.createElement('meta');
+        element.setAttribute(attrName, attrValue);
+        element.setAttribute('content', content);
+        document.head.appendChild(element);
+      }
+    };
+
+    // Helper to set or create link element
+    const setLinkTag = (rel: string, href: string, hreflang?: string) => {
+      const selector = hreflang 
+        ? `link[rel="${rel}"][hreflang="${hreflang}"]` 
+        : `link[rel="${rel}"]`;
+      let element = document.querySelector(selector);
+      if (element) {
+        element.setAttribute('href', href);
+      } else {
+        element = document.createElement('link');
+        element.setAttribute('rel', rel);
+        if (hreflang) element.setAttribute('hreflang', hreflang);
+        element.setAttribute('href', href);
+        document.head.appendChild(element);
+      }
+    };
+
+    const subPath = pathParts.slice(1).join('/');
+    const pathSuffix = subPath ? `/${subPath}` : '';
+    const currentCanonicalUrl = `https://www.supsurf.ge/${locale}${pathSuffix}`;
+
+    // Meta Description
+    setMetaTag('name', 'description', metaDesc);
+
+    // Canonical link
+    setLinkTag('canonical', currentCanonicalUrl);
+
+    // Multilingual Hreflang links for Google Search
+    setLinkTag('alternate', `https://www.supsurf.ge/ge${pathSuffix}`, 'ka');
+    setLinkTag('alternate', `https://www.supsurf.ge/ge${pathSuffix}`, 'ge');
+    setLinkTag('alternate', `https://www.supsurf.ge/ru${pathSuffix}`, 'ru');
+    setLinkTag('alternate', `https://www.supsurf.ge/en${pathSuffix}`, 'en');
+    setLinkTag('alternate', `https://www.supsurf.ge/ge${pathSuffix}`, 'x-default');
+
+    // OpenGraph Social & Search Meta Tags
+    setMetaTag('property', 'og:title', pageTitle);
+    setMetaTag('property', 'og:description', metaDesc);
+    setMetaTag('property', 'og:url', currentCanonicalUrl);
+    setMetaTag('property', 'og:type', 'website');
+    setMetaTag('property', 'og:site_name', 'supsurf.ge');
+    setMetaTag('property', 'og:image', 'https://www.supsurf.ge/pictures/logo.webp');
+    setMetaTag('property', 'og:locale', locale === 'ge' ? 'ka_GE' : locale === 'ru' ? 'ru_RU' : 'en_US');
+
+    // Twitter Cards
+    setMetaTag('name', 'twitter:card', 'summary_large_image');
+    setMetaTag('name', 'twitter:title', pageTitle);
+    setMetaTag('name', 'twitter:description', metaDesc);
+    setMetaTag('name', 'twitter:image', 'https://www.supsurf.ge/pictures/logo.webp');
+
+    // Geo Target Meta Tags for Localized Search Priority
+    setMetaTag('name', 'geo.region', 'GE');
+    setMetaTag('name', 'geo.placename', 'Tbilisi, Batumi, Georgia');
   }, [location.pathname, dict, locale]);
 
   if (loading || !dict) {

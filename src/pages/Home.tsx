@@ -181,7 +181,92 @@ export default function Home() {
       }
     };
 
-    script.text = JSON.stringify(businessSchema);
+    const faqSchema = {
+      '@type': 'FAQPage',
+      'mainEntity': locale === 'ge' ? [
+        {
+          '@type': 'Question',
+          'name': 'რა ღირს საპ ბორდის დღიური გაქირავება supsurf.ge-ზე?',
+          'acceptedAnswer': {
+            '@type': 'Answer',
+            'text': 'საპ ბორდის 1 დღით გაქირავების ფასი შეადგენს 50 ლარს, ხოლო 2 დღით - 80 ლარს. ფასში შედის სრული აღჭურვილობა: საპ დაფა, ნახშირბადის ნიჩაბი, სამაშველო ჟილეტი, უსაფრთხოების თოკი, ტუმბო და წყალგაუმტარი ტელეფონის ქეისი.'
+          }
+        },
+        {
+          '@type': 'Question',
+          'name': 'სად შეიძლება საპ ბორდით სრიალი საქართველოში?',
+          'acceptedAnswer': {
+            '@type': 'Answer',
+            'text': 'საპ ბორდით სრიალი შეგიძლიათ ლისის ტბაზე (თბილისი), ბათუმის სანაპიროზე, ანაკლიაში, ბაზალეთის ტბაზე, სიონის წყალსაცავზე, ჟინვალსა და შაორის ტბაზე.'
+          }
+        },
+        {
+          '@type': 'Question',
+          'name': 'როგორ შემიძლია საპ ბორდის დაჯავშნა?',
+          'acceptedAnswer': {
+            '@type': 'Answer',
+            'text': 'დაჯავშნა შეგიძლიათ პირდაპირ საიტზე ან WhatsApp-ით (+995 592 05 50 17). წინასწარი გადახდა არ არის საჭირო.'
+          }
+        }
+      ] : locale === 'ru' ? [
+        {
+          '@type': 'Question',
+          'name': 'Сколько стоит аренда сапборда на supsurf.ge?',
+          'acceptedAnswer': {
+            '@type': 'Answer',
+            'text': 'Стоимость аренды сапборда на 1 день составляет 50 GEL, а на 2 дня — 80 GEL. В комплект входит все необходимое: доска, весло, жилет, лиш, насос и водонепроницаемый чехол.'
+          }
+        },
+        {
+          '@type': 'Question',
+          'name': 'Где можно кататься на сапборде в Грузии?',
+          'acceptedAnswer': {
+            '@type': 'Answer',
+            'text': 'Кататься на сапах можно на озере Лиси в Тбилиси, на побережье Батуми, в Анаклии, на озере Базалети, Сионском и Жинвальском водохранилищах.'
+          }
+        },
+        {
+          '@type': 'Question',
+          'name': 'Как забронировать сапборд?',
+          'acceptedAnswer': {
+            '@type': 'Answer',
+            'text': 'Вы можете забронировать сапборд прямо на сайте или через WhatsApp (+995 592 05 50 17) без предоплаты.'
+          }
+        }
+      ] : [
+        {
+          '@type': 'Question',
+          'name': 'How much does SUP board rental cost on supsurf.ge?',
+          'acceptedAnswer': {
+            '@type': 'Answer',
+            'text': 'Daily SUP rental is 50 GEL for 1 day or 80 GEL for 2 days. Includes full gear: inflatable board, carbon paddle, life vest, leash, pump, and waterproof phone case.'
+          }
+        },
+        {
+          '@type': 'Question',
+          'name': 'Where can I go paddleboarding in Georgia?',
+          'acceptedAnswer': {
+            '@type': 'Answer',
+            'text': 'Top locations include Lisi Lake in Tbilisi, Batumi beach, Anaklia, Bazaleti Lake, Sioni Reservoir, and Shaori Lake.'
+          }
+        },
+        {
+          '@type': 'Question',
+          'name': 'How can I book a SUP board?',
+          'acceptedAnswer': {
+            '@type': 'Answer',
+            'text': 'Book directly on the website or via WhatsApp (+995 592 05 50 17). No advance payment required.'
+          }
+        }
+      ]
+    };
+
+    const combinedSchema = {
+      '@context': 'https://schema.org',
+      '@graph': [businessSchema, faqSchema]
+    };
+
+    script.text = JSON.stringify(combinedSchema);
 
     return () => {
       const existingScript = document.getElementById(schemaId);
