@@ -6,6 +6,7 @@ import { getDictionary } from '@/lib/get-dictionary';
 import type { Locale } from '@/lib/get-dictionary';
 import BookingModal from './BookingModal';
 import db from '../data/db.json';
+import { Phone } from 'lucide-react';
 
 export default function Layout() {
   const { locale: rawLocale } = useParams<{ locale: string }>();
@@ -217,6 +218,50 @@ export default function Layout() {
     // Geo Target Meta Tags for Localized Search Priority
     setMetaTag('name', 'geo.region', 'GE');
     setMetaTag('name', 'geo.placename', 'Tbilisi, Batumi, Georgia');
+
+    // Breadcrumb JSON-LD Schema for Google Search Snippets
+    const breadcrumbItems: any[] = [
+      {
+        '@type': 'ListItem',
+        'position': 1,
+        'name': 'supsurf.ge',
+        'item': `https://www.supsurf.ge/${locale}`
+      }
+    ];
+
+    if (page && page !== 'home') {
+      const pageNames: Record<string, Record<string, string>> = {
+        rent: { ge: 'გაქირავება', ru: 'Прокат', en: 'Rentals' },
+        shop: { ge: 'მაღაზია', ru: 'Магазин', en: 'Shop' },
+        services: { ge: 'სერვისები', ru: 'Услуги', en: 'Services' },
+        blog: { ge: 'ბლოგი', ru: 'Блог', en: 'Blog' },
+        about: { ge: 'ჩვენ შესახებ', ru: 'О нас', en: 'About' },
+        admin: { ge: 'ადმინი', ru: 'Админ', en: 'Admin' }
+      };
+
+      const pageLabel = pageNames[page]?.[locale] || page;
+      breadcrumbItems.push({
+        '@type': 'ListItem',
+        'position': 2,
+        'name': pageLabel,
+        'item': currentCanonicalUrl
+      });
+    }
+
+    const breadcrumbSchema = {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      'itemListElement': breadcrumbItems
+    };
+
+    let schemaScript = document.getElementById('breadcrumb-schema') as HTMLScriptElement;
+    if (!schemaScript) {
+      schemaScript = document.createElement('script');
+      schemaScript.id = 'breadcrumb-schema';
+      schemaScript.type = 'application/ld+json';
+      document.head.appendChild(schemaScript);
+    }
+    schemaScript.text = JSON.stringify(breadcrumbSchema);
   }, [location.pathname, dict, locale]);
 
   if (loading || !dict) {
@@ -253,6 +298,29 @@ export default function Layout() {
         locale={locale}
         itemName={modalItem}
       />
+
+      {/* Mobile Floating Quick-Action Bar for Instant Booking Conversions */}
+      <div className="md:hidden fixed bottom-4 left-4 right-4 z-40 flex items-center gap-2 p-2 bg-ocean-dark/95 backdrop-blur-xl border border-white/15 rounded-2xl shadow-2xl shadow-ocean-dark/50 animate-fade-in">
+        <a
+          href={`https://wa.me/${db?.contact?.phone?.replace(/\+/g, '').replace(/\s+/g, '') || '995592055017'}?text=${encodeURIComponent(locale === 'ge' ? 'გამარჯობა, მინდა საპ ბორდის დაჯავშნა supsurf.ge-დან' : locale === 'ru' ? 'Здравствуйте, хочу забронировать сапборд на supsurf.ge' : 'Hello, I would like to book a SUP board from supsurf.ge')}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex-1 flex items-center justify-center gap-2 py-3 px-4 bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-xs rounded-xl shadow-lg shadow-emerald-500/25 active:scale-95 transition-all"
+        >
+          <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.705 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+          </svg>
+          <span>{locale === 'ge' ? 'WhatsApp დაჯავშნა' : locale === 'ru' ? 'WhatsApp Бронь' : 'WhatsApp Book'}</span>
+        </a>
+
+        <a
+          href={`tel:${db?.contact?.phone || '+995592055017'}`}
+          className="flex items-center justify-center p-3 bg-ocean-teal/20 text-ocean-teal border border-ocean-teal/30 hover:bg-ocean-teal hover:text-ocean-dark rounded-xl font-bold text-xs active:scale-95 transition-all"
+          aria-label="Call Us"
+        >
+          <Phone className="w-4 h-4" />
+        </a>
+      </div>
     </>
   );
 }
