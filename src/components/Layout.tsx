@@ -314,11 +314,17 @@ export default function Layout() {
         </a>
 
         <a
-          href={`tel:${db?.contact?.phone || '+995592055017'}`}
-          className="flex items-center justify-center p-3 bg-ocean-teal/20 text-ocean-teal border border-ocean-teal/30 hover:bg-ocean-teal hover:text-ocean-dark rounded-xl font-bold text-xs active:scale-95 transition-all"
-          aria-label="Call Us"
+          href={db?.contact?.instagram || 'https://www.instagram.com/sun_set_paddle/'}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-center p-3 bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 text-white rounded-xl font-bold text-xs shadow-md shadow-rose-500/20 active:scale-95 transition-all"
+          aria-label="Instagram"
         >
-          <Phone className="w-4 h-4" />
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
         </a>
       </div>
     </>

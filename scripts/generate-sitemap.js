@@ -60,13 +60,17 @@ function generateSitemap() {
             }
         }
 
-        // Generate XML
+        // Generate XML with Image Sitemap Namespace
         const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 ${urls.map(url => `  <url>
     <loc>${url}</loc>
     <changefreq>weekly</changefreq>
     <priority>${url.includes('/blog/') || url.includes('/shop/') || url.includes('/services/') ? '0.7' : '1.0'}</priority>
+    <image:image>
+      <image:loc>${domain}/pictures/logo.webp</image:loc>
+      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
+    </image:image>
   </url>`).join('\n')}
 </urlset>`;
 

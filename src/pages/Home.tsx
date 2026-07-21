@@ -153,6 +153,10 @@ export default function Home() {
           : 'Premium SUP board rentals and sales in Georgia (Tbilisi Lisi Lake, Batumi, Anaklia). Best daily rates, full adventure gear included.',
       'url': window.location.origin,
       'telephone': '+995 592 05 50 17',
+      'sameAs': [
+        'https://www.instagram.com/sun_set_paddle/',
+        'https://www.facebook.com/SUNSETPSUP/'
+      ],
       'priceRange': '$$',
       'address': {
         '@type': 'PostalAddress',
