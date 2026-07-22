@@ -71,7 +71,7 @@ export default function Layout() {
     const pathParts = location.pathname.split('/').filter(Boolean);
     const page = pathParts[1] || 'home'; 
 
-    let pageTitle = 'supsurf.ge | Premium SUP & Surf Georgia';
+    let pageTitle = 'supsurf.ge | Premium SUP Board Rentals & Sales in Georgia';
     let metaDesc = 'Premium SUP board rentals and sales in Georgia (Tbilisi, Batumi, Anaklia). Best daily rates, full adventure gear included.';
 
     if (locale === 'ge') {
@@ -80,72 +80,72 @@ export default function Layout() {
       
       switch (page) {
         case 'rent':
-          pageTitle = 'საპების გაქირავება | supsurf.ge';
+          pageTitle = 'საპ ბორდების დღიური გაქირავება ლისზე & ბათუმში | supsurf.ge';
           metaDesc = 'საპ ბორდების დღიური გაქირავება სრული აღჭურვილობით. 1 დღე 50 ლარად, 2 დღე 80 ლარად. დაჯავშნე WhatsApp-ით.';
           break;
         case 'shop':
-          pageTitle = 'საპების მაღაზია | supsurf.ge';
+          pageTitle = 'საპ ბორდების & წყლის აღჭურვილობის მაღაზია | supsurf.ge';
           metaDesc = 'შეიძინეთ უმაღლესი ხარისხის გასაბერი საპ დაფები და წყლის აქსესუარები გარანტიითა და ადგილზე მიწოდებით.';
           break;
         case 'services':
-          pageTitle = 'სერვისები & ტურები | supsurf.ge';
+          pageTitle = 'საპ ტურები, ტრენინგები & კორპორატიული სერვისები | supsurf.ge';
           metaDesc = 'საპ ტურები, კორპორატიული გასვლები და ჯგუფური აქტივობები წყალზე. შეისწავლე საპინგი პროფესიონალებთან ერთად.';
           break;
         case 'blog':
-          pageTitle = 'ბლოგი & რჩევები | supsurf.ge';
+          pageTitle = 'საპ ბორდინგის ბლოგი & უსაფრთხოების რჩევები | supsurf.ge';
           metaDesc = 'სასარგებლო რჩევები საპ ბორდით სრიალის შესახებ. როგორ ავირჩიოთ საპი და სად ვიპოვოთ საუკეთესო ტბები საქართველოში.';
           break;
         case 'about':
-          pageTitle = 'ჩვენ შესახებ | supsurf.ge';
+          pageTitle = 'ჩვენ შესახებ — საპების გაქირავების სადგურები | supsurf.ge';
           metaDesc = 'supsurf.ge-ის 5 წლიანი ისტორია საქართველოში. გაიცანით ჩვენი გუნდი და აქტიური სადგურები თბილისში, ბათუმსა და ანაკლიაში.';
           break;
       }
     } else if (locale === 'ru') {
-      pageTitle = 'supsurf.ge | Аренда и продажа SUP-бордов в Грузии';
+      pageTitle = 'supsurf.ge | Аренда и продажа SUP-бордов в Грузии (Лиси)';
       metaDesc = 'Аренда и продажа SUP-досок в Грузии (Тбилиси, Батуми, Анаклия). Отличные цены, полные комплекты снаряжения включены в стоимость.';
 
       switch (page) {
         case 'rent':
-          pageTitle = 'Прокат сапов в Грузии | supsurf.ge';
+          pageTitle = 'Прокат сапбордов в Грузии (Тбилиси, Батуми) | supsurf.ge';
           metaDesc = 'Посуточный прокат сапбордов со всем снаряжением. 1 день за 50 GEL, 2 дня за 80 GEL. Забронируйте через WhatsApp.';
           break;
         case 'shop':
-          pageTitle = 'Купить сапборд в Грузии | supsurf.ge Shop';
+          pageTitle = 'Магазин сапбордов и снаряжения в Грузии | supsurf.ge';
           metaDesc = 'Продажа надувных сап-досок премиум-класса и водных аксессуаров с гарантией и доставкой по всей Грузии.';
           break;
         case 'services':
-          pageTitle = 'Услуги и SUP-туры | supsurf.ge';
+          pageTitle = 'САП-туры, уроки серфинга и мероприятия в Грузии | supsurf.ge';
           metaDesc = 'Сап-прогулки, корпоративные мероприятия и групповые активности на воде. Научитесь сапсерфингу с инструктором.';
           break;
         case 'blog':
-          pageTitle = 'Блог о сапсерфинге | supsurf.ge';
+          pageTitle = 'Блог о сапсерфинге в Грузии: советы и маршруты | supsurf.ge';
           metaDesc = 'Полезные советы и статьи о сапбординге. Как выбрать сап и где найти лучшие локации для катания в Грузии.';
           break;
         case 'about':
-          pageTitle = 'О нас | supsurf.ge';
+          pageTitle = 'О компании supsurf.ge: 5 лет опыта проката в Грузии';
           metaDesc = '5 лет опыта supsurf.ge в Грузии. Наша история, контакты и активные станции проката в Тбилиси, Батуми и Анаклии.';
           break;
       }
     } else {
       switch (page) {
         case 'rent':
-          pageTitle = 'SUP Rentals in Georgia | supsurf.ge';
+          pageTitle = 'Daily SUP Board & Paddleboard Rentals in Georgia | supsurf.ge';
           metaDesc = 'Daily stand-up paddleboard rentals with full gear. 1 day for 50 GEL, 2 days for 80 GEL. Book easily via WhatsApp.';
           break;
         case 'shop':
-          pageTitle = 'SUP Board Shop | supsurf.ge';
+          pageTitle = 'Inflatable SUP Boards & Watersports Shop Georgia | supsurf.ge';
           metaDesc = 'Shop premium inflatable paddleboards and watersports accessories with warranty and shipping across Georgia.';
           break;
         case 'services':
-          pageTitle = 'SUP Services & Tours | supsurf.ge';
+          pageTitle = 'Guided SUP Tours & Surfing Lessons in Georgia | supsurf.ge';
           metaDesc = 'Paddleboarding tours, corporate team building, and group events. Learn stand-up paddling with our certified guides.';
           break;
         case 'blog':
-          pageTitle = 'SUP Blog & Tips | supsurf.ge';
+          pageTitle = 'SUP Surfing Blog, Safety Guides & Lake Reviews | supsurf.ge';
           metaDesc = 'Discover useful guides and tips on paddleboarding. Learn how to choose your gear and discover top paddling lakes in Georgia.';
           break;
         case 'about':
-          pageTitle = 'About Us | supsurf.ge';
+          pageTitle = 'About Us — SUP Board Rental Stations in Georgia | supsurf.ge';
           metaDesc = 'supsurf.ge\'s 5-year history in Georgia. Meet our team and discover active rental stations in Tbilisi, Batumi, and Anaklia.';
           break;
       }

@@ -143,7 +143,7 @@ export default function Home() {
 
     const businessSchema = {
       '@context': 'https://schema.org',
-      '@type': 'SportsActivityLocation',
+      '@type': ['SportsActivityLocation', 'LocalBusiness'],
       'name': 'supsurf.ge',
       'image': window.location.origin + '/pictures/logo.webp',
       'description': locale === 'ge' 
@@ -1177,6 +1177,84 @@ export default function Home() {
               <h3 className="font-display text-[10px] sm:text-sm font-bold text-ocean-dark">Facebook</h3>
             </a>
 
+          </div>
+        </div>
+      </section>
+
+      {/* SEO COMPREHENSIVE TEXT GUIDE (ELIMINATES THIN CONTENT & BOOSTS RANKINGS) */}
+      <section className="bg-slate-50 py-16 border-t border-ocean-slate/10">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="bg-white rounded-3xl p-8 sm:p-12 border border-ocean-slate/10 shadow-sm space-y-8">
+            <div className="border-b border-ocean-slate/10 pb-6">
+              <h2 className="font-display text-2xl sm:text-3xl font-extrabold text-ocean-dark">
+                {locale === 'ge' 
+                  ? 'სრულყოფილი გზამკვლევი საპ ბორდით სრიალის შესახებ საქართველოში' 
+                  : locale === 'ru' 
+                    ? 'Полный путеводитель по сапбордингу в Грузии (Тбилиси и Батуми)' 
+                    : 'Complete Guide to Stand-Up Paddleboarding (SUP) in Georgia'}
+              </h2>
+              <p className="font-sans text-sm text-ocean-slate mt-2">
+                {locale === 'ge' 
+                  ? 'ყველაფერი რაც უნდა იცოდეთ საპ ბორდის იჯარის, ტბების, აღჭურვილობისა და უსაფრთხოების შესახებ supsurf.ge-სგან.' 
+                  : locale === 'ru' 
+                    ? 'Всё, что вам нужно знать об аренде сапбордов, лучших озерах и технике безопасности от supsurf.ge.' 
+                    : 'Everything you need to know about SUP board rentals, lake locations, gear, and safety from supsurf.ge.'}
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 font-sans text-xs sm:text-sm text-ocean-slate leading-relaxed">
+              <div className="space-y-4">
+                <h3 className="font-display text-base font-bold text-ocean-dark">
+                  {locale === 'ge' ? '1. რატომ არის საპ ბორდინგი საუკეთესო აქტივობა?' : locale === 'ru' ? '1. Почему сапбординг так популярен?' : '1. Why Paddleboarding is Georgia’s Top Water Activity'}
+                </h3>
+                <p>
+                  {locale === 'ge'
+                    ? 'საპ ბორდინგი (Stand-Up Paddleboarding) არის წყლის სპორტისა და განტვირთვის საუკეთესო კომბინაცია. ეს არის მარტივად ათვისებადი აქტივობა, რომელიც არ მოითხოვს წინასწარ მომზადებას. ლისის ტბაზე, ბათუმის სანაპიროსა თუ საქართველოს ულამაზეს ტბებზე საპ ბორდით სრიალი გაძლევთ საშუალებას დატკბეთ ბუნებით, გააუმჯობესოთ სხეულის წონასწორობა და მიიღოთ უდიდესი ენერგია.'
+                    : locale === 'ru'
+                      ? 'Сапбординг (Stand-Up Paddleboarding) — это идеальное сочетание спорта и отдыха на воде. Катание на сап-доске легко освоить за 5 минут без специальной подготовки. На озере Лиси в Тбилиси, побережье Батуми или горных водохранилищах Грузии вы сможете насладиться природой и подтянуть физическую форму.'
+                      : 'Stand-Up Paddleboarding (SUP) is the ultimate water activity combining outdoor relaxation with a full-body fitness workout. Accessible to all skill levels within 5 minutes of instruction, paddling across Lisi Lake in Tbilisi, Batumi coastline, or Georgia’s mountain reservoirs provides unforgettable scenic views.'}
+                </p>
+              </div>
+
+              <div className="space-y-4">
+                <h3 className="font-display text-base font-bold text-ocean-dark">
+                  {locale === 'ge' ? '2. საუკეთესო ლოკაციები საპინგისთვის საქართველოში' : locale === 'ru' ? '2. Лучшие локации для катания на сапах' : '2. Top SUP Paddling Destinations in Georgia'}
+                </h3>
+                <p>
+                  {locale === 'ge'
+                    ? 'supsurf.ge გთავაზობთ საპ ბორდების გაქირავებას უშუალოდ ლისის ტბაზე (თბილისი), ბათუმის ბულვარსა და ანაკლიაში. ასევე, ჩვენი კომპაქტური გასაბერი საპები ჩანთით მარტივად ეტევა ნებისმიერი ავტომობილის საბარგულში, რაც საშუალებას გაძლევთ წაიღოთ ისინი ბაზალეთის, სიონის, ჟინვალის, შაორისა თუ ფარავნის ტბებზე.'
+                    : locale === 'ru'
+                      ? 'supsurf.ge предлагает прокат сапбордов напрямую на озере Лиси (Тбилиси), в Батуми и Анаклии. Наши надувные сапы в рюкзаках легко помещаются в багажник любого авто, что позволяет вам взять их в поездку на озера Базалети, Сиони, Жинвали, Шаори и Паравани.'
+                      : 'supsurf.ge operates active rental hubs at Lisi Lake Park in Tbilisi, Batumi Boulevard, and Anaklia Pier. Our ultra-portable inflatable SUP boards come packed in compact backpacks, allowing you to transport them easily in any car trunk to Bazaleti Lake, Sioni Reservoir, Zhinvali, and Shaori Lake.'}
+                </p>
+              </div>
+
+              <div className="space-y-4">
+                <h3 className="font-display text-base font-bold text-ocean-dark">
+                  {locale === 'ge' ? '3. რა შედის supsurf.ge-ს იჯარის პაკეტში?' : locale === 'ru' ? '3. Что входит в комплект аренды?' : '3. What Included in Your Rental Package?'}
+                </h3>
+                <p>
+                  {locale === 'ge'
+                    ? 'თითოეული საპ ბორდის დღიური იჯარისას (1 დღე - 50 GEL, 2 დღე - 80 GEL) თქვენ იღებთ სრულ პროფესიონალურ კომპლექტს: 1) მაღალი სიმტკიცის გასაბერ საპ დაფას, 2) რეგულირებად მსუბუქ ნიჩაბს, 3) უსაფრთხოების სამაშველო ჟილეტს, 4) ფეხის თოკს (Leash), 5) ორმაგი მოქმედების ტუმბოს და 6) წყალგაუმტარ ტელეფონის ქეისს.'
+                    : locale === 'ru'
+                      ? 'При посуточной аренде сапборда (1 день — 50 GEL, 2 дня — 80 GEL) вы получаете полный комплект: прочную надувную доску, регулируемое легкое весло, страховочный жилет, лиш на ногу, насос двойного действия и водонепроницаемый чехол для телефона.'
+                      : 'Every daily SUP board rental (1 day: 50 GEL, 2 days: 80 GEL) includes a premium adventure kit: a high-pressure drop-stitch inflatable board, adjustable lightweight paddle, USCG-compliant safety life vest, ankle leash, dual-action pump, and a waterproof phone pouch.'}
+                </p>
+              </div>
+
+              <div className="space-y-4">
+                <h3 className="font-display text-base font-bold text-ocean-dark">
+                  {locale === 'ge' ? '4. როგორ დავიჯავშნოთ საპი მარტივად?' : locale === 'ru' ? '4. Как легко забронировать сапборд?' : '4. How to Book Your SUP Board Instantly'}
+                </h3>
+                <p>
+                  {locale === 'ge'
+                    ? 'დაჯავშნა ხდება უმარტივესად: აირჩიეთ სასურველი თარიღი supsurf.ge-ზე ან დაგვიკავშირდით პირდაპირ WhatsApp-ით (+995 592 05 50 17). წინასწარი დეპოზიტის გადახდა არ არის საჭირო — იხდით ადგილზე ინვენტარის მიღებისას!'
+                    : locale === 'ru'
+                      ? 'Забронировать сапборд очень просто: выберите дату на сайте supsurf.ge или напишите нам прямо в WhatsApp (+995 592 05 50 17). Предоплата не требуется — оплата происходит при получении снаряжения!'
+                      : 'Booking your board is seamless: select your desired rental date on supsurf.ge or message us directly on WhatsApp (+995 592 05 50 17). No advance deposit required — pay upon pick up!'}
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
