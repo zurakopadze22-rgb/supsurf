@@ -217,7 +217,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://www.supsurf.ge/en/services/sup_allround</loc>
+    <loc>https://www.supsurf.ge/en/services/rent_daily</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -226,7 +226,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://www.supsurf.ge/ge/services/sup_allround</loc>
+    <loc>https://www.supsurf.ge/ge/services/rent_daily</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -235,7 +235,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://www.supsurf.ge/ru/services/sup_allround</loc>
+    <loc>https://www.supsurf.ge/ru/services/rent_daily</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -244,7 +244,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://www.supsurf.ge/en/services/sup_touring</loc>
+    <loc>https://www.supsurf.ge/en/services/lesson_basic</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -253,7 +253,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://www.supsurf.ge/ge/services/sup_touring</loc>
+    <loc>https://www.supsurf.ge/ge/services/lesson_basic</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -262,7 +262,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://www.supsurf.ge/ru/services/sup_touring</loc>
+    <loc>https://www.supsurf.ge/ru/services/lesson_basic</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -271,7 +271,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://www.supsurf.ge/en/services/surf_soft</loc>
+    <loc>https://www.supsurf.ge/en/services/rent_hourly</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -280,7 +280,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://www.supsurf.ge/ge/services/surf_soft</loc>
+    <loc>https://www.supsurf.ge/ge/services/rent_hourly</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -289,115 +289,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://www.supsurf.ge/ru/services/surf_soft</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.supsurf.ge/en/services/surf_hard</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.supsurf.ge/ge/services/surf_hard</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.supsurf.ge/ru/services/surf_hard</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.supsurf.ge/en/services/wingfoil</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.supsurf.ge/ge/services/wingfoil</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.supsurf.ge/ru/services/wingfoil</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.supsurf.ge/en/services/tour_lisi</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.supsurf.ge/ge/services/tour_lisi</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.supsurf.ge/ru/services/tour_lisi</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.supsurf.ge/en/services/lesson_surf</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.supsurf.ge/ge/services/lesson_surf</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.supsurf.ge/ru/services/lesson_surf</loc>
+    <loc>https://www.supsurf.ge/ru/services/rent_hourly</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>

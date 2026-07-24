@@ -33,7 +33,7 @@ function generateSitemap() {
 
         // 3. Services (including static rental items)
         const staticRentals = [
-            'sup_allround', 'sup_touring', 'surf_soft', 'surf_hard', 'wingfoil'
+            'rent_daily', 'lesson_basic', 'rent_hourly', 'corporate_event'
         ];
         const serviceIds = new Set(staticRentals);
         if (db.services) {

@@ -14,9 +14,9 @@
     "ru": "Аренда SUP-бордов"
   },
   "promo_subtitle": {
-    "en": "Rent premium SUP boards at Lisi Lake, Batumi, and Anaklia at the best price.",
-    "ge": "იქირავე საპი ლისის ტბაზე, ბათუმსა და ანაკლიაში საუკეთესო ფასად.",
-    "ru": "Аренда сапбордов на Лисьем озере, в Батуми и Анаклии по лучшей цене."
+    "en": "Rent premium SUP boards at Lisi Lake (Tbilisi) and Shekvetili at the best price.",
+    "ge": "იქირავე საპი ლისის ტბასა (თბილისი) და შეკვეთილში საუკეთესო ფასად.",
+    "ru": "Аренда сапбордов на Лисьем озере (Тбилиси) и в Шекветили по лучшей цене."
   },
   "kit_items": [
     {
@@ -106,47 +106,109 @@
   ],
   "services": [
     {
-      "id": "tour_lisi",
+      "id": "rent_daily",
       "name": {
-        "en": "Lisi Lake Guided Tour",
-        "ge": "ტურები ლისის ტბაზე",
-        "ru": "Тур с гидом по озеру Лиси"
+        "ge": "საპ ბორდის დღიური გაქირავება (აქცია)",
+        "en": "Daily SUP Board Rental (Special Offer)",
+        "ru": "Посуточная аренда сапборда (Акция)"
       },
       "location": {
-        "en": "Tbilisi - Lisi Lake",
-        "ge": "თბილისი - ლისის ტბა",
-        "ru": "Тбилиси - Озеро Лиси"
+        "ge": "თბილისი (ლისის ტბა) & შეკვეთილი",
+        "en": "Tbilisi (Lisi Lake) & Shekvetili",
+        "ru": "Тбилиси (Озеро Лиси) и Шекветили"
       },
-      "price": "60 GEL",
+      "price": "50 GEL (1 დღე) / 80 GEL (2 დღე)",
       "duration": {
-        "en": "2 Hours",
-        "ge": "2 საათი",
-        "ru": "2 Часа"
+        "ge": "1-2 დღე (სრული კომპლექტი)",
+        "en": "1-2 Days (Full Kit)",
+        "ru": "1-2 Дня (Полный комплект)"
+      },
+      "image": "/pictures/paddleboard-1.webp",
+      "desc": {
+        "ge": "საპ ბორდის დღიური გაქირავება სპეციალური ფასდაკლებით! 1 დღე = 50 ლარი, ხოლო 2 დღე = 80 ლარი. ფასში შედის სრული პროფესიონალური აღჭურვილობა: გასაბერი დაფა, კარბონის ნიჩაბი, სამაშველო ჟილეტი, უსაფრთხოების თოკი (Leash), ტუმბო და წყალგაუმტარი ტელეფონის ქეისი.",
+        "en": "Daily SUP board rental with special discount! 1 day = 50 GEL, 2 days = 80 GEL. Includes full kit: inflatable board, carbon paddle, life vest, safety leash, high-pressure pump, and waterproof phone case.",
+        "ru": "Посуточная аренда сапборда по акции! 1 день = 50 GEL, 2 дня = 80 GEL. В стоимость входит полный комплект: надувная доска, карбоновое весло, спасательный жилет, лиш, насос и водонепроницаемый чехол."
+      },
+      "inclusions": {
+        "ge": [
+          "გასაბერი საპ დაფა",
+          "მსუბუქი კარბონის ნიჩაბი",
+          "სამაშველო ჟილეტი",
+          "უსაფრთხოების თოკი (Leash)",
+          "მაღალი წნევის ტუმბო",
+          "წყალგაუმტარი ტელეფონის ქეისი",
+          "ზურგჩანთა ტრანსპორტირებისთვის"
+        ],
+        "en": [
+          "Inflatable SUP Board",
+          "Lightweight Carbon Paddle",
+          "Buoyancy Safety Life Vest",
+          "Ankle Safety Leash",
+          "High-Pressure Dual Pump",
+          "Waterproof Phone Case",
+          "Travel Backpack"
+        ],
+        "ru": [
+          "Надувная SUP-доска",
+          "Карбоновое весло",
+          "Спасательный жилет",
+          "Страховочный лиш",
+          "Насос высокого давления",
+          "Водонепроницаемый чехол",
+          "Рюкзак для транспортировки"
+        ]
+      },
+      "images": [
+        "/pictures/paddleboard-1.webp",
+        "/pictures/paddleboard.webp",
+        "/pictures/backpack.webp"
+      ]
+    },
+    {
+      "id": "lesson_basic",
+      "name": {
+        "ge": "საბაზისო შემსწავლელი სეანსი (90 წუთი)",
+        "en": "Basic Beginner SUP Session (90 Mins)",
+        "ru": "Базовое обучающее занятие (90 минут)"
+      },
+      "location": {
+        "ge": "თბილისი (ლისის ტბა) & შეკვეთილი",
+        "en": "Tbilisi (Lisi Lake) & Shekvetili",
+        "ru": "Тбилиси (Озеро Лиси) и Шекветили"
+      },
+      "price": "45 GEL",
+      "duration": {
+        "ge": "90 წუთი (ინსტრუქტორთან ერთად)",
+        "en": "90 Mins (With Instructor)",
+        "ru": "90 Минут (С инструктором)"
       },
       "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=500&q=80",
       "desc": {
-        "en": "Enjoy a breathtaking sunset or sunrise paddle across Lisi Lake under the guidance of our local instructors. Perfect for families, beginners, and group bonding.",
-        "ge": "ისიამოვნეთ მზის ჩასვლის ან ამოსვლის ულამაზესი ხედებით ლისის ტბაზე გამოცდილი ინსტრუქტორების მეთვალყურეობით. საუკეთესოა ოჯახებისთვის და მეგობრებისთვის.",
-        "ru": "Насладитесь захватывающим закатом или рассветом на озере Лиси под руководством опытных местных гидов. Идеально для семей, новичков и корпоративов."
+        "ge": "90-წუთიანი შემსწავლელი სეანსი სერტიფიცირებულ ინსტრუქტორთან ერთად! მოიცავს ხმელეთზე უსაფრთხოების ბრიფინგს, ბალანსის დაჭერას, ნიჩბოსნობის სწორ ტექნიკასა და წყალზე პრაქტიკულ სრიალს ინსტრუქტორის მეთვალყურეობით.",
+        "en": "90-minute structured beginner session with a certified instructor! Includes safety briefing on shore, posture balance setup, correct stroke technique, and guided paddling on the water.",
+        "ru": "90-минутное обучающее занятие с сертифицированным инструктором! Включает инструктаж по безопасности, постановку баланса, технику гребли и сопровождение инструктора на воде."
       },
       "inclusions": {
-        "en": [
-          "Full SUP Kit",
-          "Professional Instructor",
-          "Sunset Photoshoot",
-          "Hot Tea/Coffee"
-        ],
         "ge": [
-          "სრული საპ კომპლექტი",
-          "პროფესიონალი ინსტრუქტორი",
-          "მზის ჩასვლის ფოტოები",
-          "ცხელი ჩაი ან ყავა"
+          "90 წუთი ინსტრუქტორთან",
+          "სრული საპ აღჭურვილობა",
+          "უსაფრთხოების ბრიფინგი",
+          "ბალანსისა და ნიჩბოსნობის ტექნიკა",
+          "ფოტო/ვიდეო გადაღება"
+        ],
+        "en": [
+          "90 Mins with Instructor",
+          "Full SUP Kit Included",
+          "Safety & Land Briefing",
+          "Balance & Stroke Technique",
+          "Photo & Video Shots"
         ],
         "ru": [
-          "Полный сап комплект",
-          "Профессиональный инструктор",
-          "Фотосессия на закате",
-          "Горячий чай/кофе"
+          "90 минут с инструктором",
+          "Полный комплект снаряжения",
+          "Инструктаж по безопасности",
+          "Техника гребли и баланса",
+          "Фото и видеосъемка"
         ]
       },
       "images": [
@@ -155,95 +217,102 @@
       ]
     },
     {
-      "id": "lesson_surf",
+      "id": "rent_hourly",
       "name": {
-        "en": "Surf School Batumi",
-        "ge": "სერფინგის სკოლა ბათუმში",
-        "ru": "Школа серфинга в Батуми"
+        "ge": "საათობრივი გაქირავება",
+        "en": "Hourly SUP Board Rental",
+        "ru": "Почасовая аренда сапборда"
       },
       "location": {
-        "en": "Batumi Beach",
-        "ge": "ბათუმის სანაპირო",
-        "ru": "Пляж Батуми"
+        "ge": "თბილისი (ლისის ტბა) & შეკვეთილი",
+        "en": "Tbilisi (Lisi Lake) & Shekvetili",
+        "ru": "Тбилиси (Озеро Лиси) и Шекветили"
       },
-      "price": "90 GEL",
+      "price": "25 GEL (1-ლი სთ) / 20 GEL (შემდეგი)",
       "duration": {
-        "en": "1.5 Hours",
-        "ge": "1.5 საათი",
-        "ru": "1.5 Часа"
+        "ge": "საათობრივი",
+        "en": "Hourly",
+        "ru": "Почасовая"
       },
-      "image": "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=500&q=80",
+      "image": "/pictures/paddleboard-2.webp",
       "desc": {
-        "en": "Catch your first wave on the Black Sea coast! Our structured lessons cover safety protocols, pop-up mechanics, board control, and riding technique.",
-        "ge": "დაიჭირეთ თქვენი პირველი ტალღა შავი ზღვის სანაპიროზე! გაკვეთილი მოიცავს უსაფრთხოების წესებს, დაფაზე დგომის მექანიკას და ბალანსის მართვას.",
-        "ru": "Поймайте свою первую волну на Черном море! Наши структурированные уроки включают технику безопасности, механику вставания на доску и управление балансом."
+        "ge": "საპ ბორდით სრიალი საათობრივად ლისის ტბასა და შეკვეთილის სანაპიროზე! პირველი საათის ღირებულება შეადგენს 25 ლარს, ხოლო ყოველი შემდგომი საათი — 20 ლარს. მოიცავს სრულ აღჭურვილობას.",
+        "en": "Hourly paddleboard rental on Lisi Lake and Shekvetili beach. 25 GEL for the 1st hour, and 20 GEL for each subsequent hour. Includes full gear.",
+        "ru": "Почасовая аренда сапбордов на озере Лиси и на пляже Шекветили. 25 GEL за первый час и 20 GEL за каждый последующий час. Полное снаряжение включено."
       },
       "inclusions": {
-        "en": [
-          "Surfboard Rental",
-          "Wetsuit",
-          "1-on-1 Instructor Guide",
-          "HD Action Videos"
-        ],
         "ge": [
-          "სერფინგის დაფის ქირაობა",
-          "სველი კოსტუმი (ჰიდროკოსტუმი)",
-          "პირადი ინსტრუქტორი",
-          "აქშენ ვიდეო ჩანაწერები"
+          "1-ლი საათი: 25 ლარი",
+          "ყოფილი შემდგომი საათი: 20 ლარი",
+          "სრული საპ აღჭურვილობა",
+          "სამაშველო ჟილეტი",
+          "წყალგაუმტარი ქეისი"
+        ],
+        "en": [
+          "1st Hour: 25 GEL",
+          "Each Next Hour: 20 GEL",
+          "Full SUP Gear Included",
+          "Safety Life Vest",
+          "Waterproof Phone Pouch"
         ],
         "ru": [
-          "Аренда серфборда",
-          "Гидрокостюм",
-          "Персональный инструктор",
-          "Экшен-видео вашей каталки"
+          "1-й час: 25 GEL",
+          "Каждый следующий час: 20 GEL",
+          "Полный комплект",
+          "Спасательный жилет",
+          "Водонепроницаемый чехол"
         ]
       },
       "images": [
-        "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=500&q=80"
+        "/pictures/paddleboard-2.webp",
+        "/pictures/paddleboard.webp"
       ]
     },
     {
       "id": "corporate_event",
       "name": {
-        "en": "Corporate Water Fun",
-        "ge": "კორპორატიული აქტივობები",
-        "ru": "Корпоративы на воде"
+        "ge": "კორპორატიული შეთავაზებები",
+        "en": "Corporate & Group Offers",
+        "ru": "Корпоративные предложения"
       },
       "location": {
-        "en": "Lisi, Batumi or Anaklia",
-        "ge": "ლისი, ბათუმი ან ანაკლია",
-        "ru": "Лиси, Батуми или Анаклия"
+        "ge": "თბილისი (ლისის ტბა) & შეკვეთილი",
+        "en": "Tbilisi (Lisi Lake) & Shekvetili",
+        "ru": "Тбилиси (Озеро Лиси) и Шекветили"
       },
-      "price": "Custom / კორპორატიული",
+      "price": "Custom / ინდივიდუალური",
       "duration": {
-        "en": "Flexible",
         "ge": "მოქნილი დრო",
+        "en": "Flexible Time",
         "ru": "Гибкое время"
       },
       "image": "https://images.unsplash.com/photo-1500309722644-cf8528574a7b?auto=format&fit=crop&w=500&q=80",
       "desc": {
-        "en": "Elevate your team's synergy with giant SUP races, relay games, water polo, and beach barbecues. Fully customized event planning tailored to your organization.",
-        "ge": "გააძლიერეთ თქვენი გუნდის სინერგია გიგანტური საპების რბოლებით, წყლის პოლოთი და სანაპირო ბარბექიუთი. სრულად მორგებული თქვენს მოთხოვნებზე.",
-        "ru": "Усильте командную синергию с помощью гонок на гигантских сапах, эстафет, водного поло и пляжного барбекю. Полностью индивидуальная программа."
+        "ge": "ინდივიდუალური კორპორატიული შეთავაზებები კომპანიებისა და ჯგუფებისთვის. მოგვწერეთ თქვენი სურვილები (მონაწილეთა რაოდენობა, თარიღი) და შევადგენთ სპეციალურად თქვენზე მორგებულ პაკეტს ლისის ტბასა თუ შეკვეთილში.",
+        "en": "Customized corporate offers and team building for groups and businesses. Contact us with your requirements (group size, date) to receive a tailored package at Lisi Lake or Shekvetili.",
+        "ru": "Индивидуальные корпоративные предложения для компаний и групп. Напишите нам ваши пожелания (число участников, дата), и мы подготовим специальный пакет на озере Лиси или в Шекветили."
       },
       "inclusions": {
-        "en": [
-          "Giant SUPs (fits 6-8 people)",
-          "Event Coordinator",
-          "Catering & Drinks",
-          "Professional Videography"
-        ],
         "ge": [
-          "გიგანტური საპები (6-8 კაცზე)",
+          "ჯგუფური საპ შეჯიბრებები",
           "ღონისძიების კოორდინატორი",
-          "ქეითერინგი და სასმელები",
-          "პროფესიონალი ვიდეოგრაფი"
+          "სრული აღჭურვილობის უზრუნველყოფა",
+          "ინდივიდუალური ფასდაკლება",
+          "ფოტო/ვიდეო გადაღება"
+        ],
+        "en": [
+          "Group SUP Races & Relay",
+          "Event Coordinator",
+          "Full Gear & Safety Setup",
+          "Custom Group Discount",
+          "Photo & Video Shots"
         ],
         "ru": [
-          "Гигантские сапы (на 6-8 человек)",
-          "Координатор праздника",
-          "Кейтеринг и напитки",
-          "Профессиональная видеосъемка"
+          "Групповые соревнования на сапах",
+          "Координатор мероприятия",
+          "Полное обеспечение снаряжением",
+          "Групповая скидка",
+          "Фото и видеосъемка"
         ]
       },
       "images": [

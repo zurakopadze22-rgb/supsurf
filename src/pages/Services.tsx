@@ -25,87 +25,59 @@ export default function Services() {
       });
   }, []);
 
-  const rawPackages = db?.services || [];
+  const rawPackages = db?.services || [
+    {
+      id: "rent_daily",
+      name: { ge: "საპ ბორდის დღიური გაქირავება (აქცია)", en: "Daily SUP Board Rental (Special Offer)", ru: "Посуточная аренда сапборда (Акция)" },
+      location: { ge: "თბილისი (ლისის ტბა) & შეკვეთილი", en: "Tbilisi (Lisi Lake) & Shekvetili", ru: "Тбилиси (Озеро Лиси) и Шекветили" },
+      price: "50 GEL (1 დღე) / 80 GEL (2 დღე)",
+      duration: { ge: "1-2 დღე (სრული კომპლექტი)", en: "1-2 Days (Full Kit)", ru: "1-2 Дня (Полный комплект)" },
+      image: "/pictures/paddleboard-1.webp",
+      desc: { ge: "საპ ბორდის დღიური გაქირავება სპეციალური ფასდაკლებით! 1 დღე = 50 ლარი, ხოლო 2 დღე = 80 ლარი.", en: "Daily SUP board rental with special discount! 1 day = 50 GEL, 2 days = 80 GEL.", ru: "Посуточная аренда сапборда по акции! 1 день = 50 GEL, 2 дня = 80 GEL." },
+      isRental: true
+    },
+    {
+      id: "lesson_basic",
+      name: { ge: "საბაზისო შემსწავლელი სეანსი (90 წუთი)", en: "Basic Beginner SUP Session (90 Mins)", ru: "Базовое обучающее занятие (90 минут)" },
+      location: { ge: "თბილისი (ლისის ტბა) & შეკვეთილი", en: "Tbilisi (Lisi Lake) & Shekvetili", ru: "Тбилиси (Озеро Лиси) и Шекветили" },
+      price: "45 GEL",
+      duration: { ge: "90 წუთი (ინსტრუქტორთან ერთად)", en: "90 Mins (With Instructor)", ru: "90 Минут (С инструктором)" },
+      image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=500&q=80",
+      desc: { ge: "90-წუთიანი შემსწავლელი სეანსი სერტიფიცირებულ ინსტრუქტორთან ერთად!", en: "90-minute structured beginner session with a certified instructor!", ru: "90-минутное обучающее занятие с сертифицированным инструктором!" },
+      isRental: false
+    },
+    {
+      id: "rent_hourly",
+      name: { ge: "საათობრივი გაქირავება", en: "Hourly SUP Board Rental", ru: "Почасовая аренда сапборда" },
+      location: { ge: "თბილისი (ლისის ტბა) & შეკვეთილი", en: "Tbilisi (Lisi Lake) & Shekvetili", ru: "Тбилиси (Озеро Лиси) и Шекветили" },
+      price: "25 GEL (1-ლი სთ) / 20 GEL (შემდეგი)",
+      duration: { ge: "საათობრივი", en: "Hourly", ru: "Почасовая" },
+      image: "/pictures/paddleboard-2.webp",
+      desc: { ge: "საპ ბორდით სრიალი საათობრივად ლისის ტბასა და შეკვეთილის სანაპიროზე! 25 ლარი 1-ლი საათი, 20 ლარი შემდგომი.", en: "Hourly paddleboard rental on Lisi Lake and Shekvetili beach. 25 GEL 1st hr, 20 GEL next.", ru: "Почасовая аренда сапбордов на озере Лиси и на пляже Шекветили." },
+      isRental: true
+    },
+    {
+      id: "corporate_event",
+      name: { ge: "კორპორატიული შეთავაზებები", en: "Corporate & Group Offers", ru: "Корпоративные предложения" },
+      location: { ge: "თბილისი (ლისის ტბა) & შეკვეთილი", en: "Tbilisi (Lisi Lake) & Shekvetili", ru: "Тбилиси (Озеро Лиси) и Шекветили" },
+      price: "Custom / ინდივიდუალური",
+      duration: { ge: "მოქნილი დრო", en: "Flexible Time", ru: "Гибкое время" },
+      image: "https://images.unsplash.com/photo-1500309722644-cf8528574a7b?auto=format&fit=crop&w=500&q=80",
+      desc: { ge: "ინდივიდუალური კორპორატიული შეთავაზებები კომპანიებისა და ჯგუფებისთვის.", en: "Customized corporate offers and team building for groups and businesses.", ru: "Индивидуальные корпоративные предложения для компаний и групп." },
+      isRental: false
+    }
+  ];
 
-  const packages = rawPackages.map((pkg: any) => ({
+  const allItems = rawPackages.map((pkg: any) => ({
     id: pkg.id,
-    name: pkg.name[locale] || pkg.name.en,
-    category: pkg.location[locale] || pkg.location.en,
+    name: pkg.name[locale] || pkg.name.ge || pkg.name.en,
+    category: pkg.location[locale] || pkg.location.ge || pkg.location.en,
     price: pkg.price,
-    duration: pkg.duration[locale] || pkg.duration.en,
-    desc: pkg.desc[locale] || pkg.desc.en,
+    duration: pkg.duration[locale] || pkg.duration.ge || pkg.duration.en,
+    desc: pkg.desc[locale] || pkg.desc.ge || pkg.desc.en,
     image: pkg.image,
-    isRental: false
+    isRental: pkg.id.includes('rent')
   }));
-
-  const rentalItems = [
-    {
-      id: 'sup_allround',
-      name: dict?.booking?.board_options?.sup_allround || 'SUP All-round Board',
-      category: locale === 'ge' ? 'საპ დაფა' : locale === 'ru' ? 'SUP Доска' : 'SUP Board',
-      price: '30 GEL',
-      desc: dict?.home?.services?.sup_desc || 'Stable, easy-to-use board perfect for lake paddling.',
-      image: 'https://images.unsplash.com/photo-1500309722644-cf8528574a7b?auto=format&fit=crop&w=500&q=80',
-      locationsJoined: locale === 'ge' ? 'ლისი, ბათუმი' : 'Lisi, Batumi',
-      isRental: true
-    },
-    {
-      id: 'sup_touring',
-      name: dict?.booking?.board_options?.sup_touring || 'SUP Touring Board',
-      category: locale === 'ge' ? 'საპ დაფა' : locale === 'ru' ? 'SUP Доска' : 'SUP Board',
-      price: '40 GEL',
-      desc: 'Sleek design for high speed, long distances, and open waters. Fitted with dry bag tie-downs.',
-      image: 'https://images.unsplash.com/photo-1500309722644-cf8528574a7b?auto=format&fit=crop&w=500&q=80',
-      locationsJoined: locale === 'ge' ? 'ბათუმი, ანაკლია' : 'Batumi, Anaklia',
-      isRental: true
-    },
-    {
-      id: 'surf_soft',
-      name: dict?.booking?.board_options?.surf_soft || 'Surf Softtop Board',
-      category: locale === 'ge' ? 'სერფბორდი' : locale === 'ru' ? 'Серфборд' : 'Surfboard',
-      price: '35 GEL',
-      desc: dict?.home?.services?.surf_desc || 'Softtop board suitable for beginners learning control.',
-      image: 'https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=500&q=80',
-      locationsJoined: locale === 'ge' ? 'ბათუმი, ანაკლია' : 'Batumi, Anaklia',
-      isRental: true
-    },
-    {
-      id: 'surf_hard',
-      name: dict?.booking?.board_options?.surf_hard || 'Surf Hardtop Board',
-      category: locale === 'ge' ? 'სერფბორდი' : locale === 'ru' ? 'Серфборд' : 'Surfboard',
-      price: '50 GEL',
-      desc: 'Epoxy resin surfboard. Designed for aggressive turning and high performance on fast waves.',
-      image: 'https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=500&q=80',
-      locationsJoined: locale === 'ge' ? 'ბათუმი' : 'Batumi',
-      isRental: true
-    },
-    {
-      id: 'wingfoil',
-      name: dict?.booking?.board_options?.wingfoil || 'Wingfoil Pack',
-      category: locale === 'ge' ? 'ვინგფოილი' : locale === 'ru' ? 'Вингфойл' : 'Wingfoil',
-      price: '100 GEL',
-      desc: dict?.home?.services?.wingfoil_desc || 'High-performance wing and hydrofoil set.',
-      image: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=500&q=80',
-      locationsJoined: locale === 'ge' ? 'ბათუმი, ანაკლია' : 'Batumi, Anaklia',
-      isRental: true
-    },
-  ];
-
-  const mappedRentals = rentalItems.map(r => ({
-    id: r.id,
-    name: r.name,
-    category: r.category,
-    price: r.price,
-    duration: locale === 'ge' ? '1 დღე' : locale === 'ru' ? '1 день' : '1 Day',
-    desc: r.desc,
-    image: r.image,
-    isRental: true
-  }));
-
-  const allItems = [
-    ...packages.map((p: any) => ({ ...p, isRental: false })),
-    ...mappedRentals
-  ];
 
   const filteredItems = allItems.filter(item => {
     // Filter by category type

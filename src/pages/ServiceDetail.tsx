@@ -27,153 +27,59 @@ export default function ServiceDetail() {
 
   const staticRentalServices: any[] = [
     {
-      id: 'sup_allround',
-      name: {
-        en: "Gladiator Pro 10'6\" Inflatable SUP",
-        ge: "Gladiator Pro 10'6\" გასაბერი საპი",
-        ru: "Надувной сапборд Gladiator Pro 10'6\""
-      },
-      location: {
-        en: "Lisi Lake, Batumi Beach",
-        ge: "ლისის ტბა, ბათუმის სანაპირო",
-        ru: "Озеро Лиси, Пляж Батуми"
-      },
-      price: "30 GEL",
-      duration: {
-        en: "1 Day",
-        ge: "1 დღე",
-        ru: "1 დღე"
-      },
+      id: "rent_daily",
+      name: { ge: "საპ ბორდის დღიური გაქირავება (აქცია)", en: "Daily SUP Board Rental (Special Offer)", ru: "Посуточная аренда сапборда (Акция)" },
+      location: { ge: "თბილისი (ლისის ტბა) & შეკვეთილი", en: "Tbilisi (Lisi Lake) & Shekvetili", ru: "Тбилиси (Озеро Лиси) и Шекветили" },
+      price: "50 GEL (1 დღე) / 80 GEL (2 დღე)",
+      duration: { ge: "1-2 დღე (სრული კომპლექტი)", en: "1-2 Days (Full Kit)", ru: "1-2 Дня (Полный комплект)" },
+      image: "/pictures/paddleboard-1.webp",
+      desc: { ge: "საპ ბორდის დღიური გაქირავება სპეციალური ფასდაკლებით! 1 დღე = 50 ლარი, ხოლო 2 დღე = 80 ლარი. ფასში შედის სრული პროფესიონალური აღჭურვილობა: გასაბერი დაფა, კარბონის ნიჩაბი, სამაშველო ჟილეტი, უსაფრთხოების თოკი (Leash), ტუმბო და წყალგაუმტარი ტელეფონის ქეისი.", en: "Daily SUP board rental with special discount! 1 day = 50 GEL, 2 days = 80 GEL. Includes full kit: inflatable board, carbon paddle, life vest, safety leash, high-pressure pump, and waterproof phone case.", ru: "Посуточная аренда сапборда по акции! 1 день = 50 GEL, 2 дня = 80 GEL. В стоимость входит полный комплект: надувная доска, карбоновое весло, спасательный жилет, лиш, насос и водонепроницаемый чехол." },
+      inclusions: {
+        ge: ["გასაბერი საპ დაფა", "მსუბუქი კარბონის ნიჩაბი", "სამაშველო ჟილეტი", "უსაფრთხოების თოკი (Leash)", "მაღალი წნევის ტუმბო", "წყალგაუმტარი ტელეფონის ქეისი", "ზურგჩანთა ტრანსპორტირებისთვის"],
+        en: ["Inflatable SUP Board", "Lightweight Carbon Paddle", "Buoyancy Safety Life Vest", "Ankle Safety Leash", "High-Pressure Dual Pump", "Waterproof Phone Case", "Travel Backpack"],
+        ru: ["Надувная SUP-доска", "Карбоновое весло", "Спасательный жилет", "Страховочный лиш", "Насос высокого давления", "Водонепроницаемый чехол", "Рюкзак для транспортировки"]
+      }
+    },
+    {
+      id: "lesson_basic",
+      name: { ge: "საბაზისო შემსწავლელი სეანსი (90 წუთი)", en: "Basic Beginner SUP Session (90 Mins)", ru: "Базовое обучающее занятие (90 минут)" },
+      location: { ge: "თბილისი (ლისის ტბა) & შეკვეთილი", en: "Tbilisi (Lisi Lake) & Shekvetili", ru: "Тбилиси (Озеро Лиси) и Шекветили" },
+      price: "45 GEL",
+      duration: { ge: "90 წუთი (ინსტრუქტორთან ერთად)", en: "90 Mins (With Instructor)", ru: "90 Минут (С инструктором)" },
+      image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=500&q=80",
+      desc: { ge: "90-წუთიანი შემსწავლელი სეანსი სერტიფიცირებულ ინსტრუქტორთან ერთად! მოიცავს ხმელეთზე უსაფრთხოების ბრიფინგს, ბალანსის დაჭერას, ნიჩბოსნობის სწორ ტექნიკასა და წყალზე პრაქტიკულ სრიალს ინსტრუქტორის მეთვალყურეობით.", en: "90-minute structured beginner session with a certified instructor! Includes safety briefing on shore, posture balance setup, correct stroke technique, and guided paddling on the water.", ru: "90-минутное обучающее занятие с сертифицированным инструктором! Включает инструктаж по безопасности, постановку баланса, технику гребли и сопровождение инструктора на воде." },
+      inclusions: {
+        ge: ["90 წუთი ინსტრუქტორთან", "სრული საპ აღჭურვილობა", "უსაფრთხოების ბრიფინგი", "ბალანსისა და ნიჩბოსნობის ტექნიკა", "ფოტო/ვიდეო გადაღება"],
+        en: ["90 Mins with Instructor", "Full SUP Kit Included", "Safety & Land Briefing", "Balance & Stroke Technique", "Photo & Video Shots"],
+        ru: ["90 минут с инструктором", "Полный комплект снаряжения", "Инструктаж по безопасности", "Техника гребли и баланса", "Фото и видеосъемка"]
+      }
+    },
+    {
+      id: "rent_hourly",
+      name: { ge: "საათობრივი გაქირავება", en: "Hourly SUP Board Rental", ru: "Почасовая аренда сапборда" },
+      location: { ge: "თბილისი (ლისის ტბა) & შეკვეთილი", en: "Tbilisi (Lisi Lake) & Shekvetili", ru: "Тбилиси (Озеро Лиси) и Шекветили" },
+      price: "25 GEL (1-ლი სთ) / 20 GEL (შემდეგი)",
+      duration: { ge: "საათობრივი", en: "Hourly", ru: "Почасовая" },
+      image: "/pictures/paddleboard-2.webp",
+      desc: { ge: "საპ ბორდით სრიალი საათობრივად ლისის ტბასა და შეკვეთილის სანაპიროზე! პირველი საათის ღირებულება შეადგენს 25 ლარს, ხოლო ყოველი შემდგომი საათი — 20 ლარს. მოიცავს სრულ აღჭურვილობას.", en: "Hourly paddleboard rental on Lisi Lake and Shekvetili beach. 25 GEL for the 1st hour, and 20 GEL for each subsequent hour. Includes full gear.", ru: "Почасовая аренда сапбордов на озере Лиси и на пляже Шекветили. 25 GEL за первый час и 20 GEL за каждый последующий час. Полное снаряжение включено." },
+      inclusions: {
+        ge: ["1-ლი საათი: 25 ლარი", "ყოფილი შემდგომი საათი: 20 ლარი", "სრული საპ აღჭურვილობა", "სამაშველო ჟილეტი", "წყალგაუმტარი ქეისი"],
+        en: ["1st Hour: 25 GEL", "Each Next Hour: 20 GEL", "Full SUP Gear Included", "Safety Life Vest", "Waterproof Phone Pouch"],
+        ru: ["1-й час: 25 GEL", "Каждый следующий час: 20 GEL", "Полный комплект", "Спасательный жилет", "Водонепроницаемый чехол"]
+      }
+    },
+    {
+      id: "corporate_event",
+      name: { ge: "კორპორატიული შეთავაზებები", en: "Corporate & Group Offers", ru: "Корпоративные предложения" },
+      location: { ge: "თბილისი (ლისის ტბა) & შეკვეთილი", en: "Tbilisi (Lisi Lake) & Shekvetili", ru: "Тбилиси (Озеро Лиси) и Шекветили" },
+      price: "Custom / ინდივიდუალური",
+      duration: { ge: "მოქნილი დრო", en: "Flexible Time", ru: "Гибкое время" },
       image: "https://images.unsplash.com/photo-1500309722644-cf8528574a7b?auto=format&fit=crop&w=800&q=80",
-      desc: {
-        en: "Stable, easy-to-use board perfect for lake paddling and relaxed coastal tours. Includes double-action pump, carbon paddle, safety leash, and travel backpack.",
-        ge: "სტაბილური, მარტივად სამართავი დაფა, იდეალურია ტბებზე სასრიალოდ და მშვიდ ზღვაზე სეირნობისთვის. კომპლექტშია ტუმბო, კარბონის ნიჩაბი, ლიში და ჩანთა.",
-        ru: "Стабильный, простой в управлении сапборд, идеальный для прогулок по озерам и спокойному морю. В комплекте насос, карбоновое весло, лиш и рюкзак."
-      },
+      desc: { ge: "ინდივიდუალური კორპორატიული შეთავაზებები კომპანიებისა და ჯგუფებისთვის. მოგვწერეთ თქვენი სურვილები (მონაწილეთა რაოდენობა, თარიღი) და შევადგენთ სპეციალურად თქვენზე მორგებულ პაკეტს ლისის ტბასა თუ შეკვეთილში.", en: "Customized corporate offers and team building for groups and businesses. Contact us with your requirements (group size, date) to receive a tailored package at Lisi Lake or Shekvetili.", ru: "Индивидуальные корпоративные предложения для компаний и групп. Напишите нам ваши пожелания (число участников, дата), и мы подготовим специальный пакет на озере Лиси или в Шекветили." },
       inclusions: {
-        en: ["Premium Inflatable SUP Board", "Adjustable Carbon Paddle", "Safety Leash", "High-Pressure Pump", "CE Safety Life Vest", "Waterproof Phone Pouch"],
-        ge: ["პრემიუმ გასაბერი საპ დაფა", "რეგულირებადი კარბონის ნიჩაბი", "უსაფრთხოების ლიში", "მაღალი წნევის ტუმბო", "სამაშველო ჟილეტი", "წყალგამძლე ტელეფონის ქეისი"],
-        ru: ["Премиум надувная SUP-доска", "Регулируемое карбоновое весло", "Страховочный лиш", "Насос высокого давления", "Спасательный жилет", "Водонепроницаемый чехол"]
-      }
-    },
-    {
-      id: 'sup_touring',
-      name: {
-        en: "Tiki 11'6\" Premium Touring SUP",
-        ge: "ტურინგ საპ ბორდი Tiki 11'6\"",
-        ru: "Туринговый сапборд Tiki 11'6\""
-      },
-      location: {
-        en: "Batumi, Anaklia Beach",
-        ge: "ბათუმი, ანაკლიის სანაპირო",
-        ru: "Батуми, Пляж Анаклиа"
-      },
-      price: "40 GEL",
-      duration: {
-        en: "1 Day",
-        ge: "1 დღე",
-        ru: "1 დღე"
-      },
-      image: "https://images.unsplash.com/photo-1500309722644-cf8528574a7b?auto=format&fit=crop&w=800&q=80",
-      desc: {
-        en: "Sleek, high-speed design optimized for long distances and open waters. Fitted with dry bag tie-downs and touring fin.",
-        ge: "სწრაფი და სპორტული დიზაინის მქონე საპ დაფა, ოპტიმიზებული გრძელ დისტანციებზე სრიალისათვის. აღჭურვილია სპეციალური სამაგრებით წყალგაუმტარი ჩანთისთვის.",
-        ru: "Быстрый спортивный сапборд, оптимизированный для длинных дистанций. Оснащен креплениями для гермомешка."
-      },
-      inclusions: {
-        en: ["Touring SUP Board", "Carbon Paddle", "Touring Fin", "Pump & Safety Leash", "CE Safety Life Vest", "Waterproof Phone Pouch"],
-        ge: ["ტურისტული საპ დაფა", "კარბონის ნიჩაბი", "სპორტული ფარფლი", "ტუმბო და ლიში", "სამაშველო ჟილეტი", "წყალგამძლე ტელეფონის ქეისი"],
-        ru: ["Туринговая SUP-доска", "Карбоновое весло", "Спортивный плавник", "Насос и лиш", "Спасательный жилет", "Водонепроницаемый чехол"]
-      }
-    },
-    {
-      id: 'surf_soft',
-      name: {
-        en: "Surf Softtop Board (8'0\")",
-        ge: "სერფინგის Soft-Top დაფა (8'0\")",
-        ru: "Серфборд Soft-Top (8'0\")"
-      },
-      location: {
-        en: "Batumi, Anaklia Beach",
-        ge: "ბათუმი, ანაკლიის სანაპირო",
-        ru: "Батуми, Пляж Анаклиа"
-      },
-      price: "35 GEL",
-      duration: {
-        en: "1 Day",
-        ge: "1 დღე",
-        ru: "1 დღე"
-      },
-      image: "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=800&q=80",
-      desc: {
-        en: "Soft-top surfboard designed with max volume and safety for beginners learning stability and control.",
-        ge: "რბილი ზედაპირის მქონე სერფინგის დაფა დამწყებთათვის, უზრუნველყოფს მაქსიმალურ სტაბილურობასა და უსაფრთხოებას პირველი ტალღების დაჭერისას.",
-        ru: "Мягкий серфборд для новичков, обеспечивающий максимальную стабильность и безопасность при ловле первых волн."
-      },
-      inclusions: {
-        en: ["Softtop Surfboard", "Safety Leash", "Fins Set", "CE Safety Life Vest"],
-        ge: ["Softtop სერფინგის დაფა", "უსაფრთხოების ლიში", "ფარფლების კომპლექტი", "სამაშველო ჟილეტი"],
-        ru: ["Softtop серфборд", "Страховочный лиш", "Комплект плавников", "Спасательный жилет"]
-      }
-    },
-    {
-      id: 'surf_hard',
-      name: {
-        en: "Epoxy Resin Surfboard (6'4\")",
-        ge: "ეპოქსიდური სერფინგის დაფა (6'4\")",
-        ru: "Эпоксидный серфборд (6'4\")"
-      },
-      location: {
-        en: "Batumi Beach",
-        ge: "ბათუმის სანაპირო",
-        ru: "Пляж Батуми"
-      },
-      price: "50 GEL",
-      duration: {
-        en: "1 Day",
-        ge: "1 დღე",
-        ru: "1 დღე"
-      },
-      image: "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=800&q=80",
-      desc: {
-        en: "High performance epoxy surfboard for aggressive turns, high speed and steep waves.",
-        ge: "მაღალი მანევრირების მქონე მყარი სერფინგის დაფა გამოცდილი მოყვარულებისთვის, იდეალურია სწრაფი და მყარი ტალღების დასაჭერად.",
-        ru: "Маневренный жесткий серфборд для опытных серферов, идеальный для быстрых волн."
-      },
-      inclusions: {
-        en: ["Epoxy Hardtop Surfboard", "Fins Set", "Safety Leash", "Wax & Key"],
-        ge: ["ეპოქსიდური სერფინგის დაფა", "ფარფლების კომპლექტი", "უსაფრთხოების ლიში", "ცვილი და გასაღები"],
-        ru: ["Эпоксидный серфборд", "Комплект плавников", "Страховочный лиш", "Воск и ключ"]
-      }
-    },
-    {
-      id: 'wingfoil',
-      name: {
-        en: "Wingfoil Complete Package",
-        ge: "ვინგფოილის სრული კომპლექტი",
-        ru: "Полный комплект вингфойла"
-      },
-      location: {
-        en: "Batumi, Anaklia Beach",
-        ge: "ბათუმი, ანაკლიის სანაპირო",
-        ru: "Батуми, Пляж Анаклиа"
-      },
-      price: "100 GEL",
-      duration: {
-        en: "1 Day",
-        ge: "1 დღე",
-        ru: "1 დღე"
-      },
-      image: "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=800&q=80",
-      desc: {
-        en: "Premium wing and hydrofoil package for high speed flight above water. For intermediate to advanced riders.",
-        ge: "პრემიუმ კლასის ფრთისა და ჰიდროფოილის კომპლექტი წყლის ზემოთ ფრენის შეგრძნებისთვის. განკუთვნილია საშუალო და გამოცდილი სერფერებისთვის.",
-        ru: "Премиальный комплект крыла и гидрофойла для полета над водой. Для опытных райдеров."
-      },
-      inclusions: {
-        en: ["Wingfoil Board", "Hydrofoil Mast & Wings Set", "Handheld Wing", "Pump & Harness", "Safety Leash & Life Vest"],
-        ge: ["ვინგფოილის დაფა", "ჰიდროფოილის ანძა და ფრთები", "ხელის ფრთა (Wing)", "ტუმბო და დამცავი ღვედი", "უსაფრთხოების ლიში და ჟილეტი"],
-        ru: ["Доска для вингфойла", "Гидрофойл (мачта и крылья)", "Ручное крыло", "Насос и трапеция", "Страховочный лиш и жилет"]
+        ge: ["ჯგუფური საპ შეჯიბრებები", "ღონისძიების კოორდინატორი", "სრული აღჭურვილობის უზრუნველყოფა", "ინდივიდუალური ფასდაკლება", "ფოტო/ვიდეო გადაღება"],
+        en: ["Group SUP Races & Relay", "Event Coordinator", "Full Gear & Safety Setup", "Custom Group Discount", "Photo & Video Shots"],
+        ru: ["Групповые соревнования на сапах", "Координатор мероприятия", "Полное обеспечение снаряжением", "Групповая скидка", "Фото и видеосъемка"]
       }
     }
   ];

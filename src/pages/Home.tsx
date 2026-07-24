@@ -147,10 +147,10 @@ export default function Home() {
       'name': 'supsurf.ge',
       'image': window.location.origin + '/pictures/logo.webp',
       'description': locale === 'ge' 
-        ? 'საპ ბორდების გაქირავება და გაყიდვა საქართველოში (თბილისი - ლისის ტბა, ბათუმი, ანაკლია). საუკეთესო დღიური ფასები, სრული აღჭურვილობა შედის ფასში.' 
+        ? 'საპ ბორდების გაქირავება და გაყიდვა საქართველოში (თბილისი - ლისის ტბა, შეკვეთილი). საუკეთესო დღიური ფასები (50 ლარი/დღე), სრული აღჭურვილობა შედის ფასში.' 
         : locale === 'ru'
-          ? 'Аренда и продажа SUP-бордов в Грузии (Тбилиси - Лисье озеро, Батуми, Анаклия). Отличные цены, полные комплекты снаряжения.'
-          : 'Premium SUP board rentals and sales in Georgia (Tbilisi Lisi Lake, Batumi, Anaklia). Best daily rates, full adventure gear included.',
+          ? 'Аренда и продажа SUP-бордов в Грузии (Тбилиси - Лисье озеро, Шекветили). Отличные цены (50 GEL/день), полные комплекты снаряжения.'
+          : 'Premium SUP board rentals and sales in Georgia (Tbilisi Lisi Lake, Shekvetili). Best daily rates (50 GEL/day), full adventure gear included.',
       'url': window.location.origin,
       'telephone': '+995 592 05 50 17',
       'sameAs': [
@@ -163,8 +163,8 @@ export default function Home() {
       'priceRange': '$$',
       'address': {
         '@type': 'PostalAddress',
-        'streetAddress': 'Lisi Lake Park / Batumi Boulevard',
-        'addressLocality': 'Tbilisi / Batumi',
+        'streetAddress': 'Lisi Lake Park / Shekvetili Coastline',
+        'addressLocality': 'Tbilisi / Shekvetili',
         'addressCountry': 'GE'
       },
       'geo': {

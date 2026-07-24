@@ -45,16 +45,10 @@ export default function About() {
         hours: "Mon - Sun: 09:00 - 21:00"
       },
       {
-        name: locale === 'ge' ? "ბათუმი - ანბანის კოშკის სადგური" : locale === 'ru' ? "Батуми - Станция у Алфавитной башни" : "Batumi - Miracle Beach Station",
-        address: "Miracle Beach (near Ferris Wheel), Batumi, Georgia",
+        name: locale === 'ge' ? "შეკვეთილი - სანაპირო სადგური" : locale === 'ru' ? "Шекветили - Станция на побережье" : "Shekvetili - Coastline Station",
+        address: "Shekvetili Beach Promenade, Shekvetili, Georgia",
         phone: "+995 592 05 50 17",
-        hours: "Mon - Sun: 08:00 - 20:00"
-      },
-      {
-        name: locale === 'ge' ? "ანაკლია - ბულვარის პიერსი" : locale === 'ru' ? "Анаклия - Станция на бульваре" : "Anaklia - Boulevard Pier Station",
-        address: "Main Boulevard Coastline, Anaklia, Georgia",
-        phone: "+995 592 05 50 17",
-        hours: "Mon - Sun: 10:00 - 22:00"
+        hours: "Mon - Sun: 09:00 - 21:00"
       }
     ]
   };

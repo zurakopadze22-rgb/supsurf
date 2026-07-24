@@ -76,8 +76,7 @@
     "location": "Preferred Rental Location",
     "locations": {
       "lisi": "Tbilisi - Lisi Lake Station",
-      "batumi": "Batumi - Miracle Beach Station",
-      "anaklia": "Anaklia - Boulevard Station"
+      "shekvetili": "Shekvetili - Coastline Station"
     },
     "start_date": "Start Date",
     "end_date": "End Date",
