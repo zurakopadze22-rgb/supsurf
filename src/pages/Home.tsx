@@ -143,7 +143,7 @@ export default function Home() {
 
     const businessSchema = {
       '@context': 'https://schema.org',
-      '@type': ['SportsActivityLocation', 'LocalBusiness'],
+      '@type': ['Organization', 'SportsActivityLocation', 'LocalBusiness'],
       'name': 'supsurf.ge',
       'image': window.location.origin + '/pictures/logo.webp',
       'description': locale === 'ge' 
@@ -155,7 +155,10 @@ export default function Home() {
       'telephone': '+995 592 05 50 17',
       'sameAs': [
         'https://www.instagram.com/sun_set_paddle/',
-        'https://www.facebook.com/SUNSETPSUP/'
+        'https://www.facebook.com/SUNSETPSUP/',
+        'https://x.com/supsurfge',
+        'https://www.youtube.com/@supsurfge',
+        'https://www.linkedin.com/company/supsurfge'
       ],
       'priceRange': '$$',
       'address': {

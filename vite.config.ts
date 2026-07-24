@@ -9,6 +9,17 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            return 'vendor';
+          }
+        },
+      },
+    },
+  },
   server: {
     port: 3000,
     proxy: {

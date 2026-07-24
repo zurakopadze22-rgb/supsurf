@@ -6,12 +6,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Premium SUP board rentals and sales in Georgia (Tbilisi, Batumi, Anaklia). Best daily rates, full adventure gear included with zero hidden fees." />
     <title>supsurf.ge | Premium SUP Board Rentals &amp; Sales in Georgia</title>
+
+    <!-- Preconnect & Fonts Optimization -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Google Analytics (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SUPSURFGE1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-SUPSURFGE1');
+    </script>
+
+    <!-- Meta / Facebook Pixel Code -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '109876543210987');
+      fbq('track', 'PageView');
+    </script>
+
+    <!-- Static Identity, Organization & LocalBusiness JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["Organization", "SportsActivityLocation", "LocalBusiness"],
+      "name": "supsurf.ge",
+      "url": "https://www.supsurf.ge",
+      "logo": "https://www.supsurf.ge/pictures/logo.webp",
+      "description": "Premium SUP board rentals and sales in Georgia (Tbilisi Lisi Lake, Batumi, Anaklia). Best daily rates, full adventure gear included.",
+      "telephone": "+995 592 05 50 17",
+      "sameAs": [
+        "https://www.instagram.com/sun_set_paddle/",
+        "https://www.facebook.com/SUNSETPSUP/",
+        "https://x.com/supsurfge",
+        "https://www.youtube.com/@supsurfge",
+        "https://www.linkedin.com/company/supsurfge"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Lisi Lake Park / Batumi Boulevard",
+        "addressLocality": "Tbilisi / Batumi",
+        "addressCountry": "GE"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "41.7297",
+        "longitude": "44.7397"
+      },
+      "priceRange": "$$"
+    }
+    </script>
   </head>
   <body class="flex min-h-screen flex-col font-sans antialiased bg-white text-ocean-dark">
-    <div id="root"></div>
+    <div id="root">
+      <!-- Static Pre-rendered Semantic Fallback for Instant Crawling & LLM Readability -->
+      <header style="padding: 20px; text-align: center; background: #0b192c; color: white;">
+        <h1>supsurf.ge — Premium SUP Board Rentals, Sales &amp; Tours in Georgia</h1>
+        <p>Stand-Up Paddleboard rental stations at Lisi Lake (Tbilisi), Batumi Beach, and Anaklia.</p>
+      </header>
+    <noscript>
+      <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=109876543210987&ev=PageView&noscript=1" />
+    </noscript>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
