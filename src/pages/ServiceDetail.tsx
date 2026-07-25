@@ -360,23 +360,12 @@ Could you please confirm availability? Thank you!`;
                   className="inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-display font-bold py-3.5 text-xs shadow-md transition-colors cursor-pointer"
                 >
                   <MessageCircle className="w-5 h-5 text-white fill-white shrink-0" />
-                  <span>{locale === 'ge' ? 'დაჯავშნე ტური' : locale === 'ru' ? 'Забронировать' : 'WhatsApp Reservation'}</span>
+                  <span>{locale === 'ge' ? 'WhatsApp-ით დაჯავშნა' : locale === 'ru' ? 'Забронировать в WhatsApp' : 'Book on WhatsApp'}</span>
                 </button>
 
-                {/* Direct Booking on Site */}
-                <Link
-                  to={`/${locale}/rent`}
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-ocean-dark hover:bg-ocean-navy text-white font-display font-bold py-3.5 text-xs shadow-md transition-colors"
-                >
-                  <Calendar className="w-4.5 h-4.5 text-ocean-teal" />
-                  <span>Use Booking Form</span>
-                </Link>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 {/* Instagram DM */}
                 <a
-                  href={contact.instagram}
+                  href={contact.instagram || "https://www.instagram.com/sun_set_paddle/"}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 hover:shadow-lg text-white font-display font-bold py-3.5 text-xs shadow-md transition-all"
@@ -386,16 +375,31 @@ Could you please confirm availability? Thank you!`;
                     <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                     <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
                   </svg>
-                  <span>Instagram DM</span>
+                  <span>Instagram-ზე მიწერა</span>
+                </a>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                {/* Facebook Messenger */}
+                <a
+                  href="https://m.me/SUNSETPSUP"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-display font-bold py-3.5 text-xs shadow-md transition-colors"
+                >
+                  <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                    <path d="M12 2C6.477 2 2 6.145 2 11.258c0 2.91 1.455 5.51 3.733 7.21V22l3.41-1.872c.9.25 1.854.385 2.857.385 5.523 0 10-4.145 10-9.255C22 6.145 17.523 2 12 2zm1.026 12.443l-2.548-2.72-4.97 2.72 5.466-5.8 2.607 2.72 4.91-2.72-5.465 5.8z"/>
+                  </svg>
+                  <span>Facebook-ზე მიწერა</span>
                 </a>
 
                 {/* Direct Calling */}
                 <a
                   href={`tel:${contact.phone.replace(/\s+/g, '')}`}
-                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-ocean-slate/20 hover:bg-ocean-light py-3 font-sans text-xs font-bold text-ocean-dark transition-colors"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-ocean-slate/20 hover:bg-ocean-light py-3.5 font-sans text-xs font-bold text-ocean-dark transition-colors"
                 >
                   <PhoneCall className="w-4 h-4 text-ocean-teal" />
-                  <span>{locale === 'ge' ? 'დარეკვა: ' : locale === 'ru' ? 'Позвонить: ' : 'Call direct: '}{contact.phone}</span>
+                  <span>{locale === 'ge' ? 'დარეკვა: ' : locale === 'ru' ? 'Позвонить: ' : 'Call: '}{contact.phone}</span>
                 </a>
               </div>
             </div>
