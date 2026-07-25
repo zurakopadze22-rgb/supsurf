@@ -121,7 +121,7 @@ export default function Services() {
               <Waves className="w-4 h-4 sm:w-5 sm:h-5" />
             </div>
             <h2 className="font-display text-xl sm:text-2xl font-black text-ocean-dark tracking-tight">
-              {locale === 'ge' ? '🏄‍♂️ საპ ბორდების გაქირავება' : locale === 'ru' ? '🏄‍♂️ Аренда сапбордов' : '🏄‍♂️ SUP Board Rentals'}
+              {locale === 'ge' ? 'საპ ბორდების გაქირავება' : locale === 'ru' ? 'Аренда сапбордов' : 'SUP Board Rentals'}
             </h2>
           </div>
 
@@ -262,7 +262,7 @@ export default function Services() {
           </div>
         </section>
 
-        {/* SECTION 2: 🎓 საბაზისო შემსწავლელი სეანსები (Beginner Lesson Section) */}
+        {/* SECTION 2: საბაზისო შემსწავლელი სეანსები (Beginner Lesson Section) */}
         <section className="space-y-4 sm:space-y-6">
           {/* Section Title Header */}
           <div className="flex items-center gap-3 border-b border-ocean-slate/15 pb-3">
@@ -270,7 +270,7 @@ export default function Services() {
               <Star className="w-4 h-4 sm:w-5 sm:h-5 fill-white" />
             </div>
             <h2 className="font-display text-xl sm:text-2xl font-black text-ocean-dark tracking-tight">
-              {locale === 'ge' ? '🎓 საბაზისო შემსწავლელი სეანსები' : locale === 'ru' ? '🎓 Обучение сапбордингу' : '🎓 Beginner Lessons'}
+              {locale === 'ge' ? 'საბაზისო შემსწავლელი სეანსები' : locale === 'ru' ? 'Обучение сапбордингу' : 'Beginner Lessons'}
             </h2>
           </div>
 
@@ -335,7 +335,7 @@ export default function Services() {
           </Link>
         </section>
 
-        {/* SECTION 3: 🏆 კორპორატიული შეთავაზებები (Corporate Section) */}
+        {/* SECTION 3: კორპორატიული შეთავაზებები (Corporate Section) */}
         <section id="corporate-section" className="space-y-4 sm:space-y-6">
           {/* Section Title Header */}
           <div className="flex items-center gap-3 border-b border-ocean-slate/15 pb-3">
@@ -343,7 +343,7 @@ export default function Services() {
               <Trophy className="w-4 h-4 sm:w-5 sm:h-5 text-amber-300" />
             </div>
             <h2 className="font-display text-xl sm:text-2xl font-black text-ocean-dark tracking-tight">
-              {locale === 'ge' ? '🏆 კორპორატიული შეთავაზებები' : locale === 'ru' ? '🏆 Корпоративы' : '🏆 Corporate Events'}
+              {locale === 'ge' ? 'კორპორატიული შეთავაზებები' : locale === 'ru' ? 'Корпоративы' : 'Corporate Events'}
             </h2>
           </div>
 
