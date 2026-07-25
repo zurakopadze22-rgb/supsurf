@@ -473,33 +473,34 @@ export default function Home() {
 
                     <div className="grid grid-cols-2 gap-3 text-left">
                       {/* 1 Day Option */}
-                      <div className="bg-white/60 border border-ocean-slate/10 p-2.5 rounded-xl text-left">
+                      <div className="bg-white/90 border border-ocean-slate/10 p-2.5 rounded-xl text-left">
                         <span className="block font-display text-[9px] font-black text-ocean-dark/70 uppercase tracking-wider">{promo.day_1}</span>
-                        <div className="mt-1 flex items-baseline justify-start gap-1">
-                          <span className="font-display text-lg font-black text-orange-600">50₾</span>
-                          <span className="font-display text-[9px] text-ocean-slate/40 line-through ml-1">70₾</span>
+                        <div className="mt-1 flex items-baseline justify-start gap-1.5">
+                          <span className="font-display text-2xl font-black text-blue-600">50₾</span>
+                          <span className="font-display text-xs text-red-500 font-bold line-through">70₾</span>
                         </div>
                         <span className="block font-sans text-[8px] text-emerald-600 font-bold mt-0.5">{labels.insteadOfLight1}</span>
                       </div>
 
                       {/* 2 Days Option */}
-                      <div className="bg-white border border-ocean-teal/30 p-2.5 rounded-xl text-left relative shadow-sm">
-                        <span className="absolute top-0 right-0 bg-gradient-to-r from-ocean-teal to-teal-400 px-1.5 py-0.5 text-[5px] font-black uppercase text-white rounded-bl-md">
+                      <div className="bg-white border-2 border-ocean-teal/40 p-2.5 rounded-xl text-left relative shadow-sm">
+                        <span className="absolute top-0 right-0 bg-gradient-to-r from-ocean-teal to-teal-400 px-1.5 py-0.5 text-[6px] font-black uppercase text-white rounded-bl-md">
                           POP
                         </span>
                         <span className="block font-display text-[9px] font-black text-ocean-dark uppercase tracking-wider">{promo.day_2}</span>
-                        <div className="mt-1 flex items-baseline justify-start gap-1">
-                          <span className="font-display text-lg font-black text-ocean-teal">80₾</span>
-                          <span className="font-display text-[9px] text-ocean-slate/40 line-through ml-1">100₾</span>
+                        <div className="mt-1 flex items-baseline justify-start gap-1.5">
+                          <span className="font-display text-2xl font-black text-blue-600">80₾</span>
+                          <span className="font-display text-xs text-red-500 font-bold line-through">100₾</span>
                         </div>
                         <span className="block font-sans text-[8px] text-ocean-teal font-bold mt-0.5">{labels.insteadOfLight2}</span>
                       </div>
                     </div>
 
-                    <div className="mt-3 text-center">
-                      <span className="inline-flex items-center gap-1 font-display text-[10px] font-bold text-ocean-dark hover:text-ocean-teal transition-colors">
-                        {labels.claimPromo} <ArrowRight className="w-3 h-3 text-ocean-dark" />
-                      </span>
+                    <div className="mt-3">
+                      <div className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md shadow-emerald-500/25">
+                        <span>{labels.claimPromo}</span>
+                        <ArrowRight className="w-4 h-4 text-white" />
+                      </div>
                     </div>
                   </button>
                 </div>
@@ -539,15 +540,15 @@ export default function Home() {
 
                   <div className="space-y-3 sm:space-y-4 flex-1 flex flex-col justify-center text-left">
                     {/* 1 Day Package */}
-                    <div className="flex items-center justify-between p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-white/70 border border-ocean-slate/15 hover:border-orange-500/40 transition-all duration-300 relative overflow-hidden group shadow-sm">
+                    <div className="flex items-center justify-between p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-white/70 border border-ocean-slate/15 hover:border-blue-500/40 transition-all duration-300 relative overflow-hidden group shadow-sm">
                       <div className="space-y-0.5">
                         <span className="block font-display text-sm sm:text-base font-extrabold text-ocean-dark tracking-wide uppercase">{promo.day_1}</span>
                         <span className="block font-sans text-[10px] text-ocean-slate">{labels.wholeDay}</span>
                       </div>
                       <div className="text-right">
                         <div className="flex items-baseline justify-end gap-1.5">
-                          <span className="font-display text-2xl font-black text-orange-600">50₾</span>
-                          <span className="font-display text-xs text-ocean-slate/40 line-through">70₾</span>
+                          <span className="font-display text-3xl font-black text-blue-600">50₾</span>
+                          <span className="font-display text-sm text-red-500 font-bold line-through">70₾</span>
                         </div>
                         <span className="block font-sans text-[9px] font-bold text-emerald-600">{labels.insteadOfLight1}</span>
                       </div>
@@ -568,8 +569,8 @@ export default function Home() {
                       </div>
                       <div className="text-right">
                         <div className="flex items-baseline justify-end gap-1.5">
-                          <span className="font-display text-2xl font-black text-ocean-teal">80₾</span>
-                          <span className="font-display text-xs text-ocean-slate/40 line-through">100₾</span>
+                          <span className="font-display text-3xl font-black text-blue-600">80₾</span>
+                          <span className="font-display text-sm text-red-500 font-bold line-through">100₾</span>
                         </div>
                         <span className="block font-sans text-[9px] font-bold text-ocean-teal">{labels.insteadOfLight2}</span>
                       </div>
@@ -583,7 +584,7 @@ export default function Home() {
                         setModalItem(locale === 'ge' ? 'საპ აქცია (50ლ / 80ლ)' : 'SUP Special Promo (50GEL / 80GEL)');
                         setModalOpen(true);
                       }}
-                      className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-ocean-coral to-orange-500 hover:shadow-lg py-3 text-sm font-bold text-white transition-all shadow-md font-display cursor-pointer"
+                      className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 hover:brightness-110 py-3.5 text-sm font-black text-white transition-all shadow-md shadow-emerald-500/25 font-display cursor-pointer uppercase tracking-wider"
                     >
                       <span>{labels.claimPromo}</span>
                       <ArrowRight className="w-4.5 h-4.5 text-white" />
@@ -1184,8 +1185,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SEO COMPREHENSIVE TEXT GUIDE (ELIMINATES THIN CONTENT & BOOSTS RANKINGS) */}
-      <section className="bg-slate-50 py-16 border-t border-ocean-slate/10">
+      {/* SEO COMPREHENSIVE TEXT GUIDE (VISUALLY HIDDEN FOR CLEAN UX, SEARCH ENGINE / CRAWLER ONLY) */}
+      <section className="sr-only">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="bg-white rounded-3xl p-8 sm:p-12 border border-ocean-slate/10 shadow-sm space-y-8">
             <div className="border-b border-ocean-slate/10 pb-6">
