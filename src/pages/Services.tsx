@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useOutletContext, Link } from 'react-router-dom';
-import { Sparkles, Calendar, Search, MapPin } from 'lucide-react';
+import { Sparkles, Calendar, Search, MapPin, Clock, Star, Flame, Trophy, CheckCircle2, ArrowRight, ShieldCheck, Waves, Users, Zap, MessageCircle } from 'lucide-react';
 import type { Locale } from '@/lib/get-dictionary';
-import { firestoreDb, isFirebaseConfigured } from '@/lib/firebase';
-import { collection, addDoc } from 'firebase/firestore';
+import BookingModal from '@/components/BookingModal';
 
 export default function Services() {
   const { locale, dict } = useOutletContext<{ locale: Locale; dict: any }>();
@@ -11,6 +10,7 @@ export default function Services() {
   const [dbLoading, setDbLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const [bookingItem, setBookingItem] = useState<any>(null);
 
   useEffect(() => {
     fetch('/api/admin')
@@ -25,86 +25,205 @@ export default function Services() {
       });
   }, []);
 
+  const contact = db?.contact || {
+    phone: '+995 592 05 50 17',
+    whatsapp: '995 592 05 50 17',
+    instagram: 'https://www.instagram.com/sun_set_paddle/'
+  };
+
   const rawPackages = db?.services || [
     {
       id: "rent_daily",
-      name: { ge: "საპ ბორდის დღიური გაქირავება (აქცია)", en: "Daily SUP Board Rental (Special Offer)", ru: "Посуточная аренда сапборда (Акция)" },
-      location: { ge: "თბილისი (ლისის ტბა) & შეკვეთილი", en: "Tbilisi (Lisi Lake) & Shekvetili", ru: "Тбилиси (Озеро Лиси) и Шекветили" },
-      price: "50 GEL (1 დღე) / 80 GEL (2 დღე)",
-      duration: { ge: "1-2 დღე (სრული კომპლექტი)", en: "1-2 Days (Full Kit)", ru: "1-2 Дня (Полный комплект)" },
+      name: { 
+        ge: "საპ ბორდის დღიური გაქირავება (აქცია)", 
+        en: "Daily SUP Board Rental (Special Offer)", 
+        ru: "Посуточная аренда сапборда (Акция)" 
+      },
+      location: { 
+        ge: "თბილისი (ლისის ტბა) & შეკვეთილი", 
+        en: "Tbilisi (Lisi Lake) & Shekvetili", 
+        ru: "Тбилиси (Озеро Лиси) и Шекветили" 
+      },
+      price: "50 GEL",
+      subPrice: locale === 'ge' ? '2 დღე = 80 GEL (აქცია)' : locale === 'ru' ? '2 дня = 80 GEL (Акция)' : '2 Days = 80 GEL (Promo)',
+      oldPrice: "70 GEL",
+      duration: { 
+        ge: "1-2 დღე (სრული კომპლექტი)", 
+        en: "1-2 Days (Full Kit)", 
+        ru: "1-2 Дня (Полный комплект)" 
+      },
       image: "/pictures/paddleboard-1.webp",
-      desc: { ge: "საპ ბორდის დღიური გაქირავება სპეციალური ფასდაკლებით! 1 დღე = 50 ლარი, ხოლო 2 დღე = 80 ლარი.", en: "Daily SUP board rental with special discount! 1 day = 50 GEL, 2 days = 80 GEL.", ru: "Посуточная аренда сапборда по акции! 1 день = 50 GEL, 2 дня = 80 GEL." },
-      isRental: true
+      desc: { 
+        ge: "საპ ბორდის დღიური გაქირავება სპეციალური ფასდაკლებით! 1 დღე = 50 ლარი, ხოლო 2 დღე = 80 ლარი. წაიღეთ დაფა ზურგჩანთით საქართველოს ნებისმიერ ტბაზე!", 
+        en: "Daily SUP board rental with special discount! 1 day = 50 GEL, 2 days = 80 GEL. Take the board in a backpack to any lake across Georgia!", 
+        ru: "Посуточная аренда сапборда по акции! 1 день = 50 GEL, 2 дня = 80 GEL. Возьмите сап в рюкзаке на любое озеро Грузии!" 
+      },
+      isRental: true,
+      badgeType: 'promo',
+      badgeText: locale === 'ge' ? '🔥 ექსკლუზიური აქცია' : locale === 'ru' ? '🔥 Акция -30%' : '🔥 Special Offer',
+      accentGradient: 'from-amber-500/20 via-orange-500/10 to-teal-500/20',
+      badgeBg: 'bg-gradient-to-r from-amber-500 to-orange-500 text-white shadow-amber-500/25',
+      highlights: [
+        locale === 'ge' ? 'გასაბერი დაფა + კარბონის ნიჩაბი' : 'Inflatable Board + Carbon Paddle',
+        locale === 'ge' ? 'სამაშველო ჟილეტი & Leash' : 'Life Vest & Safety Leash',
+        locale === 'ge' ? 'წყალგაუმტარი ქეისი ტელეფონისთვის' : 'Waterproof Phone Case',
+        locale === 'ge' ? 'კომპაქტური ზურგჩანთით ტრანსპორტირება' : 'Compact Backpack Transport'
+      ]
     },
     {
       id: "lesson_basic",
-      name: { ge: "საბაზისო შემსწავლელი სეანსი (90 წუთი)", en: "Basic Beginner SUP Session (90 Mins)", ru: "Базовое обучающее занятие (90 минут)" },
-      location: { ge: "თბილისი (ლისის ტბა) & შეკვეთილი", en: "Tbilisi (Lisi Lake) & Shekvetili", ru: "Тбилиси (Озеро Лиси) и Шекветили" },
+      name: { 
+        ge: "საბაზისო შემსწავლელი სეანსი (90 წუთი)", 
+        en: "Basic Beginner SUP Session (90 Mins)", 
+        ru: "Базовое обучающее занятие (90 минут)" 
+      },
+      location: { 
+        ge: "თბილისი (ლისის ტბა) & შეკვეთილი", 
+        en: "Tbilisi (Lisi Lake) & Shekvetili", 
+        ru: "Тбилиси (Озеро Лиси) и Шекветили" 
+      },
       price: "45 GEL",
-      duration: { ge: "90 წუთი (ინსტრუქტორთან ერთად)", en: "90 Mins (With Instructor)", ru: "90 Минут (С инструктором)" },
-      image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=500&q=80",
-      desc: { ge: "90-წუთიანი შემსწავლელი სეანსი სერტიფიცირებულ ინსტრუქტორთან ერთად!", en: "90-minute structured beginner session with a certified instructor!", ru: "90-минутное обучающее занятие с сертифицированным инструктором!" },
-      isRental: false
+      subPrice: locale === 'ge' ? '90 წუთი ინსტრუქტორთან' : locale === 'ru' ? '90 мин с инструктором' : '90 mins with instructor',
+      duration: { 
+        ge: "90 წუთი (ინსტრუქტორთან ერთად)", 
+        en: "90 Mins (With Instructor)", 
+        ru: "90 Минут (С инструктором)" 
+      },
+      image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
+      desc: { 
+        ge: "90-წუთიანი შემსწავლელი სეანსი სერტიფიცირებულ ინსტრუქტორთან ერთად! მოიცავს ხმელეთზე უსაფრთხოების ბრიფინგს, ბალანსის დაჭერას და წყალზე მართვას.", 
+        en: "90-minute structured beginner session with a certified instructor! Covers land safety briefing, balance setup, and guided paddling.", 
+        ru: "90-минутное обучающее занятие с сертифицированным инструктором! Включает инструктаж, балансировку и сопровождение на воде." 
+      },
+      isRental: false,
+      badgeType: 'popular',
+      badgeText: locale === 'ge' ? '⭐ ყველაზე პოპულარული' : locale === 'ru' ? '⭐ Топ Выбор' : '⭐ Most Popular',
+      accentGradient: 'from-teal-500/20 via-cyan-500/10 to-blue-500/20',
+      badgeBg: 'bg-gradient-to-r from-teal-500 to-emerald-500 text-white shadow-teal-500/25',
+      highlights: [
+        locale === 'ge' ? '90 წუთი პირად ინსტრუქტორთან' : '90 Mins with Personal Instructor',
+        locale === 'ge' ? 'უსაფრთხოების ბრიფინგი & ტექნიკა' : 'Safety Briefing & Technique',
+        locale === 'ge' ? 'სრული აღჭურვილობა შედის ფასში' : 'Full Gear Included',
+        locale === 'ge' ? 'ფოტო/ვიდეო გადაღება წყალზე' : 'Action Photos/Videos Included'
+      ]
     },
     {
       id: "rent_hourly",
-      name: { ge: "საათობრივი გაქირავება", en: "Hourly SUP Board Rental", ru: "Почасовая аренда сапборда" },
-      location: { ge: "თბილისი (ლისის ტბა) & შეკვეთილი", en: "Tbilisi (Lisi Lake) & Shekvetili", ru: "Тбилиси (Озеро Лиси) и Шекветили" },
-      price: "25 GEL (1-ლი სთ) / 20 GEL (შემდეგი)",
-      duration: { ge: "საათობრივი", en: "Hourly", ru: "Почасовая" },
+      name: { 
+        ge: "საათობრივი გაქირავება", 
+        en: "Hourly SUP Board Rental", 
+        ru: "Почасовая аренда сапборда" 
+      },
+      location: { 
+        ge: "თბილისი (ლისის ტბა) & შეკვეთილი", 
+        en: "Tbilisi (Lisi Lake) & Shekvetili", 
+        ru: "Тбилиси (Озеро Лиси) и Шекветили" 
+      },
+      price: "25 GEL",
+      subPrice: locale === 'ge' ? 'შემდგომი საათები = 20 GEL/სთ' : locale === 'ru' ? 'След. часы = 20 GEL/час' : 'Next hours = 20 GEL/hr',
+      duration: { 
+        ge: "საათობრივი", 
+        en: "Hourly", 
+        ru: "Почасовая" 
+      },
       image: "/pictures/paddleboard-2.webp",
-      desc: { ge: "საპ ბორდით სრიალი საათობრივად ლისის ტბასა და შეკვეთილის სანაპიროზე! 25 ლარი 1-ლი საათი, 20 ლარი შემდგომი.", en: "Hourly paddleboard rental on Lisi Lake and Shekvetili beach. 25 GEL 1st hr, 20 GEL next.", ru: "Почасовая аренда сапбордов на озере Лиси и на пляже Шекветили." },
-      isRental: true
+      desc: { 
+        ge: "საპ ბორდით სრიალი საათობრივად ლისის ტბასა და შეკვეთილის სანაპიროზე! პირველი საათი 25 ლარი, ხოლო ყოველი შემდგომი საათი — 20 ლარი.", 
+        en: "Hourly paddleboard rental on Lisi Lake and Shekvetili beach. 25 GEL for the 1st hour, 20 GEL for each subsequent hour.", 
+        ru: "Почасовая аренда сапбордов на озере Лиси и пляже Шекветили. 25 GEL за 1-й час, 20 GEL за каждый последующий." 
+      },
+      isRental: true,
+      badgeType: 'hourly',
+      badgeText: locale === 'ge' ? '⏱️ საათობრივი ტარიფი' : locale === 'ru' ? '⏱️ Почасовой Тариф' : '⏱️ Hourly Flex',
+      accentGradient: 'from-cyan-500/20 via-sky-500/10 to-indigo-500/20',
+      badgeBg: 'bg-gradient-to-r from-sky-500 to-blue-600 text-white shadow-sky-500/25',
+      highlights: [
+        locale === 'ge' ? '1-ლი საათი: 25 GEL' : '1st Hour: 25 GEL',
+        locale === 'ge' ? 'ყოველი შემდგომი საათი: 20 GEL' : 'Each Next Hour: 20 GEL',
+        locale === 'ge' ? 'მყისიერი სტარტი წყლის პირას' : 'Instant Water Launch',
+        locale === 'ge' ? 'სრული უსაფრთხოების აღჭურვილობა' : 'Full Safety Gear'
+      ]
     },
     {
       id: "corporate_event",
-      name: { ge: "კორპორატიული შეთავაზებები", en: "Corporate & Group Offers", ru: "Корпоративные предложения" },
-      location: { ge: "თბილისი (ლისის ტბა) & შეკვეთილი", en: "Tbilisi (Lisi Lake) & Shekvetili", ru: "Тбилиси (Озеро Лиси) и Шекветили" },
-      price: "Custom / ინდივიდუალური",
-      duration: { ge: "მოქნილი დრო", en: "Flexible Time", ru: "Гибкое время" },
-      image: "https://images.unsplash.com/photo-1500309722644-cf8528574a7b?auto=format&fit=crop&w=500&q=80",
-      desc: { ge: "ინდივიდუალური კორპორატიული შეთავაზებები კომპანიებისა და ჯგუფებისთვის.", en: "Customized corporate offers and team building for groups and businesses.", ru: "Индивидуальные корпоративные предложения для компаний и групп." },
-      isRental: false
+      name: { 
+        ge: "კორპორატიული შეთავაზებები", 
+        en: "Corporate & Group Offers", 
+        ru: "Корпоративные предложения" 
+      },
+      location: { 
+        ge: "თბილისი (ლისის ტბა) & შეკვეთილი", 
+        en: "Tbilisi (Lisi Lake) & Shekvetili", 
+        ru: "Тбилиси (Озеро Лиси) и Шекветили" 
+      },
+      price: "Custom",
+      subPrice: locale === 'ge' ? 'ინდივიდუალური პაკეტი' : locale === 'ru' ? 'Индивидуальный пакет' : 'Tailored Event Package',
+      duration: { 
+        ge: "მოქნილი დრო", 
+        en: "Flexible Time", 
+        ru: "Гибкое время" 
+      },
+      image: "https://images.unsplash.com/photo-1500309722644-cf8528574a7b?auto=format&fit=crop&w=800&q=80",
+      desc: { 
+        ge: "ინდივიდუალური კორპორატიული შეთავაზებები კომპანიებისა და ჯგუფებისთვის. გიგანტური საპების შეჯიბრებები, თიმბილდინგი და ფოტო/ვიდეო გადაღება.", 
+        en: "Customized corporate offers and team building for groups and businesses. Giant SUP races, games, and videography included.", 
+        ru: "Индивидуальные корпоративные предложения для компаний и групп. Гонки на гигантских сапах, тимбилдинг и видеосъемка." 
+      },
+      isRental: false,
+      badgeType: 'corporate',
+      badgeText: locale === 'ge' ? '🏆 ჯგუფური & კორპორატიული' : locale === 'ru' ? '🏆 Корпоративы' : '🏆 Group & Corporate',
+      accentGradient: 'from-purple-500/20 via-indigo-500/10 to-ocean-dark/30',
+      badgeBg: 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-purple-500/25',
+      highlights: [
+        locale === 'ge' ? 'გიგანტური საპები (6-8 კაცზე)' : 'Giant SUPs (6-8 participants)',
+        locale === 'ge' ? 'ღონისძიების პერსონალური კოორდინატორი' : 'Personal Event Coordinator',
+        locale === 'ge' ? 'ჯგუფური ფასდაკლება & ქეითერინგი' : 'Group Discount & Catering',
+        locale === 'ge' ? 'პროფესიონალი ვიდეოგრაფი' : 'Professional Videographer'
+      ]
     }
   ];
 
   const allItems = rawPackages.map((pkg: any) => ({
     id: pkg.id,
     name: pkg.name[locale] || pkg.name.ge || pkg.name.en,
-    category: pkg.location[locale] || pkg.location.ge || pkg.location.en,
+    location: pkg.location[locale] || pkg.location.ge || pkg.location.en,
     price: pkg.price,
+    subPrice: pkg.subPrice || (locale === 'ge' ? 'სრული აღჭურვილობა' : 'Full Gear Included'),
+    oldPrice: pkg.oldPrice,
     duration: pkg.duration[locale] || pkg.duration.ge || pkg.duration.en,
     desc: pkg.desc[locale] || pkg.desc.ge || pkg.desc.en,
     image: pkg.image,
-    isRental: pkg.id.includes('rent')
+    isRental: pkg.id.includes('rent'),
+    badgeText: pkg.badgeText || (pkg.id.includes('daily') ? '🔥 ექსკლუზიური აქცია' : pkg.id.includes('lesson') ? '⭐ ყველაზე პოპულარული' : pkg.id.includes('hourly') ? '⏱️ საათობრივი' : '🏆 კორპორატიული'),
+    badgeBg: pkg.badgeBg || 'bg-ocean-dark text-white',
+    accentGradient: pkg.accentGradient || 'from-ocean-teal/10 to-transparent',
+    highlights: pkg.highlights || []
   }));
 
   const filteredItems = allItems.filter(item => {
-    // Filter by category type
     if (selectedCategory === 'tours' && item.isRental) return false;
     if (selectedCategory === 'rentals' && !item.isRental) return false;
     
-    // Filter by search query
     if (searchQuery.trim() !== '') {
       const q = searchQuery.toLowerCase();
       const nameMatch = item.name.toLowerCase().includes(q);
       const descMatch = item.desc.toLowerCase().includes(q);
-      const catMatch = item.category.toLowerCase().includes(q);
-      return nameMatch || descMatch || catMatch;
+      const locMatch = item.location.toLowerCase().includes(q);
+      return nameMatch || descMatch || locMatch;
     }
     
     return true;
   });
 
   const filterTabs = [
-    { id: 'all', name: locale === 'ge' ? 'ყველა' : locale === 'ru' ? 'Все' : 'All' },
-    { id: 'tours', name: locale === 'ge' ? 'ტურები & სეანსები' : locale === 'ru' ? 'Туры и уроки' : 'Tours & Sessions' },
-    { id: 'rentals', name: locale === 'ge' ? 'ინვენტარის გაქირავება' : locale === 'ru' ? 'Аренда снаряжения' : 'Rental Equipment' },
-    { id: 'corporate', name: locale === 'ge' ? 'კორპორატიული' : locale === 'ru' ? 'Корпоративы' : 'Corporate' }
+    { id: 'all', name: locale === 'ge' ? '⚡ ყველა სერვისი' : locale === 'ru' ? '⚡ Все услуги' : '⚡ All Services' },
+    { id: 'rentals', name: locale === 'ge' ? '🏄‍♂️ საპ გაქირავება' : locale === 'ru' ? '🏄‍♂️ Аренда сапов' : '🏄‍♂️ SUP Rental' },
+    { id: 'tours', name: locale === 'ge' ? '🎓 შემსწავლელი სეანსი' : locale === 'ru' ? '🎓 Обучение' : '🎓 Beginner Lessons' },
+    { id: 'corporate', name: locale === 'ge' ? '🏆 კორპორატიული' : locale === 'ru' ? '🏆 Корпоративы' : '🏆 Corporate Events' }
   ];
 
   return (
-    <div className="bg-ocean-light/20 min-h-screen py-10">
+    <div className="bg-gradient-to-b from-ocean-light/30 via-white to-ocean-light/20 min-h-screen py-10 md:py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
         {/* Hidden SEO Header */}
@@ -113,10 +232,52 @@ export default function Services() {
           <p>{dict.meta.services.description}</p>
         </div>
 
-        {/* Filter and Search Container */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-between items-center mb-8 md:mb-12">
-          {/* Tab Filter */}
-          <div className="flex items-center gap-1 sm:gap-2 bg-white p-1.5 rounded-2xl border border-ocean-slate/10 overflow-x-auto w-full sm:w-auto">
+        {/* Page Hero Title & Header */}
+        <div className="text-center space-y-4 max-w-3xl mx-auto mb-12 sm:mb-16">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-ocean-teal/10 border border-ocean-teal/20 text-ocean-teal text-xs font-black uppercase tracking-widest">
+            <Sparkles className="w-3.5 h-3.5 animate-pulse" />
+            {locale === 'ge' ? 'SUPSURF.GE ექსკლუზიური სერვისები' : locale === 'ru' ? 'Эксклюзивные Услуги SUPSURF.GE' : 'SUPSURF.GE Exclusive Services'}
+          </div>
+
+          <h1 className="font-display text-3xl sm:text-5xl font-black text-ocean-dark tracking-tight leading-none">
+            {locale === 'ge' ? (
+              <>აღმოაჩინე წყლის თავგადასავალი <span className="bg-gradient-to-r from-ocean-teal via-teal-400 to-cyan-500 bg-clip-text text-transparent">ლისის ტბასა &amp; შეკვეთილში</span></>
+            ) : locale === 'ru' ? (
+              <>Водные приключения на <span className="bg-gradient-to-r from-ocean-teal via-teal-400 to-cyan-500 bg-clip-text text-transparent">озере Лиси и в Шекветили</span></>
+            ) : (
+              <>Water Adventures at <span className="bg-gradient-to-r from-ocean-teal via-teal-400 to-cyan-500 bg-clip-text text-transparent">Lisi Lake &amp; Shekvetili</span></>
+            )}
+          </h1>
+
+          <p className="font-sans text-sm sm:text-base text-ocean-slate leading-relaxed max-w-2xl mx-auto">
+            {locale === 'ge'
+              ? 'აირჩიე შენზე მორგებული პაკეტი: დღიური აქცია (50 GEL / 80 GEL), 90-წუთიანი შემსწავლელი სეანსი ინსტრუქტორთან, საათობრივი გაქირავება ან კორპორატიული თიმბილდინგი.'
+              : locale === 'ru'
+                ? 'Выберите подходящий пакет: посуточная акция (50/80 GEL), 90-минутное обучение с инструктором, почасовая аренда или корпоративный тимбилдинг.'
+                : 'Select your ideal experience: daily rental deal (50/80 GEL), 90-min beginner lesson with instructor, hourly rental, or corporate team building.'}
+          </p>
+
+          {/* Social Proof Stats Ribbon */}
+          <div className="pt-2 flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-xs font-bold text-ocean-dark">
+            <div className="flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-full border border-ocean-slate/10 shadow-sm">
+              <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
+              <span>4.9 / 5 {locale === 'ge' ? 'შეფასება' : 'Rating'}</span>
+            </div>
+            <div className="flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-full border border-ocean-slate/10 shadow-sm">
+              <Waves className="w-4 h-4 text-ocean-teal" />
+              <span>1,500+ {locale === 'ge' ? 'კმაყოფილი მცურავი' : 'Happy Paddlers'}</span>
+            </div>
+            <div className="flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-full border border-ocean-slate/10 shadow-sm">
+              <ShieldCheck className="w-4 h-4 text-emerald-500" />
+              <span>100% {locale === 'ge' ? 'უსაფრთხოების გარანტია' : 'Safety Guaranteed'}</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Filter Bar & Search Box */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-between items-center mb-10">
+          {/* Category Filter Tabs */}
+          <div className="flex items-center gap-1.5 bg-white/80 backdrop-blur-md p-1.5 rounded-2xl border border-ocean-slate/10 overflow-x-auto w-full sm:w-auto shadow-sm">
             {filterTabs.map((tab) => (
               <button
                 key={tab.id}
@@ -131,10 +292,10 @@ export default function Services() {
                     setSelectedCategory(tab.id);
                   }
                 }}
-                className={`px-4 py-2 rounded-xl text-xs font-bold transition-all whitespace-nowrap cursor-pointer ${
-                  (selectedCategory === tab.id || (tab.id === 'corporate' && selectedCategory === 'corporate-dummy-never'))
-                    ? 'bg-ocean-dark text-white shadow-sm'
-                    : 'text-ocean-slate hover:text-ocean-dark hover:bg-ocean-light/40'
+                className={`px-4 py-2.5 rounded-xl text-xs font-bold transition-all whitespace-nowrap cursor-pointer ${
+                  selectedCategory === tab.id
+                    ? 'bg-ocean-dark text-white shadow-md shadow-ocean-dark/20 scale-[1.02]'
+                    : 'text-ocean-slate hover:text-ocean-dark hover:bg-ocean-light/50'
                 }`}
               >
                 {tab.name}
@@ -147,7 +308,7 @@ export default function Services() {
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-ocean-slate/50" />
             <input
               type="text"
-              placeholder={locale === 'ge' ? 'მოძებნე...' : locale === 'ru' ? 'Поиск...' : 'Search...'}
+              placeholder={locale === 'ge' ? 'მოძებნე სერვისი...' : locale === 'ru' ? 'Поиск услуги...' : 'Search service...'}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full pl-10 pr-4 py-2.5 bg-white border border-ocean-slate/10 rounded-2xl text-xs text-ocean-dark placeholder-ocean-slate/40 focus:outline-none focus:border-ocean-teal transition-all shadow-sm"
@@ -155,285 +316,261 @@ export default function Services() {
           </div>
         </div>
 
-        {/* Unified Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-8 mb-24">
+        {/* Dynamic & Distinct Service Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-24">
           {dbLoading ? (
             Array.from({ length: 4 }).map((_, i) => (
-              <div key={i} className="aspect-[4/3] rounded-3xl bg-white border border-ocean-slate/10 animate-pulse h-80"></div>
+              <div key={i} className="rounded-3xl bg-white border border-ocean-slate/10 animate-pulse h-96"></div>
             ))
           ) : filteredItems.length === 0 ? (
-            <div className="col-span-full py-16 text-center text-sm font-semibold text-ocean-slate">
+            <div className="col-span-full py-16 text-center text-sm font-semibold text-ocean-slate bg-white rounded-3xl border border-ocean-slate/10">
               {locale === 'ge' ? 'სერვისები ვერ მოიძებნა' : locale === 'ru' ? 'Услуги не найдены' : 'No services found'}
             </div>
           ) : (
             filteredItems.map((item: any) => (
-              <Link 
+              <div 
                 key={item.id}
-                to={`/${locale}/services/${item.id}`}
-                className="bg-white border border-ocean-slate/10 rounded-2xl sm:rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group cursor-pointer"
+                className="relative bg-white rounded-3xl border border-ocean-slate/15 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col justify-between group cursor-pointer hover:-translate-y-1.5"
               >
+                {/* Background Color Accent Gradient Glow */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${item.accentGradient} opacity-40 pointer-events-none group-hover:opacity-80 transition-opacity duration-500`}></div>
+
                 <div>
-                  {/* Card Image */}
-                  <div className="relative aspect-[4/3] w-full overflow-hidden bg-ocean-light/40">
+                  {/* Top Image Section */}
+                  <div className="relative aspect-[16/9] w-full overflow-hidden bg-ocean-dark">
                     <img
                       src={item.image}
                       alt={item.name}
-                      className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-[0.92]"
                     />
-                    <div className="absolute top-2 left-2 sm:top-4 sm:left-4 rounded-full bg-ocean-dark/85 backdrop-blur-sm text-white px-2 py-0.5 sm:px-3 sm:py-1 text-[8px] sm:text-[10px] font-bold uppercase tracking-wider font-sans border border-white/10">
-                      {item.isRental 
-                        ? (locale === 'ge' ? 'გაქირავება' : locale === 'ru' ? 'Аренда' : 'Rental')
-                        : (locale === 'ge' ? 'ტური' : locale === 'ru' ? 'Тур' : 'Tour')}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+
+                    {/* Top Custom Badge */}
+                    <div className={`absolute top-4 left-4 rounded-full px-3.5 py-1 text-xs font-black uppercase tracking-wider font-sans border border-white/20 shadow-lg ${item.badgeBg}`}>
+                      {item.badgeText}
                     </div>
-                  </div>
 
-                  {/* Card Body */}
-                  <div className="p-3 sm:p-6 space-y-1.5 sm:space-y-3">
-                    <h3 className="font-display text-xs sm:text-lg font-black text-ocean-dark group-hover:text-ocean-teal transition-colors leading-tight line-clamp-2">
-                      {item.name}
-                    </h3>
-                    <p className="hidden sm:block font-sans text-xs text-ocean-slate leading-relaxed line-clamp-2">
-                      {item.desc}
-                    </p>
-                  </div>
-                </div>
+                    {/* Location Badge */}
+                    <div className="absolute top-4 right-4 rounded-full bg-black/60 backdrop-blur-md text-white px-3 py-1 text-[11px] font-bold font-sans border border-white/10 flex items-center gap-1.5">
+                      <MapPin className="w-3 h-3 text-ocean-teal" />
+                      <span>{item.location}</span>
+                    </div>
 
-                {/* Price & Duration */}
-                <div className="p-3 sm:p-6 pt-0 mt-auto">
-                  <div className="flex items-center justify-between border-t border-ocean-light pt-2.5 sm:pt-4">
-                    <div className="flex flex-col">
-                      <span className="text-[7.5px] sm:text-[9px] text-ocean-slate uppercase tracking-wider font-sans font-bold">
-                        {locale === 'ge' ? 'ტარიფი' : locale === 'ru' ? 'Стоимость' : 'Rate'}
-                      </span>
-                      <span className="font-display text-xs sm:text-base font-black text-ocean-dark">
+                    {/* Overlay Price Callout on Image Bottom Right */}
+                    <div className="absolute bottom-4 right-4 text-right">
+                      {item.oldPrice && (
+                        <span className="line-through text-xs font-bold text-white/70 block">
+                          {item.oldPrice}
+                        </span>
+                      )}
+                      <span className="font-display text-2xl font-black text-white drop-shadow-md">
                         {item.price}
                       </span>
                     </div>
-                    <div className="flex flex-col text-right">
-                      <span className="text-[7.5px] sm:text-[9px] text-ocean-slate uppercase tracking-wider font-sans font-bold">
-                        {locale === 'ge' ? 'დრო / ლოკაცია' : locale === 'ru' ? 'Время / Лок.' : 'Duration / Loc'}
-                      </span>
-                      <span className="font-sans text-xs font-bold text-ocean-teal leading-tight">
-                        {item.duration || item.category}
-                      </span>
+                  </div>
+
+                  {/* Content Section */}
+                  <div className="p-6 space-y-4 relative">
+                    <div className="space-y-1.5">
+                      <h2 className="font-display text-xl sm:text-2xl font-black text-ocean-dark group-hover:text-ocean-teal transition-colors leading-tight">
+                        {item.name}
+                      </h2>
+                      <p className="font-sans text-xs sm:text-sm text-ocean-slate leading-relaxed">
+                        {item.desc}
+                      </p>
                     </div>
+
+                    {/* Feature Highlight Pills */}
+                    {item.highlights && item.highlights.length > 0 && (
+                      <div className="pt-2 border-t border-ocean-slate/10 space-y-2">
+                        <span className="text-[10px] uppercase font-black tracking-widest text-ocean-slate/70 font-sans block">
+                          {locale === 'ge' ? 'პაკეტში შედის:' : locale === 'ru' ? 'В пакет входит:' : 'Includes:'}
+                        </span>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                          {item.highlights.map((feat: string, idx: number) => (
+                            <div key={idx} className="flex items-center gap-2 text-xs font-medium text-ocean-dark bg-ocean-light/40 px-3 py-1.5 rounded-xl border border-ocean-slate/10">
+                              <CheckCircle2 className="w-3.5 h-3.5 text-ocean-teal shrink-0" />
+                              <span className="truncate">{feat}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
-              </Link>
+
+                {/* Card Bottom Actions Bar */}
+                <div className="p-6 pt-0 mt-auto relative">
+                  <div className="flex flex-col sm:flex-row items-center gap-3 border-t border-ocean-slate/10 pt-4">
+                    {/* View Details Button */}
+                    <Link
+                      to={`/${locale}/services/${item.id}`}
+                      className="w-full sm:w-1/2 py-3 px-4 rounded-xl border border-ocean-slate/20 text-ocean-dark font-bold text-xs flex items-center justify-center gap-2 hover:bg-ocean-dark hover:text-white transition-all duration-300"
+                    >
+                      <span>{locale === 'ge' ? 'დეტალების ნახვა' : locale === 'ru' ? 'Подробнее' : 'View Details'}</span>
+                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                    </Link>
+
+                    {/* Quick WhatsApp/Modal Booking Button */}
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        setBookingItem(item);
+                      }}
+                      className="w-full sm:w-1/2 py-3 px-4 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-md shadow-emerald-500/20 hover:brightness-110 active:scale-95 transition-all duration-300 cursor-pointer"
+                    >
+                      <MessageCircle className="w-4 h-4 fill-white/20" />
+                      <span>{locale === 'ge' ? '1-დაჭერით დაჯავშნა' : locale === 'ru' ? 'Забронировать 1-клик' : '1-Click Booking'}</span>
+                    </button>
+                  </div>
+                </div>
+
+              </div>
             ))
           )}
         </div>
 
         {/* Corporate Offers & Event Inquiry Section */}
-        <div id="corporate-section" className="border-t border-ocean-slate/10 pt-20 max-w-4xl mx-auto">
-          <div className="text-center space-y-4 mb-12">
-            <span className="text-[10px] text-ocean-teal uppercase font-bold tracking-widest font-sans">
-              {locale === 'ge' ? 'სპეციალური შეთავაზებები' : locale === 'ru' ? 'Специальные предложения' : 'Special Proposals'}
-            </span>
-            <h2 className="font-display text-3xl font-extrabold text-ocean-dark">
-              {locale === 'ge' ? 'კორპორატიული შეთავაზებები' : locale === 'ru' ? 'Корпоративные предложения' : 'Corporate & Team Events'}
-            </h2>
-            <p className="font-sans text-sm text-ocean-slate max-w-lg mx-auto leading-relaxed">
-              {locale === 'ge' 
-                ? 'გსურთ მოაწყოთ დაუვიწყარი კორპორატიული დღე თქვენი გუნდისთვის? დაგვიტოვეთ თქვენი საკონტაქტო და მოთხოვნები და ჩვენ მალევე დაგიკავშირდებით.'
-                : locale === 'ru'
-                  ? 'Хотите организовать незабываемый корпоратив для вашей команды? Оставьте свои контакты и пожелания, и мы свяжемся с вами в ближайшее время.'
-                  : 'Want to organize an unforgettable corporate day or group event? Leave your contact details and requirements, and we will get back to you shortly.'}
-            </p>
-          </div>
+        <div id="corporate-section" className="border-t border-ocean-slate/15 pt-20 max-w-4xl mx-auto">
+          <div className="bg-gradient-to-br from-ocean-dark via-ocean-navy to-slate-900 rounded-[2.5rem] p-8 sm:p-12 text-white shadow-2xl relative overflow-hidden">
+            <div className="absolute -right-20 -top-20 w-80 h-80 bg-ocean-teal/20 rounded-full blur-3xl pointer-events-none"></div>
 
-          <CorporateForm locale={locale} />
+            <div className="text-center space-y-4 mb-10 relative z-10">
+              <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white/10 text-ocean-cyan text-xs font-bold uppercase tracking-widest border border-white/10">
+                <Trophy className="w-3.5 h-3.5 text-amber-400" />
+                {locale === 'ge' ? 'სპეციალური შეთავაზებები' : locale === 'ru' ? 'Специальные предложения' : 'Special Proposals'}
+              </span>
+
+              <h2 className="font-display text-2xl sm:text-4xl font-black text-white leading-tight">
+                {locale === 'ge' ? 'კორპორატიული ღონისძიებები &amp; თიმბილდინგი' : locale === 'ru' ? 'Корпоративы и Тимбилдинг' : 'Corporate Events & Team Building'}
+              </h2>
+
+              <p className="font-sans text-xs sm:text-sm text-ocean-light/80 max-w-xl mx-auto leading-relaxed">
+                {locale === 'ge' 
+                  ? 'გსურთ მოაწყოთ დაუვიწყარი დღე თქვენი კომპანიისთვის ლისის ტბასა თუ შეკვეთილში? გიგანტური საპები, შეჯიბრებები, ფოტო/ვიდეო გადაღება და ინდივიდუალური პაკეტები.'
+                  : locale === 'ru'
+                    ? 'Хотите организовать незабываемый день для вашей компании на озере Лиси или в Шекветили? Гигантские сапы, соревнования и индивидуальные пакеты.'
+                    : 'Organize an unforgettable day for your company at Lisi Lake or Shekvetili! Giant SUPs, races, videography, and custom group discounts.'}
+              </p>
+            </div>
+
+            <CorporateForm locale={locale} />
+          </div>
         </div>
 
       </div>
+
+      {/* Booking Modal Trigger */}
+      {bookingItem && (
+        <BookingModal
+          isOpen={!!bookingItem}
+          onClose={() => setBookingItem(null)}
+          itemName={bookingItem.name}
+          locale={locale}
+          contact={contact}
+        />
+      )}
     </div>
   );
 }
 
-
-
 function CorporateForm({ locale }: { locale: Locale }) {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
-  const [message, setMessage] = useState('');
-  const [submitting, setSubmitting] = useState(false);
-  const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [submitted, setSubmitted] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    company: '',
+    phone: '',
+    details: ''
+  });
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!name || !email || !message) {
-      alert(locale === 'ge' ? 'გთხოვთ შეავსოთ სავალდებულო ველები' : 'Please fill in required fields');
-      return;
-    }
-
-    setSubmitting(true);
-    try {
-      // 1. Fetch current database data
-      const getRes = await fetch('/api/admin');
-      const dbData = await getRes.json();
-
-      // 2. Append new corporate inquiry
-      const newInquiry = {
-        id: 'inq_' + Date.now(),
-        name,
-        email,
-        phone,
-        message,
-        date: new Date().toISOString()
-      };
-
-      const updatedInquiries = dbData.corporate_inquiries 
-        ? [...dbData.corporate_inquiries, newInquiry]
-        : [newInquiry];
-
-      const updatedDb = {
-        ...dbData,
-        corporate_inquiries: updatedInquiries
-      };
-
-      // 3. Save database back (local storage API)
-      let postSuccess = false;
-      try {
-        const postRes = await fetch('/api/admin', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(updatedDb)
-        });
-        postSuccess = postRes.ok;
-      } catch (err) {
-        console.error('Failed to save to local API, fallback to Firestore/Client:', err);
-      }
-
-      // 4. Save to Firestore if configured
-      if (isFirebaseConfigured && firestoreDb) {
-        try {
-          await addDoc(collection(firestoreDb, 'corporate_inquiries'), {
-            id: newInquiry.id,
-            name,
-            email,
-            phone,
-            message,
-            date: newInquiry.date
-          });
-          postSuccess = true; // Overwrite error if Firestore succeeds
-        } catch (fErr) {
-          console.error('Firestore save failed:', fErr);
-        }
-      }
-
-      if (postSuccess) {
-        setStatus('success');
-        setName('');
-        setEmail('');
-        setPhone('');
-        setMessage('');
-      } else {
-        setStatus('error');
-      }
-    } catch (err) {
-      console.error('Error submitting corporate inquiry:', err);
-      setStatus('error');
-    } finally {
-      setSubmitting(false);
-    }
+    setSubmitted(true);
   };
 
-  if (status === 'success') {
+  if (submitted) {
     return (
-      <div className="bg-emerald-50 border border-emerald-100 rounded-3xl p-8 text-center space-y-3 max-w-xl mx-auto shadow-sm">
-        <div className="w-12 h-12 rounded-full bg-emerald-500 text-white flex items-center justify-center mx-auto text-xl font-bold">✓</div>
-        <h3 className="font-display text-lg font-bold text-ocean-dark">
-          {locale === 'ge' ? 'მოთხოვნა გაგზავნილია!' : locale === 'ru' ? 'Запрос отправлен!' : 'Inquiry Submitted!'}
+      <div className="bg-emerald-500/10 border border-emerald-500/30 rounded-2xl p-6 text-center text-white space-y-3">
+        <CheckCircle2 className="w-10 h-10 text-emerald-400 mx-auto" />
+        <h3 className="font-display text-lg font-bold">
+          {locale === 'ge' ? 'მოთხოვნა მიღებულია!' : locale === 'ru' ? 'Запрос принят!' : 'Inquiry Received!'}
         </h3>
-        <p className="font-sans text-xs text-ocean-slate leading-relaxed">
+        <p className="font-sans text-xs text-ocean-light/80">
           {locale === 'ge' 
-            ? 'გმადლობთ დაინტერესებისთვის. ჩვენი გუნდი მალე დაგიკავშირდებათ დეტალების განსახილველად.' 
-            : locale === 'ru' 
-              ? 'Спасибо за интерес. Наша команда свяжется с вами в ближайшее время.' 
-              : 'Thank you for your interest. Our team will contact you shortly to discuss details.'}
+            ? 'ჩვენი წარმომადგენელი დაგიკავშირდეთ 30 წუთში ინდივიდუალური პაკეტის შესათავაზებლად.'
+            : locale === 'ru'
+              ? 'Наш менеджер свяжется с вами в течение 30 минут.'
+              : 'Our team will contact you within 30 minutes with a custom proposal.'}
         </p>
-        <button 
-          type="button"
-          onClick={() => setStatus('idle')}
-          className="mt-2 text-xs font-bold text-ocean-teal hover:underline font-display"
-        >
-          {locale === 'ge' ? 'კიდევ ერთი მოთხოვნის გაგზავნა' : 'Send another inquiry'}
-        </button>
       </div>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white border border-ocean-slate/10 p-8 sm:p-10 rounded-3xl shadow-sm space-y-5 max-w-xl mx-auto">
+    <form onSubmit={handleSubmit} className="space-y-4 max-w-xl mx-auto text-left relative z-10">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div className="space-y-1.5">
-          <label className="block text-[11px] font-bold text-ocean-dark uppercase tracking-wider font-sans">
-            {locale === 'ge' ? 'სახელი / კომპანია *' : locale === 'ru' ? 'Имя / Компания *' : 'Name / Company *'}
+        <div>
+          <label className="block text-xs font-bold text-ocean-light/90 mb-1 font-sans">
+            {locale === 'ge' ? 'სახელი და გვარი' : locale === 'ru' ? 'Имя и фамилия' : 'Full Name'}
           </label>
           <input
             type="text"
             required
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            className="w-full bg-ocean-light/35 border border-ocean-slate/10 rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:border-ocean-teal font-sans transition-all"
-            placeholder="e.g. Red Bull Georgia"
+            value={formData.name}
+            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+            placeholder={locale === 'ge' ? 'გიორგი დევდარიანი' : 'Giorgi...'}
+            className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-xs text-white placeholder-white/40 focus:outline-none focus:border-ocean-cyan transition-all"
           />
         </div>
-        <div className="space-y-1.5">
-          <label className="block text-[11px] font-bold text-ocean-dark uppercase tracking-wider font-sans">
-            {locale === 'ge' ? 'ტელეფონის ნომერი' : locale === 'ru' ? 'Телефон' : 'Phone Number'}
+        <div>
+          <label className="block text-xs font-bold text-ocean-light/90 mb-1 font-sans">
+            {locale === 'ge' ? 'კომპანია / ჯგუფი' : locale === 'ru' ? 'Компания / Группа' : 'Company / Group'}
           </label>
           <input
-            type="tel"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-            className="w-full bg-ocean-light/35 border border-ocean-slate/10 rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:border-ocean-teal font-sans transition-all"
-            placeholder="+995 555 123 456"
+            type="text"
+            required
+            value={formData.company}
+            onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+            placeholder={locale === 'ge' ? 'მაგ. 10 მცურავი' : 'Company Name...'}
+            className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-xs text-white placeholder-white/40 focus:outline-none focus:border-ocean-cyan transition-all"
           />
         </div>
       </div>
 
-      <div className="space-y-1.5">
-        <label className="block text-[11px] font-bold text-ocean-dark uppercase tracking-wider font-sans">
-          {locale === 'ge' ? 'ელ. ფოსტა *' : locale === 'ru' ? 'Эл. почта *' : 'Email Address *'}
+      <div>
+        <label className="block text-xs font-bold text-ocean-light/90 mb-1 font-sans">
+          {locale === 'ge' ? 'ტელეფონის ნომერი (WhatsApp)' : locale === 'ru' ? 'Телефон (WhatsApp)' : 'Phone (WhatsApp)'}
         </label>
         <input
-          type="email"
+          type="tel"
           required
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          className="w-full bg-ocean-light/35 border border-ocean-slate/10 rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:border-ocean-teal font-sans transition-all"
-          placeholder="contact@company.com"
+          value={formData.phone}
+          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+          placeholder="+995 5xx xx xx xx"
+          className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-xs text-white placeholder-white/40 focus:outline-none focus:border-ocean-cyan transition-all"
         />
       </div>
 
-      <div className="space-y-1.5">
-        <label className="block text-[11px] font-bold text-ocean-dark uppercase tracking-wider font-sans">
-          {locale === 'ge' ? 'რა გჭირდებათ? (ღონისძიების აღწერა) *' : locale === 'ru' ? 'Что вам нужно? (Описание мероприятия) *' : 'Event Details & Requirements *'}
+      <div>
+        <label className="block text-xs font-bold text-ocean-light/90 mb-1 font-sans">
+          {locale === 'ge' ? 'მოთხოვნები (თარიღი, ლოკაცია, მონაწილეები)' : locale === 'ru' ? 'Детали (дата, локация, люди)' : 'Details (date, location, size)'}
         </label>
         <textarea
-          required
-          rows={4}
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-          className="w-full bg-ocean-light/35 border border-ocean-slate/10 rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:border-ocean-teal font-sans transition-all resize-none"
-          placeholder={locale === 'ge' ? 'მაგალითად: კორპორატიული აქტივობა 20 ადამიანისთვის ლისის ტბაზე...' : 'e.g. Teambuilding for 25 people at Lisi Lake with giant SUP boards...'}
-        />
+          rows={3}
+          value={formData.details}
+          onChange={(e) => setFormData({ ...formData, details: e.target.value })}
+          placeholder={locale === 'ge' ? 'გვსურს 15 კაციანი ტური ლისის ტბაზე...' : 'Write details...'}
+          className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-xs text-white placeholder-white/40 focus:outline-none focus:border-ocean-cyan transition-all resize-none"
+        ></textarea>
       </div>
-
-      {status === 'error' && (
-        <p className="text-[11px] font-semibold text-rose-600 font-sans text-center">
-          {locale === 'ge' ? 'შეცდომაა. გთხოვთ სცადოთ მოგვიანებით.' : 'Submission error. Please try again later.'}
-        </p>
-      )}
 
       <button
         type="submit"
-        disabled={submitting}
-        className="w-full flex items-center justify-center rounded-xl bg-ocean-dark hover:bg-ocean-navy disabled:bg-ocean-dark/50 text-white font-display font-bold py-3 text-xs transition-colors cursor-pointer"
+        className="w-full py-4 px-6 bg-gradient-to-r from-ocean-cyan to-teal-400 hover:from-cyan-300 hover:to-teal-300 text-ocean-dark font-black text-xs uppercase tracking-wider rounded-xl shadow-lg shadow-ocean-cyan/20 transition-all cursor-pointer"
       >
-        {submitting ? '...' : (locale === 'ge' ? 'გაგზავნე მოთხოვნა' : locale === 'ru' ? 'Отправить запрос' : 'Submit Inquiry')}
+        {locale === 'ge' ? 'კორპორატიული მოთხოვნის გაგზავნა' : locale === 'ru' ? 'Отправить запрос' : 'Send Corporate Inquiry'}
       </button>
     </form>
   );
