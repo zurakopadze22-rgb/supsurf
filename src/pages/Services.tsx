@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { useOutletContext } from 'react-router-dom';
-import { Sparkles, Clock, Star, Flame, Trophy, CheckCircle2, ShieldCheck, Waves, MessageCircle, Touchpad, ArrowUpRight } from 'lucide-react';
+import { useOutletContext, Link } from 'react-router-dom';
+import { Sparkles, Clock, Star, Flame, Trophy, CheckCircle2, ShieldCheck, Waves, MessageCircle, ArrowRight } from 'lucide-react';
 import type { Locale } from '@/lib/get-dictionary';
 import BookingModal from '@/components/BookingModal';
 
@@ -54,7 +54,7 @@ export default function Services() {
     duration: locale === 'ge' ? "საათობრივი" : "Hourly",
     image: "/pictures/paddleboard-2.webp",
     desc: locale === 'ge' 
-      ? "საპ ბორდით სრიალი საათობრივად! პირველი საათი 25 ლარი, ხოლო ყოველი შემდგომი საათი — 20 ლარი." 
+      ? "საპ ბორდით სრიალი საათობრივად! პირველი საათი 25 ლარი, ხოლო ყოველ შემდგომ საათზე — 20 ლარი." 
       : "Hourly paddleboard rental. 25 GEL 1st hour, 20 GEL for each next hour.",
     badgeText: locale === 'ge' ? '⏱️ საათობრივი ტარიფი' : '⏱️ Hourly Flex',
     highlights: [
@@ -129,9 +129,9 @@ export default function Services() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
             
             {/* Card 1: Daily Rental Promo */}
-            <div 
-              onClick={() => setBookingItem(dailyRentalItem)}
-              className="group relative bg-gradient-to-br from-amber-500/10 via-white to-orange-500/5 rounded-3xl sm:rounded-[2.5rem] border-2 border-amber-500/30 p-4 sm:p-7 shadow-md hover:shadow-xl hover:border-amber-500 transition-all duration-300 cursor-pointer flex flex-col justify-between overflow-hidden hover:-translate-y-1"
+            <Link
+              to={`/${locale}/services/${dailyRentalItem.id}`}
+              className="group relative bg-gradient-to-br from-amber-500/10 via-white to-orange-500/5 rounded-3xl sm:rounded-[2.5rem] border-2 border-amber-500/30 p-4 sm:p-7 shadow-md hover:shadow-xl hover:border-amber-500 transition-all duration-300 flex flex-col justify-between overflow-hidden hover:-translate-y-1 cursor-pointer"
             >
               <div>
                 {/* Top Badge */}
@@ -188,16 +188,16 @@ export default function Services() {
                 </div>
 
                 <div className="py-2 px-4 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 text-white font-black text-[11px] sm:text-xs uppercase tracking-wider flex items-center gap-1.5 shadow-md group-hover:brightness-110 transition-all shrink-0">
-                  <MessageCircle className="w-3.5 h-3.5 fill-white/20" />
-                  <span>{locale === 'ge' ? 'დააკლიკეთ დასაჯავშნად' : 'Click to Book'}</span>
+                  <span>{locale === 'ge' ? 'დეტალები & დაჯავშნა' : 'Details & Book'}</span>
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
                 </div>
               </div>
-            </div>
+            </Link>
 
             {/* Card 2: Hourly Rental */}
-            <div 
-              onClick={() => setBookingItem(hourlyRentalItem)}
-              className="group relative bg-gradient-to-br from-sky-500/10 via-white to-blue-500/5 rounded-3xl sm:rounded-[2.5rem] border-2 border-sky-500/30 p-4 sm:p-7 shadow-md hover:shadow-xl hover:border-sky-500 transition-all duration-300 cursor-pointer flex flex-col justify-between overflow-hidden hover:-translate-y-1"
+            <Link
+              to={`/${locale}/services/${hourlyRentalItem.id}`}
+              className="group relative bg-gradient-to-br from-sky-500/10 via-white to-blue-500/5 rounded-3xl sm:rounded-[2.5rem] border-2 border-sky-500/30 p-4 sm:p-7 shadow-md hover:shadow-xl hover:border-sky-500 transition-all duration-300 flex flex-col justify-between overflow-hidden hover:-translate-y-1 cursor-pointer"
             >
               <div>
                 {/* Top Badge */}
@@ -253,11 +253,11 @@ export default function Services() {
                 </div>
 
                 <div className="py-2 px-4 rounded-xl bg-gradient-to-r from-sky-500 to-blue-600 text-white font-black text-[11px] sm:text-xs uppercase tracking-wider flex items-center gap-1.5 shadow-md group-hover:brightness-110 transition-all shrink-0">
-                  <MessageCircle className="w-3.5 h-3.5 fill-white/20" />
-                  <span>{locale === 'ge' ? 'დააკლიკეთ დასაჯავშნად' : 'Click to Book'}</span>
+                  <span>{locale === 'ge' ? 'დეტალები & დაჯავშნა' : 'Details & Book'}</span>
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
                 </div>
               </div>
-            </div>
+            </Link>
 
           </div>
         </section>
@@ -275,9 +275,9 @@ export default function Services() {
           </div>
 
           {/* Compact Beginner Lesson Card */}
-          <div 
-            onClick={() => setBookingItem(beginnerLessonItem)}
-            className="group relative bg-gradient-to-br from-emerald-500/10 via-white to-teal-500/10 rounded-3xl sm:rounded-[2.5rem] border-2 border-emerald-500/30 p-4 sm:p-7 shadow-md hover:shadow-xl hover:border-emerald-500 transition-all duration-300 cursor-pointer overflow-hidden hover:-translate-y-1"
+          <Link
+            to={`/${locale}/services/${beginnerLessonItem.id}`}
+            className="group relative bg-gradient-to-br from-emerald-500/10 via-white to-teal-500/10 rounded-3xl sm:rounded-[2.5rem] border-2 border-emerald-500/30 p-4 sm:p-7 shadow-md hover:shadow-xl hover:border-emerald-500 transition-all duration-300 cursor-pointer overflow-hidden hover:-translate-y-1 block"
           >
             <div className="flex items-center justify-between gap-2 mb-3 sm:mb-4">
               <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-gradient-to-r from-emerald-500 to-teal-600 text-white text-[10px] sm:text-xs font-black uppercase tracking-wider shadow-xs">
@@ -328,11 +328,11 @@ export default function Services() {
               </div>
 
               <div className="py-2 px-4 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-black text-[11px] sm:text-xs uppercase tracking-wider flex items-center gap-1.5 shadow-md group-hover:brightness-110 transition-all shrink-0">
-                <MessageCircle className="w-3.5 h-3.5 fill-white/20" />
-                <span>{locale === 'ge' ? 'დააკლიკეთ დასაჯავშნად' : 'Click to Book'}</span>
+                <span>{locale === 'ge' ? 'დეტალები & დაჯავშნა' : 'Details & Book'}</span>
+                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
               </div>
             </div>
-          </div>
+          </Link>
         </section>
 
         {/* SECTION 3: 🏆 კორპორატიული შეთავაზებები (Corporate Section) */}
