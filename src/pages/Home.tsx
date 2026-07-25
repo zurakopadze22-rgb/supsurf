@@ -462,12 +462,17 @@ export default function Home() {
                     }}
                     className="w-full block p-3 rounded-2xl bg-gradient-to-br from-white to-ocean-light/50 border border-ocean-teal/20 backdrop-blur-md shadow-lg text-left hover:scale-[1.01] active:scale-[0.99] transition-all cursor-pointer"
                   >
-                    <div className="flex items-center justify-between border-b border-ocean-slate/10 pb-2 mb-3">
-                      <span className="font-display text-xs font-black uppercase text-ocean-teal tracking-wider">
-                        ☀️ {labels.summerSale}
-                      </span>
-                      <span className="inline-flex items-center rounded-full bg-emerald-500/10 px-2 py-0.5 text-[8px] font-black text-emerald-600 border border-emerald-500/20">
-                        SALE
+                    <div className="border-b border-ocean-slate/10 pb-2 mb-3">
+                      <div className="flex items-center justify-between">
+                        <span className="font-display text-xs font-black uppercase text-ocean-teal tracking-wider">
+                          ☀️ {labels.summerSale}
+                        </span>
+                        <span className="inline-flex items-center rounded-full bg-emerald-500/10 px-2 py-0.5 text-[8px] font-black text-emerald-600 border border-emerald-500/20">
+                          SALE
+                        </span>
+                      </div>
+                      <span className="block font-sans text-[10px] font-bold text-ocean-dark/80 mt-1">
+                        {locale === 'ge' ? 'იქირავე სრული აღჭურვილობა' : locale === 'ru' ? 'Аренда полного комплекта' : 'Rent Full Adventure Equipment'}
                       </span>
                     </div>
 
@@ -527,12 +532,17 @@ export default function Home() {
                 className="w-full max-w-[390px] rounded-3xl p-5 sm:p-6 md:p-8 shadow-xl border border-ocean-slate/15 flex flex-col justify-between transform hover:scale-[1.01] transition-transform duration-300 relative overflow-hidden bg-gradient-to-br from-white via-white to-ocean-light/50 min-h-[340px] sm:min-h-[385px] md:min-h-[420px]"
               >
                 <div className="relative z-10 space-y-4 sm:space-y-6 flex-1 flex flex-col justify-between">
-                  <div className="flex items-center justify-between border-b border-ocean-slate/10 pb-2.5 sm:pb-3">
-                    <span className="font-display text-sm sm:text-base font-extrabold tracking-wide uppercase text-ocean-teal">
-                      {labels.summerSale}
-                    </span>
-                    <span className="inline-flex items-center rounded-full bg-emerald-500/10 px-2.5 py-0.5 sm:px-3 sm:py-1 text-[10px] sm:text-xs font-bold text-emerald-600 border border-emerald-500/20">
-                      SALE
+                  <div className="border-b border-ocean-slate/10 pb-2.5 sm:pb-3">
+                    <div className="flex items-center justify-between">
+                      <span className="font-display text-sm sm:text-base font-extrabold tracking-wide uppercase text-ocean-teal">
+                        {labels.summerSale}
+                      </span>
+                      <span className="inline-flex items-center rounded-full bg-emerald-500/10 px-2.5 py-0.5 sm:px-3 sm:py-1 text-[10px] sm:text-xs font-bold text-emerald-600 border border-emerald-500/20">
+                        SALE
+                      </span>
+                    </div>
+                    <span className="block font-sans text-xs font-bold text-ocean-dark/80 mt-1">
+                      {locale === 'ge' ? 'იქირავე სრული აღჭურვილობა' : locale === 'ru' ? 'Аренда полного комплекта' : 'Rent Full Adventure Equipment'}
                     </span>
                   </div>
 
