@@ -479,7 +479,6 @@ export default function Home() {
                           <span className="font-display text-2xl font-black text-blue-600">50₾</span>
                           <span className="font-display text-xs text-red-500 font-bold line-through">70₾</span>
                         </div>
-                        <span className="block font-sans text-[8px] text-emerald-600 font-bold mt-0.5">{labels.insteadOfLight1}</span>
                       </div>
 
                       {/* 2 Days Option */}
@@ -492,7 +491,6 @@ export default function Home() {
                           <span className="font-display text-2xl font-black text-blue-600">80₾</span>
                           <span className="font-display text-xs text-red-500 font-bold line-through">100₾</span>
                         </div>
-                        <span className="block font-sans text-[8px] text-ocean-teal font-bold mt-0.5">{labels.insteadOfLight2}</span>
                       </div>
                     </div>
 
@@ -550,7 +548,6 @@ export default function Home() {
                           <span className="font-display text-3xl font-black text-blue-600">50₾</span>
                           <span className="font-display text-sm text-red-500 font-bold line-through">70₾</span>
                         </div>
-                        <span className="block font-sans text-[9px] font-bold text-emerald-600">{labels.insteadOfLight1}</span>
                       </div>
                     </div>
 
@@ -572,7 +569,6 @@ export default function Home() {
                           <span className="font-display text-3xl font-black text-blue-600">80₾</span>
                           <span className="font-display text-sm text-red-500 font-bold line-through">100₾</span>
                         </div>
-                        <span className="block font-sans text-[9px] font-bold text-ocean-teal">{labels.insteadOfLight2}</span>
                       </div>
                     </div>
                   </div>
