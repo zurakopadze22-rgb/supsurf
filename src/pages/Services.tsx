@@ -50,7 +50,7 @@ export default function Services() {
     id: "rent_hourly",
     name: locale === 'ge' ? "საათობრივი გაქირავება" : locale === 'ru' ? "Почасовая аренда" : "Hourly SUP Rental",
     price: "25 GEL",
-    subPrice: locale === 'ge' ? 'ყოფილი შემდგომი საათი = 20 GEL/სთ' : locale === 'ru' ? 'След. часы = 20 GEL/час' : 'Next hours = 20 GEL/hr',
+    subPrice: locale === 'ge' ? 'ყოველი შემდგომი საათი = 20 GEL/სთ' : locale === 'ru' ? 'След. часы = 20 GEL/час' : 'Next hours = 20 GEL/hr',
     duration: locale === 'ge' ? "საათობრივი" : "Hourly",
     image: "/pictures/paddleboard-2.webp",
     desc: locale === 'ge' 
@@ -59,7 +59,7 @@ export default function Services() {
     badgeText: locale === 'ge' ? '⏱️ საათობრივი ტარიფი' : '⏱️ Hourly Flex',
     highlights: [
       locale === 'ge' ? '1-ლი საათი: 25 GEL' : '1st Hour: 25 GEL',
-      locale === 'ge' ? 'ყოფილი შემდგომი საათი: 20 GEL' : 'Each Next Hour: 20 GEL',
+      locale === 'ge' ? 'ყოველი შემდგომი საათი: 20 GEL' : 'Each Next Hour: 20 GEL',
       locale === 'ge' ? 'მყისიერი სტარტი წყლის პირას' : 'Instant Water Launch',
       locale === 'ge' ? 'სრული უსაფრთხოების აღჭურვილობა' : 'Full Safety Gear'
     ]
