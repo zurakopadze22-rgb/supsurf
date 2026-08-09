@@ -99,6 +99,7 @@ export default function Admin() {
 
   // Save changes to disk
   const saveChanges = async (updatedData: DBData) => {
+    setDbData(updatedData);
     setSaveStatus('saving');
     try {
       const res = await fetch('/api/admin', {
@@ -107,7 +108,6 @@ export default function Admin() {
         body: JSON.stringify(updatedData),
       });
       if (!res.ok) throw new Error('Failed to save data');
-      setDbData(updatedData);
       setSaveStatus('saved');
       setTimeout(() => setSaveStatus('idle'), 3000);
     } catch (err) {
@@ -739,8 +739,9 @@ export default function Admin() {
                     };
                     const updated = {
                       ...dbData,
-                      services: [...dbData.services, newService]
+                      services: [newService, ...dbData.services]
                     };
+                    setDbData(updated);
                     setEditingServiceId(newId);
                     saveChanges(updated);
                   }}
@@ -1161,7 +1162,7 @@ export default function Admin() {
                     const newId = `product_${Date.now()}`;
                     const newProd = {
                       id: newId,
-                      name: { en: 'Carbon Paddle Model X', ge: 'კარბონის ნიჩაბი X', ru: 'Карбоновое весло X' },
+                      name: { en: 'New Product', ge: 'ახალი პროდუქტი', ru: 'Новый товар' },
                       category: { en: 'Accessories', ge: 'აქსესუარები', ru: 'Аксессуары' },
                       condition: { en: 'New', ge: 'ახალი', ru: 'Новый' },
                       price: '300 GEL',
@@ -1171,8 +1172,9 @@ export default function Admin() {
                     };
                     const updated = {
                       ...dbData,
-                      products: [...dbData.products, newProd]
+                      products: [newProd, ...dbData.products]
                     };
+                    setDbData(updated);
                     setEditingProductId(newId);
                     saveChanges(updated);
                   }}

@@ -1,9 +1,25 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
+import { createRequire } from 'module';
+
+const require = createRequire(import.meta.url);
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    {
+      name: 'express-api-server',
+      configureServer(server) {
+        try {
+          const expressApp = require('./index.js');
+          server.middlewares.use(expressApp);
+        } catch (e) {
+          console.error('Failed to attach Express API server to Vite:', e);
+        }
+      },
+    },
+  ],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
@@ -22,15 +38,6 @@ export default defineConfig({
   },
   server: {
     port: 3000,
-    proxy: {
-      '/api': {
-        target: 'http://localhost:3001',
-        changeOrigin: true,
-      },
-      '/uploads': {
-        target: 'http://localhost:3001',
-        changeOrigin: true,
-      },
-    },
   },
 });
+

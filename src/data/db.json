@@ -322,6 +322,32 @@
   ],
   "products": [
     {
+      "id": "product_1786287649926",
+      "name": {
+        "en": "New Product",
+        "ge": "ახალი პროდუქტი",
+        "ru": "Новый товар"
+      },
+      "category": {
+        "en": "Accessories",
+        "ge": "აქსესუარები",
+        "ru": "Аксессуары"
+      },
+      "condition": {
+        "en": "New",
+        "ge": "ახალი",
+        "ru": "Новый"
+      },
+      "price": "300 GEL",
+      "rating": 5,
+      "image": "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=400&q=80",
+      "desc": {
+        "en": "Write details here...",
+        "ge": "დაწერეთ დეტალები...",
+        "ru": "Описание..."
+      }
+    },
+    {
       "id": "board_gladiator",
       "name": {
         "en": "New Tiki 10'6\" Inflatable Paddle Board",

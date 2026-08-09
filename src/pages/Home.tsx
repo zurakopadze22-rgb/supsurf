@@ -471,7 +471,7 @@ export default function Home() {
                           SALE
                         </span>
                       </div>
-                      <span className="block font-sans text-xs font-black text-ocean-dark text-center mt-1.5 pt-1 border-t border-ocean-slate/10">
+                      <span className="block font-sans text-xs font-black text-center mt-2 py-1.5 px-3 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 text-white shadow-md uppercase tracking-wider">
                         {locale === 'ge' ? 'იქირავე სრული აღჭურვილობა' : locale === 'ru' ? 'Аренда полного комплекта' : 'Rent Full Adventure Equipment'}
                       </span>
                     </div>
@@ -541,7 +541,7 @@ export default function Home() {
                         SALE
                       </span>
                     </div>
-                    <span className="block font-sans text-xs sm:text-sm font-black text-ocean-dark text-center mt-2 pt-1.5 border-t border-ocean-slate/10">
+                    <span className="block font-sans text-xs sm:text-sm font-black text-center mt-2.5 py-2 px-4 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 text-white shadow-md uppercase tracking-wider">
                       {locale === 'ge' ? 'იქირავე სრული აღჭურვილობა' : locale === 'ru' ? 'Аренда полного комплекта' : 'Rent Full Adventure Equipment'}
                     </span>
                   </div>

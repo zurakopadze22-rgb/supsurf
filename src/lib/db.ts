@@ -96,6 +96,13 @@ export function writeDB(data: DBData): boolean {
     return true;
   } catch (error) {
     console.error('Error writing DB:', error);
-    return false;
+    try {
+      const tmpPath = path.join(require('os').tmpdir(), 'supsurf_db.json');
+      fs.writeFileSync(tmpPath, JSON.stringify(data, null, 2), 'utf8');
+      return true;
+    } catch (e) {
+      return false;
+    }
   }
 }
+

@@ -138,7 +138,7 @@ Could you please confirm availability and details? Thank you!`;
   return (
     <div className="bg-ocean-light/20 min-h-screen py-16">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        
+
         {/* Back Link */}
         <div className="mb-8">
           <Link
@@ -152,7 +152,7 @@ Could you please confirm availability and details? Thank you!`;
 
         {/* Product Details Card */}
         <div className="rounded-3xl border border-ocean-slate/10 bg-white p-6 sm:p-10 shadow-xl grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
-          
+
           {/* Left: Product Image Gallery Carousel */}
           <div className="md:col-span-5 w-full space-y-4">
             <div className="relative aspect-square w-full rounded-2xl overflow-hidden border border-ocean-slate/10 shadow-md bg-ocean-light/30 group">
@@ -161,7 +161,7 @@ Could you please confirm availability and details? Thank you!`;
                 alt={name}
                 className="w-full h-full object-cover transition-all duration-300"
               />
-              
+
               {/* Slider Chevrons */}
               {images.length > 1 && (
                 <>
@@ -177,16 +177,15 @@ Could you please confirm availability and details? Thank you!`;
                   >
                     <ChevronRight className="w-4 h-4" />
                   </button>
-                  
+
                   {/* Dots indicator */}
                   <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5 bg-black/30 px-3 py-1.5 rounded-full backdrop-blur-sm">
                     {images.map((_, idx) => (
                       <button
                         key={idx}
                         onClick={() => setActiveImgIdx(idx)}
-                        className={`w-1.5 h-1.5 rounded-full transition-all cursor-pointer ${
-                          idx === activeImgIdx ? 'bg-white w-3' : 'bg-white/40'
-                        }`}
+                        className={`w-1.5 h-1.5 rounded-full transition-all cursor-pointer ${idx === activeImgIdx ? 'bg-white w-3' : 'bg-white/40'
+                          }`}
                       />
                     ))}
                   </div>
@@ -201,9 +200,8 @@ Could you please confirm availability and details? Thank you!`;
                   <button
                     key={idx}
                     onClick={() => setActiveImgIdx(idx)}
-                    className={`w-16 h-16 rounded-lg overflow-hidden border-2 shrink-0 bg-ocean-light/35 transition-all ${
-                      idx === activeImgIdx ? 'border-ocean-teal scale-[0.98]' : 'border-transparent hover:border-ocean-slate/20'
-                    }`}
+                    className={`w-16 h-16 rounded-lg overflow-hidden border-2 shrink-0 bg-ocean-light/35 transition-all ${idx === activeImgIdx ? 'border-ocean-teal scale-[0.98]' : 'border-transparent hover:border-ocean-slate/20'
+                      }`}
                   >
                     <img src={imgUrl} alt="" className="w-full h-full object-cover" />
                   </button>
@@ -214,11 +212,11 @@ Could you please confirm availability and details? Thank you!`;
             <div className="mt-4 flex items-center gap-2 text-xs text-ocean-slate font-sans bg-ocean-light/40 p-3.5 rounded-xl border border-ocean-slate/5">
               <Shield className="w-4.5 h-4.5 text-ocean-teal shrink-0" />
               <span>
-                {locale === 'ge' 
-                  ? 'ოფიციალური შემოწმება და ტესტირება გაყიდვამდე ლისის ტბაზე.' 
-                  : locale === 'ru' 
-                  ? 'Официальная проверка и тестирование перед продажей на озере Лиси.' 
-                  : 'Safety-checked and tested on Lisi Lake before delivery.'}
+                {locale === 'ge'
+                  ? 'ოფიციალური შემოწმება და ტესტირება გაყიდვამდე ლისის ტბაზე.'
+                  : locale === 'ru'
+                    ? 'Официальная проверка и тестирование перед продажей на озере Лиси.'
+                    : 'Safety-checked and tested on Lisi Lake before delivery.'}
               </span>
             </div>
           </div>
@@ -230,11 +228,10 @@ Could you please confirm availability and details? Thank you!`;
                 <span className="text-[10px] text-ocean-teal uppercase font-bold tracking-widest font-sans">
                   {category}
                 </span>
-                <span className={`rounded-full px-2.5 py-0.5 text-[9px] font-bold uppercase tracking-wider font-sans border ${
-                  condition === 'New' || condition === 'ახალი' || condition === 'Новый'
+                <span className={`rounded-full px-2.5 py-0.5 text-[9px] font-bold uppercase tracking-wider font-sans border ${condition === 'New' || condition === 'ახალი' || condition === 'Новый'
                     ? 'bg-emerald-50 text-emerald-600 border-emerald-100'
                     : 'bg-amber-50 text-amber-600 border-amber-100'
-                }`}>
+                  }`}>
                   {condition}
                 </span>
               </div>
@@ -245,13 +242,12 @@ Could you please confirm availability and details? Thank you!`;
               {/* Stars */}
               <div className="flex gap-0.5 items-center">
                 {[...Array(5)].map((_, i) => (
-                  <Star 
-                    key={i} 
-                    className={`w-4 h-4 ${
-                      i < Math.floor(product.rating) 
-                        ? 'fill-ocean-coral text-ocean-coral' 
+                  <Star
+                    key={i}
+                    className={`w-4 h-4 ${i < Math.floor(product.rating)
+                        ? 'fill-ocean-coral text-ocean-coral'
                         : 'text-ocean-slate/20'
-                    }`} 
+                      }`}
                   />
                 ))}
                 <span className="text-xs text-ocean-slate ml-2 font-sans font-semibold">({product.rating} / 5.0)</span>
@@ -300,7 +296,7 @@ Could you please confirm availability and details? Thank you!`;
               <h3 className="font-display text-xs font-bold text-ocean-dark uppercase tracking-wider">
                 {locale === 'ge' ? 'შეძენა ან შეკითხვა' : locale === 'ru' ? 'Купить или спросить' : 'Purchase / Inquire'}
               </h3>
-              
+
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 {/* WhatsApp Buy */}
                 <button

@@ -7,64 +7,102 @@ const multer = require('multer');
 
 const app = express();
 app.use(cors());
-app.use(express.json());
+
+// Increase JSON body parser limit for base64 uploads & large DB payload
+app.use(express.json({ limit: '50mb' }));
+app.use(express.urlencoded({ limit: '50mb', extended: true }));
 
 // Serve uploads statically
 app.use('/uploads', express.static(path.join(__dirname, 'public/uploads')));
 
-// Ensure upload directory exists
+// Ensure upload directory exists if possible
 const uploadDir = path.join(__dirname, 'public/uploads');
-if (!fs.existsSync(uploadDir)) {
-    fs.mkdirSync(uploadDir, { recursive: true });
+try {
+    if (!fs.existsSync(uploadDir)) {
+        fs.mkdirSync(uploadDir, { recursive: true });
+    }
+} catch (e) {
+    console.warn('Upload directory is read-only or could not be created:', e.message);
 }
 
-// Multer storage configuration
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null, uploadDir);
-    },
-    filename: function (req, file, cb) {
-        const cleanFileName = file.originalname
-            .replace(/[^a-zA-Z0-9.-]/g, '_')
-            .replace(/_{2,}/g, '_');
-        cb(null, `${Date.now()}_${cleanFileName}`);
-    }
+// Multer memory storage configuration (safe for serverless read-only environments)
+const storage = multer.memoryStorage();
+const upload = multer({ 
+    storage: storage,
+    limits: { fileSize: 20 * 1024 * 1024 }
 });
 
-const upload = multer({ storage: storage });
-
-// Database path
+// Database path & temporary path
 const dbPath = path.join(__dirname, 'src/data/db.json');
+const tmpDbPath = path.join(require('os').tmpdir(), 'supsurf_db.json');
+
+// In-memory database cache
+let memoryDB = null;
 
 function readDB() {
+    if (memoryDB) {
+        return memoryDB;
+    }
+
+    // 1. Try reading from temporary writable location (/tmp/supsurf_db.json)
     try {
-        const rawData = fs.readFileSync(dbPath, 'utf8');
-        return JSON.parse(rawData);
+        if (fs.existsSync(tmpDbPath)) {
+            const rawData = fs.readFileSync(tmpDbPath, 'utf8');
+            memoryDB = JSON.parse(rawData);
+            return memoryDB;
+        }
+    } catch (err) {
+        console.warn('Error reading tmp DB:', err.message);
+    }
+
+    // 2. Try reading primary project db.json file
+    try {
+        if (fs.existsSync(dbPath)) {
+            const rawData = fs.readFileSync(dbPath, 'utf8');
+            memoryDB = JSON.parse(rawData);
+            return memoryDB;
+        }
     } catch (error) {
         console.error('Error reading DB:', error);
-        return {
-            contact: { phone: '', whatsapp: '', instagram: '' },
-            promo_image: '',
-            kit_items: [],
-            services: [],
-            products: [],
-            blog_categories: []
-        };
     }
+
+    // 3. Fallback structure
+    memoryDB = {
+        contact: { phone: '', whatsapp: '', instagram: '' },
+        promo_image: '',
+        kit_items: [],
+        services: [],
+        products: [],
+        blog_categories: []
+    };
+    return memoryDB;
 }
 
 function writeDB(data) {
+    if (!data || typeof data !== 'object') {
+        return false;
+    }
+    memoryDB = data;
+
+    // 1. Primary write to src/data/db.json (works in local dev)
     try {
         const dir = path.dirname(dbPath);
         if (!fs.existsSync(dir)) {
             fs.mkdirSync(dir, { recursive: true });
         }
         fs.writeFileSync(dbPath, JSON.stringify(data, null, 2), 'utf8');
-        return true;
     } catch (error) {
-        console.error('Error writing DB:', error);
-        return false;
+        console.warn('Cannot write to primary dbPath (read-only environment like Vercel):', error.message);
     }
+
+    // 2. Secondary write to /tmp (works in serverless lambdas)
+    try {
+        fs.writeFileSync(tmpDbPath, JSON.stringify(data, null, 2), 'utf8');
+    } catch (tmpErr) {
+        console.warn('Cannot write to tmpDbPath:', tmpErr.message);
+    }
+
+    return true;
 }
 
 const RS_API_URL = 'https://services.rs.ge/WayBillService/WayBillService.asmx';
@@ -195,6 +233,7 @@ app.post('/api/admin', (req, res) => {
             res.status(500).json({ error: 'Failed to write database file' });
         }
     } catch (e) {
+        console.error('API /api/admin POST error:', e);
         res.status(400).json({ error: 'Invalid payload' });
     }
 });
@@ -205,8 +244,28 @@ app.post('/api/admin/upload', upload.single('file'), (req, res) => {
         if (!req.file) {
             return res.status(400).json({ error: 'No file uploaded' });
         }
-        const fileUrl = `/uploads/${req.file.filename}`;
-        res.json({ url: fileUrl });
+
+        const cleanFileName = req.file.originalname
+            .replace(/[^a-zA-Z0-9.-]/g, '_')
+            .replace(/_{2,}/g, '_');
+        const filename = `${Date.now()}_${cleanFileName}`;
+
+        // Attempt writing to disk (works on local machine)
+        try {
+            if (!fs.existsSync(uploadDir)) {
+                fs.mkdirSync(uploadDir, { recursive: true });
+            }
+            fs.writeFileSync(path.join(uploadDir, filename), req.file.buffer);
+            return res.json({ url: `/uploads/${filename}` });
+        } catch (fsErr) {
+            console.warn('Disk upload failed (read-only filesystem), converting to Base64 data URI:', fsErr.message);
+        }
+
+        // Fallback for read-only filesystem (e.g. Vercel)
+        const mimeType = req.file.mimetype || 'image/jpeg';
+        const base64Data = req.file.buffer.toString('base64');
+        const dataUrl = `data:${mimeType};base64,${base64Data}`;
+        res.json({ url: dataUrl });
     } catch (error) {
         console.error('Upload error:', error);
         res.status(500).json({ error: 'Failed to upload file' });
@@ -218,3 +277,4 @@ if (process.env.NODE_ENV !== 'production') {
     app.listen(PORT, () => console.log(`🚀 API Running on ${PORT}`));
 }
 module.exports = app;
+

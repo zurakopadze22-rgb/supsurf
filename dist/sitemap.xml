@@ -136,6 +136,33 @@
     </image:image>
   </url>
   <url>
+    <loc>https://www.supsurf.ge/en/shop/product_1786287649926</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
+      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.supsurf.ge/ge/shop/product_1786287649926</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
+      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.supsurf.ge/ru/shop/product_1786287649926</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
+      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://www.supsurf.ge/en/shop/board_gladiator</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
