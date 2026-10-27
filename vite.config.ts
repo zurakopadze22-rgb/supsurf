@@ -11,12 +11,16 @@ export default defineConfig({
     {
       name: 'express-api-server',
       configureServer(server) {
-        try {
-          const expressApp = require('./index.js');
-          server.middlewares.use(expressApp);
-        } catch (e) {
-          console.error('Failed to attach Express API server to Vite:', e);
-        }
+        server.middlewares.use((req, res, next) => {
+          try {
+            delete require.cache[require.resolve('./index.js')];
+            const expressApp = require('./index.js');
+            return expressApp(req, res, next);
+          } catch (e) {
+            console.error('Failed to dispatch to Express API:', e);
+            next();
+          }
+        });
       },
     },
   ],

@@ -1,13 +1,109 @@
 import React, { useState, useEffect } from 'react';
-import { useOutletContext, Link } from 'react-router-dom';
+import { useOutletContext, Link, useLocation } from 'react-router-dom';
 import { Sparkles, Clock, Star, Flame, Trophy, CheckCircle2, ShieldCheck, Waves, MessageCircle, ArrowRight } from 'lucide-react';
 import type { Locale } from '@/lib/get-dictionary';
 import BookingModal from '@/components/BookingModal';
+import initialDb from '../data/db.json';
 
 export default function Services() {
   const { locale, dict } = useOutletContext<{ locale: Locale; dict: any }>();
-  const [db, setDb] = useState<any>(null);
+  const location = useLocation();
+  const [db, setDb] = useState<any>(initialDb);
   const [bookingItem, setBookingItem] = useState<any>(null);
+
+  const isRentRoute = location.pathname.includes('/rent');
+
+  // Inject structured data for Google Search & AEO
+  useEffect(() => {
+    const schemaId = 'services-catalog-schema';
+    let script = document.getElementById(schemaId) as HTMLScriptElement;
+    if (!script) {
+      script = document.createElement('script');
+      script.id = schemaId;
+      script.type = 'application/ld+json';
+      document.head.appendChild(script);
+    }
+
+    const catalogSchema = {
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      'name': isRentRoute 
+        ? (locale === 'ge' ? 'საპ ბორდების გაქირავება თბილისსა და საქართველოში - SUPSURF.GE' : 'SUP Board Rentals in Tbilisi & Georgia - SUPSURF.GE')
+        : (locale === 'ge' ? 'საპ ტურები, გაკვეთილები და იჯარა - SUPSURF.GE' : 'SUP Tours, Lessons & Rentals - SUPSURF.GE'),
+      'serviceType': isRentRoute ? 'SUP Board Rental' : 'Water Sports & SUP Services',
+      'description': isRentRoute
+        ? 'Daily (50 GEL/day, 80 GEL/2 days) and hourly (25 GEL 1st hr) inflatable Stand Up Paddleboard rentals at Tbilisi Sea with travel backpacks across Georgia.'
+        : 'Guided paddleboarding tours, beginner lessons with certified instructors (45 GEL for 90 mins), and corporate team building at Tbilisi Sea.',
+      'provider': {
+        '@type': ['SportsActivityLocation', 'LocalBusiness'],
+        '@id': 'https://supsurf.ge/#localbusiness'
+      },
+      'areaServed': [
+        { '@type': 'City', 'name': 'Tbilisi' },
+        { '@type': 'Place', 'name': 'Tbilisi Sea' },
+        { '@type': 'Place', 'name': 'Lisi Lake' },
+        { '@type': 'Place', 'name': 'Bazaleti Lake' },
+        { '@type': 'Place', 'name': 'Sioni Reservoir' },
+        { '@type': 'Place', 'name': 'Zhinvali Reservoir' },
+        { '@type': 'Place', 'name': 'Shaori Reservoir' },
+        { '@type': 'Place', 'name': 'Paliastomi Lake' },
+        { '@type': 'City', 'name': 'Batumi' },
+        { '@type': 'Place', 'name': 'Shekvetili' },
+        { '@type': 'Country', 'name': 'Georgia' }
+      ],
+      'hasOfferCatalog': {
+        '@type': 'OfferCatalog',
+        'name': isRentRoute 
+          ? (locale === 'ge' ? 'საპ ბორდების გაქირავების ტარიფები' : 'SUP Rental Rates') 
+          : (locale === 'ge' ? 'სერვისებისა და ტურების კატალოგი' : 'SUPSURF Services Catalog'),
+        'itemListElement': [
+          {
+            '@type': 'Offer',
+            'name': 'Daily SUP Board Rental (1 Day: 50 GEL / 2 Days: 80 GEL)',
+            'price': '50',
+            'priceCurrency': 'GEL',
+            'availability': 'https://schema.org/InStock',
+            'url': `https://supsurf.ge/${locale}/services/rent_daily`,
+            'seller': {
+              '@type': 'LocalBusiness',
+              '@id': 'https://supsurf.ge/#localbusiness'
+            }
+          },
+          {
+            '@type': 'Offer',
+            'name': 'Hourly On-Water SUP Rental (25 GEL 1st hr / 20 GEL next)',
+            'price': '25',
+            'priceCurrency': 'GEL',
+            'availability': 'https://schema.org/InStock',
+            'url': `https://supsurf.ge/${locale}/services/rent_hourly`,
+            'seller': {
+              '@type': 'LocalBusiness',
+              '@id': 'https://supsurf.ge/#localbusiness'
+            }
+          },
+          {
+            '@type': 'Offer',
+            'name': 'Beginner SUP Lesson with Certified Instructor (90 mins: 45 GEL)',
+            'price': '45',
+            'priceCurrency': 'GEL',
+            'availability': 'https://schema.org/InStock',
+            'url': `https://supsurf.ge/${locale}/services/lesson_basic`,
+            'seller': {
+              '@type': 'LocalBusiness',
+              '@id': 'https://supsurf.ge/#localbusiness'
+            }
+          }
+        ]
+      }
+    };
+
+    script.text = JSON.stringify(catalogSchema);
+
+    return () => {
+      const el = document.getElementById(schemaId);
+      if (el) el.remove();
+    };
+  }, [isRentRoute, locale]);
 
   useEffect(() => {
     fetch('/api/admin')
@@ -107,10 +203,25 @@ export default function Services() {
     <div className="bg-gradient-to-b from-ocean-light/20 via-white to-ocean-light/30 min-h-screen py-6 sm:py-12">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-20">
         
-        {/* Hidden SEO Header */}
-        <div className="sr-only">
-          <h1>{dict.meta.services.title}</h1>
-          <p>{dict.meta.services.description}</p>
+        {/* Visible Semantic SEO Header */}
+        <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-5 sm:p-8 border border-ocean-slate/10 shadow-sm space-y-2">
+          <span className="inline-block text-[10px] sm:text-xs font-extrabold uppercase tracking-widest text-ocean-teal">
+            {isRentRoute
+              ? (locale === 'ge' ? 'SUPSURF.GE • საპ ბორდების გაქირავება თბილისში' : locale === 'ru' ? 'SUPSURF.GE • Прокат сапбордов в Тбилиси' : 'SUPSURF.GE • SUP Board Rental in Tbilisi')
+              : (locale === 'ge' ? 'SUPSURF.GE • სერვისები, ტურები და გაკვეთილები' : locale === 'ru' ? 'SUPSURF.GE • Услуги, туры и обучение' : 'SUPSURF.GE • Services, Tours & Lessons')}
+          </span>
+          <h1 className="font-display text-2xl sm:text-3xl md:text-4xl font-extrabold text-ocean-dark tracking-tight">
+            {isRentRoute
+              ? (locale === 'ge' ? 'საპ ბორდებისა & წყლის დაფების გაქირავება თბილისში (50₾/დღე)' : locale === 'ru' ? 'Аренда сапбордов и водных досок в Тбилиси (50₾/день)' : 'SUP Board & Paddleboard Rental in Tbilisi (50 GEL/Day)')
+              : (locale === 'ge' ? 'საპ ბორდების გაქირავება, ტურები და გაკვეთილები თბილისის ზღვაზე' : locale === 'ru' ? 'Прокат сапов, САП-туры и обучение с инструктором в Тбилиси' : 'SUP Rentals, Guided Tours & Lessons at Tbilisi Sea')
+            }
+          </h1>
+          <p className="font-sans text-xs sm:text-sm text-ocean-slate leading-relaxed max-w-4xl">
+            {isRentRoute
+              ? (locale === 'ge' ? 'საპ ბორდების დღიური (50₾/დღე, 2 დღე — 80₾) და საათობრივი (25₾/სთ) გაქირავება თბილისში, თბილისის ზღვაზე. სრული 7-ნაწილიანი აღჭურვილობა ზურგჩანთით (დაფა, ნიჩაბი, სამაშველო ჟილეტი, წყალგაუმტარი ქეისი, ლიში, ტუმბო) დეპოზიტის გარეშე!' : locale === 'ru' ? 'Посуточная (50 GEL/день, 2 дня — 80 GEL) и почасовая (25 GEL/час) аренда сапбордов на Тбилисском море. Полный комплект из 7 предметов в рюкзаке без залога.' : 'Daily (50 GEL/day, 80 GEL/2 days) and hourly (25 GEL/hr) Stand Up Paddleboard rentals at Tbilisi Sea, Georgia. Full 7-piece kit in a travel backpack. Zero deposit required.')
+              : (locale === 'ge' ? 'საპ ბორდების დღიური და საათობრივი გაქირავება თბილისის ზღვაზე, 90-წუთიანი შემსწავლელი გაკვეთილები დამწყებთათვის სერტიფიცირებულ ინსტრუქტორთან (45₾) და კორპორატიული საპ ტურები.' : locale === 'ru' ? 'Посуточный и почасовой прокат сапбордов на Тбилисском море, 90-минутное обучение для начинающих с сертифицированным инструктором (45 GEL) и корпоративные мероприятия.' : 'Daily & hourly SUP rentals at Tbilisi Sea, 90-minute beginner lessons with certified instructors (45 GEL), and custom corporate water events.')
+            }
+          </p>
         </div>
 
         {/* SECTION 1: 🏄‍♂️ საპ ბორდების გაქირავება (SUP Rental Section) */}
@@ -149,6 +260,8 @@ export default function Services() {
                       src={dailyRentalItem.image} 
                       alt={dailyRentalItem.name}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                      loading="lazy"
+                      decoding="async"
                     />
                   </div>
 
@@ -215,6 +328,8 @@ export default function Services() {
                       src={hourlyRentalItem.image} 
                       alt={hourlyRentalItem.name}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                      loading="lazy"
+                      decoding="async"
                     />
                   </div>
 
@@ -291,6 +406,8 @@ export default function Services() {
                   src={beginnerLessonItem.image} 
                   alt={beginnerLessonItem.name}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
 
@@ -372,6 +489,61 @@ export default function Services() {
         </section>
 
       </div>
+
+      {/* GENERATIVE ENGINE OPTIMIZATION (GEO) SERVICES & RENTALS FACT BASE (sr-only: visually hidden for clean UX, fully parsed by search bots, LLMs & screen readers) */}
+      <section className="sr-only" aria-label="SUPSURF Services & Rental Specifications">
+        <article className="space-y-4">
+          <h2>
+            {locale === 'ge' 
+              ? 'SUPSURF.GE — საპ ბორდების გაქირავების, გაკვეთილებისა და ტურების დეტალური მონაცემთა ბაზა' 
+              : locale === 'ru' 
+              ? 'SUPSURF.GE — Детальная база данных по аренде сапов, урокам и турам в Грузии' 
+              : 'SUPSURF.GE — Detailed Specifications: SUP Rentals, Lessons & Touring in Georgia'}
+          </h2>
+
+          <div data-geo-service="rent-daily">
+            <h3>Daily SUP Board Rental (50 GEL / 1 Day, 80 GEL / 2 Days)</h3>
+            <p>
+              SUPSURF.GE provides full-day inflatable Stand Up Paddleboard rentals. The rate is 50 GEL for 24 hours, or 80 GEL for 2 consecutive days. Every rental includes an all-round drop-stitch board, adjustable paddle, CE-certified life vest, safety leash, dual-action pump with pressure gauge, waterproof phone pouch, and backpack. Zero deposit required.
+            </p>
+          </div>
+
+          <div data-geo-service="rent-hourly">
+            <h3>Hourly On-Water SUP Rental at Tbilisi Sea (25 GEL 1st Hour, 20 GEL Next Hours)</h3>
+            <p>
+              On-demand hourly paddleboarding is available directly at the SUPSURF.GE base on Tbilisi Sea. Pricing is 25 GEL for the first hour and 20 GEL for each additional hour, including board, paddle, and safety life vest.
+            </p>
+          </div>
+
+          <div data-geo-service="lesson-basic">
+            <h3>Beginner SUP Lesson with Certified Instructor (45 GEL / 90 Minutes)</h3>
+            <p>
+              A 90-minute structured beginner session at Tbilisi Sea covering dry-land safety protocols, foot positioning, balance maintenance, efficient forward stroke technique, and supervised on-water paddling. Full gear included.
+            </p>
+          </div>
+
+          <div data-geo-service="corporate-tours">
+            <h3>Corporate Team Building & Group Lake Excursions</h3>
+            <p>
+              Customizable group packages with multi-person SUPs, relays, guided paddling tours, and event coordination for companies and large private groups at Tbilisi Sea and regional reservoirs.
+            </p>
+          </div>
+
+          <div data-geo-service="destinations">
+            <h3>Confirmed Self-Transport Paddle Destinations</h3>
+            <p>
+              Renters can take portable SUP backpacks to confirmed lakes across Georgia: Tbilisi Sea, Lisi Lake, Bazaleti Lake, Sioni Reservoir, Zhinvali Reservoir, Shaori Reservoir in Racha, and the Black Sea coast in Batumi.
+            </p>
+          </div>
+
+          <div data-geo-service="entity-graph">
+            <h3>Entity Footprint</h3>
+            <p>
+              SUPSURF → SUP rental | SUPSURF → SUP equipment | SUPSURF → SUP sessions | SUPSURF → SUP tours | SUPSURF → Tbilisi | SUPSURF → Lisi Lake | SUPSURF → Georgia | SUPSURF → confirmed destinations
+            </p>
+          </div>
+        </article>
+      </section>
 
       {/* Booking Modal Trigger */}
       {bookingItem && (

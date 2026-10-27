@@ -1,4 +1,3 @@
-const sharp = require('sharp');
 const path = require('path');
 const fs = require('fs');
 
@@ -8,6 +7,11 @@ const outputIcoPath = path.join(__dirname, '../public/favicon.ico');
 
 async function createFavicon() {
   try {
+    if (fs.existsSync(outputPngPath) && fs.existsSync(outputIcoPath)) {
+      console.log('✅ favicon.png and favicon.ico already exist.');
+      return;
+    }
+    const sharp = require('sharp');
     if (!fs.existsSync(inputPath)) {
       console.error('Input logo.webp not found!');
       return;

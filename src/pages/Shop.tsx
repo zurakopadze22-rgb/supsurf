@@ -2,18 +2,26 @@ import React, { useState, useEffect } from 'react';
 import { useOutletContext, Link } from 'react-router-dom';
 import { ShoppingBag, Star, Shield, Search, X, SlidersHorizontal } from 'lucide-react';
 import type { Locale } from '@/lib/get-dictionary';
+import initialDb from '../data/db.json';
 
 export default function Shop() {
   const { locale, dict } = useOutletContext<{ locale: Locale; dict: any }>();
-  const [db, setDb] = useState<any>(null);
-  const [dbLoading, setDbLoading] = useState(true);
+  const [db, setDb] = useState<any>(initialDb);
+  const [dbLoading, setDbLoading] = useState(false);
 
   // Filter States
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [minPrice, setMinPrice] = useState(0);
-  const [maxPrice, setMaxPrice] = useState(3000);
-  const [maxPriceLimit, setMaxPriceLimit] = useState(3000);
+  const initialMax = (() => {
+    if (initialDb && Array.isArray(initialDb.products)) {
+      const parsedPrices = initialDb.products.map((p: any) => parseFloat(p.price.replace(/[^0-9.]/g, '')) || 0);
+      return Math.max(...parsedPrices, 500);
+    }
+    return 3000;
+  })();
+  const [maxPrice, setMaxPrice] = useState(initialMax);
+  const [maxPriceLimit, setMaxPriceLimit] = useState(initialMax);
 
   useEffect(() => {
     fetch('/api/admin')
@@ -37,6 +45,68 @@ export default function Shop() {
         setDbLoading(false);
       });
   }, []);
+
+  // Inject ItemList Schema for E-Commerce SEO
+  useEffect(() => {
+    if (!db?.products || db.products.length === 0) return;
+
+    const schemaId = 'shop-itemlist-schema';
+    let script = document.getElementById(schemaId) as HTMLScriptElement;
+    if (!script) {
+      script = document.createElement('script');
+      script.id = schemaId;
+      script.type = 'application/ld+json';
+      document.head.appendChild(script);
+    }
+
+    const shopSchema = {
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      '@id': `https://supsurf.ge/${locale}/shop/#collection`,
+      'url': window.location.href,
+      'name': locale === 'ge' ? 'საპ დაფების მაღაზია - SUPSURF.GE' : 'SUP Boards Shop - SUPSURF.GE',
+      'description': locale === 'ge' 
+        ? 'ახალი და მეორადი საპ ბორდების, წყლის დაფებისა და სერფინგის აქსესუარების გაყიდვა თბილისში.'
+        : 'New and used Stand Up Paddleboards and water accessories for sale in Tbilisi, Georgia.',
+      'isPartOf': {
+        '@type': 'WebSite',
+        '@id': 'https://supsurf.ge/#website'
+      },
+      'mainEntity': {
+        '@type': 'ItemList',
+        'name': locale === 'ge' ? 'საპ ბორდების კატალოგი' : 'SUP Boards Catalog',
+        'itemListElement': (db.products || []).map((p: any, idx: number) => ({
+          '@type': 'ListItem',
+          'position': idx + 1,
+          'item': {
+            '@type': 'Product',
+            'name': p.name?.[locale] || p.name?.en,
+            'image': p.image?.startsWith('http') ? p.image : `https://supsurf.ge${p.image}`,
+            'description': p.desc?.[locale] || p.desc?.en,
+            'sku': p.id,
+            'offers': {
+              '@type': 'Offer',
+              'price': parseFloat(p.price?.replace(/[^0-9.]/g, '')) || 0,
+              'priceCurrency': 'GEL',
+              'availability': 'https://schema.org/InStock',
+              'url': `https://supsurf.ge/${locale}/shop/${p.id}`,
+              'seller': {
+                '@type': 'LocalBusiness',
+                '@id': 'https://supsurf.ge/#localbusiness'
+              }
+            }
+          }
+        }))
+      }
+    };
+
+    script.text = JSON.stringify(shopSchema);
+
+    return () => {
+      const el = document.getElementById(schemaId);
+      if (el) el.remove();
+    };
+  }, [db, locale]);
 
   const rawProducts = db?.products || [];
 
@@ -113,12 +183,19 @@ export default function Shop() {
     <div className="bg-white min-h-screen py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
-        {/* Header (Visually hidden for clean UX, but present for SEO) */}
-        <div className="sr-only">
-          <h1 className="font-display text-4xl font-extrabold text-ocean-dark tracking-tight">
-            {dict.meta.shop.title}
+        {/* Visible SEO Header */}
+        <div className="mb-8 bg-ocean-light/20 rounded-3xl p-5 sm:p-8 border border-ocean-slate/10 space-y-2">
+          <span className="inline-block text-[10px] sm:text-xs font-extrabold uppercase tracking-widest text-ocean-teal">
+            {locale === 'ge' ? 'SUPSURF.GE • საპ ბორდების მაღაზია თბილისში' : locale === 'ru' ? 'SUPSURF.GE • Магазин сапбордов в Тбилиси' : 'SUPSURF.GE • SUP Board Shop in Tbilisi'}
+          </span>
+          <h1 className="font-display text-2xl sm:text-3xl md:text-4xl font-extrabold text-ocean-dark tracking-tight">
+            {locale === 'ge'
+              ? 'საპ ბორდების ყიდვა თბილისში — გასაბერი საპ დაფები და აქსესუარები'
+              : locale === 'ru'
+                ? 'Купить сапборд в Тбилиси — Надувные SUP-доски и аксессуары с гарантией'
+                : 'Buy Inflatable SUP Boards & Water Sports Gear in Tbilisi, Georgia'}
           </h1>
-          <p className="font-sans text-base text-ocean-slate max-w-2xl mx-auto">
+          <p className="font-sans text-xs sm:text-sm text-ocean-slate max-w-3xl leading-relaxed">
             {dict.meta.shop.description}
           </p>
         </div>
@@ -392,6 +469,8 @@ export default function Shop() {
                           src={prod.image}
                           alt={prod.name}
                           className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
+                          loading="lazy"
+                          decoding="async"
                         />
                         <div className={`absolute top-2 lg:top-4 left-2 lg:left-4 rounded-full px-2 lg:px-3.5 py-0.5 lg:py-1 text-[8px] lg:text-[10px] font-bold uppercase tracking-wider font-sans border ${
                           prod.condition === 'New' || prod.condition === 'ახალი' || prod.condition === 'Новый'

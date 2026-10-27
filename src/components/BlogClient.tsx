@@ -109,6 +109,8 @@ export default function BlogClient({ categories, locale, dict }: BlogClientProps
                     src={post.image}
                     alt={post.title}
                     className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div className="absolute top-2 left-2 sm:top-4 sm:left-4 rounded-full bg-ocean-dark/85 backdrop-blur-sm text-white px-2 py-0.5 sm:px-3 sm:py-1 text-[8px] sm:text-[10px] font-bold uppercase tracking-wider font-sans border border-white/10">
                     {post.categoryTitle}

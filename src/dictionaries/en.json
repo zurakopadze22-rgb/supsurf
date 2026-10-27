@@ -1,28 +1,28 @@
 {
   "meta": {
     "home": {
-      "title": "SUP Surf Georgia | Premium SUP & Surfboard Rentals & Sales",
-      "description": "Experience Stand-Up Paddle boarding & surfing in Georgia! Rent high-quality SUP boards, surfboards, and marine equipment. Professional tours, lessons, and top gear sales."
+      "title": "SUP Board & Water Board Rentals at Tbilisi Sea | SUP Surf Georgia",
+      "description": "Experience Stand-Up Paddle boarding & water board rentals in Tbilisi, located exclusively at Tbilisi Sea! Rent high-quality SUP boards, surfboards, and marine gear at best rates (50 GEL/day)."
     },
     "rent": {
-      "title": "SUP Board & Surfboard Rentals | Rental Catalog",
-      "description": "Rent SUP boards, surfboards, and wingfoils by the hour or day in Georgia. Select from top locations including Lisi Lake, Batumi, and Anaklia."
+      "title": "SUP Board & Water Board Rentals Tbilisi Sea | Rental Catalog",
+      "description": "Rent SUP boards, water boards, and surfboards by the day or hour at Tbilisi Sea, Georgia. Special rate: 1 day 50 GEL, 2 days 80 GEL with full adventure gear."
     },
     "shop": {
-      "title": "Buy SUP Boards & Surf Gear | Watersports Shop",
-      "description": "Shop new and premium used SUP boards, leashes, paddles, life vests, and accessories in Georgia. Top brands, expert advice."
+      "title": "Buy SUP Boards & Water Boards in Tbilisi | Watersports Shop",
+      "description": "Shop new and premium used SUP boards, leashes, paddles, life vests, and watersports accessories in Tbilisi, Georgia. Top brands & warranty."
     },
     "services": {
-      "title": "SUP Tours, Surf Lessons & Events in Georgia",
-      "description": "Join our guided SUP tours, beginner-friendly surfing lessons, and corporate water sports events. Fully certified instructors."
+      "title": "Tbilisi Sea SUP Tours, Lessons & Events in Tbilisi",
+      "description": "Join our guided SUP tours at Tbilisi Sea, beginner-friendly water board lessons, and corporate water sports events. Fully certified instructors."
     },
     "blog": {
-      "title": "Water Sports & SUP Blog | Safety Guides & Tips",
-      "description": "Read safety guidelines, water sports destinations reviews, Stand-Up Paddle boarding tips, and explore Georgia's best lakes and coasts."
+      "title": "Tbilisi Sea SUP Surfing & Water Board Blog | Safety Guides",
+      "description": "Read safety guidelines, water board tips, Stand-Up Paddle boarding guides, and explore Tbilisi Sea's best spots with SUPSURF.GE (supsurf.ge)."
     },
     "contact": {
-      "title": "Contact Us | SUP Rent Batumi, Tbilisi, Anaklia",
-      "description": "Get in touch with SUP Surf Georgia. Rent boards, book tours, or inquire about sales. View locations and contact numbers."
+      "title": "Contact Us | SUPSURF.GE Tbilisi Sea, Tbilisi",
+      "description": "Get in touch with SUPSURF.GE. Rent SUP boards & water boards at Tbilisi Sea, book tours, or inquire about sales. Tel: +995 592 05 50 17."
     }
   },
   "nav": {
@@ -36,28 +36,28 @@
   },
   "home": {
     "hero": {
-      "title": "SUP Board Rental",
-      "subtitle": "Rent premium paddleboards at Lisi Lake, Batumi, and Anaklia at the best price.",
+      "title": "SUP Board & Water Board Rental",
+      "subtitle": "Rent premium paddleboards and water boards at Tbilisi Sea at the best price. 1 Day = 50 GEL with full adventure gear.",
       "rentCTA": "Rent Full Kit",
       "shopCTA": "Shop Gear",
       "keywords_label": "Our core services:"
     },
     "services": {
-      "title": "Our Marine Equipment & Packages",
-      "subtitle": "Whether you are looking to rent for a day or buy your own gear, we have you covered with the finest water sports equipment.",
-      "sup_title": "Stand-Up Paddle (SUP)",
-      "sup_desc": "Top-tier inflatable and rigid stand up paddle boarding gear. Perfect for calm lakes or coastal cruising.",
-      "surf_title": "Surfboards",
-      "surf_desc": "High-performance longboards, shortboards, and soft-tops for beginners and professional riders alike.",
+      "title": "Our Water Boards & Equipment in Tbilisi",
+      "subtitle": "Whether you are looking to rent for a day or buy your own water board, we have you covered with the finest paddleboarding gear at Tbilisi Sea.",
+      "sup_title": "Stand-Up Paddle & Water Boards (SUP)",
+      "sup_desc": "Top-tier inflatable and rigid stand up paddle boarding gear at Tbilisi Sea. Perfect for calm water cruising and active leisure.",
+      "surf_title": "Surfboards & Water Boards",
+      "surf_desc": "High-performance longboards, shortboards, and soft-tops for beginners and professional riders alike in Tbilisi.",
       "wingfoil_title": "Wing Foil & Windsurf",
-      "wingfoil_desc": "Experience the thrill of flying above water with our state-of-the-art wingfoil rental packages.",
+      "wingfoil_desc": "Experience the thrill of flying above water at Tbilisi Sea with our state-of-the-art wingfoil packages.",
       "lessons_title": "Expert Lessons",
-      "lessons_desc": "Learn stand up paddle boarding or surfing from certified instructors. Individual and group sessions available.",
+      "lessons_desc": "Learn stand up paddle boarding and water board balance from certified instructors at Tbilisi Sea. Individual and group sessions available.",
       "learn_more": "Learn More"
     },
     "testimonials": {
       "title": "What Our Riders Say",
-      "subtitle": "Real experiences from active water sports enthusiasts, tourists, and regular rental clients across Georgia."
+      "subtitle": "Real experiences from active water sports enthusiasts, tourists, and regular rental clients in Tbilisi."
     }
   },
   "booking": {
@@ -65,7 +65,7 @@
     "subtitle": "Fill out the inquiry form below to check availability and reserve your board. No upfront payment required.",
     "select_board": "Select Equipment Type",
     "board_options": {
-    "sup_allround": "Full SUP Equipment Set (Promo) — 50 GEL/Day",
+      "sup_allround": "Full SUP / Water Board Equipment Set (Promo) — 50 GEL/Day",
       "sup_touring": "Premium Touring SUP Board (11'6\")",
       "surf_soft": "Beginner Surfboard Soft-Top (8'0\")",
       "surf_hard": "Performance Surfboard Epoxy (6'4\")",
@@ -75,8 +75,7 @@
     "pricing_note": "Special Promo: 1 Day = 50 GEL, 2 Days = 80 GEL (includes full kit).",
     "location": "Preferred Rental Location",
     "locations": {
-      "lisi": "Tbilisi - Lisi Lake Station",
-      "shekvetili": "Shekvetili - Coastline Station"
+      "tbilisi_sea": "Tbilisi - Tbilisi Sea Station"
     },
     "start_date": "Start Date",
     "end_date": "End Date",
@@ -103,10 +102,10 @@
     }
   },
   "footer": {
-    "slogan": "Providing premium water sports gear, guided tours, and surf lessons in Tbilisi, Batumi, and Anaklia since 2021.",
+    "slogan": "Providing premium SUP boards, water boards, guided tours, and lessons at Tbilisi Sea since 2021.",
     "quick_links": "Quick Navigation",
     "contact_info": "Contact Details",
-    "address": "Batumi Beach Boulevard / Lisi Lake, Georgia",
+    "address": "Tbilisi Sea, Tbilisi, Georgia",
     "rights": "All rights reserved. Powered by enterprise-grade SEO and Next.js."
   },
   "blog_posts": [
@@ -121,8 +120,8 @@
     },
     {
       "id": "destination-review-lisi",
-      "title": "Exploring Lisi Lake: The Ultimate Tbilisi SUP Escape",
-      "excerpt": "Need a quick break from the Tbilisi summer heat? Lisi Lake offers the perfect calm-water destination for stand up paddle boarding. Learn about rentals, optimal boarding hours, and more.",
+      "title": "Exploring Tbilisi Sea: The Ultimate Tbilisi SUP & Water Board Escape",
+      "excerpt": "Need a quick break from the Tbilisi summer heat? Tbilisi Sea offers the perfect water destination for stand up paddle boarding. Learn about rentals, optimal boarding hours, and more.",
       "category": "Destinations",
       "date": "June 10, 2026",
       "readTime": "4 min read",
@@ -130,8 +129,8 @@
     },
     {
       "id": "beginners-guide-surfing",
-      "title": "Batumi Surf Guide: Best Wave Conditions for Beginners",
-      "excerpt": "Georgia is starting to ride waves! In this post, we analyze swell sizes, tidal behaviors, and the best beach sections near Batumi Miracle Beach for first-time surfboard riders.",
+      "title": "Tbilisi Sea Water Board Guide: Best Riding Tips for Beginners",
+      "excerpt": "Water sports in Tbilisi are thriving! In this guide, we break down paddling balance, gear selection, and the best shoreline spots at Tbilisi Sea for first-time board riders.",
       "category": "Surfing Tips",
       "date": "May 28, 2026",
       "readTime": "8 min read",
@@ -140,7 +139,7 @@
   ],
   "blog_ui": {
     "read_article": "Read Article",
-    "by": "By"
+    "by": "By:"
   },
   "shop_products": [
     {
@@ -148,7 +147,7 @@
       "name": "Gladiator Pro 10'6\" Inflatable SUP",
       "category": "SUP Boards",
       "condition": "New",
-      "desc": "All-round premium inflatable paddleboard package including carbon paddle, pump, bag, and leash."
+      "desc": "Premium all-round inflatable stand-up paddleboard bundle including carbon paddle, dual-action pump, heavy-duty backpack, and leash."
     },
     {
       "id": "paddle_carbon",
@@ -159,57 +158,57 @@
     },
     {
       "id": "vest_safety",
-      "name": "NRS Ninja PFD Life Vest",
+      "name": "NRS Ninja PFD Safety Life Vest",
       "category": "Accessories",
       "condition": "New",
-      "desc": "US Coast Guard approved Type III low-profile safety vest. Flexible foam panels for active paddling."
+      "desc": "Coast Guard certified low-profile safety vest. Athletic foam side-panels designed for unrestricted paddling motion."
     },
     {
       "id": "board_used_epoxy",
-      "name": "Torq Epoxy Longboard 8'0\"",
+      "name": "Torq Epoxy Surfboard 8'0\"",
       "category": "Surfboards",
-      "condition": "Premium Used",
-      "desc": "Excellent condition epoxy surfboard. Perfect for beginners and longboarders looking to catch small-medium waves."
+      "condition": "Used - Like New",
+      "desc": "Eco-built epoxy longboard in great condition. Exceptional stability for beginners and intermediate cruisers on gentle waves."
     },
     {
       "id": "dry_bag_20l",
       "name": "Ocean Pack Waterproof Dry Bag (20L)",
       "category": "Accessories",
       "condition": "New",
-      "desc": "Heavy-duty 500D PVC roll-top waterproof bag. Keeps your phone, camera, and clothes safe and dry."
+      "desc": "Heavy-duty 500D PVC tarpaulin waterproof dry sack. Keeps your smartphone, dry clothes, and essentials protected."
     }
   ],
   "shop_ui": {
     "buy_inquire": "Buy / Inquire",
     "warranty_title": "Official Warranty & Gear Exchange Support",
-    "warranty_desc": "We stand behind all water sports products we sell. New inflatable boards come with a 2-year manufacturer warranty. Used boards are fully safety inspected, and tested on Lisi Lake/Batumi before being offered for resale. Want to upgrade? Ask about our Gear Exchange program."
+    "warranty_desc": "We stand behind all water sports products we sell. New inflatable boards come with a 2-year manufacturer warranty. Used boards are fully safety inspected and tested on Tbilisi Sea before being offered for resale. Want to upgrade? Ask about our Gear Exchange program."
   },
   "services_packages": [
     {
       "id": "tour_lisi",
-      "name": "Sunrise & Sunset Guided SUP Tours",
-      "location": "Lisi Lake, Tbilisi / Batumi Coastline",
+      "name": "Sunrise & Sunset Guided SUP Tours at Tbilisi Sea",
+      "location": "Tbilisi Sea, Tbilisi",
       "price": "50 GEL per person",
       "duration": "2 Hours",
-      "desc": "Paddle out with a certified guide to witness the gorgeous Georgian sunrise or sunset from the water. Includes safety briefing, boards, life vests, and digital photos.",
-      "inclusions": ["Premium Touring SUP Board", "Certified Water Guide", "Safety Briefing & Coaching", "GoPro Photo Session", "Water bottle & dry bag"]
+      "desc": "Paddle out with a certified guide at Tbilisi Sea to witness the gorgeous sunrise or sunset from the water. Includes safety briefing, boards, life vests, and digital photos.",
+      "inclusions": ["Premium Touring SUP / Water Board", "Certified Water Guide", "Safety Briefing & Coaching", "GoPro Photo Session", "Water bottle & dry bag"]
     },
     {
       "id": "lesson_surf",
-      "name": "Beginner Surfing Lessons",
-      "location": "Batumi Miracle Beach / Anaklia Pier",
+      "name": "Water Board & Surf Lessons for Beginners",
+      "location": "Tbilisi Sea, Tbilisi",
       "price": "70 GEL per lesson",
       "duration": "1.5 Hours",
-      "desc": "Learn the fundamentals of catching waves! Our instructors cover paddling technique, pop-up mechanics, board control, and wave etiquette in a safe environment.",
-      "inclusions": ["Soft-top beginner surfboard", "Personal Instructor (1-on-1)", "Wetsuit (if water temp requires)", "Safety leash & rash guard", "Beach theory + Water practice"]
+      "desc": "Learn the fundamentals of standing up, balance, and paddling! Our instructors guide you step-by-step at Tbilisi Sea.",
+      "inclusions": ["Soft-top beginner board", "Personal Instructor (1-on-1)", "Wetsuit (if water temp requires)", "Safety leash & rash guard", "Beach theory + Water practice"]
     },
     {
       "id": "corporate_event",
-      "name": "Corporate Watersports Events & Teambuildings",
-      "location": "Tbilisi (Lisi Lake) / Batumi / Anaklia",
+      "name": "Corporate Watersports Events at Tbilisi Sea",
+      "location": "Tbilisi (Tbilisi Sea)",
       "price": "Custom pricing (Contact us)",
       "duration": "Half-Day / Full-Day",
-      "desc": "Build team spirit with exciting water sports relays, paddleboard yoga sessions, and board races! Suitable for all age groups and experience levels.",
+      "desc": "Build team spirit with exciting water sports relays, paddleboard yoga sessions, and board races at Tbilisi Sea! Suitable for all age groups.",
       "inclusions": ["Full station booking & private gear", "Team coaches & safety lifeguards", "Fun races, SUP polo, and relays", "Catering / Beach lounge zone access", "Event coordination & photography"]
     }
   ],
@@ -220,7 +219,7 @@
     "duration": "Duration"
   },
   "contact_page": {
-    "our_stations": "Our Stations",
+    "our_stations": "Our Station",
     "send_inquiry": "Send an Inquiry",
     "form_subtitle": "Have questions about custom SUP sales or group events? Leave your contact info and our team will reply shortly.",
     "full_name": "Full Name",
@@ -228,36 +227,24 @@
     "subject": "Subject",
     "message": "Message",
     "btn_send": "Send Message",
-    "map_title": "Interactive Water Sports Map",
-    "map_desc": "Our rental containers and surf schools are located right on the water line for instant pickup.",
-    "active_stations": "Active Geo Stations",
+    "map_title": "Tbilisi Sea Watersports Station",
+    "map_desc": "Our rental station is located right on the waterline at Tbilisi Sea for instant pickup.",
+    "active_stations": "Active Station",
     "placeholder_name": "Giorgi...",
     "placeholder_subject": "e.g. Board Purchase, Group Lessons",
     "placeholder_message": "Write details...",
     "branches": [
       {
-        "name": "Tbilisi - Lisi Lake Station",
-        "address": "Lisi Lake Park, Northern Shore, Tbilisi, Georgia",
-        "phone": "+995 555 123 456",
-        "hours": "Mon - Sun: 09:00 - 21:00"
-      },
-      {
-        "name": "Batumi - Miracle Beach Station",
-        "address": "Miracle Beach (near Ferris Wheel), Batumi, Georgia",
-        "phone": "+995 555 123 457",
-        "hours": "Mon - Sun: 08:00 - 20:00"
-      },
-      {
-        "name": "Anaklia - Boulevard Pier Station",
-        "address": "Main Boulevard Coastline, Anaklia, Georgia",
-        "phone": "+995 555 123 458",
-        "hours": "Mon - Sun: 10:00 - 22:00"
+        "name": "Tbilisi - Tbilisi Sea Station",
+        "address": "Tbilisi Sea, Tbilisi, Georgia",
+        "phone": "+995 592 05 50 17",
+        "hours": "Mon - Sun: 08:00 - 21:00"
       }
     ]
   },
   "promo": {
-    "title": "SUP Board Rental",
-    "subtitle": "Rent premium paddleboards at Lisi Lake, Batumi, and Anaklia at the best price.",
+    "title": "SUP Board Rental in Tbilisi",
+    "subtitle": "Rent premium inflatable paddleboards and water boards at Tbilisi Sea or take a full backpack kit anywhere in Georgia at the best price.",
     "pricing_headline": "Special Daily Rental Offer",
     "day_1": "1 Day Promo",
     "day_1_price": "50 GEL",
@@ -268,15 +255,15 @@
     "kit_includes_title": "What's in the Full Kit?",
     "kit_includes_desc": "We believe in seamless pleasure. Our daily package gives you a complete gear bundle to get on the water instantly with zero friction:",
     "kit_items": {
-      "board": "High-Quality Inflatable SUP Board",
+      "board": "High-Quality Inflatable SUP / Water Board",
       "paddle": "Adjustable Carbon Paddle",
       "vest": "Certified Safety Life Vest",
       "bag": "Ergonomic Carrying Bag",
       "case": "Waterproof Mobile Phone Case",
       "pump": "High-Pressure Double-Action Pump"
     },
-    "video_title": "Feel the Vibe, Conquer the Challenge",
-    "video_desc": "Watch our community catching waves in Batumi, cruising Tbilisi Lisi Lake, and having fun during our weekend board challenges. Ready to join the momentum?"
+    "video_title": "Feel the Vibe at Tbilisi Sea",
+    "video_desc": "Watch our community cruising Tbilisi Sea on SUP boards and water boards, having fun during our weekend challenges. Ready to join the momentum?"
   },
   "rental_options": {
     "title": "Rental Options",

@@ -3,12 +3,13 @@ import { useParams, useOutletContext, Link } from 'react-router-dom';
 import { Calendar, CheckCircle2, Star, ArrowLeft, MessageCircle, PhoneCall, ChevronLeft, ChevronRight, MapPin, Clock } from 'lucide-react';
 import type { Locale } from '@/lib/get-dictionary';
 import BookingModal from '@/components/BookingModal';
+import initialDb from '../data/db.json';
 
 export default function ServiceDetail() {
   const { id } = useParams<{ id: string }>();
   const { locale, dict } = useOutletContext<{ locale: Locale; dict: any }>();
-  const [db, setDb] = useState<any>(null);
-  const [dbLoading, setDbLoading] = useState(true);
+  const [db, setDb] = useState<any>(initialDb);
+  const [dbLoading, setDbLoading] = useState(false);
   const [activeImgIdx, setActiveImgIdx] = useState(0);
   const [modalOpen, setModalOpen] = useState(false);
 
@@ -28,26 +29,26 @@ export default function ServiceDetail() {
   const staticRentalServices: any[] = [
     {
       id: "rent_daily",
-      name: { ge: "საპ ბორდის დღიური გაქირავება (აქცია)", en: "Daily SUP Board Rental (Special Offer)", ru: "Посуточная аренда сапборда (Акция)" },
-      location: { ge: "თბილისი (ლისის ტბა) & შეკვეთილი", en: "Tbilisi (Lisi Lake) & Shekvetili", ru: "Тбилиси (Озеро Лиси) и Шекветили" },
+      name: { ge: "საპ ბორდისა & წყლის დაფის დღიური გაქირავება (აქცია)", en: "Daily SUP & Water Board Rental (Special Offer)", ru: "Посуточная аренда сапборда и водной доски (Акция)" },
+      location: { ge: "თბილისი (თბილისის ზღვა)", en: "Tbilisi (Tbilisi Sea)", ru: "Тбилиси (Тбилисское море)" },
       price: "50 GEL (1 დღე) / 80 GEL (2 დღე)",
       duration: { ge: "1-2 დღე (სრული კომპლექტი)", en: "1-2 Days (Full Kit)", ru: "1-2 Дня (Полный комплект)" },
       image: "/pictures/paddleboard-1.webp",
-      desc: { ge: "საპ ბორდის დღიური გაქირავება სპეციალური ფასდაკლებით! 1 დღე = 50 ლარი, ხოლო 2 დღე = 80 ლარი. ფასში შედის სრული პროფესიონალური აღჭურვილობა: გასაბერი დაფა, კარბონის ნიჩაბი, სამაშველო ჟილეტი, უსაფრთხოების თოკი (Leash), ტუმბო და წყალგაუმტარი ტელეფონის ქეისი.", en: "Daily SUP board rental with special discount! 1 day = 50 GEL, 2 days = 80 GEL. Includes full kit: inflatable board, carbon paddle, life vest, safety leash, high-pressure pump, and waterproof phone case.", ru: "Посуточная аренда сапборда по акции! 1 день = 50 GEL, 2 дня = 80 GEL. В стоимость входит полный комплект: надувная доска, карбоновое весло, спасательный жилет, лиш, насос и водонепроницаемый чехол." },
+      desc: { ge: "საპ ბორდისა და წყლის დაფის დღიური გაქირავება თბილისის ზღვაზე სპეციალური ფასდაკლებით! 1 დღე = 50 ლარი, ხოლო 2 დღე = 80 ლარი. ფასში შედის სრული პროფესიონალური აღჭურვილობა: გასაბერი დაფა, კარბონის ნიჩაბი, სამაშველო ჟილეტი, უსაფრთხოების თოკი (Leash), ტუმბო და წყალგაუმტარი ტელეფონის ქეისი.", en: "Daily SUP board and water board rental at Tbilisi Sea with special discount! 1 day = 50 GEL, 2 days = 80 GEL. Includes full kit: inflatable board, carbon paddle, life vest, safety leash, high-pressure pump, and waterproof phone case.", ru: "Посуточная аренда сапборда и водной доски на Тбилисском море по акции! 1 день = 50 GEL, 2 дня = 80 GEL. В стоимость входит полный комплект: надувная доска, карбоновое весло, спасательный жилет, лиш, насос и водонепроницаемый чехол." },
       inclusions: {
-        ge: ["გასაბერი საპ დაფა", "მსუბუქი კარბონის ნიჩაბი", "სამაშველო ჟილეტი", "უსაფრთხოების თოკი (Leash)", "მაღალი წნევის ტუმბო", "წყალგაუმტარი ტელეფონის ქეისი", "ზურგჩანთა ტრანსპორტირებისთვის"],
-        en: ["Inflatable SUP Board", "Lightweight Carbon Paddle", "Buoyancy Safety Life Vest", "Ankle Safety Leash", "High-Pressure Dual Pump", "Waterproof Phone Case", "Travel Backpack"],
-        ru: ["Надувная SUP-доска", "Карбоновое весло", "Спасательный жилет", "Страховочный лиш", "Насос высокого давления", "Водонепроницаемый чехол", "Рюкзак для транспортировки"]
+        ge: ["გასაბერი საპ / წყლის დაფა", "მსუბუქი კარბონის ნიჩაბი", "სამაშველო ჟილეტი", "უსაფრთხოების თოკი (Leash)", "მაღალი წნევის ტუმბო", "წყალგაუმტარი ტელეფონის ქეისი", "ზურგჩანთა ტრანსპორტირებისთვის"],
+        en: ["Inflatable SUP / Water Board", "Lightweight Carbon Paddle", "Buoyancy Safety Life Vest", "Ankle Safety Leash", "High-Pressure Dual Pump", "Waterproof Phone Case", "Travel Backpack"],
+        ru: ["Надувная SUP-доска / водная доска", "Карбоновое весло", "Спасательный жилет", "Страховочный лиш", "Насос высокого давления", "Водонепроницаемый чехол", "Рюкзак для транспортировки"]
       }
     },
     {
       id: "lesson_basic",
       name: { ge: "საბაზისო შემსწავლელი სეანსი (90 წუთი)", en: "Basic Beginner SUP Session (90 Mins)", ru: "Базовое обучающее занятие (90 минут)" },
-      location: { ge: "თბილისი (ლისის ტბა) & შეკვეთილი", en: "Tbilisi (Lisi Lake) & Shekvetili", ru: "Тбилиси (Озеро Лиси) и Шекветили" },
+      location: { ge: "თბილისი (თბილისის ზღვა)", en: "Tbilisi (Tbilisi Sea)", ru: "Тбилиси (Тбилисское море)" },
       price: "45 GEL",
       duration: { ge: "90 წუთი (ინსტრუქტორთან ერთად)", en: "90 Mins (With Instructor)", ru: "90 Минут (С инструктором)" },
       image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=500&q=80",
-      desc: { ge: "90-წუთიანი შემსწავლელი სეანსი სერტიფიცირებულ ინსტრუქტორთან ერთად! მოიცავს ხმელეთზე უსაფრთხოების ბრიფინგს, ბალანსის დაჭერას, ნიჩბოსნობის სწორ ტექნიკასა და წყალზე პრაქტიკულ სრიალს ინსტრუქტორის მეთვალყურეობით.", en: "90-minute structured beginner session with a certified instructor! Includes safety briefing on shore, posture balance setup, correct stroke technique, and guided paddling on the water.", ru: "90-минутное обучающее занятие с сертифицированным инструктором! Включает инструктаж по безопасности, постановку баланса, технику гребли и сопровождение инструктора на воде." },
+      desc: { ge: "90-წუთიანი შემსწავლელი სეანსი სერტიფიცირებულ ინსტრუქტორთან ერთად თბილისის ზღვაზე! მოიცავს ხმელეთზე უსაფრთხოების ბრიფინგს, ბალანსის დაჭერას, ნიჩბოსნობის სწორ ტექნიკასა და წყალზე პრაქტიკულ სრიალს ინსტრუქტორის მეთვალყურეობით.", en: "90-minute structured beginner session with a certified instructor at Tbilisi Sea! Includes safety briefing on shore, posture balance setup, correct stroke technique, and guided paddling on the water.", ru: "90-минутное обучающее занятие с сертифицированным инструктором на Тбилисском море! Включает инструктаж по безопасности, постановку баланса, технику гребли и сопровождение инструктора на воде." },
       inclusions: {
         ge: ["90 წუთი ინსტრუქტორთან", "სრული საპ აღჭურვილობა", "უსაფრთხოების ბრიფინგი", "ბალანსისა და ნიჩბოსნობის ტექნიკა", "ფოტო/ვიდეო გადაღება"],
         en: ["90 Mins with Instructor", "Full SUP Kit Included", "Safety & Land Briefing", "Balance & Stroke Technique", "Photo & Video Shots"],
@@ -57,11 +58,11 @@ export default function ServiceDetail() {
     {
       id: "rent_hourly",
       name: { ge: "საათობრივი გაქირავება", en: "Hourly SUP Board Rental", ru: "Почасовая аренда сапборда" },
-      location: { ge: "თბილისი (ლისის ტბა) & შეკვეთილი", en: "Tbilisi (Lisi Lake) & Shekvetili", ru: "Тбилиси (Озеро Лиси) и Шекветили" },
+      location: { ge: "თბილისი (თბილისის ზღვა)", en: "Tbilisi (Tbilisi Sea)", ru: "Тбилиси (Тбилисское море)" },
       price: "25 GEL (1-ლი სთ) / 20 GEL (შემდეგი)",
       duration: { ge: "საათობრივი", en: "Hourly", ru: "Почасовая" },
       image: "/pictures/paddleboard-2.webp",
-      desc: { ge: "საპ ბორდით სრიალი საათობრივად ლისის ტბასა და შეკვეთილის სანაპიროზე! პირველი საათის ღირებულება შეადგენს 25 ლარს, ხოლო ყოველი შემდგომი საათი — 20 ლარს. მოიცავს სრულ აღჭურვილობას.", en: "Hourly paddleboard rental on Lisi Lake and Shekvetili beach. 25 GEL for the 1st hour, and 20 GEL for each subsequent hour. Includes full gear.", ru: "Почасовая аренда сапбордов на озере Лиси и на пляже Шекветили. 25 GEL за первый час и 20 GEL за каждый последующий час. Полное снаряжение включено." },
+      desc: { ge: "საპ ბორდითა და წყლის დაფით სრიალი საათობრივად თბილისის ზღვაზე! პირველი საათის ღირებულება შეადგენს 25 ლარს, ხოლო ყოველი შემდგომი საათი — 20 ლარს. მოიცავს სრულ აღჭურვილობას.", en: "Hourly paddleboard & water board rental on Tbilisi Sea! 25 GEL for the 1st hour, and 20 GEL for each subsequent hour. Includes full gear.", ru: "Почасовая аренда сапбордов и водных досок на Тбилисском море. 25 GEL за первый час и 20 GEL за каждый последующий час. Полное снаряжение включено." },
       inclusions: {
         ge: ["1-ლი საათი: 25 ლარი", "ყოველი შემდგომი საათი: 20 ლარი", "სრული საპ აღჭურვილობა", "სამაშველო ჟილეტი", "წყალგაუმტარი ქეისი"],
         en: ["1st Hour: 25 GEL", "Each Next Hour: 20 GEL", "Full SUP Gear Included", "Safety Life Vest", "Waterproof Phone Pouch"],
@@ -70,12 +71,12 @@ export default function ServiceDetail() {
     },
     {
       id: "corporate_event",
-      name: { ge: "კორპორატიული შეთავაზებები", en: "Corporate & Group Offers", ru: "Корпоративные предложения" },
-      location: { ge: "თბილისი (ლისის ტბა) & შეკვეთილი", en: "Tbilisi (Lisi Lake) & Shekvetili", ru: "Тбилиси (Озеро Лиси) и Шекветили" },
+      name: { ge: "კორპორატიული შეთავაზებები თბილისის ზღვაზე", en: "Corporate & Group Offers at Tbilisi Sea", ru: "Корпоративные предложения на Тбилисском море" },
+      location: { ge: "თბილისი (თბილისის ზღვა)", en: "Tbilisi (Tbilisi Sea)", ru: "Тбилиси (Тбилисское море)" },
       price: "Custom / ინდივიდუალური",
       duration: { ge: "მოქნილი დრო", en: "Flexible Time", ru: "Гибкое время" },
       image: "https://images.unsplash.com/photo-1500309722644-cf8528574a7b?auto=format&fit=crop&w=800&q=80",
-      desc: { ge: "ინდივიდუალური კორპორატიული შეთავაზებები კომპანიებისა და ჯგუფებისთვის. მოგვწერეთ თქვენი სურვილები (მონაწილეთა რაოდენობა, თარიღი) და შევადგენთ სპეციალურად თქვენზე მორგებულ პაკეტს ლისის ტბასა თუ შეკვეთილში.", en: "Customized corporate offers and team building for groups and businesses. Contact us with your requirements (group size, date) to receive a tailored package at Lisi Lake or Shekvetili.", ru: "Индивидуальные корпоративные предложения для компаний и групп. Напишите нам ваши пожелания (число участников, дата), и мы подготовим специальный пакет на озере Лиси или в Шекветили." },
+      desc: { ge: "ინდივიდუალური კორპორატიული შეთავაზებები კომპანიებისა და ჯგუფებისთვის თბილისის ზღვაზე. მოგვწერეთ თქვენი სურვილები (მონაწილეთა რაოდენობა, თარიღი) და შევადგენთ სპეციალურად თქვენზე მორგებულ პაკეტს.", en: "Customized corporate offers and team building for groups and businesses at Tbilisi Sea. Contact us with your requirements to receive a tailored package.", ru: "Индивидуальные корпоративные предложения для компаний и групп на Тбилисском море. Напишите нам ваши пожелания, и мы подготовим специальный пакет." },
       inclusions: {
         ge: ["ჯგუფური საპ შეჯიბრებები", "ღონისძიების კოორდინატორი", "სრული აღჭურვილობის უზრუნველყოფა", "ინდივიდუალური ფასდაკლება", "ფოტო/ვიდეო გადაღება"],
         en: ["Group SUP Races & Relay", "Event Coordinator", "Full Gear & Safety Setup", "Custom Group Discount", "Photo & Video Shots"],
@@ -106,29 +107,49 @@ export default function ServiceDetail() {
     const schemaInclusions = service.inclusions[locale] || service.inclusions.en || [];
     const schemaImages = service.images && service.images.length > 0 ? service.images : [service.image];
 
-    const serviceSchema = {
-      '@context': 'https://schema.org/',
-      '@type': 'TouristTrip',
+    const isTour = service.id === 'corporate_event';
+    const isLesson = service.id === 'lesson_basic';
+    const isRental = service.id.startsWith('rent_');
+
+    const serviceSchema: any = {
+      '@context': 'https://schema.org',
+      '@type': isTour ? ['Service', 'TouristTrip'] : 'Service',
       'name': schemaName,
       'description': schemaDesc,
+      'serviceType': isLesson 
+        ? (locale === 'ge' ? 'საპის გაკვეთილი და ინსტრუქტაჟი' : locale === 'ru' ? 'Урок сапбординга с инструктором' : 'SUP Lesson & Coaching')
+        : isRental 
+          ? (locale === 'ge' ? 'საპ ბორდისა და წყლის დაფის გაქირავება' : locale === 'ru' ? 'Прокат сапбордов' : 'SUP Board & Watersports Rental')
+          : (locale === 'ge' ? 'საპ ტურები და კორპორატიული ღონისძიებები' : locale === 'ru' ? 'SUP туры и корпоративные мероприятия' : 'SUP Tours & Corporate Events'),
       'image': schemaImages.map((img: string) => img.startsWith('http') ? img : window.location.origin + img),
-      'touristType': 'Water sports lovers',
+      'provider': {
+        '@type': ['SportsActivityLocation', 'LocalBusiness'],
+        '@id': 'https://supsurf.ge/#localbusiness',
+        'name': 'SUPSURF.GE',
+        'url': 'https://supsurf.ge'
+      },
+      'areaServed': [
+        { '@type': 'City', 'name': 'Tbilisi' },
+        { '@type': 'Place', 'name': 'Tbilisi Sea' },
+        { '@type': 'Country', 'name': 'Georgia' }
+      ],
       'offers': {
         '@type': 'Offer',
         'url': window.location.href,
         'priceCurrency': 'GEL',
         'price': priceVal,
-        'availability': 'https://schema.org/InStock'
-      },
-      'itinerary': {
-        '@type': 'ItemList',
-        'itemListElement': schemaInclusions.map((inc: string, idx: number) => ({
-          '@type': 'ListItem',
-          'position': idx + 1,
-          'name': inc
-        }))
+        'availability': 'https://schema.org/InStock',
+        'seller': {
+          '@type': 'LocalBusiness',
+          '@id': 'https://supsurf.ge/#localbusiness',
+          'name': 'SUPSURF.GE'
+        }
       }
     };
+
+    if (schemaInclusions.length > 0) {
+      serviceSchema.termsOfService = schemaInclusions.join(', ');
+    }
 
     script.text = JSON.stringify(serviceSchema);
 
@@ -238,6 +259,9 @@ Could you please confirm availability? Thank you!`;
                 src={images[activeImgIdx]}
                 alt={name}
                 className="w-full h-full object-cover transition-all duration-300"
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
               />
               
               {/* Slider Controls */}
@@ -283,7 +307,7 @@ Could you please confirm availability? Thank you!`;
                       idx === activeImgIdx ? 'border-ocean-teal scale-[0.98]' : 'border-transparent hover:border-ocean-slate/20'
                     }`}
                   >
-                    <img src={imgUrl} alt="" className="w-full h-full object-cover" />
+                    <img src={imgUrl} alt={`${name} thumbnail ${idx + 1}`} className="w-full h-full object-cover" loading="lazy" decoding="async" />
                   </button>
                 ))}
               </div>

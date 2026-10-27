@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useOutletContext, Link } from 'react-router-dom';
 import { Calendar, Clock, User, ArrowLeft, Play } from 'lucide-react';
 import type { Locale } from '@/lib/get-dictionary';
+import initialDb from '../data/db.json';
 
 function renderBlogVideo(url?: string) {
   if (!url) return null;
@@ -68,8 +69,8 @@ function renderBlogVideo(url?: string) {
 export default function BlogPostDetail() {
   const { id } = useParams<{ id: string }>();
   const { locale } = useOutletContext<{ locale: Locale; dict: any }>();
-  const [db, setDb] = useState<any>(null);
-  const [dbLoading, setDbLoading] = useState(true);
+  const [db, setDb] = useState<any>(initialDb);
+  const [dbLoading, setDbLoading] = useState(false);
 
   useEffect(() => {
     fetch('/api/admin')
@@ -113,7 +114,9 @@ export default function BlogPostDetail() {
       document.head.appendChild(script);
     }
 
-    const blogSchema = {
+    const isLocationArticle = id === 'best-lakes-georgia-sup';
+
+    const blogSchema: any = {
       '@context': 'https://schema.org',
       '@type': 'BlogPosting',
       'headline': title,
@@ -124,16 +127,46 @@ export default function BlogPostDetail() {
         'name': activeBlog.author
       },
       'publisher': {
-        '@type': 'Organization',
-        'name': 'supsurf.ge',
+        '@type': ['SportsActivityLocation', 'LocalBusiness', 'Organization'],
+        '@id': 'https://supsurf.ge/#localbusiness',
+        'name': 'SUPSURF.GE',
+        'url': 'https://supsurf.ge',
         'logo': {
           '@type': 'ImageObject',
-          'url': window.location.origin + '/pictures/logo.webp'
+          'url': 'https://supsurf.ge/pictures/logo.webp'
         }
+      },
+      'mainEntityOfPage': {
+        '@type': 'WebPage',
+        '@id': window.location.href
+      },
+      'inLanguage': locale === 'ge' ? 'ka' : locale,
+      'isPartOf': {
+        '@type': 'WebSite',
+        '@id': 'https://supsurf.ge/#website'
       },
       'description': activeBlog.excerpt[locale] || activeBlog.excerpt.en,
       'articleBody': content
     };
+
+    if (isLocationArticle) {
+      blogSchema.spatialCoverage = 'Georgia';
+      blogSchema.contentLocation = [
+        { '@type': 'Place', 'name': 'Tbilisi Sea', 'geo': { '@type': 'GeoCoordinates', 'latitude': 41.7450, 'longitude': 44.8650 } },
+        { '@type': 'Place', 'name': 'Lisi Lake', 'address': { '@type': 'PostalAddress', 'addressLocality': 'Tbilisi', 'addressCountry': 'GE' } },
+        { '@type': 'Place', 'name': 'Bazaleti Lake', 'address': { '@type': 'PostalAddress', 'addressLocality': 'Dusheti', 'addressCountry': 'GE' } },
+        { '@type': 'Place', 'name': 'Sioni Reservoir', 'address': { '@type': 'PostalAddress', 'addressLocality': 'Tianeti', 'addressCountry': 'GE' } },
+        { '@type': 'Place', 'name': 'Zhinvali Reservoir', 'address': { '@type': 'PostalAddress', 'addressLocality': 'Dusheti', 'addressCountry': 'GE' } },
+        { '@type': 'Place', 'name': 'Shaori Reservoir', 'address': { '@type': 'PostalAddress', 'addressLocality': 'Racha', 'addressCountry': 'GE' } },
+        { '@type': 'Place', 'name': 'Black Sea Coast (Batumi)', 'address': { '@type': 'PostalAddress', 'addressLocality': 'Batumi', 'addressCountry': 'GE' } },
+        { '@type': 'Place', 'name': 'Paliastomi Lake', 'address': { '@type': 'PostalAddress', 'addressLocality': 'Kolkheti', 'addressCountry': 'GE' } }
+      ];
+      blogSchema.about = [
+        { '@type': 'Thing', 'name': 'Stand Up Paddleboarding (SUP)' },
+        { '@type': 'Thing', 'name': 'SUP Board Rental Tbilisi' },
+        { '@type': 'Thing', 'name': 'Water Activities in Georgia' }
+      ];
+    }
 
     script.text = JSON.stringify(blogSchema);
 
@@ -187,6 +220,9 @@ export default function BlogPostDetail() {
             src={activeBlog.image}
             alt={title}
             className="object-cover w-full h-full"
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
           />
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-white via-ocean-dark/70 to-ocean-dark/30 z-0"></div>
@@ -296,6 +332,40 @@ export default function BlogPostDetail() {
                   </p>
                 );
               })}
+            </div>
+
+            {/* Contextual Internal Link Banner for SEO & Conversion Funnel */}
+            <div className="mt-8 rounded-2xl border border-ocean-slate/15 bg-ocean-light/30 p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div className="space-y-1 text-left">
+                <h4 className="font-display text-sm font-bold text-ocean-dark">
+                  {locale === 'ge' 
+                    ? 'გსურთ საპ ბორდით სრიალის გამოცდა?' 
+                    : locale === 'ru' 
+                    ? 'Хотите покататься на сапборде?' 
+                    : 'Ready to Experience Stand Up Paddleboarding?'}
+                </h4>
+                <p className="font-sans text-xs text-ocean-slate">
+                  {locale === 'ge' 
+                    ? 'იქირავეთ სრული კომპლექტი 50 ლარად დღეში ან გაიარეთ გაკვეთილი ინსტრუქტორთან თბილისის ზღვაზე.' 
+                    : locale === 'ru' 
+                    ? 'Арендуйте полный комплект за 50 GEL в день или запишитесь на урок с инструктором на Тбилисском море.' 
+                    : 'Rent a complete packable SUP kit for 50 GEL/day or book a 90-minute beginner lesson at Tbilisi Sea.'}
+                </p>
+              </div>
+              <div className="flex gap-2 shrink-0">
+                <Link
+                  to={`/${locale}/rent`}
+                  className="rounded-xl bg-ocean-teal hover:bg-ocean-dark text-white px-4 py-2 text-xs font-bold font-display shadow-sm transition-colors"
+                >
+                  {locale === 'ge' ? 'საპის ქირაობა' : locale === 'ru' ? 'Аренда сапа' : 'Rent a SUP'}
+                </Link>
+                <Link
+                  to={`/${locale}/services/lesson_basic`}
+                  className="rounded-xl bg-white hover:bg-ocean-light text-ocean-dark border border-ocean-slate/20 px-4 py-2 text-xs font-bold font-display transition-colors"
+                >
+                  {locale === 'ge' ? 'გაკვეთილები' : locale === 'ru' ? 'Уроки' : 'Lessons'}
+                </Link>
+              </div>
             </div>
           </div>
 

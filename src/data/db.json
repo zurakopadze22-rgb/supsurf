@@ -2,34 +2,35 @@
   "contact": {
     "phone": "+995 592 05 50 17",
     "whatsapp": "995 592 05 50 17",
+    "email": "info@supsurf.ge",
     "instagram": "https://www.instagram.com/sun_set_paddle/"
   },
-  "promo_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5gE106Pf2-K-JkVUMawfBl9jLln0_Rq1Ide078g9WCMxbB2nYlEujxx15&s=10",
+  "promo_image": "/pictures/paddleboard-1.webp",
   "logo": "/pictures/logo.webp",
   "hero_video_url": "https://www.instagram.com/reels/C-Swmkuoe3Z/",
   "lifestyle_video_url": "https://www.instagram.com/reels/C-Swmkuoe3Z/",
   "promo_title": {
-    "en": "SUP Board Rental & Sales",
-    "ge": "საპ ბორდების გაქირავება",
-    "ru": "Аренда SUP-бордов"
+    "en": "SUP Board Rental in Tbilisi",
+    "ge": "საპ ბორდების გაქირავება თბილისში",
+    "ru": "Аренда сапбордов в Тбилиси"
   },
   "promo_subtitle": {
-    "en": "Rent premium SUP boards in Tbilisi and on the Black Sea Coast at the best price.",
-    "ge": "იქირავე საპი თბილისსა და შავ ზღვაზე საუკეთესო ფასად.",
-    "ru": "Аренда сапбордов в Тбилиси и на Черном море по лучшей цене."
+    "en": "Rent premium inflatable SUP boards & water boards at Tbilisi Sea or take a full backpack kit anywhere in Georgia — 50 GEL/day, zero deposit!",
+    "ge": "იქირავეთ პრემიუმ გასაბერი საპ ბორდი (SUP) და წყლის დაფა თბილისის ზღვაზე ან წაიღეთ ნებისმიერ ტბაზე საუკეთესო ფასად — 50₾/დღე სრული აღჭურვილობით, დეპოზიტის გარეშე!",
+    "ru": "Прокат премиум сапбордов (SUP) и водных досок на Тбилисском море или с выездом на любые озера Грузии — 50 GEL/день с полным комплектом без залога!"
   },
   "kit_items": [
     {
       "key": "board",
       "image": "/pictures/paddleboard.webp",
       "title": {
-        "en": "Inflatable Board",
-        "ge": "გასაბერი დაფა",
-        "ru": "Надувная доска"
+        "en": "Inflatable Water Board (SUP)",
+        "ge": "გასაბერი წყლის დაფა (SUP)",
+        "ru": "Надувная водная доска (SUP)"
       },
       "desc": {
-        "en": "Stable all-round inflatable board suitable for all water conditions.",
-        "ge": "სტაბილური გასაბერი დაფა ყველა ტიპის წყლისთვის.",
+        "en": "Stable all-round inflatable water board suitable for all water conditions.",
+        "ge": "სტაბილური გასაბერი წყლის დაფა ყველა ტიპის წყლისთვის.",
         "ru": "Стабильная универсальная надувная доска для любых условий."
       }
     },
@@ -108,14 +109,14 @@
     {
       "id": "rent_daily",
       "name": {
-        "ge": "საპ ბორდის დღიური გაქირავება (აქცია)",
-        "en": "Daily SUP Board Rental (Special Offer)",
-        "ru": "Посуточная аренда сапборда (Акция)"
+        "ge": "საპ ბორდისა & წყლის დაფის დღიური გაქირავება (აქცია)",
+        "en": "Daily SUP & Water Board Rental (Special Offer)",
+        "ru": "Посуточная аренда сапборда и водной доски (Акция)"
       },
       "location": {
-        "ge": "თბილისი (ლისის ტბა) & შეკვეთილი",
-        "en": "Tbilisi (Lisi Lake) & Shekvetili",
-        "ru": "Тбилиси (Озеро Лиси) и Шекветили"
+        "ge": "თბილისი (თბილისის ზღვა)",
+        "en": "Tbilisi (Tbilisi Sea)",
+        "ru": "Тбилиси (Тбилисское море)"
       },
       "price": "50 GEL (1 დღე) / 80 GEL (2 დღე)",
       "duration": {
@@ -125,13 +126,13 @@
       },
       "image": "/pictures/paddleboard-1.webp",
       "desc": {
-        "ge": "საპ ბორდის დღიური გაქირავება სპეციალური ფასდაკლებით! 1 დღე = 50 ლარი, ხოლო 2 დღე = 80 ლარი. ფასში შედის სრული პროფესიონალური აღჭურვილობა: გასაბერი დაფა, კარბონის ნიჩაბი, სამაშველო ჟილეტი, უსაფრთხოების თოკი (Leash), ტუმბო და წყალგაუმტარი ტელეფონის ქეისი.",
-        "en": "Daily SUP board rental with special discount! 1 day = 50 GEL, 2 days = 80 GEL. Includes full kit: inflatable board, carbon paddle, life vest, safety leash, high-pressure pump, and waterproof phone case.",
-        "ru": "Посуточная аренда сапборда по акции! 1 день = 50 GEL, 2 дня = 80 GEL. В стоимость входит полный комплект: надувная доска, карбоновое весло, спасательный жилет, лиш, насос и водонепроницаемый чехол."
+        "ge": "საპ ბორდისა და წყლის დაფის დღიური გაქირავება თბილისის ზღვაზე სპეციალური ფასდაკლებით! 1 დღე = 50 ლარი, ხოლო 2 დღე = 80 ლარი. ფასში შედის სრული პროფესიონალური აღჭურვილობა: გასაბერი დაფა, კარბონის ნიჩაბი, სამაშველო ჟილეტი, უსაფრთხოების თოკი (Leash), ტუმბო და წყალგაუმტარი ტელეფონის ქეისი.",
+        "en": "Daily SUP board and water board rental at Tbilisi Sea with special discount! 1 day = 50 GEL, 2 days = 80 GEL. Includes full kit: inflatable board, carbon paddle, life vest, safety leash, high-pressure pump, and waterproof phone case.",
+        "ru": "Посуточная аренда сапборда и водной доски на Тбилисском море по акции! 1 день = 50 GEL, 2 дня = 80 GEL. В стоимость входит полный комплект: надувная доска, карбоновое весло, спасательный жилет, лиш, насос и водонепроницаемый чехол."
       },
       "inclusions": {
         "ge": [
-          "გასაბერი საპ დაფა",
+          "გასაბერი საპ დაფა / წყლის დაფა",
           "მსუბუქი კარბონის ნიჩაბი",
           "სამაშველო ჟილეტი",
           "უსაფრთხოების თოკი (Leash)",
@@ -140,7 +141,7 @@
           "ზურგჩანთა ტრანსპორტირებისთვის"
         ],
         "en": [
-          "Inflatable SUP Board",
+          "Inflatable SUP / Water Board",
           "Lightweight Carbon Paddle",
           "Buoyancy Safety Life Vest",
           "Ankle Safety Leash",
@@ -149,7 +150,7 @@
           "Travel Backpack"
         ],
         "ru": [
-          "Надувная SUP-доска",
+          "Надувная SUP-доска / водная доска",
           "Карбоновое весло",
           "Спасательный жилет",
           "Страховочный лиш",
@@ -172,9 +173,9 @@
         "ru": "Базовое обучающее занятие (90 минут)"
       },
       "location": {
-        "ge": "თბილისი (ლისის ტბა) & შეკვეთილი",
-        "en": "Tbilisi (Lisi Lake) & Shekvetili",
-        "ru": "Тбилиси (Озеро Лиси) и Шекветили"
+        "ge": "თბილისი (თბილისის ზღვა)",
+        "en": "Tbilisi (Tbilisi Sea)",
+        "ru": "Тбилиси (Тбилисское море)"
       },
       "price": "45 GEL",
       "duration": {
@@ -184,9 +185,9 @@
       },
       "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=500&q=80",
       "desc": {
-        "ge": "90-წუთიანი შემსწავლელი სეანსი სერტიფიცირებულ ინსტრუქტორთან ერთად! მოიცავს ხმელეთზე უსაფრთხოების ბრიფინგს, ბალანსის დაჭერას, ნიჩბოსნობის სწორ ტექნიკასა და წყალზე პრაქტიკულ სრიალს ინსტრუქტორის მეთვალყურეობით.",
-        "en": "90-minute structured beginner session with a certified instructor! Includes safety briefing on shore, posture balance setup, correct stroke technique, and guided paddling on the water.",
-        "ru": "90-минутное обучающее занятие с сертифицированным инструктором! Включает инструктаж по безопасности, постановку баланса, технику гребли и сопровождение инструктора на воде."
+        "ge": "90-წუთიანი შემსწავლელი სეანსი სერტიფიცირებულ ინსტრუქტორთან ერთად თბილისის ზღვაზე! მოიცავს ხმელეთზე უსაფრთხოების ბრიფინგს, ბალანსის დაჭერას, ნიჩბოსნობის სწორ ტექნიკასა და წყალზე პრაქტიკულ სრიალს ინსტრუქტორის მეთვალყურეობით.",
+        "en": "90-minute structured beginner session with a certified instructor at Tbilisi Sea! Includes safety briefing on shore, posture balance setup, correct stroke technique, and guided paddling on the water.",
+        "ru": "90-минутное обучающее занятие с сертифицированным инструктором на Тбилисском море! Включает инструктаж по безопасности, постановку баланса, технику гребли и сопровождение инструктора на воде."
       },
       "inclusions": {
         "ge": [
@@ -224,9 +225,9 @@
         "ru": "Почасовая аренда сапборда"
       },
       "location": {
-        "ge": "თბილისი (ლისის ტბა) & შეკვეთილი",
-        "en": "Tbilisi (Lisi Lake) & Shekvetili",
-        "ru": "Тбилиси (Озеро Лиси) и Шекветили"
+        "ge": "თბილისი (თბილისის ზღვა)",
+        "en": "Tbilisi (Tbilisi Sea)",
+        "ru": "Тбилиси (Тбилисское море)"
       },
       "price": "25 GEL (1-ლი სთ) / 20 GEL (შემდეგი)",
       "duration": {
@@ -236,9 +237,9 @@
       },
       "image": "/pictures/paddleboard-2.webp",
       "desc": {
-        "ge": "საპ ბორდით სრიალი საათობრივად ლისის ტბასა და შეკვეთილის სანაპიროზე! პირველი საათის ღირებულება შეადგენს 25 ლარს, ხოლო ყოველი შემდგომი საათი — 20 ლარს. მოიცავს სრულ აღჭურვილობას.",
-        "en": "Hourly paddleboard rental on Lisi Lake and Shekvetili beach. 25 GEL for the 1st hour, and 20 GEL for each subsequent hour. Includes full gear.",
-        "ru": "Почасовая аренда сапбордов на озере Лиси и на пляже Шекветили. 25 GEL за первый час и 20 GEL за каждый последующий час. Полное снаряжение включено."
+        "ge": "საპ ბორდითა და წყლის დაფით სრიალი საათობრივად თბილისის ზღვაზე! პირველი საათის ღირებულება შეადგენს 25 ლარს, ხოლო ყოველი შემდგომი საათი — 20 ლარს. მოიცავს სრულ აღჭურვილობას.",
+        "en": "Hourly paddleboard & water board rental on Tbilisi Sea! 25 GEL for the 1st hour, and 20 GEL for each subsequent hour. Includes full gear.",
+        "ru": "Почасовая аренда сапбордов и водных досок на Тбилисском море. 25 GEL за первый час и 20 GEL за каждый последующий час. Полное снаряжение включено."
       },
       "inclusions": {
         "ge": [
@@ -271,14 +272,14 @@
     {
       "id": "corporate_event",
       "name": {
-        "ge": "კორპორატიული შეთავაზებები",
-        "en": "Corporate & Group Offers",
-        "ru": "Корпоративные предложения"
+        "ge": "კორპორატიული შეთავაზებები თბილისის ზღვაზე",
+        "en": "Corporate & Group Offers at Tbilisi Sea",
+        "ru": "Корпоративные предложения на Тбилисском море"
       },
       "location": {
-        "ge": "თბილისი (ლისის ტბა) & შეკვეთილი",
-        "en": "Tbilisi (Lisi Lake) & Shekvetili",
-        "ru": "Тбилиси (Озеро Лиси) и Шекветили"
+        "ge": "თბილისი (თბილისის ზღვა)",
+        "en": "Tbilisi (Tbilisi Sea)",
+        "ru": "Тбилиси (Тбилисское море)"
       },
       "price": "Custom / ინდივიდუალური",
       "duration": {
@@ -288,9 +289,9 @@
       },
       "image": "https://images.unsplash.com/photo-1500309722644-cf8528574a7b?auto=format&fit=crop&w=500&q=80",
       "desc": {
-        "ge": "ინდივიდუალური კორპორატიული შეთავაზებები კომპანიებისა და ჯგუფებისთვის. მოგვწერეთ თქვენი სურვილები (მონაწილეთა რაოდენობა, თარიღი) და შევადგენთ სპეციალურად თქვენზე მორგებულ პაკეტს ლისის ტბასა თუ შეკვეთილში.",
-        "en": "Customized corporate offers and team building for groups and businesses. Contact us with your requirements (group size, date) to receive a tailored package at Lisi Lake or Shekvetili.",
-        "ru": "Индивидуальные корпоративные предложения для компаний и групп. Напишите нам ваши пожелания (число участников, дата), и мы подготовим специальный пакет на озере Лиси или в Шекветили."
+        "ge": "ინდივიდუალური კორპორატიული შეთავაზებები კომპანიებისა და ჯგუფებისთვის თბილისის ზღვაზე. მოგვწერეთ თქვენი სურვილები (მონაწილეთა რაოდენობა, თარიღი) და შევადგენთ სპეციალურად თქვენზე მორგებულ პაკეტს.",
+        "en": "Customized corporate offers and team building for groups and businesses at Tbilisi Sea. Contact us with your requirements to receive a tailored package.",
+        "ru": "Индивидуальные корпоративные предложения для компаний и групп на Тбилисском море. Напишите нам ваши пожелания, и мы подготовим специальный пакет."
       },
       "inclusions": {
         "ge": [
@@ -321,32 +322,6 @@
     }
   ],
   "products": [
-    {
-      "id": "product_1786287649926",
-      "name": {
-        "en": "New Product",
-        "ge": "ახალი პროდუქტი",
-        "ru": "Новый товар"
-      },
-      "category": {
-        "en": "Accessories",
-        "ge": "აქსესუარები",
-        "ru": "Аксессуары"
-      },
-      "condition": {
-        "en": "New",
-        "ge": "ახალი",
-        "ru": "Новый"
-      },
-      "price": "300 GEL",
-      "rating": 5,
-      "image": "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=400&q=80",
-      "desc": {
-        "en": "Write details here...",
-        "ge": "დაწერეთ დეტალები...",
-        "ru": "Описание..."
-      }
-    },
     {
       "id": "board_gladiator",
       "name": {
@@ -429,9 +404,9 @@
       "rating": 5,
       "image": "/pictures/waterproof-case.webp",
       "desc": {
-        "en": "SKU: ACC1600001\n❤Made of high-quality waterproof materials,it provides a full range of waterproof protection for your phone.\n❤The front fully transparent design allows you to clearly see the content displayed on the phone,avoiding you from missing important messages.\n❤The neck lanyard is made of high-quality materials,which is very comfortable to wear and will not harm your skin.\n❤The bright color design makes it easy for you to match any of your outfits.\n❤We are dedicated to providing the best devices for all lovers of water sports,and we care about your user experience.Please feel free to contact us if you have any questions.\n\nimmediatly following, I'm generating an image that effectively showcases this waterproof phone pouch, including key details from your listing like the description features and price.\n\nTo create this image, I will design a clean, professional product shot of the waterproof phone pouch that highlights the features from the description and clearly includes the price. I'll depict a vibrant blue waterproof pouch with a crystal-clear front and an adjustable lanyard. It will be shown holding a smartphone, with water droplets visible on the surface to demonstrate its function, set against a blurred beach background. Text overlays in both English and Georgian will highlight the key selling points from the listing.",
-        "ge": "SKU : ACC1600001\n❤ დამზადებულია მაღალხარისხოვანი წყალგაუმტარი მასალებისგან, ის უზრუნველყოფს თქვენი ტელეფონის სრულ წყალგაუმტარ დაცვას.\n❤ წინა, სრულიად გამჭვირვალე დიზაინი საშუალებას გაძლევთ ნათლად დაინახოთ ტელეფონზე გამოსახული შინაარსი, რაც თავიდან აგაცილებთ მნიშვნელოვანი შეტყობინებების გამოტოვებას.\n❤ კისერზე ჩამოსაკიდი ღვედი დამზადებულია მაღალხარისხოვანი მასალებისგან, რომელიც ძალიან კომფორტული სატარებელია და არ აზიანებს თქვენს კანს.\n❤ ნათელი ფერების დიზაინი გაგიადვილებთ მის შეხამებას ნებისმიერ თქვენს სამოსთან.\n❤ ჩვენ მზად ვართ უზრუნველვყოთ საუკეთესო მოწყობილობები წყლის სპორტის ყველა მოყვარულისთვის და ვზრუნავთ თქვენს მომხმარებლის გამოცდილებაზე. გთხოვთ, მოგვმართოთ ნებისმიერი შეკითხვის შემთხვევაში.",
-        "ru": "SKU (Артикул): ACC1600001\n❤ Изготовлен из высококачественных водонепроницаемых материалов, он обеспечивает полный спектр водонепроницаемой защиты для вашего телефона.\n❤ Полностью прозрачный дизайн передней панели позволяет четко видеть содержимое на экране телефона, что поможет вам не пропустить важные сообщения.\n❤ Шейный ремешок выполнен из высококачественных материалов, он очень удобен в ношении и не раздражает кожу.\n❤ Яркий дизайн позволяет легко сочетать чехол с любым вашим нарядом.\n❤ Мы стремимся предоставлять лучшие аксессуары для всех любителей водного спорта и заботимся о вашем пользовательском опыте. Пожалуйста, свяжитесь с нами, если у вас возникнут вопросы.Описание..."
+        "en": "Universal waterproof phone pouch designed for stand-up paddleboarding, kayaking, and open water sports. Features a certified hermetic dual-seal closure, clear front window for full touchscreen responsiveness, and a soft adjustable neck lanyard. Keeps your smartphone 100% dry and buoyant during your water adventures.",
+        "ge": "უნივერსალური წყალგაუმტარი ტელეფონის ქეისი საპ ბორდინგისთვის, კაიაკინგისა და წყლის სპორტისთვის. აღჭურვილია ჰერმეტული ორმაგი საკეტით, სრულად გამჭვირვალე სენსორული წინა პანელითა და კომფორტული რეგულირებადი კისრის ღვედით. საიმედოდ იცავს თქვენს სმარტფონს დასველებისგან და გაძლევთ ფოტოებისა და ვიდეოების გადაღების შესაძლებლობას წყალზე.",
+        "ru": "Универсальный водонепроницаемый чехол для смартфона, созданный для сапбординга и водных видов спорта. Оснащен герметичной двойной защелкой, прозрачной сенсорной пленкой для управления экраном на воде и регулируемым шейным ремешком. Надежно защищает телефон от воды, брызг и песка."
       },
       "images": [
         "/pictures/waterproof-case.webp",
@@ -552,6 +527,28 @@
       },
       "blogs": [
         {
+          "id": "sup-board-rental-tbilisi-price-guide",
+          "title": {
+            "en": "SUP Board Rental in Tbilisi (2026): Prices, Tbilisi Sea Station & Complete Guide",
+            "ge": "საპ ბორდების გაქირავება თბილისში (2026): ფასები, თბილისის ზღვის სადგური და სრული გზამკვლევი",
+            "ru": "Аренда сапбордов в Тбилиси (2026): цены, станция на Тбилисском море и полный гид"
+          },
+          "excerpt": {
+            "en": "Looking for SUP board rental in Tbilisi? Compare hourly (25 GEL) and 24-hour (50 GEL) paddleboard rental rates, Tbilisi Sea station hours, zero-deposit takeaway rules, and what is included in the 7-piece kit.",
+            "ge": "ეძებთ საპ ბორდების გაქირავებას თბილისში? გაიგეთ ყველაფერი დღიური (50₾) და საათობრივი (25₾) ტარიფების, თბილისის ზღვის სადგურის, უდეპოზიტო ჯავშნისა და 7-ნაწილიანი სრული ეკიპირების შესახებ.",
+            "ru": "Ищете прокат сапбордов в Тбилиси? Узнайте всё о посуточных (50 GEL) и почасовых (25 GEL) тарифах, станции на Тбилисском море, аренде без залога и полной комплектации."
+          },
+          "content": {
+            "en": "If you are searching for **SUP board rental in Tbilisi**, **SUPSURF.GE** offers the most flexible, affordable, and beginner-friendly Stand-Up Paddleboard (SUP) service in Georgia. Whether you want to paddle right away on calm flatwater at **Tbilisi Sea** or pack an inflatable paddleboard into your car trunk for a weekend road trip to **Lisi Lake, Zhinvali, Bazaleti, Sioni, Shaori, or Batumi**, here is everything you need to know.\n\n### 1. SUP Board Rental Prices in Tbilisi (2026 Rates)\n- **24-Hour Daily SUP Rental — 50 GEL:** Includes a complete 7-piece adventure kit packed in an ergonomic travel backpack. Pick it up in Tbilisi and take it to any lake or reservoir in Georgia.\n- **2-Day Weekend SUP Package — 80 GEL:** Save 20 GEL when renting for a full weekend (48 hours).\n- **Hourly SUP Rental at Tbilisi Sea Station — 25 GEL (1st hour) / 20 GEL (each additional hour):** Arrive at our Tbilisi Sea shoreline station where boards are already inflated and ready to launch.\n- **90-Minute Beginner SUP Lesson with Instructor — 45 GEL:** Master water safety, standing balance, and forward/turning paddle strokes with a certified coach.\n\n### 2. What Is Included in the 50 GEL Daily Kit?\nEvery SUPSURF.GE rental includes 100% of the gear you need on the water at **no extra cost**:\n1. **Premium Inflatable SUP Board (10'6\" – 11'6\", 32–34\" wide):** High-stability drop-stitch PVC construction supporting up to 150–158 kg.\n2. **Adjustable Lightweight Paddle:** Ergonomic shaft sized to your height.\n3. **Certified Safety Life Vest (PFD):** Available in all adult and youth sizes.\n4. **Waterproof Smartphone Pouch:** Shoot photos and videos on the water safely.\n5. **Safety Ankle Leash:** Keeps you connected to your board at all times.\n6. **High-Pressure Dual-Action Pump & Removable Fin:** Inflates the board in 5–7 minutes.\n7. **Compact Travel Backpack:** Fits effortlessly in the trunk or back seat of any sedan or hatchback.\n\n### 3. Why Rent with SUPSURF.GE in Tbilisi?\n- **0 GEL Deposit Policy:** Unlike traditional rentals, we do not freeze cash deposits.\n- **Open Daily 08:00 – 21:00:** Convenient early-morning pickup and sunset sessions at Tbilisi Sea.\n- **Instant WhatsApp Booking:** Message **+995 592 05 50 17** to reserve your board in under 2 minutes.",
+            "ge": "თუ გაინტერესებთ **საპ ბორდების გაქირავება თბილისში**, **SUPSURF.GE** გთავაზობთ ყველაზე ხელმისაწვდომ, უსაფრთხო და კომფორტულ სერვისს როგორც ადგილზე — **თბილისის ზღვის სადგურზე**, ისე გატანით მთელი საქართველოს მასშტაბით (**ლისის ტბა, ჟინვალის წყალსაცავი, ბაზალეთის ტბა, სიონის წყალსაცავი, შაორი, ბათუმი**).\n\n### 1. რა ღირს საპ ბორდის გაქირავება თბილისში? (2026 წლის ტარიფები)\n- **დღიური გაქირავება (24 საათი) — 50 ₾:** იდეალურია მათთვის, ვისაც სურს საპ ბორდის წაღება ნებისმიერ ტბაზე ან მთელი დღით თბილისის ზღვაზე განტვირთვა.\n- **2-დღიანი პაკეტი (უიქენდ აქცია) — 80 ₾:** საუკეთესო არჩევანი შაბათ-კვირის გასვლებისთვის და კემპინგისთვის (დაზოგეთ 20 ₾).\n- **საათობრივი გაქირავება თბილისის ზღვაზე — 25 ₾ (პირველი საათი), 20 ₾ (ყოველი მომდევნო საათი):** მობრძანდით ჩვენს სადგურზე თბილისის ზღვაზე, სადაც საპ დაფები უკვე გაბერილი და გამზადებული დაგხვდებათ პირდაპირ წყლის პირას!\n- **საპ ბორდის გაკვეთილი დამწყებთათვის ინსტრუქტორთან — 45 ₾ (90 წუთი):** სერტიფიცირებული ინსტრუქტორი გასწავლით ბალანსის დაჭერას, ფეხზე სწორად წამოდგომასა და ნიჩბოსნობის ტექნიკას.\n\n### 2. რა შედის 50 ლარიან დღიურ კომპლექტში?\nSUPSURF.GE-ზე საპ ბორდის ქირაობისას ფასში შედის **სრული 7-ნაწილიანი ეკიპირება** დამატებითი გადასახადის გარეშე:\n1. **პრემიუმ გასაბერი საპ ბორდი (SUP / წყლის დაფა):** განიერი (81–84 სმ) და სტაბილური მოდელები, რომლებიც უძლებს 150–158 კგ-მდე დატვირთვას.\n2. **რეგულირებადი მსუბუქი ნიჩაბი:** მარტივად ერგება ნებისმიერი სიმაღლის ადამიანს.\n3. **სერტიფიცირებული სამაშველო ჟილეტი:** უზრუნველყოფს 100%-იან უსაფრთხოებას მაშინაც კი, თუ ცურვა არ იცით.\n4. **წყალგაუმტარი ტელეფონის ქეისი:** გადაიღეთ ფოტოები და ვიდეოები წყალზე ტელეფონის დასველების გარეშე.\n5. **უსაფრთხოების ფეხის თოკი (Leash):** გაკავშირებთ დაფასთან ნებისმიერ სიტუაციაში.\n6. **მაღალი წნევის ტუმბო (ხელის/ელექტრო) და მოსახსნელი ფარფლი (Fin):** დაფის გაბერვას სჭირდება მხოლოდ 5–7 წუთი.\n7. **კომპაქტური ზურგჩანთა:** ჩაფუშული საპ ბორდი და მთელი ინვენტარი ეტევა ერთ ზურგჩანთაში და თავისუფლად თავსდება ნებისმიერი მსუბუქი ავტომობილის საბარგულში.\n\n### 3. რატომ ირჩევენ SUPSURF.GE-ს თბილისში?\n- **0 ₾ დეპოზიტი (გირაოს გარეშე):** არ გიწევთ წინასწარ დამატებითი თანხის დატოვება ან გაყინვა.\n- **სამუშაო საათები 08:00 – 21:00 (ყოველდღე):** შეგიძლიათ ისრიალოთ როგორც დილის მშვიდ წყალზე, ისე მზის ჩასვლისას.\n- **მყისიერი დაჯავშნა WhatsApp-ით:** მოგვწერეთ ან დაგვირეკეთ ნომერზე **+995 592 05 50 17** და დაჯავშნეთ საპ ბორდი 2 წუთში!",
+            "ru": "Если вы ищете **аренду сапбордов в Тбилиси**, станция **SUPSURF.GE** предлагает лучшие условия как для катания на месте — на **Тбилисском море**, так и для посуточного проката с выездом на любые водоемы Грузии (**озеро Лиси, Жинвальское и Сионское водохранилища, озеро Базалети, Шаори, Батуми**).\n\n### 1. Цены на прокат сапбордов в Тбилиси (тарифы 2026)\n- **Посуточная аренда (24 часа) — 50 GEL:** Полный комплект из 7 предметов в удобном рюкзаке для поездок на любое озеро.\n- **Аренда на 2 дня (выходные) — 80 GEL:** Выгодный тариф для уикенда и кемпинга (экономия 20 GEL).\n- **Почасовая аренда на Тбилисском море — 25 GEL (1-й час) / 20 GEL (каждый следующий час):** Приезжайте на нашу станцию на берегу Тбилисского моря — сапборды уже накачаны и готовы к выходу на воду.\n- **Обучение с инструктором для начинающих (90 минут) — 45 GEL:** Освойте баланс, правильную стойку и технику гребли с первого занятия.\n\n### 2. Что входит в суточный комплект за 50 GEL?\nВ стоимость аренды включено абсолютно всё снаряжение без доплат:\n1. **Устойчивый надувной сапборд (SUP-доска):** Грузоподъемность до 150–158 кг.\n2. **Регулируемое легкое весло.**\n3. **Сертифицированный спасательный жилет.**\n4. **Водонепроницаемый чехол для телефона.**\n5. **Страховочный лиш на ногу.**\n6. **Насос высокого давления и съемный плавник.**\n7. **Компактный рюкзак для переноски:** Легко помещается в багажник любого седана.\n\n### 3. Преимущества SUPSURF.GE\n- **Без залога (0 GEL депозит):** Никаких замороженных сумм.\n- **Работаем ежедневно с 08:00 до 21:00.**\n- **Быстрое бронирование в WhatsApp:** Напишите нам на **+995 592 05 50 17**."
+          },
+          "date": "2026-07-18",
+          "readTime": "5 min",
+          "author": "Giorgi Kopadze",
+          "image": "/pictures/paddleboard-1.webp"
+        },
+        {
           "id": "what-is-sup-board",
           "title": {
             "en": "What is a Stand-Up Paddleboard (SUP)?",
@@ -665,22 +662,22 @@
         {
           "id": "best-lakes-georgia-sup",
           "title": {
-            "en": "Top 5 Lakes for Paddleboarding in Georgia",
-            "ge": "სად ვისრიალოთ საპ ბორდით: 5 საუკეთესო ტბა საქართველოში",
-            "ru": "Топ-5 озер для сапсерфинга в Грузии"
+            "en": "Where to Paddleboard in Georgia: Tbilisi Sea, Lisi Lake, Mountain Reservoirs & Black Sea (Batumi)",
+            "ge": "სად ვისრიალოთ საპ ბორდით საქართველოში: თბილისის ზღვა, ლისის ტბა, მთის წყალსაცავები და ბათუმი",
+            "ru": "Где покататься на сапборде в Грузии: Тбилисское море, озеро Лиси, горные водохранилища и Батуми"
           },
           "excerpt": {
-            "en": "Explore the most beautiful and peaceful lakes in Georgia for an unforgettable paddleboarding adventure.",
-            "ge": "აღმოაჩინეთ საქართველოს ულამაზესი და მშვიდი ტბები საპით სეირნობისთვის და დაუვიწყარი თავგადასავლებისთვის.",
-            "ru": "Откройте для себя самые красивые и спокойные озера Грузии для незабываемого SUP-путешествия."
+            "en": "Discover confirmed paddleboarding spots in Georgia: from Tbilisi Sea and Lisi Lake to Bazaleti, Sioni, Shaori, and the Black Sea coast in Batumi and Shekvetili.",
+            "ge": "სრულყოფილი ლოკაციების გზამკვლევი: თბილისის ზღვა, ლისის ტბა, ბაზალეთი, სიონი, შაორი და შავი ზღვის სანაპირო (ბათუმი, შეკვეთილი).",
+            "ru": "Полный путеводитель по проверенным сап-локациям Грузии: Тбилисское море, Лиси, Базалети, Сиони, Шаори и побережье Черного моря в Батуми и Шекветили."
           },
           "content": {
-            "en": "Georgia is home to spectacular lakes that offer perfect flat-water conditions for paddleboarding. Here are our top 5 recommendations:\n\n1. **Lisi Lake (Tbilisi):** The perfect weekday spot close to the city center. Ideal for sunset paddling and family trips.\n2. **Bazaleti Lake:** Beautiful landscapes and clean water, located just 40 minutes from Tbilisi. Perfect for beginners.\n3. **Sioni Reservoir:** Surrounded by forests and mountains, Sioni offers crystal clear waters and quiet coves.\n4. **Shaori Reservoir:** Located in Racha region, Shaori is surrounded by majestic forests that look breathtaking in autumn.\n5. **Zhinali Reservoir:** Turquoise water surrounded by high mountains and ancient fortresses creating jaw-dropping views.\n\n> Safety Tip: Always check the wind speed before launching. Offshore wind (wind blowing away from the shore) can make paddling back extremely exhausting.",
-            "ge": "საქართველოში უამრავი ლამაზი ტბა და წყალსაცავია, რომლებიც იდეალურია საპ ბორდით სასრიალოდ. გთავაზობთ ჩვენს საუკეთესო ხუთეულს:\n\n1. **ლისის ტბა (თბილისი):** ყველაზე პოპულარული და მარტივად მისადგომი ადგილი ქალაქში. საუკეთესოა მზის ჩასვლისას სრიალისთვის.\n2. **ბაზალეთის ტბა:** თბილისიდან სულ რაღაც 40 წუთის სავალზეა. დიდი სივრცე და სასიამოვნო ტალღები.\n3. **სიონის წყალსაცავი:** მთებითა და ტყით გარშემორტყმული ულამაზესი ადგილი. აქ წყალი ყოველთვის სუფთა და გამჭვირვალეა.\n4. **შაორის წყალსაცავი (რაჭა):** ნამდვილი სამოთხე ბუნების მოყვარულთათვის. შემოდგომაზე ფერადი ტყეების ფონზე სრიალი დაუვიწყარია.\n5. **ჟინვალის წყალსაცავი:** ფირუზისფერი წყალი და გარშემო არსებული მთები საოცარ ხედებს ქმნის.\n\n> რჩევა უსაფრთხოებაზე: ყოველთვის შეამოწმეთ ქარის მიმართულება. სანაპიროდან წყლისკენ მქროლავმა ქარმა შეიძლება უკან დაბრუნება გაართულოს.",
-            "ru": "Грузия славится своими великолепными озерами и водохранилищами с гладкой водой. Вот наш топ-5 мест для катания на сапах:\n\n1. **Озеро Лиси (Тбилиси):** Популярное городское озеро, идеально подходящее для прогулок на закате.\n2. **Озеро Базалети:** Всего в 40 минутах езды от Тбилиси. Отличное место для начинающих.\n3. **Сионское водохранилище:** Чистейшая вода, окруженная хвойными лесами и горами.\n4. **Шаорское водохранилище (Рача):** Одно из самых живописных мест, особенно осенью.\n5. **Жинвальское водохранилище:** Бирюзовая вода на фоне величественных гор и древних крепостей.\n\n> Совет по безопасности: Всегда проверяйте направление ветра. Ветер, дующий от берега, может сильно затруднить возвращение назад."
+            "en": "Georgia is one of the premier emerging destinations for Stand Up Paddleboarding (SUP) and outdoor water activities in the Caucasus. With a warm summer climate and diverse water bodies, paddlers can explore sheltered urban lakes, serene alpine reservoirs, and morning coastal waters on the Black Sea.\n\n### 1. Tbilisi Sea (თბილისის ზღვა) — The Primary Hub in Tbilisi\n- **Distance from City Center:** 15–20 minutes (approx. 10 km).\n- **Highlights:** Home to SUPSURF.GE's primary watersports station (open daily 08:00 – 21:00). You don't need to inflate or carry equipment—boards, paddles, and life vests are ready on the shore. Expansive open flatwater makes it the #1 water activity in Tbilisi for beginners, fitness paddlers, and sunset sessions.\n\n### 2. Lisi Lake (ლისის ტბა) — Sunset Paddling Near Downtown Tbilisi\n- **Distance:** 10 km northwest of central Tbilisi.\n- **Highlights:** A popular thermal lake surrounded by walking trails and rolling hills. Its compact size ensures minimal swell, making it ideal for after-work sunset paddling and calm recreation. Easily accessible with a SUPSURF 24-hour rental pack in your car trunk.\n\n### 3. Bazaleti Lake (ბაზალეთის ტბა) — Quick Escape Near Tbilisi\n- **Distance:** 45 km north of Tbilisi (approx. 40 minutes via the highway).\n- **Highlights:** A natural volcanic lake with clean water, open horizons, and gentle breezes. Perfect for beginners and families seeking a scenic weekend picnic and paddleboarding day trip near Tbilisi.\n\n### 4. Sioni Reservoir (სიონის წყალსაცავი) — Mountain Pine Forest Sanctuary\n- **Distance:** 80 km northeast in Tianeti region.\n- **Highlights:** Nestled among pine and deciduous forests, Sioni offers mirror-calm waters, dramatic mountain reflections, and quiet coves for SUP touring and lakeside camping.\n\n### 5. Zhinvali Reservoir (ჟინვალის წყალსაცავი) — Turquoise Mountain Waters\n- **Distance:** 60 km north along the Georgian Military Highway.\n- **Highlights:** Iconic turquoise waters bordered by high Caucasus ridges and the historic Ananuri Fortress. Best paddled during calm morning hours.\n\n### 6. Shaori Reservoir (შაორის წყალსაცავი) — Highland Gem in Racha\n- **Distance:** Approx. 270 km from Tbilisi in Racha-Lechkhumi.\n- **Highlights:** At an elevation of 1,100 meters, Shaori is considered one of Georgia's most breathtaking alpine bodies of water. Smooth glass surfaces and forested shores make it unmatched for wilderness SUP expeditions.\n\n### 7. Black Sea Coast (Batumi & Shekvetili) — Coastal Morning Paddling\n- **Locations:** Batumi Boulevard coast, Shekvetili magnetic sand beaches, Kobuleti, and Gonio.\n- **Highlights:** Paddleboarding on Georgia's Black Sea is an extraordinary experience when launched between 07:30 and 11:00 AM before afternoon sea breezes create chop. Coastal dolphins are frequently spotted offshore in calm morning water.\n\n### 8. Paliastomi Lake (პალიასტომის ტბა) — Kolkheti National Park\n- **Location:** Near Poti and the Black Sea coast.\n- **Highlights:** A coastal lagoon connected to the Kaparchina River, surrounded by primeval peat wetlands. Ideal for eco-touring and birdwatching on paddleboards.\n\n> **Local Logistics & Equipment Rental:** SUPSURF.GE provides complete inflatable SUP rental packages (50 GEL/day, 80 GEL/2 days) packed in carry backpacks with pumps, paddles, and life vests. Pick up at Tbilisi Sea and take your board on road trips anywhere across Georgia with zero advance deposit.",
+            "ge": "საქართველო კავკასიის ერთ-ერთი საუკეთესო ქვეყანაა საპ ბორდინგისა და აქტიური საწყლოსნო დასვენებისთვის. თბილი ზაფხული, მშვიდი მთის წყალსაცავები და ტბები იდეალურ პირობებს ქმნის როგორც დამწყებთათვის, ისე მოგზაურებისთვის.\n\n### 1. თბილისის ზღვა (Tbilisi Sea) — მთავარი საწყლოსნო ცენტრი თბილისში\n- **მანძილი ცენტრიდან:** 15–20 წუთი (დაახლოებით 10 კმ).\n- **მახასიათებლები:** აქ მდებარეობს SUPSURF.GE-ს მთავარი სადგური (ღიაა ყოველდღე 08:00 - 21:00). დაფები ადგილზეა გაბერილი და მზადყოფნაში — არ გჭირდებათ ტრანსპორტირებაზე ფიქრი. თბილისის ზღვა საუკეთესო საწყლოსნო აქტივობაა ქალაქში განტვირთვისა და მზის ჩასვლისას სრიალისთვის.\n\n### 2. ლისის ტბა — საპით სრიალი თბილისის ცენტრთან\n- **მანძილი ცენტრიდან:** 10 კმ ჩრდილო-დასავლეთით.\n- **მახასიათებლები:** თბილისელებისთვის საყვარელი თერმული ტბა ბორცვების გარემოცვაში. კომპაქტური ზომის გამო აქ წყალი მშვიდია და იდეალურია სამუშაო დღის ბოლოს განტვირთვისთვის. მარტივად წაიღებთ SUPSURF.GE-ს დღიური იჯარის კომპლექტით.\n\n### 3. ბაზალეთის ტბა — საუკეთესო ლოკაცია თბილისთან ახლოს\n- **მანძილი თბილისიდან:** 45 კმ ჩრდილოეთით (40 წუთი ავტომობილით).\n- **მახასიათებლები:** ვულკანური წარმოშობის ტბა სუფთა წყლით და ღია პანორამით. იდეალურია ოჯახური პიკნიკისა და დამწყებთათვის საპზე ბალანსის დასაჭერად.\n\n### 4. სიონის წყალსაცავი — წიწვოვანი ტყეები და მთის სიმშვიდე\n- **მანძილი:** 80 კმ თიანეთის მიმართულებით.\n- **მახასიათებლები:** ტყითა და მთებით გარშემორტყმული ულამაზესი წყალსაცავი. აქ წყალი სარკესავით მშვიდია და იდეალურია კემპინგისა და საპ ტურებისთვის.\n\n### 5. ჟინვალის წყალსაცავი — ფირუზისფერი ალპური წყლები\n- **მანძილი:** 60 კმ სამხედრო გზის გასწვრივ.\n- **მახასიათებლები:** თვალისმომჭრელი ფირუზისფერი წყალი ანანურის ციხესიმაგრის ფონზე. რეკომენდებულია დილის საათებში სრიალი.\n\n### 6. შაორის წყალსაცავი — რაჭის ალპური მარგალიტი\n- **მანძილი:** 270 კმ თბილისიდან (რაჭა-ლეჩხუმი).\n- **მახასიათებლები:** ზღვის დონიდან 1,100 მეტრზე მდებარე უნიკალური ტბა, რომელიც შემოდგომაზე ფერადი ტყეებითაა გარშემორტყმული. ნამდვილი სამოთხე ველური ბუნების მოყვარულთათვის.\n\n### 7. შავი ზღვის სანაპირო (ბათუმი, შეკვეთილი, ქობულეთი)\n- **ლოკაციები:** ბათუმის ბულვარის სანაპირო, შეკვეთის მაგნიტური ქვიშა, გონიო.\n- **მახასიათებლები:** შავ ზღვაზე საპით სრიალი საუკეთესოა დილის 07:30-დან 11:00-მდე, სანამ ზღვის თერმული ქარი დაიწყება. დილით წყალი სრულიად მშვიდია და ხშირად დელფინების დანახვაც შეიძლება.\n\n### 8. პალიასტომის ტბა — კოლხეთის ეროვნული პარკი\n- **ლოკაცია:** ფოთთან ახლოს.\n- **მახასიათებლები:** უნიკალური ტორფიანი ტყეებით გარშემორტყმული ტბა ეკო-ტურებისა და ჩიტებზე დაკვირვებისთვის.\n\n> **აღჭურვილობა და იჯარა:** SUPSURF.GE უზრუნველყოფს სრულ კომპლექტს ზურგჩანთით (50 ლარი/დღე, 80 ლარი/2 დღე) დეპოზიტის გარეშე. აიღეთ თბილისის ზღვაზე და წაიღეთ საქართველოს ნებისმიერ წერტილში.",
+            "ru": "Грузия — одно из лучших развивающихся направлений для сапбординга (SUP) и активного водного отдыха на Кавказе. Теплое лето и разнообразие водоемов создают идеальные условия для катания на спокойной гладкой воде.\n\n### 1. Тбилисское море (Tbilisi Sea) — Главный спот в Тбилиси\n- **Расстояние от центра:** 15–20 минут (около 10 км).\n- **Особенности:** Главная станция SUPSURF.GE (работает ежедневно 08:00 – 21:00). Доски надуты и готовы на берегу — не нужно тратить время на сборы. Главная водная активность Тбилиси для новичков, тренировок и прогулок на закате.\n\n### 2. Озеро Лиси — Сапсерфинг рядом с центром Тбилиси\n- **Расстояние:** 10 км от центра города.\n- **Особенности:** Термальное озеро в окружении холмов. Компактный размер обеспечивает спокойную воду без волн. Отлично подходит для вечерних прогулок после работы.\n\n### 3. Озеро Базалети — Загородный отдых возле Тбилиси\n- **Расстояние:** 45 км на север от Тбилиси (40 минут на авто).\n- **Особенности:** Природное озеро с чистой водой. Прекрасное место для пикников, семейных поездок и легкого обучения сапбордингу.\n\n### 4. Сионское водохранилище — Горные хвойные леса\n- **Расстояние:** 80 км в регионе Тианети.\n- **Особенности:** Окружено сосновыми лесами и горами. Зеркальная гладь воды, тихие заливы и великолепные условия для кемпинга с сапами.\n\n### 5. Жинвальское водохранилище — Бирюзовая горная вода\n- **Расстояние:** 60 км по Военно-Грузинской дороге.\n- **Особенности:** Знаменитая бирюзовая вода на фоне крепости Ананури и высоких гор. Лучше всего кататься в утренние часы.\n\n### 6. Шаорское водохранилище — Жемчужина Рачи\n- **Расстояние:** Около 270 км от Тбилиси.\n- **Особенности:** Высокогорное озеро на высоте 1100 м. Сказочные пейзажи, тишина и зеркальная вода.\n\n### 7. Черноморское побережье (Батуми, Шекветили, Кобулети)\n- **Локации:** Пляжи Батуми, магнитные пески Шекветили, Гонио.\n- **Особенности:** Катание на Черном море идеально с 07:30 до 11:00 утра до поднятия дневного ветра. Утром вода гладкая, часто встречаются дельфины.\n\n### 8. Озеро Палиастоми — Национальный парк Колхети\n- **Локация:** Рядом с Поти.\n- **Особенности:** Уникальный озерный ландшафт для эко-туров и наблюдения за птицами.\n\n> **Аренда снаряжения:** SUPSURF.GE предоставляет полный надувной комплект в рюкзаке (50 GEL/день, 80 GEL/2 дня) без залога. Забирайте на Тбилисском море и путешествуйте по всей Грузии!"
           },
           "date": "2026-07-16",
-          "readTime": "5 min",
+          "readTime": "6 min",
           "author": "Levan Asatiani",
           "image": "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=500&q=80",
           "videoUrl": "https://www.youtube.com/watch?v=R3L01q1BexE"

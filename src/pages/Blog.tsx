@@ -2,11 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { useOutletContext } from 'react-router-dom';
 import type { Locale } from '@/lib/get-dictionary';
 import BlogClient from '@/components/BlogClient';
+import initialDb from '../data/db.json';
 
 export default function Blog() {
   const { locale, dict } = useOutletContext<{ locale: Locale; dict: any }>();
-  const [db, setDb] = useState<any>(null);
-  const [dbLoading, setDbLoading] = useState(true);
+  const [db, setDb] = useState<any>(initialDb);
+  const [dbLoading, setDbLoading] = useState(false);
 
   useEffect(() => {
     fetch('/api/admin')

@@ -29,8 +29,9 @@ export default function Navbar({ locale, dict, onBookNow }: NavbarProps) {
 
   const navLinks = [
     { name: dict.nav.home, href: `/${locale}` },
-    { name: dict.nav.shop, href: `/${locale}/shop` },
+    { name: dict.nav.rent, href: `/${locale}/rent` },
     { name: dict.nav.services, href: `/${locale}/services` },
+    { name: dict.nav.shop, href: `/${locale}/shop` },
     { name: dict.nav.blog, href: `/${locale}/blog` },
     { name: dict.nav.about, href: `/${locale}/about` },
   ];
@@ -55,8 +56,16 @@ export default function Navbar({ locale, dict, onBookNow }: NavbarProps) {
               id="nav-logo"
             >
               {db?.logo ? (
-                <div className="h-12 sm:h-16 w-auto group-hover:scale-[1.05] transition-transform flex items-center justify-center p-0">
-                  <img src={db.logo} alt="supsurf.ge" className="h-full w-auto object-contain" />
+                <div className="h-12 sm:h-16 w-[119px] sm:w-[158px] group-hover:scale-[1.05] transition-transform flex items-center justify-center p-0">
+                  <img
+                    src={db.logo}
+                    alt="SUPSURF.GE - საპ ბორდების გაქირავება"
+                    width={158}
+                    height={64}
+                    style={{ aspectRatio: '2394 / 968' }}
+                    className="h-full w-auto object-contain"
+                    decoding="async"
+                  />
                 </div>
               ) : (
                 <div className="rounded-xl bg-gradient-to-tr from-ocean-navy to-ocean-teal p-2.5 text-white shadow-md shadow-ocean-teal/20 group-hover:scale-105 transition-transform flex items-center gap-2">

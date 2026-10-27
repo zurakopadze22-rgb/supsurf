@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, useLocation, Outlet } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
-import { getDictionary } from '@/lib/get-dictionary';
+import { getDictionarySync } from '@/lib/get-dictionary';
 import type { Locale } from '@/lib/get-dictionary';
 import BookingModal from './BookingModal';
 import db from '../data/db.json';
@@ -12,23 +12,18 @@ export default function Layout() {
   const { locale: rawLocale } = useParams<{ locale: string }>();
   const navigate = useNavigate();
   const location = useLocation();
-  const [dict, setDict] = useState<any>(null);
-  const [loading, setLoading] = useState(true);
+  const supportedLocales: Locale[] = ['en', 'ge', 'ru'];
+  const locale = (rawLocale && supportedLocales.includes(rawLocale as Locale) ? rawLocale : 'ge') as Locale;
+  const [dict, setDict] = useState<any>(() => getDictionarySync(locale));
   const [modalOpen, setModalOpen] = useState(false);
   const [modalItem, setModalItem] = useState('');
 
-  const supportedLocales: Locale[] = ['en', 'ge', 'ru'];
-  const locale = (rawLocale && supportedLocales.includes(rawLocale as Locale) ? rawLocale : 'en') as Locale;
-
-  // Redirect to correct locale prefix if missing or invalid
+  // Redirect to correct locale prefix if missing or invalid (defaulting to 'ge' for Georgian SEO & canonical consistency)
   useEffect(() => {
     if (!rawLocale || !supportedLocales.includes(rawLocale as Locale)) {
-      // Check browser language preference
-      const browserLang = navigator.language.toLowerCase();
-      let detectedLocale = 'en';
-      if (browserLang.includes('ka') || browserLang.includes('ge')) {
-        detectedLocale = 'ge';
-      } else if (browserLang.includes('ru')) {
+      const browserLang = (navigator.language || '').toLowerCase();
+      let detectedLocale: Locale = 'ge';
+      if (browserLang.startsWith('ru')) {
         detectedLocale = 'ru';
       }
       
@@ -37,25 +32,9 @@ export default function Layout() {
     }
   }, [rawLocale, navigate, location]);
 
-  // Fetch translation dictionary
+  // Update translation dictionary synchronously when locale changes
   useEffect(() => {
-    let active = true;
-    setLoading(true);
-    getDictionary(locale)
-      .then((data) => {
-        if (active) {
-          setDict(data);
-          setLoading(false);
-        }
-      })
-      .catch((err) => {
-        console.error('Failed to load dictionary:', err);
-        setLoading(false);
-      });
-
-    return () => {
-      active = false;
-    };
+    setDict(getDictionarySync(locale));
   }, [locale]);
 
   // Scroll to top on route change
@@ -64,90 +43,189 @@ export default function Layout() {
   }, [location.pathname]);
 
 
-  // Dynamic Page Title & Meta Description SEO
+  // Dynamic Page Title, Meta Description, OpenGraph, GEO & Breadcrumbs SEO
   useEffect(() => {
     if (!dict) return;
     
     const pathParts = location.pathname.split('/').filter(Boolean);
     const page = pathParts[1] || 'home'; 
+    const detailId = pathParts[2];
 
-    let pageTitle = 'supsurf.ge | Premium SUP Board Rentals & Sales in Georgia';
-    let metaDesc = 'Premium SUP board rentals and sales in Georgia (Tbilisi, Batumi, Anaklia). Best daily rates, full adventure gear included.';
+    let pageTitle = 'SUPSURF.GE — საპ ბორდების გაქირავება თბილისში | SUP Board Rental Georgia';
+    let metaDesc = 'საპ ბორდებისა და წყლის დაფების გაქირავება თბილისის ზღვაზე (50₾/დღე). სრული აღჭურვილობა შედის ფასში. Stand Up Paddleboard (SUP) rental in Tbilisi, Georgia.';
+    let pageImage = 'https://supsurf.ge/pictures/logo.webp';
+    let detailLabel = '';
 
-    if (locale === 'ge') {
-      pageTitle = 'supsurf.ge | საპების გაქირავება & გაყიდვა საქართველოში';
-      metaDesc = 'საპ ბორდების გაქირავება და გაყიდვა საქართველოში (თბილისი, ბათუმი, ანაკლია). საუკეთესო დღიური ფასები, სრული აღჭურვილობა შედის ფასში.';
-      
-      switch (page) {
-        case 'rent':
-          pageTitle = 'საპ ბორდების დღიური გაქირავება ლისზე & ბათუმში | supsurf.ge';
-          metaDesc = 'საპ ბორდების დღიური გაქირავება სრული აღჭურვილობით. 1 დღე 50 ლარად, 2 დღე 80 ლარად. დაჯავშნე WhatsApp-ით.';
-          break;
-        case 'shop':
-          pageTitle = 'საპ ბორდების & წყლის აღჭურვილობის მაღაზია | supsurf.ge';
-          metaDesc = 'შეიძინეთ უმაღლესი ხარისხის გასაბერი საპ დაფები და წყლის აქსესუარები გარანტიითა და ადგილზე მიწოდებით.';
-          break;
-        case 'services':
-          pageTitle = 'საპ ტურები, ტრენინგები & კორპორატიული სერვისები | supsurf.ge';
-          metaDesc = 'საპ ტურები, კორპორატიული გასვლები და ჯგუფური აქტივობები წყალზე. შეისწავლე საპინგი პროფესიონალებთან ერთად.';
-          break;
-        case 'blog':
-          pageTitle = 'საპ ბორდინგის ბლოგი & უსაფრთხოების რჩევები | supsurf.ge';
-          metaDesc = 'სასარგებლო რჩევები საპ ბორდით სრიალის შესახებ. როგორ ავირჩიოთ საპი და სად ვიპოვოთ საუკეთესო ტბები საქართველოში.';
-          break;
-        case 'about':
-          pageTitle = 'ჩვენ შესახებ — საპების გაქირავების სადგურები | supsurf.ge';
-          metaDesc = 'supsurf.ge-ის 5 წლიანი ისტორია საქართველოში. გაიცანით ჩვენი გუნდი და აქტიური სადგურები თბილისში, ბათუმსა და ანაკლიაში.';
-          break;
+    // Check detail pages first (Products, Services, Blog Posts)
+    if (detailId) {
+      if (page === 'shop') {
+        const prod = (db?.products || []).find((p: any) => p.id === detailId);
+        if (prod) {
+          const pName = prod.name?.[locale] || prod.name?.en || prod.name?.ge || 'SUP Board';
+          detailLabel = pName;
+          const pDesc = prod.desc?.[locale] || prod.desc?.en || prod.desc?.ge || '';
+          pageTitle = locale === 'ge' 
+            ? `${pName} — საპების მაღაზია თბილისში | SUPSURF.GE`
+            : locale === 'ru' 
+            ? `${pName} — Купить сапборд в Тбилиси | SUPSURF.GE`
+            : `${pName} — Buy SUP Board in Tbilisi | SUPSURF.GE`;
+          metaDesc = pDesc || (locale === 'ge' ? `შეიძინეთ ${pName} გარანტიით თბილისში SUPSURF.GE-სგან.` : `Buy ${pName} with official warranty in Tbilisi, Georgia.`);
+          const rawImg = prod.images?.[0] || prod.image;
+          if (rawImg) {
+            pageImage = rawImg.startsWith('http') ? rawImg : `https://supsurf.ge${rawImg}`;
+          }
+        }
+      } else if (page === 'services') {
+        const staticRentals: Record<string, { ge: string; en: string; ru: string }> = {
+          rent_daily: { ge: "საპ ბორდისა & წყლის დაფის დღიური გაქირავება", en: "Daily SUP & Water Board Rental", ru: "Посуточная аренда сапборда" },
+          lesson_basic: { ge: "საბაზისო შემსწავლელი სეანსი ინსტრუქტორთან", en: "Basic Beginner SUP Session", ru: "Базовое обучающее занятие с инструктором" },
+          rent_hourly: { ge: "საათობრივი გაქირავება თბილისის ზღვაზე", en: "Hourly SUP Board Rental", ru: "Почасовая аренда сапборда" },
+          corporate_event: { ge: "კორპორატიული შეკრებები და ტურები", en: "Corporate Events & Team Building", ru: "Корпоративные туры" }
+        };
+        const srv = (db?.services || []).find((s: any) => s.id === detailId);
+        const srvTitle = srv ? (srv.name?.[locale] || srv.name?.en || srv.name?.ge) : staticRentals[detailId]?.[locale] || 'SUP Service';
+        detailLabel = srvTitle;
+        pageTitle = `${srvTitle} — SUPSURF.GE თბილისი`;
+        const sDesc = srv ? (srv.desc?.[locale] || srv.desc?.en) : 'SUPSURF.GE premium SUP and water board services at Tbilisi Sea, Georgia.';
+        metaDesc = sDesc;
+        if (srv?.image) {
+          pageImage = srv.image.startsWith('http') ? srv.image : `https://supsurf.ge${srv.image}`;
+        }
+      } else if (page === 'blog') {
+        let foundBlog: any = null;
+        for (const cat of (db?.blog_categories || [])) {
+          const b = (cat.blogs || []).find((item: any) => item.id === detailId);
+          if (b) {
+            foundBlog = b;
+            break;
+          }
+        }
+        if (foundBlog) {
+          const bTitle = foundBlog.title?.[locale] || foundBlog.title?.en || foundBlog.title?.ge || 'Blog';
+          detailLabel = bTitle;
+          const blogExcerpt = foundBlog.excerpt?.[locale] || foundBlog.excerpt?.en || '';
+          
+          if (detailId === 'best-lakes-georgia-sup') {
+            pageTitle = locale === 'ge'
+              ? 'სად ვისრიალოთ საპით საქართველოში: თბილისის ზღვა, ლისი, ბაზალეთი, ბათუმი | SUPSURF.GE'
+              : locale === 'ru'
+              ? 'Где покататься на сапборде в Грузии: Тбилиси, Лиси, Базалети, Батуми | SUPSURF.GE'
+              : 'Best SUP Spots in Georgia: Tbilisi Sea, Lisi Lake, Batumi & Mountain Lakes | SUPSURF.GE';
+            metaDesc = locale === 'ge'
+              ? 'საპ ბორდით სრიალი თბილისში და საქართველოში: თბილისის ზღვა, ლისის ტბა, ბაზალეთი, სიონი, შაორი და შავი ზღვა (ბათუმი, შეკვეთილი). საწყლოსნო აქტივობები და იჯარა 50₾-დან.'
+              : locale === 'ru'
+              ? 'Сапсерфинг и водные активности в Грузии: Тбилисское море, озеро Лиси, Базалети, Сиони, Шаори и Черное море в Батуми. Прокат сапов от 50 GEL/день без залога.'
+              : 'Paddleboarding and water activities in Georgia: Tbilisi Sea, Lisi Lake, Bazaleti, Sioni, Shaori, and Black Sea in Batumi. Complete SUP rental kits from 50 GEL/day.';
+          } else {
+            pageTitle = `${bTitle} — SUPSURF.GE`;
+            metaDesc = blogExcerpt || foundBlog.content?.[locale]?.substring(0, 160) || metaDesc;
+          }
+
+          if (foundBlog.image) {
+            pageImage = foundBlog.image.startsWith('http') ? foundBlog.image : `https://supsurf.ge${foundBlog.image}`;
+          }
+        }
       }
-    } else if (locale === 'ru') {
-      pageTitle = 'supsurf.ge | Аренда и продажа SUP-бордов в Грузии (Лиси)';
-      metaDesc = 'Аренда и продажа SUP-досок в Грузии (Тбилиси, Батуми, Анаклия). Отличные цены, полные комплекты снаряжения включены в стоимость.';
+    }
 
-      switch (page) {
-        case 'rent':
-          pageTitle = 'Прокат сапбордов в Грузии (Тбилиси, Батуми) | supsurf.ge';
-          metaDesc = 'Посуточный прокат сапбордов со всем снаряжением. 1 день за 50 GEL, 2 дня за 80 GEL. Забронируйте через WhatsApp.';
-          break;
-        case 'shop':
-          pageTitle = 'Магазин сапбордов и снаряжения в Грузии | supsurf.ge';
-          metaDesc = 'Продажа надувных сап-досок премиум-класса и водных аксессуаров с гарантией и доставкой по всей Грузии.';
-          break;
-        case 'services':
-          pageTitle = 'САП-туры, уроки серфинга и мероприятия в Грузии | supsurf.ge';
-          metaDesc = 'Сап-прогулки, корпоративные мероприятия и групповые активности на воде. Научитесь сапсерфингу с инструктором.';
-          break;
-        case 'blog':
-          pageTitle = 'Блог о сапсерфинге в Грузии: советы и маршруты | supsurf.ge';
-          metaDesc = 'Полезные советы и статьи о сапбординге. Как выбрать сап и где найти лучшие локации для катания в Грузии.';
-          break;
-        case 'about':
-          pageTitle = 'О компании supsurf.ge: 5 лет опыта проката в Грузии';
-          metaDesc = '5 лет опыта supsurf.ge в Грузии. Наша история, контакты и активные станции проката в Тбилиси, Батуми и Анаклии.';
-          break;
+    // Check if current route is admin or invalid detail item - inject noindex
+    if (page === 'admin' || (detailId && !detailLabel)) {
+      document.title = page === 'admin' ? 'Admin Panel — SUPSURF.GE' : '404 - Not Found | SUPSURF.GE';
+      let robotsMeta = document.querySelector('meta[name="robots"]');
+      if (!robotsMeta) {
+        robotsMeta = document.createElement('meta');
+        robotsMeta.setAttribute('name', 'robots');
+        document.head.appendChild(robotsMeta);
       }
+      robotsMeta.setAttribute('content', 'noindex, follow');
+      return;
     } else {
-      switch (page) {
-        case 'rent':
-          pageTitle = 'Daily SUP Board & Paddleboard Rentals in Georgia | supsurf.ge';
-          metaDesc = 'Daily stand-up paddleboard rentals with full gear. 1 day for 50 GEL, 2 days for 80 GEL. Book easily via WhatsApp.';
-          break;
-        case 'shop':
-          pageTitle = 'Inflatable SUP Boards & Watersports Shop Georgia | supsurf.ge';
-          metaDesc = 'Shop premium inflatable paddleboards and watersports accessories with warranty and shipping across Georgia.';
-          break;
-        case 'services':
-          pageTitle = 'Guided SUP Tours & Surfing Lessons in Georgia | supsurf.ge';
-          metaDesc = 'Paddleboarding tours, corporate team building, and group events. Learn stand-up paddling with our certified guides.';
-          break;
-        case 'blog':
-          pageTitle = 'SUP Surfing Blog, Safety Guides & Lake Reviews | supsurf.ge';
-          metaDesc = 'Discover useful guides and tips on paddleboarding. Learn how to choose your gear and discover top paddling lakes in Georgia.';
-          break;
-        case 'about':
-          pageTitle = 'About Us — SUP Board Rental Stations in Georgia | supsurf.ge';
-          metaDesc = 'supsurf.ge\'s 5-year history in Georgia. Meet our team and discover active rental stations in Tbilisi, Batumi, and Anaklia.';
-          break;
+      let robotsMeta = document.querySelector('meta[name="robots"]');
+      if (robotsMeta && robotsMeta.getAttribute('content') === 'noindex, follow') {
+        robotsMeta.setAttribute('content', 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1');
+      }
+    }
+
+    // Default top-level page fallback if not a detail item
+    if (!detailId || !detailLabel) {
+      if (locale === 'ge') {
+        pageTitle = 'საპ ბორდების გაქირავება თბილისში (50₾/დღე) — თბილისის ზღვა | SUPSURF.GE';
+        metaDesc = '№1 საპ ბორდებისა და წყლის დაფების გაქირავება თბილისში და თბილისის ზღვაზე (50₾/დღე, 80₾/2 დღე, 25₾/საათი). სრული 7-ნაწილიანი კომპლექტი ზურგჩანთით დეპოზიტის გარეშე!';
+        
+        switch (page) {
+          case 'rent':
+            pageTitle = 'საპ ბორდის გაქირავება თბილისში დღიურად (50₾) და საათობრივად (25₾) — SUPSURF.GE';
+            metaDesc = 'იქირავეთ გასაბერი საპ ბორდი (SUP) თბილისში საუკეთესო ფასად: 1 დღე — 50₾, 2 დღე — 80₾, 1 საათი თბილისის ზღვაზე — 25₾. წაიღეთ ზურგჩანთით ლისზე, ჟინვალზე, სიონზე ან ბაზალეთზე დეპოზიტის გარეშე!';
+            break;
+          case 'shop':
+            pageTitle = 'საპ ბორდების ყიდვა თბილისში — გასაბერი საპ დაფების მაღაზია | SUPSURF.GE';
+            metaDesc = 'შეიძინეთ ახალი პრემიუმ გასაბერი საპ ბორდები (SUP დაფები) და წყლის სპორტის აქსესუარები თბილისში ოფიციალური გარანტიით (1050₾-დან). უფასო ტესტირება თბილისის ზღვაზე შეძენამდე.';
+            break;
+          case 'services':
+            pageTitle = 'საპ ბორდების გაქირავება, ტურები და გაკვეთილები თბილისის ზღვაზე — SUPSURF.GE';
+            metaDesc = 'საპ ბორდების დღიური (50₾) და საათობრივი (25₾) გაქირავება თბილისში, 90-წუთიანი გაკვეთილები ინსტრუქტორთან (45₾) და კორპორატიული საპ ტურები თბილისის ზღვაზე.';
+            break;
+          case 'blog':
+            pageTitle = 'საპ ბორდინგის გზამკვლევი: ფასები, ლოკაციები თბილისში და რჩევები — SUPSURF.GE';
+            metaDesc = 'ყველაფერი საპ ბორდების გაქირავების შესახებ თბილისში: სად ვისრიალოთ საპით (თბილისის ზღვა, ლისის ტბა, ბაზალეთი, ჟინვალი, სიონი, შაორი), უსაფრთხოება და ტექნიკა.';
+            break;
+          case 'about':
+            pageTitle = 'ჩვენ შესახებ და კონტაქტი — SUPSURF.GE საპ ბორდების სადგური თბილისის ზღვაზე';
+            metaDesc = 'SUPSURF.GE — საპ ბორდების გაქირავების №1 სადგური თბილისში, თბილისის ზღვაზე (ღიაა ყოველდღე 08:00 - 21:00). ტელ / WhatsApp: +995 592 05 50 17.';
+            break;
+        }
+      } else if (locale === 'ru') {
+        pageTitle = 'Аренда сапбордов в Тбилиси (50₾/день) — Тбилисское море | SUPSURF.GE';
+        metaDesc = '№1 Прокат сапбордов (SUP) и водных досок в Тбилиси на Тбилисском море (50 GEL/день, 80 GEL/2 дня, 25 GEL/час). Полный комплект с рюкзаком, веслом и жилетом без залога!';
+
+        switch (page) {
+          case 'rent':
+            pageTitle = 'Аренда сапбордов в Тбилиси посуточно (50 GEL) и почасово (25 GEL) — SUPSURF.GE';
+            metaDesc = 'Прокат надувных сап-досок в Тбилиси посуточно (50 GEL/день, 2 дня 80 GEL) и на Тбилисском море (25 GEL/час). Компактный рюкзак для поездок на Лиси, Жинвали, Базалети, Сиони без залога.';
+            break;
+          case 'shop':
+            pageTitle = 'Купить сапборд в Тбилиси с гарантией — Магазин SUP досок | SUPSURF.GE';
+            metaDesc = 'Продажа новых надувных сап-досок (от 1050 GEL) и водонепроницаемых аксессуаров с гарантией в Тбилиси. Бесплатный тест-драйв на Тбилисском море перед покупкой.';
+            break;
+          case 'services':
+            pageTitle = 'Прокат сапов, САП-туры и обучение с инструктором в Тбилиси — SUPSURF.GE';
+            metaDesc = 'Посуточная (50 GEL) и почасовая (25 GEL) аренда сапов на Тбилисском море, обучение для начинающих с инструктором (45 GEL) и корпоративные сап-туры в Тбилиси.';
+            break;
+          case 'blog':
+            pageTitle = 'Гид по сапбордингу в Тбилиси и озерам Грузии — SUPSURF.GE';
+            metaDesc = 'Полный путеводитель по сапсерфингу в Тбилиси и Грузии: лучшие локации (Тбилисское море, Лиси, Базалети, Жинвали, Сиони, Шаори), цены на прокат и техника гребли.';
+            break;
+          case 'about':
+            pageTitle = 'О нас и Контакты — Станция проката сапбордов SUPSURF.GE на Тбилисском море';
+            metaDesc = 'SUPSURF.GE — главная станция сапсерфинга и проката сапбордов в Тбилиси на Тбилисском море (ежедневно 08:00 - 21:00). Тел / WhatsApp: +995 592 05 50 17.';
+            break;
+        }
+      } else {
+        pageTitle = 'SUP Board Rental Tbilisi (50 GEL/Day) — Tbilisi Sea Station | SUPSURF.GE';
+        metaDesc = '#1 Stand Up Paddleboard (SUP) rental in Tbilisi at Tbilisi Sea (50 GEL/day, 80 GEL/2 days, 25 GEL/hour). Full 7-piece kit in carry backpack with paddle, life vest & pump. Zero deposit!';
+
+        switch (page) {
+          case 'rent':
+            pageTitle = 'Daily & Hourly SUP Board Rental in Tbilisi (50 GEL/Day) — SUPSURF.GE';
+            metaDesc = 'Rent inflatable SUP boards in Tbilisi by the day (50 GEL/1 day, 80 GEL/2 days) or hour at Tbilisi Sea (25 GEL). Takeaway backpack kit for Lisi, Zhinvali, Bazaleti & Sioni. No deposit.';
+            break;
+          case 'shop':
+            pageTitle = 'Buy Inflatable SUP Boards in Tbilisi, Georgia — Watersports Shop | SUPSURF.GE';
+            metaDesc = 'Shop brand-new inflatable Stand Up Paddleboards (from 1,050 GEL) and waterproof accessories in Tbilisi, Georgia. Water-tested at Tbilisi Sea with official warranty.';
+            break;
+          case 'services':
+            pageTitle = 'SUP Rentals, Guided Tours & Beginner Lessons in Tbilisi — SUPSURF.GE';
+            metaDesc = 'Daily (50 GEL) & hourly (25 GEL) paddleboard rentals at Tbilisi Sea, 90-minute beginner SUP lessons with certified instructors (45 GEL), and corporate water events in Tbilisi.';
+            break;
+          case 'blog':
+            pageTitle = 'Tbilisi & Georgia Paddleboarding Guide: Spots, Prices & Tips — SUPSURF.GE';
+            metaDesc = 'Complete guide to Stand Up Paddleboarding in Tbilisi and Georgia: best lakes (Tbilisi Sea, Lisi Lake, Bazaleti, Zhinvali, Sioni, Shaori), rental rates, and safety tips.';
+            break;
+          case 'about':
+            pageTitle = 'About Us & Contact — SUPSURF.GE Tbilisi Sea Paddleboard Station';
+            metaDesc = 'SUPSURF.GE — Premier SUP board rental station located at Tbilisi Sea, Tbilisi (open daily 08:00 - 21:00). Rentals, lessons, and gear sales. WhatsApp: +995 592 05 50 17.';
+            break;
+        }
       }
     }
 
@@ -184,8 +262,15 @@ export default function Layout() {
     };
 
     const subPath = pathParts.slice(1).join('/');
-    const pathSuffix = subPath ? `/${subPath}` : '';
-    const currentCanonicalUrl = `https://www.supsurf.ge/${locale}${pathSuffix}`;
+    // Normalize /rent/:id canonical to /services/:id to prevent duplicate content and ranking cannibalization
+    const canonicalPath = (pathParts[1] === 'rent' && pathParts[2]) 
+      ? `services/${pathParts[2]}` 
+      : subPath;
+    const pathSuffix = canonicalPath ? `/${canonicalPath}` : '';
+    const currentCanonicalUrl = `https://supsurf.ge/${locale}${pathSuffix}`;
+
+    // Update <html lang="..."> attribute dynamically for Internationalization & Technical SEO
+    document.documentElement.lang = locale === 'ge' ? 'ka' : locale;
 
     // Meta Description
     setMetaTag('name', 'description', metaDesc);
@@ -193,39 +278,44 @@ export default function Layout() {
     // Canonical link
     setLinkTag('canonical', currentCanonicalUrl);
 
-    // Multilingual Hreflang links for Google Search
-    setLinkTag('alternate', `https://www.supsurf.ge/ge${pathSuffix}`, 'ka');
-    setLinkTag('alternate', `https://www.supsurf.ge/ge${pathSuffix}`, 'ge');
-    setLinkTag('alternate', `https://www.supsurf.ge/ru${pathSuffix}`, 'ru');
-    setLinkTag('alternate', `https://www.supsurf.ge/en${pathSuffix}`, 'en');
-    setLinkTag('alternate', `https://www.supsurf.ge/ge${pathSuffix}`, 'x-default');
+    // Multilingual Hreflang links for Google Search (using ISO 639-1 ka for Georgian)
+    setLinkTag('alternate', `https://supsurf.ge/ge${pathSuffix}`, 'ka');
+    setLinkTag('alternate', `https://supsurf.ge/ru${pathSuffix}`, 'ru');
+    setLinkTag('alternate', `https://supsurf.ge/en${pathSuffix}`, 'en');
+    setLinkTag('alternate', `https://supsurf.ge/ge${pathSuffix}`, 'x-default');
+
+    // Remove legacy invalid hreflang='ge' if present
+    const legacyGeTag = document.querySelector('link[rel="alternate"][hreflang="ge"]');
+    if (legacyGeTag) legacyGeTag.remove();
 
     // OpenGraph Social & Search Meta Tags
     setMetaTag('property', 'og:title', pageTitle);
     setMetaTag('property', 'og:description', metaDesc);
     setMetaTag('property', 'og:url', currentCanonicalUrl);
-    setMetaTag('property', 'og:type', 'website');
-    setMetaTag('property', 'og:site_name', 'supsurf.ge');
-    setMetaTag('property', 'og:image', 'https://www.supsurf.ge/pictures/logo.webp');
+    setMetaTag('property', 'og:type', detailId ? 'article' : 'website');
+    setMetaTag('property', 'og:site_name', 'SUPSURF.GE');
+    setMetaTag('property', 'og:image', pageImage);
     setMetaTag('property', 'og:locale', locale === 'ge' ? 'ka_GE' : locale === 'ru' ? 'ru_RU' : 'en_US');
 
     // Twitter Cards
     setMetaTag('name', 'twitter:card', 'summary_large_image');
     setMetaTag('name', 'twitter:title', pageTitle);
     setMetaTag('name', 'twitter:description', metaDesc);
-    setMetaTag('name', 'twitter:image', 'https://www.supsurf.ge/pictures/logo.webp');
+    setMetaTag('name', 'twitter:image', pageImage);
 
-    // Geo Target Meta Tags for Localized Search Priority
-    setMetaTag('name', 'geo.region', 'GE');
-    setMetaTag('name', 'geo.placename', 'Tbilisi, Batumi, Georgia');
+    // Geo Target Meta Tags for Localized Search Priority (GEO)
+    setMetaTag('name', 'geo.region', 'GE-TB');
+    setMetaTag('name', 'geo.placename', 'Tbilisi, Georgia');
+    setMetaTag('name', 'geo.position', '41.7450;44.8650');
+    setMetaTag('name', 'ICBM', '41.7450, 44.8650');
 
     // Breadcrumb JSON-LD Schema for Google Search Snippets
     const breadcrumbItems: any[] = [
       {
         '@type': 'ListItem',
         'position': 1,
-        'name': 'supsurf.ge',
-        'item': `https://www.supsurf.ge/${locale}`
+        'name': 'SUPSURF.GE',
+        'item': `https://supsurf.ge/${locale}`
       }
     ];
 
@@ -244,38 +334,37 @@ export default function Layout() {
         '@type': 'ListItem',
         'position': 2,
         'name': pageLabel,
-        'item': currentCanonicalUrl
+        'item': `https://supsurf.ge/${locale}/${page}`
       });
-    }
 
-    const breadcrumbSchema = {
-      '@context': 'https://schema.org',
-      '@type': 'BreadcrumbList',
-      'itemListElement': breadcrumbItems
-    };
+      if (detailId && detailLabel) {
+        breadcrumbItems.push({
+          '@type': 'ListItem',
+          'position': 3,
+          'name': detailLabel,
+          'item': currentCanonicalUrl
+        });
+      }
+    }
 
     let schemaScript = document.getElementById('breadcrumb-schema') as HTMLScriptElement;
-    if (!schemaScript) {
-      schemaScript = document.createElement('script');
-      schemaScript.id = 'breadcrumb-schema';
-      schemaScript.type = 'application/ld+json';
-      document.head.appendChild(schemaScript);
+    if (breadcrumbItems.length >= 2) {
+      const breadcrumbSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        'itemListElement': breadcrumbItems
+      };
+      if (!schemaScript) {
+        schemaScript = document.createElement('script');
+        schemaScript.id = 'breadcrumb-schema';
+        schemaScript.type = 'application/ld+json';
+        document.head.appendChild(schemaScript);
+      }
+      schemaScript.text = JSON.stringify(breadcrumbSchema);
+    } else if (schemaScript) {
+      schemaScript.remove();
     }
-    schemaScript.text = JSON.stringify(breadcrumbSchema);
   }, [location.pathname, dict, locale]);
-
-  if (loading || !dict) {
-    return (
-      <div className="flex min-h-screen items-center justify-center bg-white text-ocean-dark">
-        <div className="flex flex-col items-center gap-3">
-          <div className="h-10 w-10 animate-spin rounded-full border-4 border-ocean-teal border-t-transparent"></div>
-          <span className="font-display text-sm font-semibold tracking-wider uppercase text-ocean-slate animate-pulse">
-            Loading...
-          </span>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <>

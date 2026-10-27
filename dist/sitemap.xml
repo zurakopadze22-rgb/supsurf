@@ -1,597 +1,971 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://www.supsurf.ge/en</loc>
-    <changefreq>weekly</changefreq>
+    <loc>https://supsurf.ge/ge</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge" />
     <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
+      <image:loc>https://supsurf.ge/pictures/logo.webp</image:loc>
+      <image:title>SUPSURF.GE - საპ ბორდების გაქირავება თბილისში | SUP Board Rental Georgia</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.supsurf.ge/en/shop</loc>
-    <changefreq>weekly</changefreq>
+    <loc>https://supsurf.ge/en</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge" />
     <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
+      <image:loc>https://supsurf.ge/pictures/logo.webp</image:loc>
+      <image:title>SUPSURF.GE - საპ ბორდების გაქირავება თბილისში | SUP Board Rental Georgia</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.supsurf.ge/en/services</loc>
-    <changefreq>weekly</changefreq>
+    <loc>https://supsurf.ge/ru</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge" />
     <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
+      <image:loc>https://supsurf.ge/pictures/logo.webp</image:loc>
+      <image:title>SUPSURF.GE - საპ ბორდების გაქირავება თბილისში | SUP Board Rental Georgia</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.supsurf.ge/en/blog</loc>
+    <loc>https://supsurf.ge/ge/rent</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/rent" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/rent" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/rent" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/rent" />
+    <image:image>
+      <image:loc>https://supsurf.ge/pictures/logo.webp</image:loc>
+      <image:title>SUPSURF.GE - საპ ბორდების გაქირავება თბილისში | SUP Board Rental Georgia</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://supsurf.ge/en/rent</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/rent" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/rent" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/rent" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/rent" />
+    <image:image>
+      <image:loc>https://supsurf.ge/pictures/logo.webp</image:loc>
+      <image:title>SUPSURF.GE - საპ ბორდების გაქირავება თბილისში | SUP Board Rental Georgia</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://supsurf.ge/ru/rent</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/rent" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/rent" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/rent" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/rent" />
+    <image:image>
+      <image:loc>https://supsurf.ge/pictures/logo.webp</image:loc>
+      <image:title>SUPSURF.GE - საპ ბორდების გაქირავება თბილისში | SUP Board Rental Georgia</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://supsurf.ge/ge/services</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/services" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/services" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/services" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/services" />
+    <image:image>
+      <image:loc>https://supsurf.ge/pictures/logo.webp</image:loc>
+      <image:title>SUPSURF.GE - საპ ბორდების გაქირავება თბილისში | SUP Board Rental Georgia</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://supsurf.ge/en/services</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/services" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/services" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/services" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/services" />
+    <image:image>
+      <image:loc>https://supsurf.ge/pictures/logo.webp</image:loc>
+      <image:title>SUPSURF.GE - საპ ბორდების გაქირავება თბილისში | SUP Board Rental Georgia</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://supsurf.ge/ru/services</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/services" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/services" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/services" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/services" />
+    <image:image>
+      <image:loc>https://supsurf.ge/pictures/logo.webp</image:loc>
+      <image:title>SUPSURF.GE - საპ ბორდების გაქირავება თბილისში | SUP Board Rental Georgia</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://supsurf.ge/ge/shop</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/shop" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/shop" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/shop" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/shop" />
+    <image:image>
+      <image:loc>https://supsurf.ge/pictures/logo.webp</image:loc>
+      <image:title>SUPSURF.GE - საპ ბორდების გაქირავება თბილისში | SUP Board Rental Georgia</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://supsurf.ge/en/shop</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/shop" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/shop" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/shop" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/shop" />
+    <image:image>
+      <image:loc>https://supsurf.ge/pictures/logo.webp</image:loc>
+      <image:title>SUPSURF.GE - საპ ბორდების გაქირავება თბილისში | SUP Board Rental Georgia</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://supsurf.ge/ru/shop</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/shop" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/shop" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/shop" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/shop" />
+    <image:image>
+      <image:loc>https://supsurf.ge/pictures/logo.webp</image:loc>
+      <image:title>SUPSURF.GE - საპ ბორდების გაქირავება თბილისში | SUP Board Rental Georgia</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://supsurf.ge/ge/blog</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/blog" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/blog" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/blog" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/blog" />
+    <image:image>
+      <image:loc>https://supsurf.ge/pictures/logo.webp</image:loc>
+      <image:title>SUPSURF.GE - საპ ბორდების გაქირავება თბილისში | SUP Board Rental Georgia</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://supsurf.ge/en/blog</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/blog" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/blog" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/blog" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/blog" />
+    <image:image>
+      <image:loc>https://supsurf.ge/pictures/logo.webp</image:loc>
+      <image:title>SUPSURF.GE - საპ ბორდების გაქირავება თბილისში | SUP Board Rental Georgia</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://supsurf.ge/ru/blog</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/blog" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/blog" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/blog" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/blog" />
+    <image:image>
+      <image:loc>https://supsurf.ge/pictures/logo.webp</image:loc>
+      <image:title>SUPSURF.GE - საპ ბორდების გაქირავება თბილისში | SUP Board Rental Georgia</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://supsurf.ge/ge/about</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/about" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/about" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/about" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/about" />
+    <image:image>
+      <image:loc>https://supsurf.ge/pictures/logo.webp</image:loc>
+      <image:title>SUPSURF.GE - საპ ბორდების გაქირავება თბილისში | SUP Board Rental Georgia</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://supsurf.ge/en/about</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/about" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/about" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/about" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/about" />
+    <image:image>
+      <image:loc>https://supsurf.ge/pictures/logo.webp</image:loc>
+      <image:title>SUPSURF.GE - საპ ბორდების გაქირავება თბილისში | SUP Board Rental Georgia</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://supsurf.ge/ru/about</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/about" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/about" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/about" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/about" />
+    <image:image>
+      <image:loc>https://supsurf.ge/pictures/logo.webp</image:loc>
+      <image:title>SUPSURF.GE - საპ ბორდების გაქირავება თბილისში | SUP Board Rental Georgia</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://supsurf.ge/ge/services/rent_daily</loc>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/services/rent_daily" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/services/rent_daily" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/services/rent_daily" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/services/rent_daily" />
     <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
+      <image:loc>https://supsurf.ge/pictures/paddleboard-1.webp</image:loc>
+      <image:title>საპ ბორდისა &amp; წყლის დაფის დღიური გაქირავება (აქცია)</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.supsurf.ge/en/about</loc>
+    <loc>https://supsurf.ge/en/services/rent_daily</loc>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/services/rent_daily" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/services/rent_daily" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/services/rent_daily" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/services/rent_daily" />
     <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
+      <image:loc>https://supsurf.ge/pictures/paddleboard-1.webp</image:loc>
+      <image:title>საპ ბორდისა &amp; წყლის დაფის დღიური გაქირავება (აქცია)</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.supsurf.ge/ge</loc>
+    <loc>https://supsurf.ge/ru/services/rent_daily</loc>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/services/rent_daily" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/services/rent_daily" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/services/rent_daily" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/services/rent_daily" />
     <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
+      <image:loc>https://supsurf.ge/pictures/paddleboard-1.webp</image:loc>
+      <image:title>საპ ბორდისა &amp; წყლის დაფის დღიური გაქირავება (აქცია)</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.supsurf.ge/ge/shop</loc>
+    <loc>https://supsurf.ge/ge/services/lesson_basic</loc>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/services/lesson_basic" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/services/lesson_basic" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/services/lesson_basic" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/services/lesson_basic" />
     <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
+      <image:loc>https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&amp;fit=crop&amp;w=500&amp;q=80</image:loc>
+      <image:title>საბაზისო შემსწავლელი სეანსი (90 წუთი)</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.supsurf.ge/ge/services</loc>
+    <loc>https://supsurf.ge/en/services/lesson_basic</loc>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/services/lesson_basic" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/services/lesson_basic" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/services/lesson_basic" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/services/lesson_basic" />
     <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
+      <image:loc>https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&amp;fit=crop&amp;w=500&amp;q=80</image:loc>
+      <image:title>საბაზისო შემსწავლელი სეანსი (90 წუთი)</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.supsurf.ge/ge/blog</loc>
+    <loc>https://supsurf.ge/ru/services/lesson_basic</loc>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/services/lesson_basic" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/services/lesson_basic" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/services/lesson_basic" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/services/lesson_basic" />
     <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
+      <image:loc>https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&amp;fit=crop&amp;w=500&amp;q=80</image:loc>
+      <image:title>საბაზისო შემსწავლელი სეანსი (90 წუთი)</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.supsurf.ge/ge/about</loc>
+    <loc>https://supsurf.ge/ge/services/rent_hourly</loc>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/services/rent_hourly" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/services/rent_hourly" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/services/rent_hourly" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/services/rent_hourly" />
     <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
+      <image:loc>https://supsurf.ge/pictures/paddleboard-2.webp</image:loc>
+      <image:title>საათობრივი გაქირავება</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.supsurf.ge/ru</loc>
+    <loc>https://supsurf.ge/en/services/rent_hourly</loc>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/services/rent_hourly" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/services/rent_hourly" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/services/rent_hourly" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/services/rent_hourly" />
     <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
+      <image:loc>https://supsurf.ge/pictures/paddleboard-2.webp</image:loc>
+      <image:title>საათობრივი გაქირავება</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.supsurf.ge/ru/shop</loc>
+    <loc>https://supsurf.ge/ru/services/rent_hourly</loc>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/services/rent_hourly" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/services/rent_hourly" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/services/rent_hourly" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/services/rent_hourly" />
     <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
+      <image:loc>https://supsurf.ge/pictures/paddleboard-2.webp</image:loc>
+      <image:title>საათობრივი გაქირავება</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.supsurf.ge/ru/services</loc>
+    <loc>https://supsurf.ge/ge/services/corporate_event</loc>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/services/corporate_event" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/services/corporate_event" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/services/corporate_event" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/services/corporate_event" />
     <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
+      <image:loc>https://images.unsplash.com/photo-1500309722644-cf8528574a7b?auto=format&amp;fit=crop&amp;w=500&amp;q=80</image:loc>
+      <image:title>კორპორატიული შეთავაზებები თბილისის ზღვაზე</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.supsurf.ge/ru/blog</loc>
+    <loc>https://supsurf.ge/en/services/corporate_event</loc>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/services/corporate_event" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/services/corporate_event" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/services/corporate_event" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/services/corporate_event" />
     <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
+      <image:loc>https://images.unsplash.com/photo-1500309722644-cf8528574a7b?auto=format&amp;fit=crop&amp;w=500&amp;q=80</image:loc>
+      <image:title>კორპორატიული შეთავაზებები თბილისის ზღვაზე</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.supsurf.ge/ru/about</loc>
+    <loc>https://supsurf.ge/ru/services/corporate_event</loc>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/services/corporate_event" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/services/corporate_event" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/services/corporate_event" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/services/corporate_event" />
     <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
+      <image:loc>https://images.unsplash.com/photo-1500309722644-cf8528574a7b?auto=format&amp;fit=crop&amp;w=500&amp;q=80</image:loc>
+      <image:title>კორპორატიული შეთავაზებები თბილისის ზღვაზე</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.supsurf.ge/en/shop/product_1786287649926</loc>
+    <loc>https://supsurf.ge/ge/shop/board_gladiator</loc>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/shop/board_gladiator" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/shop/board_gladiator" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/shop/board_gladiator" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/shop/board_gladiator" />
     <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
+      <image:loc>https://supsurf.ge/pictures/paddleboard.webp</image:loc>
+      <image:title> გასაბერი საპ ბორდი Tiki 10&apos;6&quot;</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.supsurf.ge/ge/shop/product_1786287649926</loc>
+    <loc>https://supsurf.ge/en/shop/board_gladiator</loc>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/shop/board_gladiator" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/shop/board_gladiator" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/shop/board_gladiator" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/shop/board_gladiator" />
     <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
+      <image:loc>https://supsurf.ge/pictures/paddleboard.webp</image:loc>
+      <image:title> გასაბერი საპ ბორდი Tiki 10&apos;6&quot;</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.supsurf.ge/ru/shop/product_1786287649926</loc>
+    <loc>https://supsurf.ge/ru/shop/board_gladiator</loc>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/shop/board_gladiator" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/shop/board_gladiator" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/shop/board_gladiator" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/shop/board_gladiator" />
     <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
+      <image:loc>https://supsurf.ge/pictures/paddleboard.webp</image:loc>
+      <image:title> გასაბერი საპ ბორდი Tiki 10&apos;6&quot;</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.supsurf.ge/en/shop/board_gladiator</loc>
+    <loc>https://supsurf.ge/ge/shop/product_1782817440735</loc>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/shop/product_1782817440735" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/shop/product_1782817440735" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/shop/product_1782817440735" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/shop/product_1782817440735" />
     <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
+      <image:loc>https://supsurf.ge/pictures/waterproof-case.webp</image:loc>
+      <image:title>წყალგაუმტარი ტელეფონის ჩანთა</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.supsurf.ge/ge/shop/board_gladiator</loc>
+    <loc>https://supsurf.ge/en/shop/product_1782817440735</loc>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/shop/product_1782817440735" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/shop/product_1782817440735" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/shop/product_1782817440735" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/shop/product_1782817440735" />
     <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
+      <image:loc>https://supsurf.ge/pictures/waterproof-case.webp</image:loc>
+      <image:title>წყალგაუმტარი ტელეფონის ჩანთა</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.supsurf.ge/ru/shop/board_gladiator</loc>
+    <loc>https://supsurf.ge/ru/shop/product_1782817440735</loc>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/shop/product_1782817440735" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/shop/product_1782817440735" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/shop/product_1782817440735" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/shop/product_1782817440735" />
     <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
+      <image:loc>https://supsurf.ge/pictures/waterproof-case.webp</image:loc>
+      <image:title>წყალგაუმტარი ტელეფონის ჩანთა</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.supsurf.ge/en/shop/product_1782817440735</loc>
+    <loc>https://supsurf.ge/ge/shop/product_1782912663036</loc>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/shop/product_1782912663036" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/shop/product_1782912663036" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/shop/product_1782912663036" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/shop/product_1782912663036" />
     <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
+      <image:loc>https://supsurf.ge/pictures/sup-paddleboard-nova-1.webp</image:loc>
+      <image:title>SUP დაფა, NOVA </image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.supsurf.ge/ge/shop/product_1782817440735</loc>
+    <loc>https://supsurf.ge/en/shop/product_1782912663036</loc>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/shop/product_1782912663036" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/shop/product_1782912663036" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/shop/product_1782912663036" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/shop/product_1782912663036" />
     <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
+      <image:loc>https://supsurf.ge/pictures/sup-paddleboard-nova-1.webp</image:loc>
+      <image:title>SUP დაფა, NOVA </image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.supsurf.ge/ru/shop/product_1782817440735</loc>
+    <loc>https://supsurf.ge/ru/shop/product_1782912663036</loc>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/shop/product_1782912663036" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/shop/product_1782912663036" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/shop/product_1782912663036" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/shop/product_1782912663036" />
     <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
+      <image:loc>https://supsurf.ge/pictures/sup-paddleboard-nova-1.webp</image:loc>
+      <image:title>SUP დაფა, NOVA </image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.supsurf.ge/en/shop/product_1782912663036</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.supsurf.ge/ge/shop/product_1782912663036</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.supsurf.ge/ru/shop/product_1782912663036</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.supsurf.ge/en/services/rent_daily</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.supsurf.ge/ge/services/rent_daily</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.supsurf.ge/ru/services/rent_daily</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.supsurf.ge/en/services/lesson_basic</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.supsurf.ge/ge/services/lesson_basic</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.supsurf.ge/ru/services/lesson_basic</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.supsurf.ge/en/services/rent_hourly</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.supsurf.ge/ge/services/rent_hourly</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.supsurf.ge/ru/services/rent_hourly</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.supsurf.ge/en/services/corporate_event</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.supsurf.ge/ge/services/corporate_event</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.supsurf.ge/ru/services/corporate_event</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.supsurf.ge/en/blog/what-is-sup-board</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.supsurf.ge/ge/blog/what-is-sup-board</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.supsurf.ge/ru/blog/what-is-sup-board</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.supsurf.ge/en/blog/sup-paddle-guide</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.supsurf.ge/ge/blog/sup-paddle-guide</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.supsurf.ge/ru/blog/sup-paddle-guide</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.supsurf.ge/en/blog/how-to-stand-sup</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.supsurf.ge/ge/blog/how-to-stand-sup</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.supsurf.ge/ru/blog/how-to-stand-sup</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.supsurf.ge/en/blog/sup-safety-rules</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.supsurf.ge/ge/blog/sup-safety-rules</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.supsurf.ge/ru/blog/sup-safety-rules</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.supsurf.ge/en/blog/sup-paddling-techniques</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.supsurf.ge/ge/blog/sup-paddling-techniques</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.supsurf.ge/ru/blog/sup-paddling-techniques</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.supsurf.ge/en/blog/best-lakes-georgia-sup</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.supsurf.ge/ge/blog/best-lakes-georgia-sup</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.supsurf.ge/ru/blog/best-lakes-georgia-sup</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.supsurf.ge/en/blog/surfboards-for-beginners</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.supsurf.ge/ge/blog/surfboards-for-beginners</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.supsurf.ge/ru/blog/surfboards-for-beginners</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.supsurf.ge/en/blog/what-is-hydrofoil</loc>
+    <loc>https://supsurf.ge/ge/blog/sup-board-rental-tbilisi-price-guide</loc>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/blog/sup-board-rental-tbilisi-price-guide" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/blog/sup-board-rental-tbilisi-price-guide" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/blog/sup-board-rental-tbilisi-price-guide" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/blog/sup-board-rental-tbilisi-price-guide" />
     <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
+      <image:loc>https://supsurf.ge/pictures/paddleboard-1.webp</image:loc>
+      <image:title>საპ ბორდების გაქირავება თბილისში (2026): ფასები, თბილისის ზღვის სადგური და სრული გზამკვლევი</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.supsurf.ge/ge/blog/what-is-hydrofoil</loc>
+    <loc>https://supsurf.ge/en/blog/sup-board-rental-tbilisi-price-guide</loc>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/blog/sup-board-rental-tbilisi-price-guide" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/blog/sup-board-rental-tbilisi-price-guide" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/blog/sup-board-rental-tbilisi-price-guide" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/blog/sup-board-rental-tbilisi-price-guide" />
     <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
+      <image:loc>https://supsurf.ge/pictures/paddleboard-1.webp</image:loc>
+      <image:title>საპ ბორდების გაქირავება თბილისში (2026): ფასები, თბილისის ზღვის სადგური და სრული გზამკვლევი</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.supsurf.ge/ru/blog/what-is-hydrofoil</loc>
+    <loc>https://supsurf.ge/ru/blog/sup-board-rental-tbilisi-price-guide</loc>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/blog/sup-board-rental-tbilisi-price-guide" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/blog/sup-board-rental-tbilisi-price-guide" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/blog/sup-board-rental-tbilisi-price-guide" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/blog/sup-board-rental-tbilisi-price-guide" />
     <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
+      <image:loc>https://supsurf.ge/pictures/paddleboard-1.webp</image:loc>
+      <image:title>საპ ბორდების გაქირავება თბილისში (2026): ფასები, თბილისის ზღვის სადგური და სრული გზამკვლევი</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.supsurf.ge/en/blog/kitesurfing-wind-basics</loc>
+    <loc>https://supsurf.ge/ge/blog/what-is-sup-board</loc>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/blog/what-is-sup-board" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/blog/what-is-sup-board" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/blog/what-is-sup-board" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/blog/what-is-sup-board" />
     <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
+      <image:loc>https://images.unsplash.com/photo-1517176118179-c55d0910c5e8?auto=format&amp;fit=crop&amp;w=500&amp;q=80</image:loc>
+      <image:title>რა არის საპ დაფა?</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.supsurf.ge/ge/blog/kitesurfing-wind-basics</loc>
+    <loc>https://supsurf.ge/en/blog/what-is-sup-board</loc>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/blog/what-is-sup-board" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/blog/what-is-sup-board" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/blog/what-is-sup-board" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/blog/what-is-sup-board" />
     <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
+      <image:loc>https://images.unsplash.com/photo-1517176118179-c55d0910c5e8?auto=format&amp;fit=crop&amp;w=500&amp;q=80</image:loc>
+      <image:title>რა არის საპ დაფა?</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.supsurf.ge/ru/blog/kitesurfing-wind-basics</loc>
+    <loc>https://supsurf.ge/ru/blog/what-is-sup-board</loc>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/blog/what-is-sup-board" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/blog/what-is-sup-board" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/blog/what-is-sup-board" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/blog/what-is-sup-board" />
     <image:image>
-      <image:loc>https://www.supsurf.ge/pictures/logo.webp</image:loc>
-      <image:title>supsurf.ge - SUP Board Rental &amp; Sales Georgia</image:title>
+      <image:loc>https://images.unsplash.com/photo-1517176118179-c55d0910c5e8?auto=format&amp;fit=crop&amp;w=500&amp;q=80</image:loc>
+      <image:title>რა არის საპ დაფა?</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://supsurf.ge/ge/blog/sup-paddle-guide</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/blog/sup-paddle-guide" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/blog/sup-paddle-guide" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/blog/sup-paddle-guide" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/blog/sup-paddle-guide" />
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&amp;fit=crop&amp;w=500&amp;q=80</image:loc>
+      <image:title>როგორ შევარჩიოთ საპ ნიჩაბი?</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://supsurf.ge/en/blog/sup-paddle-guide</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/blog/sup-paddle-guide" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/blog/sup-paddle-guide" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/blog/sup-paddle-guide" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/blog/sup-paddle-guide" />
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&amp;fit=crop&amp;w=500&amp;q=80</image:loc>
+      <image:title>როგორ შევარჩიოთ საპ ნიჩაბი?</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://supsurf.ge/ru/blog/sup-paddle-guide</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/blog/sup-paddle-guide" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/blog/sup-paddle-guide" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/blog/sup-paddle-guide" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/blog/sup-paddle-guide" />
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&amp;fit=crop&amp;w=500&amp;q=80</image:loc>
+      <image:title>როგორ შევარჩიოთ საპ ნიჩაბი?</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://supsurf.ge/ge/blog/how-to-stand-sup</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/blog/how-to-stand-sup" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/blog/how-to-stand-sup" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/blog/how-to-stand-sup" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/blog/how-to-stand-sup" />
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1500309722644-cf8528574a7b?auto=format&amp;fit=crop&amp;w=500&amp;q=80</image:loc>
+      <image:title>როგორ დავდგეთ საპ დაფაზე სწორად?</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://supsurf.ge/en/blog/how-to-stand-sup</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/blog/how-to-stand-sup" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/blog/how-to-stand-sup" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/blog/how-to-stand-sup" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/blog/how-to-stand-sup" />
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1500309722644-cf8528574a7b?auto=format&amp;fit=crop&amp;w=500&amp;q=80</image:loc>
+      <image:title>როგორ დავდგეთ საპ დაფაზე სწორად?</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://supsurf.ge/ru/blog/how-to-stand-sup</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/blog/how-to-stand-sup" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/blog/how-to-stand-sup" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/blog/how-to-stand-sup" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/blog/how-to-stand-sup" />
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1500309722644-cf8528574a7b?auto=format&amp;fit=crop&amp;w=500&amp;q=80</image:loc>
+      <image:title>როგორ დავდგეთ საპ დაფაზე სწორად?</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://supsurf.ge/ge/blog/sup-safety-rules</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/blog/sup-safety-rules" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/blog/sup-safety-rules" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/blog/sup-safety-rules" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/blog/sup-safety-rules" />
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&amp;fit=crop&amp;w=500&amp;q=80</image:loc>
+      <image:title>უსაფრთხოების წესები საპით სრიალისას</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://supsurf.ge/en/blog/sup-safety-rules</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/blog/sup-safety-rules" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/blog/sup-safety-rules" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/blog/sup-safety-rules" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/blog/sup-safety-rules" />
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&amp;fit=crop&amp;w=500&amp;q=80</image:loc>
+      <image:title>უსაფრთხოების წესები საპით სრიალისას</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://supsurf.ge/ru/blog/sup-safety-rules</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/blog/sup-safety-rules" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/blog/sup-safety-rules" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/blog/sup-safety-rules" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/blog/sup-safety-rules" />
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&amp;fit=crop&amp;w=500&amp;q=80</image:loc>
+      <image:title>უსაფრთხოების წესები საპით სრიალისას</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://supsurf.ge/ge/blog/sup-paddling-techniques</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/blog/sup-paddling-techniques" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/blog/sup-paddling-techniques" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/blog/sup-paddling-techniques" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/blog/sup-paddling-techniques" />
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&amp;fit=crop&amp;w=500&amp;q=80</image:loc>
+      <image:title>ნიჩბოსნობის ტექნიკა დამწყებთათვის</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://supsurf.ge/en/blog/sup-paddling-techniques</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/blog/sup-paddling-techniques" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/blog/sup-paddling-techniques" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/blog/sup-paddling-techniques" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/blog/sup-paddling-techniques" />
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&amp;fit=crop&amp;w=500&amp;q=80</image:loc>
+      <image:title>ნიჩბოსნობის ტექნიკა დამწყებთათვის</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://supsurf.ge/ru/blog/sup-paddling-techniques</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/blog/sup-paddling-techniques" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/blog/sup-paddling-techniques" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/blog/sup-paddling-techniques" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/blog/sup-paddling-techniques" />
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&amp;fit=crop&amp;w=500&amp;q=80</image:loc>
+      <image:title>ნიჩბოსნობის ტექნიკა დამწყებთათვის</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://supsurf.ge/ge/blog/best-lakes-georgia-sup</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/blog/best-lakes-georgia-sup" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/blog/best-lakes-georgia-sup" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/blog/best-lakes-georgia-sup" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/blog/best-lakes-georgia-sup" />
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&amp;fit=crop&amp;w=500&amp;q=80</image:loc>
+      <image:title>სად ვისრიალოთ საპ ბორდით საქართველოში: თბილისის ზღვა, ლისის ტბა, მთის წყალსაცავები და ბათუმი</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://supsurf.ge/en/blog/best-lakes-georgia-sup</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/blog/best-lakes-georgia-sup" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/blog/best-lakes-georgia-sup" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/blog/best-lakes-georgia-sup" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/blog/best-lakes-georgia-sup" />
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&amp;fit=crop&amp;w=500&amp;q=80</image:loc>
+      <image:title>სად ვისრიალოთ საპ ბორდით საქართველოში: თბილისის ზღვა, ლისის ტბა, მთის წყალსაცავები და ბათუმი</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://supsurf.ge/ru/blog/best-lakes-georgia-sup</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/blog/best-lakes-georgia-sup" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/blog/best-lakes-georgia-sup" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/blog/best-lakes-georgia-sup" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/blog/best-lakes-georgia-sup" />
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&amp;fit=crop&amp;w=500&amp;q=80</image:loc>
+      <image:title>სად ვისრიალოთ საპ ბორდით საქართველოში: თბილისის ზღვა, ლისის ტბა, მთის წყალსაცავები და ბათუმი</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://supsurf.ge/ge/blog/surfboards-for-beginners</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/blog/surfboards-for-beginners" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/blog/surfboards-for-beginners" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/blog/surfboards-for-beginners" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/blog/surfboards-for-beginners" />
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&amp;fit=crop&amp;w=500&amp;q=80</image:loc>
+      <image:title>სერფინგის დაფის შერჩევა დამწყებთათვის</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://supsurf.ge/en/blog/surfboards-for-beginners</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/blog/surfboards-for-beginners" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/blog/surfboards-for-beginners" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/blog/surfboards-for-beginners" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/blog/surfboards-for-beginners" />
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&amp;fit=crop&amp;w=500&amp;q=80</image:loc>
+      <image:title>სერფინგის დაფის შერჩევა დამწყებთათვის</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://supsurf.ge/ru/blog/surfboards-for-beginners</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/blog/surfboards-for-beginners" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/blog/surfboards-for-beginners" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/blog/surfboards-for-beginners" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/blog/surfboards-for-beginners" />
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&amp;fit=crop&amp;w=500&amp;q=80</image:loc>
+      <image:title>სერფინგის დაფის შერჩევა დამწყებთათვის</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://supsurf.ge/ge/blog/what-is-hydrofoil</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/blog/what-is-hydrofoil" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/blog/what-is-hydrofoil" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/blog/what-is-hydrofoil" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/blog/what-is-hydrofoil" />
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1500309722644-cf8528574a7b?auto=format&amp;fit=crop&amp;w=500&amp;q=80</image:loc>
+      <image:title>რა არის ჰიდროფოილი და როგორ მუშაობს ის?</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://supsurf.ge/en/blog/what-is-hydrofoil</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/blog/what-is-hydrofoil" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/blog/what-is-hydrofoil" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/blog/what-is-hydrofoil" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/blog/what-is-hydrofoil" />
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1500309722644-cf8528574a7b?auto=format&amp;fit=crop&amp;w=500&amp;q=80</image:loc>
+      <image:title>რა არის ჰიდროფოილი და როგორ მუშაობს ის?</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://supsurf.ge/ru/blog/what-is-hydrofoil</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/blog/what-is-hydrofoil" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/blog/what-is-hydrofoil" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/blog/what-is-hydrofoil" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/blog/what-is-hydrofoil" />
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1500309722644-cf8528574a7b?auto=format&amp;fit=crop&amp;w=500&amp;q=80</image:loc>
+      <image:title>რა არის ჰიდროფოილი და როგორ მუშაობს ის?</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://supsurf.ge/ge/blog/kitesurfing-wind-basics</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/blog/kitesurfing-wind-basics" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/blog/kitesurfing-wind-basics" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/blog/kitesurfing-wind-basics" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/blog/kitesurfing-wind-basics" />
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&amp;fit=crop&amp;w=500&amp;q=80</image:loc>
+      <image:title>კაიტსერფინგი: ქარისა და ქარის ფანჯრის საფუძვლები</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://supsurf.ge/en/blog/kitesurfing-wind-basics</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/blog/kitesurfing-wind-basics" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/blog/kitesurfing-wind-basics" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/blog/kitesurfing-wind-basics" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/blog/kitesurfing-wind-basics" />
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&amp;fit=crop&amp;w=500&amp;q=80</image:loc>
+      <image:title>კაიტსერფინგი: ქარისა და ქარის ფანჯრის საფუძვლები</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://supsurf.ge/ru/blog/kitesurfing-wind-basics</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://supsurf.ge/ge/blog/kitesurfing-wind-basics" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://supsurf.ge/en/blog/kitesurfing-wind-basics" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://supsurf.ge/ru/blog/kitesurfing-wind-basics" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://supsurf.ge/ge/blog/kitesurfing-wind-basics" />
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&amp;fit=crop&amp;w=500&amp;q=80</image:loc>
+      <image:title>კაიტსერფინგი: ქარისა და ქარის ფანჯრის საფუძვლები</image:title>
     </image:image>
   </url>
 </urlset>

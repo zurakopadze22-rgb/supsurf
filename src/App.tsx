@@ -10,6 +10,7 @@ import Blog from './pages/Blog';
 import BlogPostDetail from './pages/BlogPostDetail';
 import About from './pages/About';
 import Admin from './pages/Admin';
+import NotFound from './pages/NotFound';
 import { Analytics } from '@vercel/analytics/react';
 
 export default function App() {
@@ -18,6 +19,8 @@ export default function App() {
       <Routes>
         <Route path="/:locale" element={<Layout />}>
           <Route index element={<Home />} />
+          <Route path="rent" element={<Services />} />
+          <Route path="rent/:id" element={<ServiceDetail />} />
           <Route path="shop" element={<Shop />} />
           <Route path="shop/:id" element={<ProductDetail />} />
           <Route path="services" element={<Services />} />
@@ -26,6 +29,7 @@ export default function App() {
           <Route path="blog/:id" element={<BlogPostDetail />} />
           <Route path="about" element={<About />} />
           <Route path="admin" element={<Admin />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
         {/* Wildcard path will fall into Layout which handles default locale redirect */}
         <Route path="*" element={<Layout />} />

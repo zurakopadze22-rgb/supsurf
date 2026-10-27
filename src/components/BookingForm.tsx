@@ -88,9 +88,9 @@ export default function BookingForm({ locale, dict }: BookingFormProps) {
 
   // Contact Info state
   const [contactInfo, setContactInfo] = useState({
-    phone: '+995 555 123 456',
-    whatsapp: '995555123456',
-    instagram: 'https://instagram.com/supsurf.ge'
+    phone: '+995 592 05 50 17',
+    whatsapp: '995592055017',
+    instagram: 'https://instagram.com/sun_set_paddle/'
   });
 
   // Fetch live contacts from DB

@@ -1,14 +1,20 @@
-const dictionaries = {
-  en: () => import('../dictionaries/en.json').then((module) => module.default),
-  ge: () => import('../dictionaries/ge.json').then((module) => module.default),
-  ru: () => import('../dictionaries/ru.json').then((module) => module.default),
-};
+import en from '../dictionaries/en.json';
+import ge from '../dictionaries/ge.json';
+import ru from '../dictionaries/ru.json';
 
 export type Locale = 'en' | 'ge' | 'ru';
 
-export const getDictionary = async (locale: Locale) => {
-  if (dictionaries[locale]) {
-    return dictionaries[locale]();
-  }
-  return dictionaries['en']();
+const dictionaries: Record<Locale, any> = {
+  en,
+  ge,
+  ru,
 };
+
+export const getDictionarySync = (locale: Locale) => {
+  return dictionaries[locale] || dictionaries.en;
+};
+
+export const getDictionary = async (locale: Locale) => {
+  return getDictionarySync(locale);
+};
+

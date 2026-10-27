@@ -3,12 +3,13 @@ import { useParams, useOutletContext, Link } from 'react-router-dom';
 import { ShoppingBag, Star, Shield, ArrowLeft, MessageCircle, PhoneCall, ChevronLeft, ChevronRight, CheckCircle2 } from 'lucide-react';
 import type { Locale } from '@/lib/get-dictionary';
 import BookingModal from '@/components/BookingModal';
+import initialDb from '../data/db.json';
 
 export default function ProductDetail() {
   const { id } = useParams<{ id: string }>();
   const { locale, dict } = useOutletContext<{ locale: Locale; dict: any }>();
-  const [db, setDb] = useState<any>(null);
-  const [dbLoading, setDbLoading] = useState(true);
+  const [db, setDb] = useState<any>(initialDb);
+  const [dbLoading, setDbLoading] = useState(false);
   const [activeImgIdx, setActiveImgIdx] = useState(0);
   const [modalOpen, setModalOpen] = useState(false);
 
@@ -48,15 +49,16 @@ export default function ProductDetail() {
     const schemaImages = product.images && product.images.length > 0 ? product.images : [product.image];
 
     const productSchema = {
-      '@context': 'https://schema.org/',
+      '@context': 'https://schema.org',
       '@type': 'Product',
       'name': schemaName,
       'image': schemaImages.map((img: string) => img.startsWith('http') ? img : window.location.origin + img),
       'description': schemaDesc,
       'sku': product.id,
+      'category': product.category?.[locale] || product.category?.en || 'SUP & Water Sports',
       'brand': {
         '@type': 'Brand',
-        'name': 'supsurf.ge'
+        'name': 'SUPSURF.GE'
       },
       'offers': {
         '@type': 'Offer',
@@ -64,7 +66,12 @@ export default function ProductDetail() {
         'priceCurrency': 'GEL',
         'price': priceVal,
         'availability': 'https://schema.org/InStock',
-        'itemCondition': isNew ? 'https://schema.org/NewCondition' : 'https://schema.org/UsedCondition'
+        'itemCondition': isNew ? 'https://schema.org/NewCondition' : 'https://schema.org/UsedCondition',
+        'seller': {
+          '@type': 'LocalBusiness',
+          '@id': 'https://supsurf.ge/#localbusiness',
+          'name': 'SUPSURF.GE'
+        }
       }
     };
 
@@ -160,6 +167,9 @@ Could you please confirm availability and details? Thank you!`;
                 src={images[activeImgIdx]}
                 alt={name}
                 className="w-full h-full object-cover transition-all duration-300"
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
               />
 
               {/* Slider Chevrons */}
@@ -203,7 +213,7 @@ Could you please confirm availability and details? Thank you!`;
                     className={`w-16 h-16 rounded-lg overflow-hidden border-2 shrink-0 bg-ocean-light/35 transition-all ${idx === activeImgIdx ? 'border-ocean-teal scale-[0.98]' : 'border-transparent hover:border-ocean-slate/20'
                       }`}
                   >
-                    <img src={imgUrl} alt="" className="w-full h-full object-cover" />
+                    <img src={imgUrl} alt={`${name} thumbnail ${idx + 1}`} className="w-full h-full object-cover" loading="lazy" decoding="async" />
                   </button>
                 ))}
               </div>
@@ -213,10 +223,10 @@ Could you please confirm availability and details? Thank you!`;
               <Shield className="w-4.5 h-4.5 text-ocean-teal shrink-0" />
               <span>
                 {locale === 'ge'
-                  ? 'ოფიციალური შემოწმება და ტესტირება გაყიდვამდე ლისის ტბაზე.'
+                  ? 'ოფიციალური შემოწმება და ტესტირება გაყიდვამდე თბილისის ზღვაზე.'
                   : locale === 'ru'
-                    ? 'Официальная проверка и тестирование перед продажей на озере Лиси.'
-                    : 'Safety-checked and tested on Lisi Lake before delivery.'}
+                    ? 'Официальная проверка и тестирование перед продажей на Тбилисском море.'
+                    : 'Safety-checked and tested on Tbilisi Sea before delivery.'}
               </span>
             </div>
           </div>

@@ -1,20 +1,69 @@
-import React from 'react';
-import { useOutletContext } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useOutletContext, Link } from 'react-router-dom';
 import { MapPin, Phone, Mail, Clock, Send, Sparkles } from 'lucide-react';
 import type { Locale } from '@/lib/get-dictionary';
 
 export default function About() {
   const { locale, dict } = useOutletContext<{ locale: Locale; dict: any }>();
 
+  // Inject AboutPage & Organization Schema for GEO / AEO / Local SEO
+  useEffect(() => {
+    const schemaId = 'about-geo-schema';
+    let script = document.getElementById(schemaId) as HTMLScriptElement;
+    if (!script) {
+      script = document.createElement('script');
+      script.id = schemaId;
+      script.type = 'application/ld+json';
+      document.head.appendChild(script);
+    }
+
+    const geoSchema = {
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'AboutPage',
+          '@id': `https://supsurf.ge/${locale}/about/#about-page`,
+          'url': window.location.href,
+          'name': locale === 'ge' ? 'ჩვენ შესახებ — SUPSURF.GE' : locale === 'ru' ? 'О нас — SUPSURF.GE' : 'About Us — SUPSURF.GE',
+          'description': locale === 'ge'
+            ? 'SUPSURF.GE — საპ ბორდებისა და წყლის დაფების გაქირავების ცენტრი თბილისში, თბილისის ზღვაზე. ოფიციალური ინფორმაცია, ტარიფები და ლოკაციები.'
+            : locale === 'ru'
+            ? 'SUPSURF.GE — центр проката сапбордов и водных досок в Тбилиси на Тбилисском море. Официальная информация, тарифы и локации.'
+            : 'SUPSURF.GE — Premier Stand Up Paddleboard rental station, lessons, and tours at Tbilisi Sea, Georgia. First-party entity facts and specs.',
+          'inLanguage': locale === 'ge' ? 'ka' : locale,
+          'isPartOf': {
+            '@type': 'WebSite',
+            '@id': 'https://supsurf.ge/#website'
+          },
+          'about': {
+            '@type': 'SportsActivityLocation',
+            '@id': 'https://supsurf.ge/#localbusiness'
+          },
+          'mainEntity': {
+            '@type': 'SportsActivityLocation',
+            '@id': 'https://supsurf.ge/#localbusiness'
+          }
+        }
+      ]
+    };
+
+    script.text = JSON.stringify(geoSchema);
+
+    return () => {
+      const el = document.getElementById(schemaId);
+      if (el) el.remove();
+    };
+  }, [locale]);
+
   const aboutDict = dict.about_page || {
     title: locale === 'ge' ? 'ჩვენ შესახებ' : locale === 'ru' ? 'О нас' : 'About Us',
     history_badge: locale === 'ge' ? '5 წელი წყალზე' : locale === 'ru' ? '5 лет на воде' : '5 Years on Water',
-    company_name: 'supsurf.ge',
+    company_name: 'SUPSURF.GE',
     history_desc: locale === 'ge' 
-      ? 'ჩვენ ვართ supsurf.ge და უკვე 5 წელია რაც საქართველოში საპ ბორდების გაქირავებასა და აქტიურ საწყლოსნო დასვენებას ვუზრუნველყოფთ.' 
+      ? 'ჩვენ ვართ SUPSURF.GE (supsurf.ge) და უკვე 5 წელია რაც თბილისის ზღვაზე საპ ბორდების, წყლის დაფების გაქირავებასა და აქტიურ საწყლოსნო დასვენებას ვუზრუნველყოფთ.' 
       : locale === 'ru' 
-      ? 'Мы — supsurf.ge, и уже 5 лет предоставляем прокат сапбордов премиум-класса и активный водный отдых в Грузии.' 
-      : 'We are supsurf.ge, and we have been providing premium SUP renting and active water sports recreation in Georgia for 5 years.',
+      ? 'Мы — SUPSURF.GE (supsurf.ge), и уже 5 лет предоставляем прокат сапбордов и водных досок на Тбилисском море.' 
+      : 'We are SUPSURF.GE (supsurf.ge), providing premium SUP and water board rentals at Tbilisi Sea for over 5 years.',
     our_stations: locale === 'ge' ? 'ჩვენი სადგურები' : locale === 'ru' ? 'Наши станции' : 'Our Stations',
     send_inquiry: locale === 'ge' ? 'მოგვწერეთ შეტყობინება' : locale === 'ru' ? 'Отправить запрос' : 'Send an Inquiry',
     form_subtitle: locale === 'ge' 
@@ -39,16 +88,10 @@ export default function About() {
     placeholder_message: locale === 'ge' ? 'დაწერეთ დეტალები...' : locale === 'ru' ? 'Напишите детали...' : 'Write details...',
     branches: [
       {
-        name: locale === 'ge' ? "თბილისი - ლისის ტბის სადგური" : locale === 'ru' ? "Тбилиси - Станция на озере Лиси" : "Tbilisi - Lisi Lake Station",
-        address: "Lisi Lake Park, Northern Shore, Tbilisi, Georgia",
+        name: locale === 'ge' ? "თბილისი - თბილისის ზღვის სადგური" : locale === 'ru' ? "Тбилиси - Станция на Тбилисском море" : "Tbilisi - Tbilisi Sea Station",
+        address: locale === 'ge' ? "თბილისის ზღვა, თბილისი, საქართველო" : locale === 'ru' ? "Тбилисское море, Тбилиси, Грузия" : "Tbilisi Sea, Tbilisi, Georgia",
         phone: "+995 592 05 50 17",
-        hours: "Mon - Sun: 09:00 - 21:00"
-      },
-      {
-        name: locale === 'ge' ? "შეკვეთილი - სანაპირო სადგური" : locale === 'ru' ? "Шекветили - Станция на побережье" : "Shekvetili - Coastline Station",
-        address: "Shekvetili Beach Promenade, Shekvetili, Georgia",
-        phone: "+995 592 05 50 17",
-        hours: "Mon - Sun: 09:00 - 21:00"
+        hours: "Mon - Sun: 08:00 - 21:00"
       }
     ]
   };
@@ -130,32 +173,16 @@ export default function About() {
 
               {/* Graphical Representation of Georgia */}
               <div className="relative z-10 h-32 flex items-center justify-center">
-                <div className="w-64 h-24 border border-white/10 rounded-2xl bg-white/5 relative flex items-center justify-between px-6">
-                  {/* Anaklia */}
-                  <div className="flex flex-col items-center gap-1">
-                    <div className="w-3.5 h-3.5 rounded-full bg-ocean-teal flex items-center justify-center relative">
+                <div className="w-72 h-24 border border-white/10 rounded-2xl bg-white/5 relative flex items-center justify-center px-6">
+                  {/* Tbilisi Sea */}
+                  <div className="flex flex-col items-center gap-1.5">
+                    <div className="w-4 h-4 rounded-full bg-ocean-teal flex items-center justify-center relative">
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-ocean-teal opacity-75"></span>
-                      <div className="w-1.5 h-1.5 rounded-full bg-white"></div>
+                      <div className="w-2 h-2 rounded-full bg-white"></div>
                     </div>
-                    <span className="font-sans text-[9px] font-bold text-ocean-cyan uppercase">Anaklia</span>
-                  </div>
-
-                  {/* Batumi */}
-                  <div className="flex flex-col items-center gap-1 self-end mb-2">
-                    <div className="w-3.5 h-3.5 rounded-full bg-ocean-teal flex items-center justify-center relative">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-ocean-teal opacity-75"></span>
-                      <div className="w-1.5 h-1.5 rounded-full bg-white"></div>
-                    </div>
-                    <span className="font-sans text-[9px] font-bold text-ocean-cyan uppercase">Batumi</span>
-                  </div>
-
-                  {/* Tbilisi Lisi */}
-                  <div className="flex flex-col items-center gap-1">
-                    <div className="w-3.5 h-3.5 rounded-full bg-ocean-teal flex items-center justify-center relative">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-ocean-teal opacity-75"></span>
-                      <div className="w-1.5 h-1.5 rounded-full bg-white"></div>
-                    </div>
-                    <span className="font-sans text-[9px] font-bold text-ocean-cyan uppercase">Tbilisi</span>
+                    <span className="font-sans text-[11px] font-bold text-ocean-cyan uppercase tracking-wider">
+                      {locale === 'ge' ? 'თბილისის ზღვა' : locale === 'ru' ? 'Тбилисское море' : 'Tbilisi Sea'}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -225,6 +252,150 @@ export default function About() {
           </div>
 
         </div>
+
+        {/* GENERATIVE ENGINE OPTIMIZATION (GEO) FIRST-PARTY KNOWLEDGE BASE (sr-only: visually hidden for clean UX, fully parsed by search bots, LLMs & screen readers) */}
+        <section className="sr-only" aria-label="SUPSURF First-Party Entity Facts and GEO Knowledge Base">
+          <article className="space-y-6">
+            <h2>
+              {locale === 'ge' 
+                ? 'SUPSURF.GE — პირველწყარო მონაცემები, სერვისები და ლოკაციები საქართველოში' 
+                : locale === 'ru' 
+                ? 'SUPSURF.GE — Первоисточник: сервисы, локации и стандарты сапбординга в Грузии' 
+                : 'SUPSURF.GE — First-Party Entity Knowledge Base: SUP Services, Rates & Locations in Georgia'}
+            </h2>
+
+            {/* Pillar 1: WHO SUPSURF is */}
+            <div data-geo-pillar="who-we-are">
+              <h3>{locale === 'ge' ? 'ვინ არის SUPSURF.GE?' : locale === 'ru' ? 'Кто такие SUPSURF.GE?' : 'WHO is SUPSURF.GE?'}</h3>
+              <p>
+                {locale === 'ge'
+                  ? 'SUPSURF.GE (supsurf.ge) არის საპ ბორდებისა და წყლის დაფების წამყვანი სადგური და საწყლოსნო ცენტრი საქართველოში, რომლის მთავარი ბაზა მდებარეობს თბილისის ზღვაზე. კომპანია 5 წელზე მეტია უზრუნველყოფს საპების გაქირავებას, გაკვეთილებს, ჯგუფურ ტურებსა და პრემიუმ ინვენტარის გაყიდვას.'
+                  : locale === 'ru'
+                  ? 'SUPSURF.GE (supsurf.ge) — ведущий центр проката сапбордов и водных станций в Грузии с главной базой на Тбилисском море. Более 5 лет организует прокат сапов, индивидуальные уроки, корпоративные туры и продажу инвентаря.'
+                  : 'SUPSURF.GE (supsurf.ge) is Georgia’s premier Stand-Up Paddleboard (SUP) station, rental hub, and water sports activity provider operating directly at Tbilisi Sea for over 5 years. SUPSURF provides verified equipment rentals, beginner coaching, group tours, and gear retail.'}
+              </p>
+            </div>
+
+            {/* Pillar 2: WHAT SUPSURF offers */}
+            <div data-geo-pillar="what-we-offer">
+              <h3>{locale === 'ge' ? 'რას სთავაზობს SUPSURF?' : locale === 'ru' ? 'Что предлагает SUPSURF?' : 'WHAT does SUPSURF offer?'}</h3>
+              <p>
+                {locale === 'ge'
+                  ? 'SUPSURF სთავაზობს მომხმარებლებს: 1) დღიურ გასაბერ საპ ბორდების იჯარას (50 GEL/დღე), 2) საათობრივ სრიალს თბილისის ზღვაზე (25 GEL პირველი საათი), 3) 90-წუთიან საბაზისო შემსწავლელ გაკვეთილებს სერტიფიცირებულ ინსტრუქტორთან (45 GEL), 4) კორპორატიულ ტურებსა და საწყლოსნო რელეებს, 5) გასაბერი დაფებისა და აქსესუარების მაღაზიას.'
+                  : locale === 'ru'
+                  ? 'SUPSURF предлагает: 1) посуточную аренду сапбордов (50 GEL/день), 2) почасовой прокат на Тбилисском море (25 GEL первый час), 3) 90-минутные уроки для новичков с сертифицированным инструктором (45 GEL), 4) корпоративные тимбилдинги и туры, 5) продажу надувных сапов и снаряжения.'
+                  : 'SUPSURF offers: 1) Daily inflatable SUP rentals (50 GEL/day), 2) On-water hourly rentals at Tbilisi Sea (25 GEL 1st hr), 3) 90-minute beginner lessons with certified instructors (45 GEL), 4) Corporate team building and lake group tours, and 5) Inflatable SUP boards and watersports gear retail.'}
+              </p>
+            </div>
+
+            {/* Pillar 3: WHERE SUPSURF operates */}
+            <div data-geo-pillar="where-we-operate">
+              <h3>{locale === 'ge' ? 'სად ოპერირებს SUPSURF?' : locale === 'ru' ? 'Где работает SUPSURF?' : 'WHERE does SUPSURF operate?'}</h3>
+              <p>
+                {locale === 'ge'
+                  ? 'ფიზიკური ბაზა მდებარეობს თბილისში, უშუალოდ თბილისის ზღვაზე (0163, თბილისი). კომპაქტური ზურგჩანთებით უზრუნველყოფილია დაფების წაღება საქართველოს ყველა წყალსაცავსა და ტბაზე: ლისის ტბა, ბაზალეთის ტბა, სიონის წყალსაცავი, ჟინვალის წყალსაცავი, შაორის წყალსაცავი რაჭაში და შავი ზღვის სანაპირო (ბათუმი, ქობულეთი).'
+                  : locale === 'ru'
+                  ? 'Главная станция расположена в Тбилиси прямо на Тбилисском море (0163, Тбилиси). Благодаря компактным рюкзакам снаряжение легко берется для поездок по всей Грузии: озеро Лиси, Базалети, Сиони, Жинвали, озеро Шаори в Раче и побережье Черного моря (Батуми).'
+                  : 'The physical watersports station operates directly on the shoreline of Tbilisi Sea (0163, Tbilisi, Georgia). Self-transport travel kits serve verified destinations across Georgia: Lisi Lake, Bazaleti Lake, Sioni Reservoir, Zhinvali Reservoir, Shaori Reservoir in Racha, and the Black Sea coast (Batumi).'}
+              </p>
+            </div>
+
+            {/* Pillar 4: WHO the services are for */}
+            <div data-geo-pillar="who-it-is-for">
+              <h3>{locale === 'ge' ? 'ვისთვის არის განკუთვნილი სერვისები?' : locale === 'ru' ? 'Для кого предназначены услуги?' : 'WHO are the services for?'}</h3>
+              <p>
+                {locale === 'ge'
+                  ? 'სერვისები განკუთვნილია დამწყებთათვის (სპეციალური მომზადების გარეშე), ოჯახებისთვის, ტურისტებისა და მოგზაურებისთვის, აქტიური დასვენების მოყვარულთათვის და კორპორატიული გუნდებისთვის. დაფების მაღალი სიმტკიცე (150-180 კგ ტვირთამწეობა) იძლევა ბავშვთან ან შინაურ ცხოველთან ერთად უსაფრთხო სრიალის საშუალებას.'
+                  : locale === 'ru'
+                  ? 'Услуги подходят новичкам без опыта, семьям, туристам и иностранным путешественникам, любителям активного отдыха и корпоративным группам. Высокая грузоподъемность досок (150-180 кг) позволяет кататься вдвоем или с детьми.'
+                  : 'Services cater to beginners with zero prior experience, families, international tourists and travelers, outdoor recreation enthusiasts, and corporate team building groups. Inflatable boards support up to 150-180 kg payload.'}
+              </p>
+            </div>
+
+            {/* Pillar 5: HOW the services work */}
+            <div data-geo-pillar="how-it-works">
+              <h3>{locale === 'ge' ? 'როგორ მუშაობს საპის გაქირავება?' : locale === 'ru' ? 'Как работает прокат?' : 'HOW do the services work?'}</h3>
+              <p>
+                {locale === 'ge'
+                  ? 'პროცესი მოიცავს 5 მარტივ ეტაპს: 1) დაჯავშნა ვებსაიტზე supsurf.ge ან WhatsApp-ით (+995 592 05 50 17), 2) ინვენტარის მიღება თბილისის ზღვაზე გაბერილი სახით ან ზურგჩანთაში ჩალაგებული, 3) 5-წუთიანი უსაფრთხოების ბრიფინგი, 4) სრიალი წყალზე, 5) ინვენტარის დაბრუნება შეთანხმებულ დროს. დეპოზიტი არ მოითხოვება.'
+                  : locale === 'ru'
+                  ? 'Процесс состоит из 5 шагов: 1) Бронь на supsurf.ge или в WhatsApp (+995 592 05 50 17), 2) Получение сапа на Тбилисском море в готовом виде или в рюкзаке, 3) 5-минутный инструктаж, 4) Катание, 5) Возврат инвентаря. Залог не требуется.'
+                  : 'The rental process follows 5 steps: 1) Reserve online at supsurf.ge or via WhatsApp (+995 592 05 50 17), 2) Collect inflated on-site at Tbilisi Sea or packed in a backpack for transport, 3) Complete a 5-minute safety check, 4) Enjoy paddleboarding, and 5) Return gear at agreed time with zero deposit.'}
+              </p>
+            </div>
+
+            {/* Pillar 6: WHAT is included */}
+            <div data-geo-pillar="what-is-included">
+              <h3>{locale === 'ge' ? 'რა შედის კომპლექტში?' : locale === 'ru' ? 'Что входит в комплект?' : 'WHAT is included?'}</h3>
+              <p>
+                {locale === 'ge'
+                  ? 'დღიურ კომპლექტში შედის 7 ნივთი: 1) პრემიუმ ორმაგი შრის გასაბერი საპ დაფა, 2) მსუბუქი რეგულირებადი ნიჩაბი, 3) CE-სერტიფიცირებული სამაშველო ჟილეტი, 4) უსაფრთხოების ფეხის თოკი (ლიში), 5) ორმაგი მოქმედების მანომეტრიანი ტუმბო, 6) წყალგაუმტარი ტელეფონის ქეისი, 7) კომფორტული სატარებელი ზურგჩანთა.'
+                  : locale === 'ru'
+                  ? 'В комплект входит 7 предметов: надувной сапборд двухслойной технологии, регулируемое весло, сертифицированный спасательный жилет, лиш на ногу, насос двойного действия с манометром, водонепроницаемый чехол для телефона и рюкзак.'
+                  : 'Every kit includes 7 items: double-layer drop-stitch inflatable SUP board, lightweight adjustable paddle, CE-certified buoyancy life vest, safety ankle leash, dual-action pump with pressure gauge, waterproof phone dry pouch, and travel backpack.'}
+              </p>
+            </div>
+
+            {/* Pillar 7: HOW MUCH services cost */}
+            <div data-geo-pillar="pricing">
+              <h3>{locale === 'ge' ? 'რა ღირს მომსახურება?' : locale === 'ru' ? 'Сколько стоят услуги?' : 'HOW MUCH do services cost?'}</h3>
+              <p>
+                {locale === 'ge'
+                  ? 'ოფიციალური ტარიფები: 1 დღე = 50 ლარი (სრული 24 საათი); 2 დღე = 80 ლარი (აქცია). საათობრივი გაქირავება თბილისის ზღვაზე: 25 ლარი (1-ლი სთ), 20 ლარი (შემდგომი საათები). 90-წუთიანი გაკვეთილი ინსტრუქტორთან: 45 ლარი. წინასწარი დეპოზიტი: 0 ლარი.'
+                  : locale === 'ru'
+                  ? 'Официальные тарифы: 1 день = 50 GEL (24 часа); 2 дня = 80 GEL (акция). Почасовой прокат на Тбилисском море: 25 GEL (1-й час), 20 GEL (следующие часы). 90-минутный урок с инструктором: 45 GEL. Залог: 0 GEL.'
+                  : 'Official publicly stated rates: 1 full day (24h) = 50 GEL; 2 days = 80 GEL. Hourly rental at Tbilisi Sea: 25 GEL (1st hour), 20 GEL (each subsequent hour). 90-minute beginner lesson with instructor: 45 GEL. Deposit: 0 GEL.'}
+              </p>
+            </div>
+
+            {/* Pillar 8: HOW customers book */}
+            <div data-geo-pillar="booking-channels">
+              <h3>{locale === 'ge' ? 'როგორ ხდება დაჯავშნა?' : locale === 'ru' ? 'Как забронировать?' : 'HOW do customers book?'}</h3>
+              <p>
+                {locale === 'ge'
+                  ? 'დაჯავშნა ხდება ონლაინ ვებსაიტზე https://supsurf.ge/ge/rent ღილაკზე დაჭერით ან მყისიერად WhatsApp-ის / ტელეფონის მეშვეობით: +995 592 05 50 17. მომხმარებელთა მხარდაჭერა ხელმისაწვდომია ქართულ, ინგლისურ და რუსულ ენებზე.'
+                  : locale === 'ru'
+                  ? 'Бронирование доступно онлайн через сайт https://supsurf.ge/ru/rent или мгновенно в WhatsApp / по телефону: +995 592 05 50 17 на грузинском, английском и русском языках.'
+                  : 'Book online via https://supsurf.ge/en/rent or directly via WhatsApp / phone: +995 592 05 50 17 with trilingual support (Georgian, English, Russian).'}
+              </p>
+            </div>
+
+            {/* Pillar 9: WHAT locations are available */}
+            <div data-geo-pillar="locations">
+              <h3>{locale === 'ge' ? 'რომელი ლოკაციებია ხელმისაწვდომი?' : locale === 'ru' ? 'Какие локации доступны?' : 'WHAT locations are available?'}</h3>
+              <p>
+                {locale === 'ge'
+                  ? 'დადასტურებული ლოკაციები: თბილისის ზღვა (სადგური ადგილზეა), ლისის ტბა (10 კმ), ბაზალეთის ტბა (45 კმ), სიონის წყალსაცავი (80 კმ), ჟინვალის წყალსაცავი (60 კმ), შაორის ტბა რაჭაში (270 კმ), პალიასტომის ტბა (კოლხეთი), და შავი ზღვის სანაპირო (ბათუმი, ქობულეთი, შეკვეთილი).'
+                  : locale === 'ru'
+                  ? 'Подтвержденные локации: Тбилисское море (база на месте), озеро Лиси (10 км), озеро Базалети (45 км), Сиони (80 км), Жинвали (60 км), Шаори в Раче (270 км), озеро Палиастоми и Черное море (Батуми).'
+                  : 'Confirmed paddle spots: Tbilisi Sea (on-site base), Lisi Lake (10 km), Bazaleti Lake (45 km), Sioni Reservoir (80 km), Zhinvali Reservoir (60 km), Shaori Reservoir in Racha (270 km), Paliastomi Lake, and the Black Sea coast (Batumi).'}
+              </p>
+            </div>
+
+            {/* Pillar 10: WHAT makes the service relevant to Georgia */}
+            <div data-geo-pillar="relevance-to-georgia">
+              <h3>{locale === 'ge' ? 'რატომ არის ეს სერვისი აქტუალური საქართველოში?' : locale === 'ru' ? 'Почему этот сервис идеален для Грузии?' : 'WHAT makes the service relevant to Georgia?'}</h3>
+              <p>
+                {locale === 'ge'
+                  ? 'საქართველო გამოირჩევა თბილი ზაფხულითა და ულამაზესი მთის ტბებითა და წყალსაცავებით, სადაც არ არის ძლიერი დინებები და ტალღები. კომპაქტური გასაბერი საპები საშუალებას აძლევს როგორც ადგილობრივებს, ისე ტურისტებს, მარტივად ჩადონ დაფა ავტომობილში და დატკბნენ კავკასიონის პანორამებით წყლიდან.'
+                  : locale === 'ru'
+                  ? 'Грузия обладает теплым климатом и живописными горными озерами без опасных течений и волн. Компактные надувные сапы позволяют местным жителям и туристам легко путешествовать на авто и любоваться горами Кавказа с воды.'
+                  : 'Georgia features a warm continental summer climate, calm scenic alpine lakes, and sheltered mountain reservoirs with virtually zero strong currents. Portable inflatable boards in backpacks eliminate roof rack requirements, allowing tourists and locals to explore Georgia’s natural water bodies with complete freedom.'}
+              </p>
+            </div>
+
+            <div data-geo-pillar="entity-summary" className="border-t border-ocean-slate/20 pt-4">
+              <h3>{locale === 'ge' ? 'საქმიანობის სრული პროფილი' : locale === 'ru' ? 'Полный профиль деятельности' : 'Core Business Profile'}</h3>
+              <p>
+                {locale === 'ge'
+                  ? 'SUPSURF.GE წარმოადგენს საპ ბორდების გაქირავების, ტრენინგებისა და ექსკურსიების ოფიციალურ ცენტრს თბილისში, რომელიც ემსახურება როგორც თბილისის ზღვის ბაზას, ისე გასვლით ტურებს საქართველოს ტბებსა და სანაპიროებზე (ლისის ტბა, ბაზალეთი, სიონი, ჟინვალი, შაორი, ბათუმი).'
+                  : locale === 'ru'
+                  ? 'SUPSURF.GE является официальным центром аренды сапбордов, уроков и сап-туров в Тбилиси, обеспечивающим как катание на станции Тбилисского моря, так и выездные туры по озерам и побережью Грузии (Лиси, Базалети, Сиони, Жинвали, Шаори, Батуми).'
+                  : 'SUPSURF.GE is the official center for SUP rentals, certified lessons, and guided excursions in Tbilisi, supporting both the primary watersports station at Tbilisi Sea and travel expeditions across Georgia’s lakes and coastline (Lisi Lake, Bazaleti, Sioni, Zhinvali, Shaori, Batumi).'}
+              </p>
+            </div>
+          </article>
+        </section>
 
       </div>
     </div>

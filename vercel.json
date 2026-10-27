@@ -1,7 +1,56 @@
 {
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Link",
+          "value": "</llms.txt>; rel=\"describedby\"; type=\"text/markdown\""
+        }
+      ]
+    },
+    {
+      "source": "/llms.txt",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/markdown; charset=utf-8"
+        },
+        {
+          "key": "Link",
+          "value": "</llms.txt>; rel=\"describedby\"; type=\"text/markdown\""
+        }
+      ]
+    },
+    {
+      "source": "/llms-full.txt",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/markdown; charset=utf-8"
+        },
+        {
+          "key": "Link",
+          "value": "</llms.txt>; rel=\"describedby\"; type=\"text/markdown\""
+        }
+      ]
+    }
+  ],
   "rewrites": [
+    {
+      "source": "/sitemap.xml",
+      "destination": "/api/index"
+    },
+    {
+      "source": "/llms.txt",
+      "destination": "/api/index"
+    },
+    {
+      "source": "/llms-full.txt",
+      "destination": "/api/index"
+    },
     {
       "source": "/api/:path*",
       "destination": "/api/index"
@@ -11,7 +60,7 @@
       "destination": "/api/index"
     },
     {
-      "source": "/((?!assets|pictures|icons|videos|api|uploads|favicon.ico|sitemap.xml|robots.txt).*)",
+      "source": "/((?!assets|pictures|icons|videos|api|uploads|favicon.ico|sitemap.xml|robots.txt|llms.txt|llms-full.txt).*)",
       "destination": "/index.html"
     }
   ]
